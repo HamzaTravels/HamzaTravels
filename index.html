@@ -3,33 +3,76 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Hamza Travels | Explore • Dream • Discover</title>
+    <title>Hamza Travels - Best Travel & Umrah Visa Services</title>
+    <!-- Google Fonts for Premium Look -->
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <!-- Font Awesome Icons -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
     <style>
         :root {
-            --primary-color: #0b457e; /* Logo Deep Blue */
-            --secondary-color: #f4a216; /* Logo Golden/Orange */
-            --dark-color: #112233;
-            --light-color: #f8fafc;
-            --text-color: #334155;
+            --primary-islamic: #0a2d54; /* Deep Royal Blue */
+            --gold-premium: #cca43b;    /* Premium Gold */
+            --gold-light: #fbf7eb;      /* Light Gold Background */
+            --whatsapp-color: #25d366;  /* WhatsApp Green */
+            --text-dark: #1e293b;
+            --bg-light: #f8fafc;
         }
 
         * {
-            box-sizing: border-box;
             margin: 0;
             padding: 0;
-            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            box-sizing: border-box;
+            font-family: 'Poppins', sans-serif;
         }
 
         body {
-            background-color: var(--light-color);
-            color: var(--text-color);
+            background-color: var(--bg-light);
+            color: var(--text-dark);
             line-height: 1.6;
         }
 
+        /* Top Bar */
+        .top-bar {
+            background-color: var(--primary-islamic);
+            color: white;
+            padding: 10px 20px;
+            font-size: 14px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            flex-wrap: wrap;
+            border-bottom: 2px solid var(--gold-premium);
+        }
+
+        .top-bar-left {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .top-bar-contacts {
+            display: flex;
+            gap: 20px;
+            flex-wrap: wrap;
+        }
+
+        .top-bar-contacts a {
+            color: #e2e8f0;
+            text-decoration: none;
+            font-weight: 600;
+            transition: color 0.2s;
+        }
+        
+        .top-bar-contacts a:hover {
+            color: var(--gold-premium);
+        }
+
+        /* Header & Live Clock */
         header {
-            background-color: #ffffff;
-            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+            background-color: white;
+            box-shadow: 0 4px 20px rgba(0,0,0,0.05);
+            padding: 15px 20px;
             position: sticky;
             top: 0;
             z-index: 1000;
@@ -41,125 +84,88 @@
             display: flex;
             justify-content: space-between;
             align-items: center;
-            padding: 10px 20px;
-        }
-
-        .logo-area {
-            display: flex;
-            align-items: center;
+            flex-wrap: wrap;
             gap: 15px;
         }
 
-        .logo-area img {
-            height: 60px;
-            width: auto;
+        .logo-fallback {
+            font-size: 26px;
+            font-weight: 800;
+            color: var(--primary-islamic);
+            display: flex;
+            align-items: center;
+            gap: 10px;
         }
 
-        .logo-text h1 {
-            color: var(--primary-color);
-            font-size: 22px;
+        .logo-fallback span {
+            color: var(--gold-premium);
+        }
+
+        /* Real-Time Clock Style */
+        .live-clock-wrapper {
+            background: var(--gold-light);
+            border: 1px solid var(--gold-premium);
+            padding: 6px 15px;
+            border-radius: 30px;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            font-weight: 700;
+            color: var(--primary-islamic);
+            font-size: 14px;
+            box-shadow: inset 0 2px 4px rgba(0,0,0,0.02);
+        }
+
+        .live-clock-wrapper i {
+            color: var(--gold-premium);
+            animation: pulse 2s infinite;
+        }
+
+        @keyframes pulse {
+            0% { transform: scale(1); }
+            50% { transform: scale(1.1); }
+            100% { transform: scale(1); }
+        }
+
+        /* Hero Section */
+        .hero {
+            background: linear-gradient(rgba(10, 45, 84, 0.92), rgba(10, 45, 84, 0.88)), url('https://images.unsplash.com/photo-1564507592333-c60657eea523?ixlib=rb-4.0.3') center/cover;
+            color: white;
+            padding: 90px 20px;
+            text-align: center;
+            border-bottom: 5px solid var(--gold-premium);
+        }
+
+        .proprietor-tag {
+            background-color: rgba(204, 164, 59, 0.2);
+            padding: 6px 25px;
+            border-radius: 30px;
+            display: inline-block;
+            margin-bottom: 25px;
+            font-size: 14px;
+            font-weight: bold;
+            border: 1px solid var(--gold-premium);
             letter-spacing: 1px;
         }
 
-        .logo-text p {
-            color: var(--secondary-color);
-            font-size: 12px;
-            font-style: italic;
-        }
-
-        .nav-links {
-            display: flex;
-            gap: 25px;
-            list-style: none;
-            align-items: center;
-        }
-
-        .nav-links a {
-            text-decoration: none;
-            color: var(--primary-color);
-            font-weight: 600;
-            transition: color 0.3s;
-        }
-
-        .nav-links a:hover {
-            color: var(--secondary-color);
-        }
-
-        /* Language Switcher Styling */
-        .lang-select {
-            padding: 5px 10px;
-            border: 1px solid var(--primary-color);
-            border-radius: 5px;
-            color: var(--primary-color);
-            background: #fff;
-            font-weight: 600;
-            cursor: pointer;
-        }
-
-        .hero {
-            background: linear-gradient(rgba(11, 69, 126, 0.85), rgba(17, 34, 51, 0.9)), url('https://images.unsplash.com/photo-1436491865332-7a61a109cc05?ixlib=rb-4.0.3') no-repeat center center/cover;
-            height: 65vh;
-            display: flex;
-            flex-direction: column;
-            justify-content: center;
-            align-items: center;
-            text-align: center;
-            color: #ffffff;
-            padding: 0 20px;
-        }
-
-        .hero h2 {
-            font-size: 42px;
-            margin-bottom: 10px;
-            letter-spacing: 2px;
+        .hero h1 {
+            font-size: 45px;
+            font-weight: 800;
+            margin-bottom: 15px;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
         }
 
         .hero p {
-            font-size: 20px;
-            color: var(--secondary-color);
-            margin-bottom: 30px;
-            font-weight: 300;
+            font-size: 18px;
+            margin-bottom: 35px;
+            max-width: 800px;
+            margin-left: auto;
+            margin-right: auto;
+            color: #f1f5f9;
         }
 
-        .cta-buttons {
-            display: flex;
-            gap: 15px;
-            flex-wrap: wrap;
-            justify-content: center;
-        }
-
-        .btn {
-            display: inline-block;
-            padding: 12px 30px;
-            text-decoration: none;
-            border-radius: 30px;
-            font-weight: bold;
-            transition: transform 0.3s, background-color 0.3s;
-        }
-
-        .btn-primary {
-            background-color: var(--secondary-color);
-            color: #fff;
-        }
-
-        .btn-primary:hover {
-            background-color: #e0920f;
-            transform: translateY(-2px);
-        }
-
-        .btn-secondary {
-            background-color: transparent;
-            color: #fff;
-            border: 2px solid #fff;
-        }
-
-        .btn-secondary:hover {
-            background-color: #fff;
-            color: var(--primary-color);
-            transform: translateY(-2px);
-        }
-
-        .services {
+        /* Services Section */
+        .services-section {
             max-width: 1200px;
             margin: 60px auto;
             padding: 0 20px;
@@ -167,247 +173,392 @@
 
         .section-title {
             text-align: center;
-            color: var(--primary-color);
             font-size: 32px;
-            margin-bottom: 40px;
+            color: var(--primary-islamic);
+            margin-bottom: 10px;
+            font-weight: 800;
             position: relative;
+            padding-bottom: 15px;
         }
 
         .section-title::after {
-            content: '';
-            display: block;
-            width: 80px;
-            height: 4px;
-            background-color: var(--secondary-color);
-            margin: 10px auto 0;
-            border-radius: 2px;
+            content: "🕌";
+            position: absolute;
+            bottom: -15px;
+            left: 50%;
+            transform: translateX(-50%);
+            font-size: 18px;
+            background-color: var(--bg-light);
+            padding: 0 10px;
+            color: var(--gold-premium);
         }
 
+        .section-subtitle {
+            text-align: center;
+            color: #64748b;
+            margin-top: 15px;
+            margin-bottom: 50px;
+            font-size: 16px;
+            font-weight: 500;
+        }
+
+        /* Services Grid */
         .services-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            grid-template-columns: repeat(auto-fit, minmax(290px, 1fr));
             gap: 30px;
         }
 
         .service-card {
-            background: #fff;
-            padding: 30px;
-            border-radius: 10px;
-            box-shadow: 0 5px 15px rgba(0,0,0,0.05);
+            background: white;
+            padding: 35px 25px;
+            border-radius: 15px;
             text-align: center;
-            border-top: 4px solid var(--primary-color);
-            transition: transform 0.3s;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.02);
+            border: 1px solid #e2e8f0;
+            border-top: 5px solid var(--primary-islamic);
+            transition: all 0.3s ease;
+        }
+
+        /* Umrah Card Special Look */
+        .service-card.umrah-card {
+            border-top-color: var(--gold-premium);
+            background-color: var(--gold-light);
         }
 
         .service-card:hover {
-            transform: translateY(-5px);
-            box-shadow: 0 8px 25px rgba(0,0,0,0.1);
+            transform: translateY(-8px);
+            box-shadow: 0 15px 35px rgba(10, 45, 84, 0.1);
+            border-top-color: var(--gold-premium);
         }
 
-        .service-card.highlight {
-            border-top-color: var(--secondary-color);
-            background-color: #fffdf9;
+        .service-icon-wrapper {
+            width: 80px;
+            height: 80px;
+            background-color: #f1f5f9;
+            border-radius: 50px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            margin: 0 auto 20px auto;
+            border: 1px solid #e2e8f0;
+            transition: all 0.3s ease;
+        }
+
+        .service-card:hover .service-icon-wrapper {
+            background-color: var(--primary-islamic);
+            color: white;
+            border-color: var(--gold-premium);
+        }
+
+        .service-card.umrah-card .service-icon-wrapper {
+            background-color: white;
+            border-color: var(--gold-premium);
+        }
+        
+        .service-card.umrah-card:hover .service-icon-wrapper {
+            background-color: var(--gold-premium);
         }
 
         .service-icon {
-            font-size: 40px;
-            color: var(--primary-color);
-            margin-bottom: 20px;
+            font-size: 36px;
+            color: var(--primary-islamic);
         }
 
-        .highlight .service-icon {
-            color: var(--secondary-color);
+        .service-card:hover .service-icon {
+            color: var(--gold-premium);
+        }
+
+        .service-card.umrah-card .service-icon {
+            color: var(--gold-premium);
+        }
+        
+        .service-card.umrah-card:hover .service-icon {
+            color: white;
         }
 
         .service-card h3 {
-            font-size: 20px;
-            margin-bottom: 15px;
-            color: var(--dark-color);
+            font-size: 21px;
+            color: var(--primary-islamic);
+            margin-bottom: 12px;
+            font-weight: 700;
         }
 
         .service-card p {
+            font-size: 14px;
+            color: #475569;
+        }
+
+        /* Buttons */
+        .btn {
+            display: inline-flex;
+            align-items: center;
+            gap: 10px;
+            padding: 12px 28px;
+            border-radius: 50px;
             font-size: 15px;
-            color: #64748b;
+            font-weight: 700;
+            text-decoration: none;
+            transition: all 0.3s ease;
+            margin: 8px;
+            box-shadow: 0 4px 10px rgba(0,0,0,0.1);
         }
 
-        .about-section {
-            background-color: #ebf2fa;
-            padding: 60px 20px;
+        .btn:hover {
+            transform: scale(1.05);
+            box-shadow: 0 6px 15px rgba(0,0,0,0.15);
         }
 
-        .about-container {
-            max-width: 1200px;
-            margin: 0 auto;
-            text-align: center;
+        .btn-whatsapp { background-color: var(--whatsapp-color); color: white; }
+        .btn-call { background-color: var(--gold-premium); color: #0a2d54; }
+        
+        .btn-call:hover {
+            background-color: var(--primary-islamic);
+            color: white;
         }
 
-        .about-container p {
-            max-width: 800px;
-            margin: 20px auto;
-            font-size: 17px;
-            color: var(--text-color);
-        }
-
+        /* Contact Section */
         .contact-section {
-            background-color: var(--dark-color);
-            color: #fff;
+            background-color: white;
             padding: 60px 20px;
+            border-top: 1px solid #e2e8f0;
         }
 
         .contact-container {
-            max-width: 1200px;
+            max-width: 900px;
             margin: 0 auto;
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-            gap: 40px;
-        }
-
-        .contact-info h3 {
-            color: var(--secondary-color);
-            font-size: 22px;
-            margin-bottom: 20px;
-        }
-
-        .contact-info p {
-            margin-bottom: 15px;
-            display: flex;
-            align-items: center;
-            gap: 10px;
-            font-size: 16px;
-        }
-
-        .contact-info i {
-            color: var(--secondary-color);
-            width: 20px;
-        }
-
-        .contact-info a {
-            color: #fff;
-            text-decoration: none;
-        }
-
-        .contact-info a:hover {
-            text-decoration: underline;
-        }
-
-        .footer-bottom {
             text-align: center;
-            padding: 20px;
-            background-color: #0b1521;
-            color: #94a3b8;
-            font-size: 14px;
-            margin-top: 40px;
-            border-top: 1px solid #1e293b;
         }
 
+        .contact-cards-wrapper {
+            display: flex;
+            justify-content: center;
+            gap: 30px;
+            margin: 40px 0;
+            flex-wrap: wrap;
+        }
+
+        .contact-method-card {
+            background: var(--bg-light);
+            padding: 25px;
+            border-radius: 12px;
+            flex: 1;
+            min-width: 260px;
+            border: 1px solid #e2e8f0;
+            border-left: 5px solid var(--gold-premium);
+        }
+
+        .contact-method-card h4 {
+            font-size: 18px;
+            color: var(--primary-islamic);
+            margin-bottom: 10px;
+            font-weight: 700;
+        }
+
+        .contact-method-card p {
+            font-size: 19px;
+            font-weight: 700;
+            color: var(--text-dark);
+        }
+
+        /* Floating WhatsApp */
+        .floating-whatsapp {
+            position: fixed;
+            bottom: 30px;
+            right: 30px;
+            background-color: var(--whatsapp-color);
+            color: white;
+            width: 65px;
+            height: 65px;
+            border-radius: 50px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            font-size: 36px;
+            box-shadow: 0 5px 20px rgba(0,0,0,0.3);
+            z-index: 9999;
+            text-decoration: none;
+            transition: all 0.3s ease;
+        }
+
+        .floating-whatsapp:hover {
+            transform: scale(1.1);
+        }
+
+        /* Footer */
+        footer {
+            background-color: var(--primary-islamic);
+            color: #94a3b8;
+            text-align: center;
+            padding: 25px;
+            font-size: 14px;
+            border-top: 4px solid var(--gold-premium);
+        }
+
+        footer strong { color: white; }
+
+        /* Responsive Settings */
         @media (max-width: 768px) {
-            .nav-container { flex-direction: column; gap: 15px; }
-            .hero h2 { font-size: 30px; }
-            .hero p { font-size: 16px; }
+            .top-bar { text-align: center; flex-direction: column; gap: 8px; justify-content: center; }
+            .nav-container { flex-direction: column; text-align: center; }
+            .hero h1 { font-size: 32px; }
+            .hero p { font-size: 15px; }
+            .section-title { font-size: 26px; }
         }
     </style>
 </head>
 <body>
 
+    <!-- Top Bar -->
+    <div class="top-bar">
+        <div class="top-bar-left">
+            <i class="fa-solid fa-mosque" style="color: var(--gold-premium);"></i> 
+            <span>Best Rate Aur Sabse Bharosemand Service Ki Guarantee</span>
+        </div>
+        <div class="top-bar-contacts">
+            <span><i class="fa-solid fa-phone" style="color: var(--gold-premium);"></i> KSA: <a href="tel:+966594388004">+966 594388004</a></span>
+            <span><i class="fa-solid fa-phone" style="color: var(--gold-premium);"></i> IND: <a href="tel:+918931048027">+91 8931048027</a></span>
+        </div>
+    </div>
+
+    <!-- Header & Navigation -->
     <header>
         <div class="nav-container">
             <div class="logo-area">
-                <img src="logo.jpg" alt="Hamza Travels Logo">
-                <div class="logo-text">
-                    <h1>HAMZA TRAVELS</h1>
-                    <p>Explore • Dream • Discover</p>
+                <div class="logo-fallback">
+                    <i class="fa-solid fa-plane-departure" style="color: var(--gold-premium);"></i> HAMZA <span>TRAVELS</span>
                 </div>
             </div>
-            <ul class="nav-links">
-                <li><a href="#services">Services</a></li>
-                <li><a href="#about">About Us</a></li>
-                <li><a href="#contact">Contact</a></li>
-                <li>
-                    <select class="lang-select">
-                        <option value="en">English</option>
-                        <option value="hi">हिन्दी (Hindi)</option>
-                        <option value="ur">اردو (Urdu)</option>
-                    </select>
-                </li>
-            </ul>
+            
+            <!-- Live Real-Time Clock -->
+            <div class="live-clock-wrapper">
+                <i class="fa-regular fa-clock"></i>
+                <span id="live-clock">00:00:00 PM</span>
+            </div>
+
+            <div>
+                <a href="https://wa.me/966594388004?text=Hello%20Hamza%20Travels" target="_blank" class="btn btn-whatsapp" style="padding: 8px 20px; font-size: 14px; margin: 0; box-shadow: none;">
+                    <i class="fa-brands fa-whatsapp"></i> Online Contact
+                </a>
+            </div>
         </div>
     </header>
 
+    <!-- Hero Section -->
     <section class="hero">
-        <h2>HAMZA TRAVELS</h2>
-        <p>Explore • Dream • Discover</p>
-        <div class="cta-buttons">
-            <a href="https://wa.me/966594388004" target="_blank" class="btn btn-primary"><i class="fab fa-whatsapp"></i> Contact KSA (WhatsApp)</a>
-            <a href="https://wa.me/918931048027" target="_blank" class="btn btn-secondary"><i class="fab fa-whatsapp"></i> Contact India (WhatsApp)</a>
+        <div class="proprietor-tag">Proprietor: MOHAMMAD MAHATAB ALAM</div>
+        <h1>Hamza Travels</h1>
+        <p>Market ke sabse saste aur best rates par Umrah Services, Air Tickets aur Indian Passport Renewal ka sahi aur sachha thikana.</p>
+        <div>
+            <a href="https://wa.me/966594388004" target="_blank" class="btn btn-whatsapp"><i class="fa-brands fa-whatsapp"></i> WhatsApp Chat</a>
+            <a href="tel:+966594388004" class="btn btn-call"><i class="fa-solid fa-phone"></i> Call Now</a>
         </div>
     </section>
 
-    <section class="services" id="services">
-        <h2 class="section-title">Our Professional Services</h2>
+    <!-- Services Section -->
+    <section class="services-section">
+        <h2 class="section-title">Hamari Services (Our Services)</h2>
+        <p class="section-subtitle">Kam se kam rates aur behtareen guidence ke sath sabhi services available hain</p>
+        
         <div class="services-grid">
             
-            <div class="service-card highlight">
-                <div class="service-icon"><i class="fas fa-passport"></i></div>
-                <h3>Indian Passport Renewal (KSA)</h3>
-                <p>Complete and hassle-free assistance for Indian Passport Renewal services for NRI community residing across Saudi Arabia.</p>
+            <!-- Service 1: Umrah Visa -->
+            <div class="service-card umrah-card">
+                <div class="service-icon-wrapper">
+                    <i class="fa-solid fa-kaaba service-icon"></i>
+                </div>
+                <h3>Umrah Visa (उमरा वीज़ा)</h3>
+                <p>Pavitra safar-e-umrah ke liye turant online visa processing, best hotel booking aur complete transport ka behtareen intezam.</p>
             </div>
 
-            <div class="service-card highlight">
-                <div class="service-icon"><i class="far fa-calendar-check"></i></div>
+            <!-- Service 2: Flight Tickets -->
+            <div class="service-card">
+                <div class="service-icon-wrapper">
+                    <i class="fa-solid fa-plane-up service-icon"></i>
+                </div>
+                <h3>Air Ticket Booking (हवाई टिकट)</h3>
+                <p>India, Saudi Arabia aur duniya bhar ke sabhi routes ke liye sabse saste aur confirm flight tickets ke liye contact karein.</p>
+            </div>
+
+            <!-- Service 3: Dummy Ticket -->
+            <div class="service-card">
+                <div class="service-icon-wrapper">
+                    <i class="fa-solid fa-ticket-simple service-icon"></i>
+                </div>
+                <h3>Dummy Ticket (डमी टिकट)</h3>
+                <p>Visa application aur immigration ke liye verified dummy ticket ki facility, market me sabse best and saste rate par available.</p>
+            </div>
+
+            <!-- Service 4: Indian Passport Renewal -->
+            <div class="service-card">
+                <div class="service-icon-wrapper">
+                    <i class="fa-solid fa-passport service-icon"></i>
+                </div>
+                <h3>Passport Renewal (पासपोर्ट रिन्यूवल)</h3>
+                <p>Saudi Arabia (KSA) me rahne wale Indian bhaiyon ke liye passport renewal ka complete, fast aur aasan online process.</p>
+            </div>
+
+            <!-- Service 5: VFS Appointment -->
+            <div class="service-card">
+                <div class="service-icon-wrapper">
+                    <i class="fa-solid fa-calendar-check service-icon"></i>
+                </div>
                 <h3>VFS Appointment Booking</h3>
-                <p>Fast-track and reliable booking solutions for your VFS passport submission appointments (Normal & Emergency categories).</p>
-            </div>
-
-            <div class="service-card">
-                <div class="service-icon"><i class="fas fa-plane"></i></div>
-                <h3>Worldwide Flight Bookings</h3>
-                <p>Best airfare deals and ticket booking options for India, Saudi Arabia, and domestic/international sectors globally.</p>
-            </div>
-
-            <div class="service-card">
-                <div class="service-icon"><i class="fas fa-headset"></i></div>
-                <h3>24/7 Dedicated Support</h3>
-                <p>Professional travel consultancy and end-to-end customer care management to fulfill all your travel requirements.</p>
+                <p>Passport aur Visa documents submit karne ke liye Normal aur Emergency category ki confirm VFS appointment service.</p>
             </div>
 
         </div>
     </section>
 
-    <section class="about-section" id="about">
-        <div class="about-container">
-            <h2 class="section-title">About Hamza Travels</h2>
-            <p><strong>Proprietor: Mohammad Mahatab Alam</strong></p>
-            <p>Hamza Travels is a trusted and premium travel agency. While our core management and networks span prominently across Saudi Arabia (KSA), our backend operations are securely handled from India. This dual presence empowers us to provide our corporate and individual clients with top-tier international documentation services and unbeatable market prices.</p>
-        </div>
-    </section>
-
-    <section class="contact-section" id="contact">
+    <!-- Contact Section -->
+    <section class="contact-section">
         <div class="contact-container">
-            
-            <div class="contact-info">
-                <h3>Hamza Travels</h3>
-                <p>Get in touch with us today for expert solutions regarding your passport applications and flight itineraries.</p>
+            <h2 class="section-title">Contact & Office Details</h2>
+            <div class="contact-cards-wrapper">
+                <div class="contact-method-card">
+                    <h4>Saudi Arabia Office (KSA)</h4>
+                    <p>+966 594388004</p>
+                </div>
+                <div class="contact-method-card">
+                    <h4>India Head Office (IND)</h4>
+                    <p>+91 8931048027</p>
+                </div>
             </div>
-
-            <div class="contact-info">
-                <h3>Contact Numbers</h3>
-                <p><i class="fas fa-phone-alt"></i> <strong>KSA:</strong> <a href="tel:+966594388004">+966 594388004</a></p>
-                <p><i class="fas fa-phone-alt"></i> <strong>IND:</strong> <a href="tel:+918931048027">+91 8931048027</a></p>
-                <p><i class="fab fa-whatsapp"></i> <strong>WhatsApp KSA:</strong> <a href="https://wa.me/966594388004" target="_blank">Chat Now</a></p>
-            </div>
-
-            <div class="contact-info">
-                <h3>Official Channels</h3>
-                <p><i class="fas fa-envelope"></i> <a href="mailto:info.hamzatravels@gmail.com">info.hamzatravels@gmail.com</a></p>
-                <p><i class="fas fa-user"></i> <strong>Proprietor:</strong> Mohammad Mahatab Alam</p>
-            </div>
-
-        </div>
-
-        <div class="footer-bottom">
-            <p>&copy; 2026 Hamza Travels. All Rights Reserved.</p>
+            <p style="color: #64748b; font-weight: 600;">Hum aapko 24 Ghante best service dene ke liye hamesha taiyar hain.</p>
         </div>
     </section>
+
+    <!-- Footer -->
+    <footer>
+        <p>&copy; 2026 <strong>Hamza Travels</strong> - Explore. Dream. Discover. | All Rights Reserved.</p>
+    </footer>
+
+    <!-- Floating WhatsApp -->
+    <a href="https://wa.me/966594388004" class="floating-whatsapp" target="_blank">
+        <i class="fa-brands fa-whatsapp"></i>
+    </a>
+
+    <!-- Live Real-Time Clock Script -->
+    <script>
+        function updateClock() {
+            const now = new Date();
+            let hours = now.getHours();
+            const minutes = String(now.getMinutes()).padStart(2, '0');
+            const seconds = String(now.getSeconds()).padStart(2, '0');
+            const ampm = hours >= 12 ? 'PM' : 'AM';
+            
+            hours = hours % 12;
+            hours = hours ? hours : 12; // 0 should be 12
+            const hoursStr = String(hours).padStart(2, '0');
+
+            const timeString = `${hoursStr}:${minutes}:${seconds} ${ampm}`;
+            document.getElementById('live-clock').textContent = timeString;
+        }
+
+        // Run clock immediately and update every second
+        updateClock();
+        setInterval(updateClock, 1000);
+    </script>
 
 </body>
 </html>
