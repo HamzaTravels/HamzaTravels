@@ -1,7 +1,7 @@
 <!DOCTYPE html><html lang="en">
 <head>
 <meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0"><title>Hamza Travels | Umrah Visa, Air Tickets & Passport Services</title><meta name="description" content="Hamza Travels provides Umrah Visa, Air Ticket Booking, Passport Renewal, VFS Appointment and Travel Services at affordable rates."><link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap" rel="stylesheet"><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css"><style>
+<meta name="viewport" content="width=device-width, initial-scale=1.0"><title>Hamza Travels | Umrah Visa, Air Tickets & Passport Services</title><meta name="description" content="Hamza Travels provides Umrah Visa, Air Ticket Booking, Passport Renewal, VFS Appointment and Travel Services at affordable rates."><link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&family=Noto+Sans+Devanagari:wght@400;600;700&display=swap" rel="stylesheet"><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css"><style>
 
 :root{
 --primary:#0b2d5c;
@@ -9,13 +9,15 @@
 --light:#f8fafc;
 --dark:#1e293b;
 --whatsapp:#25D366;
+--card-bg:#ffffff;
+--text-muted:#64748b;
 }
 
 *{
 margin:0;
 padding:0;
 box-sizing:border-box;
-font-family:'Poppins',sans-serif;
+font-family:'Poppins','Noto Sans Devanagari',sans-serif;
 }
 
 html{
@@ -23,8 +25,8 @@ scroll-behavior:smooth;
 }
 
 body{
-background:#f8fafc;
-color:#1e293b;
+background:#f1f5f9;
+color:var(--dark);
 overflow-x:hidden;
 }
 
@@ -32,14 +34,14 @@ overflow-x:hidden;
 
 .topbar{
 background:var(--primary);
-padding:10px 20px;
+padding:12px 20px;
 color:white;
 display:flex;
 justify-content:space-between;
 align-items:center;
 flex-wrap:wrap;
 font-size:14px;
-border-bottom:2px solid var(--gold);
+border-bottom:3px solid var(--gold);
 }
 
 .topbar a{
@@ -55,7 +57,7 @@ background:white;
 position:sticky;
 top:0;
 z-index:999;
-box-shadow:0 5px 20px rgba(0,0,0,.08);
+box-shadow:0 4px 25px rgba(11,45,92,.06);
 }
 
 .navbar{
@@ -81,6 +83,7 @@ height:70px;
 font-size:28px;
 font-weight:800;
 color:var(--primary);
+letter-spacing:0.5px;
 }
 
 .logo-text span{
@@ -89,24 +92,25 @@ color:var(--gold);
 
 .online-badge{
 background:#e8fff0;
-padding:10px 18px;
+padding:10px 20px;
 border-radius:30px;
 font-size:14px;
 font-weight:700;
 color:#0f9d58;
 border:1px solid #b8f5cd;
+box-shadow:0 2px 10px rgba(15,157,88,0.1);
 }
 
 /* Hero Section */
 
 .hero{
 background:
-linear-gradient(rgba(11,45,92,.90),
-rgba(11,45,92,.90)),
+linear-gradient(rgba(11,45,92,.92),
+rgba(11,45,92,.92)),
 url('https://images.unsplash.com/photo-1516483638261-f4dbaf036963');
 background-size:cover;
 background-position:center;
-padding:110px 20px;
+padding:120px 20px;
 text-align:center;
 color:white;
 }
@@ -119,6 +123,7 @@ border:1px solid var(--gold);
 border-radius:50px;
 margin-bottom:25px;
 font-weight:600;
+letter-spacing:0.5px;
 }
 
 .hero h1{
@@ -146,7 +151,8 @@ border-radius:50px;
 text-decoration:none;
 font-weight:700;
 margin:10px;
-transition:.3s;
+transition:.3s cubic-bezier(0.4, 0, 0.2, 1);
+box-shadow:0 4px 15px rgba(0,0,0,0.15);
 }
 
 .btn-whatsapp{
@@ -160,7 +166,8 @@ color:var(--primary);
 }
 
 .btn:hover{
-transform:translateY(-4px);
+transform:translateY(-5px);
+box-shadow:0 8px 25px rgba(0,0,0,0.25);
 }
 
 /* Features */
@@ -174,13 +181,14 @@ flex-wrap:wrap;
 }
 
 .feature-box{
-background:rgba(255,255,255,.10);
-backdrop-filter:blur(8px);
-padding:12px 18px;
-border-radius:10px;
+background:rgba(255,255,255,.08);
+backdrop-filter:blur(10px);
+padding:14px 22px;
+border-radius:12px;
 font-size:14px;
 font-weight:600;
 border:1px solid rgba(255,255,255,.15);
+box-shadow:0 4px 15px rgba(0,0,0,0.05);
 }
 
 /* Stats */
@@ -203,8 +211,14 @@ background:white;
 padding:35px;
 text-align:center;
 border-radius:20px;
-box-shadow:0 10px 30px rgba(0,0,0,.05);
+box-shadow:0 10px 30px rgba(11,45,92,.04);
 border-top:4px solid var(--gold);
+transition: 0.3s;
+}
+
+.stat-card:hover{
+transform: translateY(-5px);
+box-shadow:0 15px 35px rgba(11,45,92,.08);
 }
 
 .stat-card i{
@@ -216,11 +230,184 @@ margin-bottom:15px;
 .stat-card h3{
 font-size:38px;
 color:var(--primary);
+font-weight: 800;
 }
 
 .stat-card p{
 font-weight:600;
-color:#64748b;
+color:var(--text-muted);
+}
+
+/* ===== MODERN SERVICES SECTION ===== */
+.services-wrapper{
+display:flex;
+max-width:1200px;
+margin:80px auto;
+padding:0 20px;
+gap:35px;
+}
+
+.side-menu{
+width:280px;
+background:white;
+border-radius:24px;
+padding:25px;
+box-shadow:0 15px 35px rgba(11,45,92,.04);
+height:fit-content;
+position:sticky;
+top:130px;
+border:1px solid rgba(11,45,92,.03);
+}
+
+.side-menu h3{
+font-size:20px;
+margin-bottom:20px;
+color:var(--primary);
+border-left:4px solid var(--gold);
+padding-left:12px;
+font-weight: 700;
+}
+
+.side-menu a{
+display:flex;
+align-items:center;
+padding:14px 16px;
+margin:10px 0;
+text-decoration:none;
+color:var(--dark);
+font-weight:600;
+border-radius:12px;
+transition:.3s cubic-bezier(0.4, 0, 0.2, 1);
+background: #f8fafc;
+font-size: 15px;
+}
+
+.side-menu a:hover{
+background:var(--primary);
+color:white;
+transform:translateX(8px);
+box-shadow: 0 4px 15px rgba(11,45,92,0.15);
+}
+
+/* ===== MODERN SERVICES GRID ===== */
+.services-main{
+flex:1;
+}
+
+.service-card{
+background:var(--card-bg);
+padding:30px;
+margin-bottom:25px;
+border-radius:24px;
+box-shadow:0 12px 30px rgba(11,45,92,.03);
+border-left:6px solid var(--gold);
+transition:.3s cubic-bezier(0.4, 0, 0.2, 1);
+position: relative;
+overflow: hidden;
+border: 1px solid rgba(11,45,92,.02);
+border-left:6px solid var(--gold);
+}
+
+.service-card:hover{
+transform:translateY(-6px);
+box-shadow:0 20px 40px rgba(11,45,92,.08);
+background: #ffffff;
+}
+
+.service-title{
+font-size:22px;
+font-weight:800;
+color:var(--primary);
+margin-bottom:12px;
+display: flex;
+flex-direction: column;
+}
+
+.service-title span{
+font-family: 'Noto Sans Devanagari', sans-serif;
+font-weight:700;
+color:var(--text-muted);
+font-size:15px;
+margin-top:4px;
+background: #f1f5f9;
+padding: 4px 12px;
+border-radius: 6px;
+width: fit-content;
+}
+
+.service-desc{
+font-size:15px;
+color:#475569;
+line-height:1.8;
+font-weight: 400;
+}
+
+/* ===== CLOCK BOX ===== */
+.clock-box{
+background:linear-gradient(135deg,var(--primary),#1e3a8a);
+color:white;
+padding:25px;
+border-radius:24px;
+text-align:center;
+margin-bottom:30px;
+box-shadow:0 12px 30px rgba(11,45,92,.18);
+border: 1px solid rgba(255,255,255,0.1);
+}
+
+.clock-time{
+font-size:32px;
+font-weight:800;
+margin-top:5px;
+color:var(--gold);
+letter-spacing: 1px;
+}
+
+.clock-date{
+font-size:14px;
+opacity:.85;
+margin-top:4px;
+font-weight: 500;
+}
+
+/* ===== WHY CHOOSE ===== */
+.why{
+max-width:1200px;
+margin:80px auto;
+padding:0 20px;
+}
+
+.why-grid{
+display:grid;
+grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
+gap:25px;
+margin-top:40px;
+}
+
+.why-box{
+background:white;
+padding:35px 25px;
+border-radius:24px;
+text-align:center;
+box-shadow:0 12px 30px rgba(11,45,92,.03);
+border-top:4px solid var(--gold);
+transition: 0.3s;
+}
+
+.why-box:hover{
+transform: translateY(-5px);
+box-shadow:0 18px 35px rgba(11,45,92,.07);
+}
+
+.why-box i{
+font-size:40px;
+color:var(--gold);
+margin-bottom:15px;
+}
+
+.why-box h4{
+font-size: 18px;
+color: var(--primary);
+font-weight: 700;
 }
 
 /* Floating WhatsApp */
@@ -250,159 +437,27 @@ animation:pulse 2s infinite;
 100%{transform:scale(1);}
 }
 
-@media(max-width:768px){
+@media(max-width:992px){
+.services-wrapper{
+flex-direction: column;
+}
+.side-menu{
+width: 100%;
+position: static;
+}
+}
 
+@media(max-width:768px){
 .hero h1{
 font-size:38px;
 }
-
 .hero p{
 font-size:15px;
 }
-
 .navbar{
 flex-direction:column;
 gap:15px;
 }
-
-}
-
-/* ===== SERVICES LEFT MENU ===== */
-.services-wrapper{
-display:flex;
-max-width:1200px;
-margin:80px auto;
-padding:0 20px;
-gap:30px;
-}
-
-.side-menu{
-width:260px;
-background:white;
-border-radius:20px;
-padding:20px;
-box-shadow:0 10px 30px rgba(0,0,0,.05);
-height:fit-content;
-position:sticky;
-top:120px;
-}
-
-.side-menu h3{
-font-size:18px;
-margin-bottom:15px;
-color:var(--primary);
-border-left:4px solid var(--gold);
-padding-left:10px;
-}
-
-.side-menu a{
-display:block;
-padding:12px;
-margin:8px 0;
-text-decoration:none;
-color:var(--dark);
-font-weight:600;
-border-radius:10px;
-transition:.3s;
-}
-
-.side-menu a:hover{
-background:var(--primary);
-color:white;
-transform:translateX(5px);
-}
-
-/* ===== SERVICES GRID ===== */
-.services-main{
-flex:1;
-}
-
-.service-card{
-background:white;
-padding:25px;
-margin-bottom:20px;
-border-radius:18px;
-box-shadow:0 10px 25px rgba(0,0,0,.05);
-border-left:5px solid var(--gold);
-transition:.3s;
-}
-
-.service-card:hover{
-transform:translateY(-5px);
-}
-
-.service-title{
-font-size:20px;
-font-weight:800;
-color:var(--primary);
-margin-bottom:8px;
-}
-
-.service-title span{
-font-family: 'Noto Sans Devanagari', sans-serif;
-font-weight:600;
-color:#64748b;
-font-size:14px;
-display:block;
-margin-top:4px;
-}
-
-.service-desc{
-font-size:14px;
-color:#475569;
-line-height:1.7;
-}
-
-/* ===== CLOCK BOX ===== */
-.clock-box{
-background:linear-gradient(135deg,var(--primary),#1e3a8a);
-color:white;
-padding:20px;
-border-radius:20px;
-text-align:center;
-margin-bottom:20px;
-box-shadow:0 10px 25px rgba(0,0,0,.15);
-}
-
-.clock-time{
-font-size:26px;
-font-weight:800;
-margin-top:5px;
-color:var(--gold);
-}
-
-.clock-date{
-font-size:14px;
-opacity:.9;
-}
-
-/* ===== WHY CHOOSE ===== */
-.why{
-max-width:1200px;
-margin:60px auto;
-padding:0 20px;
-}
-
-.why-grid{
-display:grid;
-grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
-gap:20px;
-margin-top:30px;
-}
-
-.why-box{
-background:white;
-padding:25px;
-border-radius:18px;
-text-align:center;
-box-shadow:0 10px 25px rgba(0,0,0,.05);
-border-top:4px solid var(--gold);
-}
-
-.why-box i{
-font-size:35px;
-color:var(--gold);
-margin-bottom:10px;
 }
 
 /* ===== REVIEWS ===== */
@@ -415,34 +470,42 @@ padding:0 20px;
 .review-grid{
 display:grid;
 grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
-gap:20px;
-margin-top:30px;
+gap:25px;
+margin-top:40px;
 }
 
 .review-box{
 background:white;
-padding:25px;
-border-radius:18px;
-box-shadow:0 10px 25px rgba(0,0,0,.05);
+padding:30px;
+border-radius:24px;
+box-shadow:0 12px 30px rgba(11,45,92,.03);
 border-left:4px solid var(--gold);
+transition: 0.3s;
+}
+
+.review-box:hover{
+box-shadow:0 18px 35px rgba(11,45,92,.07);
 }
 
 .review-box p{
-font-size:14px;
+font-size:15px;
 color:#475569;
-line-height:1.6;
+line-height:1.7;
+font-style: italic;
 }
 
 .review-box h4{
-margin-top:10px;
+margin-top:15px;
 color:var(--primary);
+font-weight: 700;
+font-style: normal;
 }
 
 /* ===== CONTACT ===== */
 .contact{
 background:white;
-padding:70px 20px;
-margin-top:60px;
+padding:80px 20px;
+margin-top:80px;
 }
 
 .contact-container{
@@ -454,56 +517,80 @@ text-align:center;
 .contact-boxes{
 display:grid;
 grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
-gap:20px;
-margin-top:30px;
+gap:25px;
+margin-top:40px;
 }
 
 .contact-card{
 background:#f8fafc;
-padding:25px;
-border-radius:15px;
+padding:30px 25px;
+border-radius:20px;
 border-left:4px solid var(--gold);
+box-shadow: 0 4px 15px rgba(0,0,0,0.01);
 }
 
 .contact-card h4{
 color:var(--primary);
 margin-bottom:10px;
+font-size: 18px;
+font-weight: 700;
+}
+
+.contact-card p{
+font-weight: 600;
+color: #475569;
 }
 
 /* ===== FORM ===== */
 .form{
 max-width:600px;
-margin:40px auto;
+margin:50px auto 0 auto;
 background:white;
-padding:30px;
-border-radius:20px;
-box-shadow:0 10px 25px rgba(0,0,0,.05);
+padding:40px;
+border-radius:24px;
+box-shadow:0 15px 35px rgba(11,45,92,.06);
+border: 1px solid rgba(11,45,92,0.03);
 }
 
 .form input,
 .form textarea{
 width:100%;
-padding:12px;
-margin:10px 0;
+padding:14px;
+margin:12px 0;
 border:1px solid #e2e8f0;
-border-radius:10px;
+border-radius:12px;
 outline:none;
+font-size: 15px;
+transition: 0.3s;
+background: #f8fafc;
+}
+
+.form input:focus,
+.form textarea:focus{
+border-color: var(--primary);
+background: #fff;
+box-shadow: 0 0 0 3px rgba(11,45,92,0.1);
 }
 
 .form button{
 width:100%;
-padding:12px;
+padding:15px;
 background:var(--primary);
 color:white;
 border:none;
-border-radius:10px;
+border-radius:12px;
 font-weight:700;
 cursor:pointer;
+font-size: 16px;
+transition:.3s;
+box-shadow: 0 4px 12px rgba(11,45,92,0.15);
 }
 
 .form button:hover{
 background:var(--gold);
 color:var(--primary);
+transform: translateY(-2px);
+box-shadow: 0 6px 20px rgba(212,175,55,0.3);
 }
 
 /* ===== FOOTER ===== */
@@ -511,13 +598,15 @@ footer{
 background:var(--primary);
 color:white;
 text-align:center;
-padding:25px;
-margin-top:40px;
+padding:30px;
+margin-top:60px;
+border-top: 3px solid var(--gold);
 }
 
 footer p{
 font-size:14px;
 opacity:.9;
+font-weight: 500;
 }
 
 </style></head><body><div class="topbar">
@@ -568,7 +657,7 @@ Affordable Pricing.
 
 <a href="#">🕋 Umrah Visa (उमरा वीज़ा)</a>
 <a href="#">✈ Air Ticket Booking (हवाई टिकट)</a>
-<a href="#">🏨 Hotel Booking (हوتل بکنگ)</a>
+<a href="#">🏨 Hotel Booking (होटल बुकिंग)</a>
 <a href="#">📘 Passport Renewal (पासपोर्ट नवीनीकरण)</a>
 <a href="#">📅 VFS Appointment (वीएफएस अपॉइंटमेंट)</a>
 <a href="#">🌍 Travel Guidance (यात्रा मार्गदर्शन)</a>
@@ -586,7 +675,7 @@ Affordable Pricing.
 <div class="service-card">
 <div class="service-title">
 Umrah Visa Service
-<span>उमرا वीज़ा सेवा</span>
+<span>उमरा वीज़ा सेवा</span>
 </div>
 <div class="service-desc">
 Fast Umrah Visa processing with complete assistance for travel, hotels, transport and Ziyarat arrangements at lowest rates.
