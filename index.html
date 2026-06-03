@@ -1,0 +1,413 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hamza Travels | Explore • Dream • Discover</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        :root {
+            --primary-color: #0b457e; /* Logo Deep Blue */
+            --secondary-color: #f4a216; /* Logo Golden/Orange */
+            --dark-color: #112233;
+            --light-color: #f8fafc;
+            --text-color: #334155;
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+
+        body {
+            background-color: var(--light-color);
+            color: var(--text-color);
+            line-height: 1.6;
+        }
+
+        header {
+            background-color: #ffffff;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+        }
+
+        .nav-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 10px 20px;
+        }
+
+        .logo-area {
+            display: flex;
+            align-items: center;
+            gap: 15px;
+        }
+
+        .logo-area img {
+            height: 60px;
+            width: auto;
+        }
+
+        .logo-text h1 {
+            color: var(--primary-color);
+            font-size: 22px;
+            letter-spacing: 1px;
+        }
+
+        .logo-text p {
+            color: var(--secondary-color);
+            font-size: 12px;
+            font-style: italic;
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 25px;
+            list-style: none;
+            align-items: center;
+        }
+
+        .nav-links a {
+            text-decoration: none;
+            color: var(--primary-color);
+            font-weight: 600;
+            transition: color 0.3s;
+        }
+
+        .nav-links a:hover {
+            color: var(--secondary-color);
+        }
+
+        /* Language Switcher Styling */
+        .lang-select {
+            padding: 5px 10px;
+            border: 1px solid var(--primary-color);
+            border-radius: 5px;
+            color: var(--primary-color);
+            background: #fff;
+            font-weight: 600;
+            cursor: pointer;
+        }
+
+        .hero {
+            background: linear-gradient(rgba(11, 69, 126, 0.85), rgba(17, 34, 51, 0.9)), url('https://images.unsplash.com/photo-1436491865332-7a61a109cc05?ixlib=rb-4.0.3') no-repeat center center/cover;
+            height: 65vh;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            color: #ffffff;
+            padding: 0 20px;
+        }
+
+        .hero h2 {
+            font-size: 42px;
+            margin-bottom: 10px;
+            letter-spacing: 2px;
+        }
+
+        .hero p {
+            font-size: 20px;
+            color: var(--secondary-color);
+            margin-bottom: 30px;
+            font-weight: 300;
+        }
+
+        .cta-buttons {
+            display: flex;
+            gap: 15px;
+            flex-wrap: wrap;
+            justify-content: center;
+        }
+
+        .btn {
+            display: inline-block;
+            padding: 12px 30px;
+            text-decoration: none;
+            border-radius: 30px;
+            font-weight: bold;
+            transition: transform 0.3s, background-color 0.3s;
+        }
+
+        .btn-primary {
+            background-color: var(--secondary-color);
+            color: #fff;
+        }
+
+        .btn-primary:hover {
+            background-color: #e0920f;
+            transform: translateY(-2px);
+        }
+
+        .btn-secondary {
+            background-color: transparent;
+            color: #fff;
+            border: 2px solid #fff;
+        }
+
+        .btn-secondary:hover {
+            background-color: #fff;
+            color: var(--primary-color);
+            transform: translateY(-2px);
+        }
+
+        .services {
+            max-width: 1200px;
+            margin: 60px auto;
+            padding: 0 20px;
+        }
+
+        .section-title {
+            text-align: center;
+            color: var(--primary-color);
+            font-size: 32px;
+            margin-bottom: 40px;
+            position: relative;
+        }
+
+        .section-title::after {
+            content: '';
+            display: block;
+            width: 80px;
+            height: 4px;
+            background-color: var(--secondary-color);
+            margin: 10px auto 0;
+            border-radius: 2px;
+        }
+
+        .services-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 30px;
+        }
+
+        .service-card {
+            background: #fff;
+            padding: 30px;
+            border-radius: 10px;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.05);
+            text-align: center;
+            border-top: 4px solid var(--primary-color);
+            transition: transform 0.3s;
+        }
+
+        .service-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 8px 25px rgba(0,0,0,0.1);
+        }
+
+        .service-card.highlight {
+            border-top-color: var(--secondary-color);
+            background-color: #fffdf9;
+        }
+
+        .service-icon {
+            font-size: 40px;
+            color: var(--primary-color);
+            margin-bottom: 20px;
+        }
+
+        .highlight .service-icon {
+            color: var(--secondary-color);
+        }
+
+        .service-card h3 {
+            font-size: 20px;
+            margin-bottom: 15px;
+            color: var(--dark-color);
+        }
+
+        .service-card p {
+            font-size: 15px;
+            color: #64748b;
+        }
+
+        .about-section {
+            background-color: #ebf2fa;
+            padding: 60px 20px;
+        }
+
+        .about-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            text-align: center;
+        }
+
+        .about-container p {
+            max-width: 800px;
+            margin: 20px auto;
+            font-size: 17px;
+            color: var(--text-color);
+        }
+
+        .contact-section {
+            background-color: var(--dark-color);
+            color: #fff;
+            padding: 60px 20px;
+        }
+
+        .contact-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 40px;
+        }
+
+        .contact-info h3 {
+            color: var(--secondary-color);
+            font-size: 22px;
+            margin-bottom: 20px;
+        }
+
+        .contact-info p {
+            margin-bottom: 15px;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            font-size: 16px;
+        }
+
+        .contact-info i {
+            color: var(--secondary-color);
+            width: 20px;
+        }
+
+        .contact-info a {
+            color: #fff;
+            text-decoration: none;
+        }
+
+        .contact-info a:hover {
+            text-decoration: underline;
+        }
+
+        .footer-bottom {
+            text-align: center;
+            padding: 20px;
+            background-color: #0b1521;
+            color: #94a3b8;
+            font-size: 14px;
+            margin-top: 40px;
+            border-top: 1px solid #1e293b;
+        }
+
+        @media (max-width: 768px) {
+            .nav-container { flex-direction: column; gap: 15px; }
+            .hero h2 { font-size: 30px; }
+            .hero p { font-size: 16px; }
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <div class="nav-container">
+            <div class="logo-area">
+                <img src="logo.jpg" alt="Hamza Travels Logo">
+                <div class="logo-text">
+                    <h1>HAMZA TRAVELS</h1>
+                    <p>Explore • Dream • Discover</p>
+                </div>
+            </div>
+            <ul class="nav-links">
+                <li><a href="#services">Services</a></li>
+                <li><a href="#about">About Us</a></li>
+                <li><a href="#contact">Contact</a></li>
+                <li>
+                    <select class="lang-select">
+                        <option value="en">English</option>
+                        <option value="hi">हिन्दी (Hindi)</option>
+                        <option value="ur">اردو (Urdu)</option>
+                    </select>
+                </li>
+            </ul>
+        </div>
+    </header>
+
+    <section class="hero">
+        <h2>HAMZA TRAVELS</h2>
+        <p>Explore • Dream • Discover</p>
+        <div class="cta-buttons">
+            <a href="https://wa.me/966594388004" target="_blank" class="btn btn-primary"><i class="fab fa-whatsapp"></i> Contact KSA (WhatsApp)</a>
+            <a href="https://wa.me/918931048027" target="_blank" class="btn btn-secondary"><i class="fab fa-whatsapp"></i> Contact India (WhatsApp)</a>
+        </div>
+    </section>
+
+    <section class="services" id="services">
+        <h2 class="section-title">Our Professional Services</h2>
+        <div class="services-grid">
+            
+            <div class="service-card highlight">
+                <div class="service-icon"><i class="fas fa-passport"></i></div>
+                <h3>Indian Passport Renewal (KSA)</h3>
+                <p>Complete and hassle-free assistance for Indian Passport Renewal services for NRI community residing across Saudi Arabia.</p>
+            </div>
+
+            <div class="service-card highlight">
+                <div class="service-icon"><i class="far fa-calendar-check"></i></div>
+                <h3>VFS Appointment Booking</h3>
+                <p>Fast-track and reliable booking solutions for your VFS passport submission appointments (Normal & Emergency categories).</p>
+            </div>
+
+            <div class="service-card">
+                <div class="service-icon"><i class="fas fa-plane"></i></div>
+                <h3>Worldwide Flight Bookings</h3>
+                <p>Best airfare deals and ticket booking options for India, Saudi Arabia, and domestic/international sectors globally.</p>
+            </div>
+
+            <div class="service-card">
+                <div class="service-icon"><i class="fas fa-headset"></i></div>
+                <h3>24/7 Dedicated Support</h3>
+                <p>Professional travel consultancy and end-to-end customer care management to fulfill all your travel requirements.</p>
+            </div>
+
+        </div>
+    </section>
+
+    <section class="about-section" id="about">
+        <div class="about-container">
+            <h2 class="section-title">About Hamza Travels</h2>
+            <p><strong>Proprietor: Mohammad Mahatab Alam</strong></p>
+            <p>Hamza Travels is a trusted and premium travel agency. While our core management and networks span prominently across Saudi Arabia (KSA), our backend operations are securely handled from India. This dual presence empowers us to provide our corporate and individual clients with top-tier international documentation services and unbeatable market prices.</p>
+        </div>
+    </section>
+
+    <section class="contact-section" id="contact">
+        <div class="contact-container">
+            
+            <div class="contact-info">
+                <h3>Hamza Travels</h3>
+                <p>Get in touch with us today for expert solutions regarding your passport applications and flight itineraries.</p>
+            </div>
+
+            <div class="contact-info">
+                <h3>Contact Numbers</h3>
+                <p><i class="fas fa-phone-alt"></i> <strong>KSA:</strong> <a href="tel:+966594388004">+966 594388004</a></p>
+                <p><i class="fas fa-phone-alt"></i> <strong>IND:</strong> <a href="tel:+918931048027">+91 8931048027</a></p>
+                <p><i class="fab fa-whatsapp"></i> <strong>WhatsApp KSA:</strong> <a href="https://wa.me/966594388004" target="_blank">Chat Now</a></p>
+            </div>
+
+            <div class="contact-info">
+                <h3>Official Channels</h3>
+                <p><i class="fas fa-envelope"></i> <a href="mailto:info.hamzatravels@gmail.com">info.hamzatravels@gmail.com</a></p>
+                <p><i class="fas fa-user"></i> <strong>Proprietor:</strong> Mohammad Mahatab Alam</p>
+            </div>
+
+        </div>
+
+        <div class="footer-bottom">
+            <p>&copy; 2026 Hamza Travels. All Rights Reserved.</p>
+        </div>
+    </section>
+
+</body>
+</html>
