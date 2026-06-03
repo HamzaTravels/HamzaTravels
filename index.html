@@ -4,9 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Hamza Travels - Best Travel & Umrah Visa Services</title>
-    <!-- Google Fonts for Premium Look -->
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;800&display=swap" rel="stylesheet">
-    <!-- Font Awesome Icons -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     
     <style>
@@ -88,6 +86,17 @@
             gap: 15px;
         }
 
+        .logo-area {
+            display: flex;
+            align-items: center;
+        }
+
+        .logo-img {
+            height: 60px;
+            width: auto;
+            object-fit: contain;
+        }
+
         .logo-fallback {
             font-size: 26px;
             font-weight: 800;
@@ -113,18 +122,10 @@
             font-weight: 700;
             color: var(--primary-islamic);
             font-size: 14px;
-            box-shadow: inset 0 2px 4px rgba(0,0,0,0.02);
         }
 
         .live-clock-wrapper i {
             color: var(--gold-premium);
-            animation: pulse 2s infinite;
-        }
-
-        @keyframes pulse {
-            0% { transform: scale(1); }
-            50% { transform: scale(1.1); }
-            100% { transform: scale(1); }
         }
 
         /* Hero Section */
@@ -205,7 +206,7 @@
         /* Services Grid */
         .services-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(290px, 1fr));
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
             gap: 30px;
         }
 
@@ -220,7 +221,6 @@
             transition: all 0.3s ease;
         }
 
-        /* Umrah Card Special Look */
         .service-card.umrah-card {
             border-top-color: var(--gold-premium);
             background-color: var(--gold-light);
@@ -287,6 +287,8 @@
         .service-card p {
             font-size: 14px;
             color: #475569;
+            text-align: justify;
+            text-justify: inter-word;
         }
 
         /* Buttons */
@@ -306,7 +308,6 @@
 
         .btn:hover {
             transform: scale(1.05);
-            box-shadow: 0 6px 15px rgba(0,0,0,0.15);
         }
 
         .btn-whatsapp { background-color: var(--whatsapp-color); color: white; }
@@ -356,9 +357,10 @@
         }
 
         .contact-method-card p {
-            font-size: 19px;
+            font-size: 22px;
             font-weight: 700;
             color: var(--text-dark);
+            letter-spacing: 1px;
         }
 
         /* Floating WhatsApp */
@@ -378,11 +380,6 @@
             box-shadow: 0 5px 20px rgba(0,0,0,0.3);
             z-index: 9999;
             text-decoration: none;
-            transition: all 0.3s ease;
-        }
-
-        .floating-whatsapp:hover {
-            transform: scale(1.1);
         }
 
         /* Footer */
@@ -397,7 +394,6 @@
 
         footer strong { color: white; }
 
-        /* Responsive Settings */
         @media (max-width: 768px) {
             .top-bar { text-align: center; flex-direction: column; gap: 8px; justify-content: center; }
             .nav-container { flex-direction: column; text-align: center; }
@@ -409,7 +405,6 @@
 </head>
 <body>
 
-    <!-- Top Bar -->
     <div class="top-bar">
         <div class="top-bar-left">
             <i class="fa-solid fa-mosque" style="color: var(--gold-premium);"></i> 
@@ -421,16 +416,15 @@
         </div>
     </div>
 
-    <!-- Header & Navigation -->
     <header>
         <div class="nav-container">
             <div class="logo-area">
-                <div class="logo-fallback">
+                <img src="logo.jpg" alt="Hamza Travels Logo" class="logo-img" onerror="this.style.display='none'; document.getElementById('logo-fallback').style.display='block';">
+                <div id="logo-fallback" style="display:none;" class="logo-fallback">
                     <i class="fa-solid fa-plane-departure" style="color: var(--gold-premium);"></i> HAMZA <span>TRAVELS</span>
                 </div>
             </div>
             
-            <!-- Live Real-Time Clock -->
             <div class="live-clock-wrapper">
                 <i class="fa-regular fa-clock"></i>
                 <span id="live-clock">00:00:00 PM</span>
@@ -444,7 +438,6 @@
         </div>
     </header>
 
-    <!-- Hero Section -->
     <section class="hero">
         <div class="proprietor-tag">Proprietor: MOHAMMAD MAHATAB ALAM</div>
         <h1>Hamza Travels</h1>
@@ -455,72 +448,65 @@
         </div>
     </section>
 
-    <!-- Services Section -->
     <section class="services-section">
         <h2 class="section-title">Hamari Services (Our Services)</h2>
-        <p class="section-subtitle">Kam se kam rates aur behtareen guidence ke sath sabhi services available hain</p>
+        <p class="section-subtitle">Kam se kam rates aur behtareen guidance ke sath sabhi services available hain</p>
         
         <div class="services-grid">
             
-            <!-- Service 1: Umrah Visa -->
             <div class="service-card umrah-card">
                 <div class="service-icon-wrapper">
                     <i class="fa-solid fa-kaaba service-icon"></i>
                 </div>
                 <h3>Umrah Visa (उमरा वीज़ा)</h3>
-                <p>Pavitra safar-e-umrah ke liye turant online visa processing, best hotel booking aur complete transport ka behtareen intezam.</p>
+                <p>Hamza Travels aapko deta hai sabse fast Umrah E-Visa service. Iske sath hi Makkah aur Madinah me saste aur acche hotels ki booking, aaramdayak transport service aur ziarat ka complete intezam market ke sabse saste rates par kiya jata hai.</p>
             </div>
 
-            <!-- Service 2: Flight Tickets -->
             <div class="service-card">
                 <div class="service-icon-wrapper">
                     <i class="fa-solid fa-plane-up service-icon"></i>
                 </div>
                 <h3>Air Ticket Booking (हवाई टिकट)</h3>
-                <p>India, Saudi Arabia aur duniya bhar ke sabhi routes ke liye sabse saste aur confirm flight tickets ke liye contact karein.</p>
+                <p>India, Saudi Arabia (KSA) aur duniya bhar ke kisi bhi des ke liye flight ticket book karwein. Hamare paas sabhi international airlines (Air India, IndiGo, Saudia, Flynas) ke confirm tickets market ke special discount and lowest price par milte hain.</p>
             </div>
 
-            <!-- Service 3: Dummy Ticket -->
             <div class="service-card">
                 <div class="service-icon-wrapper">
                     <i class="fa-solid fa-ticket-simple service-icon"></i>
                 </div>
                 <h3>Dummy Ticket (डमी टिकट)</h3>
-                <p>Visa application aur immigration ke liye verified dummy ticket ki facility, market me sabse best and saste rate par available.</p>
+                <p>Kya aapko visa apply karne ya immigration purpose ke liye flight hold ticket chahiye? Hamza Travels provide karta hai fully verified aur live PNR wali Dummy Ticket service, jo aapke visa processing me kaam aayegi, wo bhi sabse low rate me.</p>
             </div>
 
-            <!-- Service 4: Indian Passport Renewal -->
             <div class="service-card">
                 <div class="service-icon-wrapper">
                     <i class="fa-solid fa-passport service-icon"></i>
                 </div>
                 <h3>Passport Renewal (पासपोर्ट रिन्यूवल)</h3>
-                <p>Saudi Arabia (KSA) me rahne wale Indian bhaiyon ke liye passport renewal ka complete, fast aur aasan online process.</p>
+                <p>Saudi Arabia me rahne wale Indian NRI bhaiyon ke liye passport renew karna ab hua aasan. Hum aapka passport renewal form online fill-up karne se lekar complete dokumentation ka kaam bina kisi galti ke fast speed me complete karate hain.</p>
             </div>
 
-            <!-- Service 5: VFS Appointment -->
             <div class="service-card">
                 <div class="service-icon-wrapper">
                     <i class="fa-solid fa-calendar-check service-icon"></i>
                 </div>
                 <h3>VFS Appointment Booking</h3>
-                <p>Passport aur Visa documents submit karne ke liye Normal aur Emergency category ki confirm VFS appointment service.</p>
+                <p>Indian passport validation aur alag-alag visa documents submit karne ke liye VFS center ki appointment milna mushkil hota hai. Hum aapko Normal aur Emergency dono category me confirm VFS slot appointment booking ki guaranteed service dete hain.</p>
             </div>
 
         </div>
     </section>
 
-    <!-- Contact Section -->
     <section class="contact-section">
         <div class="contact-container">
-            <h2 class="section-title">Contact & Office Details</h2>
+            <h2 class="section-title">Contact Information</h2>
             <div class="contact-cards-wrapper">
                 <div class="contact-method-card">
-                    <h4>Saudi Arabia Office (KSA)</h4>
+                    <h4>Saudi Arabia (KSA)</h4>
                     <p>+966 594388004</p>
                 </div>
                 <div class="contact-method-card">
-                    <h4>India Head Office (IND)</h4>
+                    <h4>India (IND)</h4>
                     <p>+91 8931048027</p>
                 </div>
             </div>
@@ -528,17 +514,14 @@
         </div>
     </section>
 
-    <!-- Footer -->
     <footer>
         <p>&copy; 2026 <strong>Hamza Travels</strong> - Explore. Dream. Discover. | All Rights Reserved.</p>
     </footer>
 
-    <!-- Floating WhatsApp -->
     <a href="https://wa.me/966594388004" class="floating-whatsapp" target="_blank">
         <i class="fa-brands fa-whatsapp"></i>
     </a>
 
-    <!-- Live Real-Time Clock Script -->
     <script>
         function updateClock() {
             const now = new Date();
@@ -548,14 +531,12 @@
             const ampm = hours >= 12 ? 'PM' : 'AM';
             
             hours = hours % 12;
-            hours = hours ? hours : 12; // 0 should be 12
+            hours = hours ? hours : 12; 
             const hoursStr = String(hours).padStart(2, '0');
 
             const timeString = `${hoursStr}:${minutes}:${seconds} ${ampm}`;
             document.getElementById('live-clock').textContent = timeString;
         }
-
-        // Run clock immediately and update every second
         updateClock();
         setInterval(updateClock, 1000);
     </script>
