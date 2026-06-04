@@ -1,407 +1,1210 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Hamza Travels | Trusted Umrah & Travel Services</title>
-<meta name="description" content="Umrah Visa, Air Ticket, Hotel Booking, Passport Renewal & VFS Appointment.">
-<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&family=Noto+Sans+Devanagari:wght@400;600;700&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+
+<title>
+Hamza Travels | Umrah Visa | Air Ticket | Passport Services
+</title>
+
+<meta name="description"
+content="Hamza Travels provides Umrah Visa, Air Ticket Booking, Hotel Booking, Indian Passport Renewal, New Passport, Dummy Ticket and Travel Services.">
+
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&family=Noto+Sans+Devanagari:wght@400;500;600;700&display=swap" rel="stylesheet">
+
+<link rel="stylesheet"
+href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css"/>
+
 <style>
+
 :root{
---primary:#061a38;
---gold:#c5a059;
---gold-light:#e5c687;
---light:#f8fafc;
---dark:#0f172a;
+--primary:#061B3A;
+--gold:#D4AF37;
+--light:#F8FAFC;
+--dark:#0F172A;
+--white:#ffffff;
 --whatsapp:#25D366;
---card-bg:#ffffff;
---text-muted:#64748b;
 }
 
-*{margin:0;padding:0;box-sizing:border-box;font-family:'Poppins','Noto Sans Devanagari',sans-serif;}
-html{scroll-behavior:smooth;}
-body{background:#f4f6f9;color:var(--dark);overflow-x:hidden;}
+*{
+margin:0;
+padding:0;
+box-sizing:border-box;
+font-family:'Poppins','Noto Sans Devanagari',sans-serif;
+}
 
-/* Top Bar */
-.topbar{
+html{
+scroll-behavior:smooth;
+}
+
+body{
+background:#f5f7fb;
+overflow-x:hidden;
+color:var(--dark);
+}
+
+/* TOP BAR */
+
+.top-bar{
 background:var(--primary);
-padding:10px 20px;
-color:white;
-display:flex;
-justify-content:space-between;
-align-items:center;
-flex-wrap:wrap;
-font-size:13px;
-border-bottom:2px solid var(--gold);
-}
-
-/* Header & Integrated Clock */
-header{
-background:white;
-position:sticky;
-top:0;
-z-index:999;
-box-shadow:0 4px 20px rgba(6,26,56,.06);
-}
-.navbar{
-max-width:1200px;
-margin:auto;
 padding:12px 20px;
 display:flex;
 justify-content:space-between;
 align-items:center;
+flex-wrap:wrap;
+color:white;
+font-size:14px;
+border-bottom:2px solid var(--gold);
 }
-.logo{display:flex;align-items:center;gap:12px;}
-.logo img{height:60px;}
-.logo-text{font-size:24px;font-weight:800;color:var(--primary);letter-spacing:0.5px;}
-.logo-text span{color:var(--gold);}
 
-/* Header Clock (Minimized & Professional) */
-.header-clock {
-background: #f1f5f9;
-padding: 6px 14px;
-border-radius: 30px;
-border: 1px solid #e2e8f0;
-text-align: right;
+.top-bar-left{
+font-weight:600;
 }
-.clock-time { font-size: 14px; font-weight: 700; color: var(--primary); }
-.clock-title { font-size: 10px; color: var(--text-muted); font-weight: 600; text-transform: uppercase; }
 
-/* Powerful Hero Section */
+.top-bar-right{
+display:flex;
+gap:20px;
+flex-wrap:wrap;
+}
+
+.top-bar-right a{
+color:white;
+text-decoration:none;
+}
+
+/* HEADER */
+
+header{
+background:white;
+position:sticky;
+top:0;
+z-index:9999;
+box-shadow:0 5px 25px rgba(0,0,0,.08);
+}
+
+.navbar{
+max-width:1200px;
+margin:auto;
+padding:15px 20px;
+display:flex;
+justify-content:space-between;
+align-items:center;
+}
+
+.logo{
+display:flex;
+align-items:center;
+gap:15px;
+}
+
+.logo img{
+height:75px;
+}
+
+.logo-text{
+font-size:30px;
+font-weight:800;
+color:var(--primary);
+}
+
+.logo-text span{
+color:var(--gold);
+}
+
+/* LIVE CLOCK */
+
+.live-clock{
+background:linear-gradient(135deg,#061B3A,#0F2D5E);
+padding:12px 22px;
+border-radius:15px;
+color:white;
+text-align:center;
+box-shadow:0 8px 20px rgba(0,0,0,.15);
+}
+
+.clock-title{
+font-size:12px;
+color:#ddd;
+}
+
+.clock-time{
+font-size:22px;
+font-weight:800;
+}
+
+/* HERO */
+
 .hero{
-background: linear-gradient(rgba(11,45,92,.88), rgba(11,45,92,.88)), url('https://images.unsplash.com/photo-1580418827493-f2b22c0a76cb?q=80&w=1600&auto=format&fit=crop');
+
+background:
+linear-gradient(rgba(6,27,58,.80),
+rgba(6,27,58,.80)),
+
+url('https://images.unsplash.com/photo-1564769625905-50e93615e769?q=80&w=1800');
+
 background-size:cover;
 background-position:center;
-padding:120px 20px;
+
+padding:140px 20px;
 text-align:center;
 color:white;
-border-bottom: 5px solid var(--gold);
 }
-.hero h2{font-size:20px;color:var(--gold-light);font-weight:600;text-transform:uppercase;margin-bottom:10px;letter-spacing:1px;}
-.hero h1{font-size:48px;font-weight:800;margin-bottom:15px;}
-.hero p{max-width:700px;margin:auto;font-size:16px;opacity:.9;line-height:1.6;}
-.hero-tagline { font-size: 18px; color: var(--gold-light); margin-top: 15px; font-weight: 600; }
 
-.hero-buttons{margin-top:30px;}
-.btn{display:inline-block;padding:14px 30px;border-radius:50px;text-decoration:none;font-weight:700;margin:8px;transition:.3s;box-shadow:0 4px 15px rgba(0,0,0,0.2);}
-.btn-whatsapp{background:var(--whatsapp);color:white;}
-.btn-call{background:var(--gold);color:white;}
-.btn:hover{transform:translateY(-3px);box-shadow:0 6px 20px rgba(0,0,0,0.3);}
+.owner-badge{
+display:inline-block;
+padding:8px 25px;
+border-radius:50px;
+border:1px solid var(--gold);
+background:rgba(212,175,55,.15);
+margin-bottom:25px;
+font-size:14px;
+font-weight:600;
+}
 
-/* Services Main Grid (Bullet Points Layout) */
-.section-title { text-align:center; font-size:32px; color:var(--primary); font-weight:800; margin-top:60px; margin-bottom:10px; }
-.section-subtitle { text-align:center; color:var(--text-muted); font-size:15px; margin-bottom:40px; }
+.hero h1{
+font-size:58px;
+font-weight:800;
+margin-bottom:15px;
+}
 
-.services-container { max-width:1200px; margin:auto; padding:0 20px; display:grid; grid-template-columns: repeat(auto-fit, minmax(350px, 1fr)); gap:25px; }
-.service-card{background:white; padding:30px; border-radius:20px; box-shadow:0 10px 25px rgba(6,26,56,.03); border-top:4px solid var(--gold); transition:.3s; }
-.service-card:hover{transform:translateY(-5px); box-shadow:0 15px 30px rgba(6,26,56,.08);}
-.service-icon { font-size: 35px; color: var(--gold); margin-bottom: 15px; }
-.service-card h3 { font-size:22px; font-weight:800; color:var(--primary); margin-bottom:5px; }
-.service-card h3 span { display:block; font-size:14px; color:var(--text-muted); font-weight:600; margin-top:2px; }
-.service-bullets { margin-top:15px; list-style:none; }
-.service-bullets li { font-size:15px; color:#475569; margin-bottom:8px; display:flex; align-items:center; gap:10px; font-weight:500; }
-.service-bullets li i { color:#0f9d58; font-size:16px; }
+.hero h2{
+font-size:24px;
+font-weight:500;
+margin-bottom:25px;
+color:#f3f4f6;
+}
 
-/* Why Choose Us (Trust Section) */
-.trust-section { background: white; padding: 60px 20px; margin-top: 70px; }
-.trust-grid { max-width:1200px; margin:auto; display:grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap:20px; text-align:center; }
-.trust-box { padding:20px; }
-.trust-box i { font-size:35px; color:var(--gold); margin-bottom:12px; }
-.trust-box h4 { font-size:16px; color:var(--primary); font-weight:700; }
+.hero p{
+max-width:900px;
+margin:auto;
+line-height:1.9;
+font-size:18px;
+}
 
-/* Islamic & Travel Image Gallery */
-<<!-- Ziyarat & Travel Gallery Section Start -->
-<section>
-<h2 class="section-title">Ziyarat & Travel Gallery</h2>
-<p class="section-subtitle">Glimpses of Holy Places and Services</p>
-<div class="gallery-container">
-<div class="gallery-card">
-  <!-- Makkah -->
-  <img src="https://images.unsplash.com/photo-1565552645632-d725f8bfc19a?auto=format&fit=crop&w=600&q=80" alt="Holy Makkah">
-  <div class="gallery-overlay">🕋 Holy Makkah</div>
-</div>
-<div class="gallery-card">
-  <!-- Masjid Al Nabawi (Corrected Live High Quality Image) -->
-  <img src="https://images.unsplash.com/photo-1591604021695-0c69b7c05981?auto=format&fit=crop&w=600&q=80" alt="Masjid Al Nabawi">
-  <div class="gallery-overlay">🕌 Masjid Al Nabawi</div>
-</div>
-<div class="gallery-card">
-  <!-- Flight Bookings -->
-  <img src="https://images.unsplash.com/photo-1436491865332-7a61a109cc05?auto=format&fit=crop&w=600&q=80" alt="Flight Booking">
-  <div class="gallery-overlay">✈ Flight Bookings</div>
-</div>
-<div class="gallery-card">
-  <!-- Luxury Hotels -->
-  <img src="https://images.unsplash.com/photo-1566073771259-6a8506099945?auto=format&fit=crop&w=600&q=80" alt="Luxury Hotels">
-  <div class="gallery-overlay">🏨 Luxury Hotels</div>
-</div>
-</div>
-</section>
-<!-- Ziyarat & Travel Gallery Section End -->
+.hero-buttons{
+margin-top:40px;
+}
 
-  
-/* 7 Hindi Muslim Reviews */
-.reviews-container { max-width:1200px; margin:auto; padding:0 20px; display:grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap:25px; }
-.review-box{background:white; padding:25px; border-radius:18px; box-shadow:0 10px 25px rgba(6,26,56,.02); border-left:4px solid var(--gold); position: relative;}
-.review-box p{font-family: 'Noto Sans Devanagari', sans-serif; font-size:14px; color:#334155; line-height:1.7; font-weight:500;}
-.review-box h4{margin-top:12px; color:var(--primary); font-weight:700; font-size:15px;}
+.btn{
+display:inline-block;
+padding:15px 35px;
+border-radius:50px;
+text-decoration:none;
+font-weight:700;
+margin:10px;
+transition:.3s;
+}
 
-/* Professional Contact Section */
-.contact-section { background:#f8fafc; padding:60px 20px; border-top:1px solid #e2e8f0; }
-.contact-grid { max-width:1100px; margin:auto; display:grid; grid-template-columns:1fr 1fr; gap:40px; }
-.contact-info { display:flex; flex-direction:column; justify-content:center; }
-.contact-info h3 { font-size:28px; color:var(--primary); font-weight:800; margin-bottom:5px; }
-.contact-info .proprietor { font-size:16px; color:var(--gold); font-weight:700; text-transform:uppercase; margin-bottom:25px; letter-spacing:0.5px; }
-.info-item { display:flex; align-items:center; gap:15px; margin-bottom:20px; background:white; padding:15px; border-radius:12px; box-shadow:0 5px 15px rgba(0,0,0,0.01); }
-.info-item i { font-size:22px; color:var(--gold); width:30px; }
-.info-item p { font-weight:600; color:#334155; font-size:15px; }
+.btn-whatsapp{
+background:var(--whatsapp);
+color:white;
+}
 
-.form-box { background:white; padding:35px; border-radius:20px; box-shadow:0 10px 30px rgba(6,26,56,0.04); border:1px solid #e2e8f0; }
-.form-box input, .form-box textarea { width:100%; padding:12px; margin-bottom:15px; border:1px solid #e2e8f0; border-radius:10px; background:#f8fafc; outline:none; font-size:14px; }
-.form-box input:focus, .form-box textarea:focus { border-color:var(--primary); background:#fff; }
-.form-box button { width:100%; padding:14px; background:var(--primary); color:white; border:none; border-radius:10px; font-weight:700; cursor:pointer; font-size:15px; transition:.3s; }
-.form-box button:hover { background:var(--gold); }
+.btn-call{
+background:var(--gold);
+color:white;
+}
 
-/* Corporate Footer */
-footer { background:var(--primary); color:white; padding:50px 20px 20px 20px; border-top:4px solid var(--gold); }
-.footer-grid { max-width:1200px; margin:auto; display:grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap:30px; padding-bottom:30px; border-bottom:1px solid rgba(255,255,255,0.1); text-align:left; }
-.footer-col h4 { color:var(--gold-light); font-size:16px; font-weight:700; margin-bottom:15px; text-transform:uppercase; }
-.footer-col p, .footer-col ul { font-size:14px; opacity:0.8; line-height:1.8; list-style:none; }
-.footer-col ul li { margin-bottom:6px; }
-.footer-bottom { text-align:center; padding-top:20px; font-size:13px; opacity:0.7; }
+.btn:hover{
+transform:translateY(-4px);
+}
 
-/* Floating WhatsApp */
-.floating-whatsapp{position:fixed;right:25px;bottom:25px;width:60px;height:60px;background:#25D366;color:white;border-radius:50%;display:flex;justify-content:center;align-items:center;font-size:30px;text-decoration:none;z-index:9999;box-shadow:0 8px 20px rgba(0,0,0,.2);transition:.3s;}
-.floating-whatsapp:hover { transform:scale(1.1); }
+/* FEATURE STRIP */
+
+.feature-strip{
+max-width:1200px;
+margin:auto;
+margin-top:-40px;
+display:grid;
+grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
+gap:20px;
+padding:0 20px;
+}
+
+.feature-box{
+background:white;
+padding:25px;
+border-radius:18px;
+box-shadow:0 10px 25px rgba(0,0,0,.08);
+text-align:center;
+}
+
+.feature-box i{
+font-size:35px;
+color:var(--gold);
+margin-bottom:15px;
+}
+
+.feature-box h3{
+font-size:18px;
+color:var(--primary);
+margin-bottom:10px;
+}
+
+/* STATS */
+
+.stats{
+padding:90px 20px;
+}
+
+.stats-grid{
+max-width:1200px;
+margin:auto;
+display:grid;
+grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
+gap:25px;
+}
+
+.stat-card{
+background:white;
+padding:35px;
+border-radius:20px;
+text-align:center;
+box-shadow:0 10px 30px rgba(0,0,0,.06);
+border-top:4px solid var(--gold);
+}
+
+.stat-card i{
+font-size:40px;
+color:var(--gold);
+margin-bottom:15px;
+}
+
+.stat-card h3{
+font-size:42px;
+color:var(--primary);
+}
+
+.stat-card p{
+font-weight:600;
+color:#64748b;
+}
 
 @media(max-width:768px){
-.hero h1{font-size:32px;}
-.navbar{flex-direction:column;gap:10px;text-align:center;}
-.contact-grid { grid-template-columns:1fr; }
-.header-clock { text-align:center; width:100%; }
+
+.hero h1{
+font-size:38px;
 }
+
+.hero h2{
+font-size:18px;
+}
+
+.navbar{
+flex-direction:column;
+gap:15px;
+}
+
+.live-clock{
+width:100%;
+}
+
+}
+
 </style>
+
 </head>
+
 <body>
 
-<div class="topbar">
-<div><i class="fa-solid fa-mosque"></i> KSA: +966 594388004 | IND: +91 8931048027</div>
-<div><i class="fa-solid fa-envelope"></i> info.hamzatravels@gmail.com</div>
+<div class="top-bar">
+
+<div class="top-bar-left">
+🕋 Trusted Umrah & Travel Services
+</div>
+
+<div class="top-bar-right">
+
+<a href="tel:+966594388004">
+🇸🇦 +966 594388004
+</a>
+
+<a href="tel:+918931048027">
+🇮🇳 +91 8931048027
+</a>
+
+</div>
+
 </div>
 
 <header>
+
 <div class="navbar">
+
 <div class="logo">
-<img src="logo.jpg" alt="Hamza Travels Logo">
-<div class="logo-text">HAMZA <span>TRAVELS</span></div>
+
+<img src="logo.jpg">
+
+<div class="logo-text">
+HAMZA <span>TRAVELS</span>
 </div>
-<!-- Minimized Professional Header Clock -->
-<div class="header-clock">
-<div class="clock-title"><i class="fa-regular fa-clock"></i> Riyadh Time</div>
-<div class="clock-time" id="clock">00:00:00</div>
+
 </div>
+
+<div class="live-clock">
+
+<div class="clock-title">
+RIYADH TIME
 </div>
+
+<div class="clock-time" id="clock">
+00:00:00
+</div>
+
+</div>
+
+</div>
+
 </header>
 
 <section class="hero">
-<h2>Trusted Umrah & Travel Services</h2>
-<h1>Umrah Visa | Air Ticket | Hotel Booking</h1>
-<p>Passport Renewal | VFS Appointment</p>
-<div class="hero-tagline">Serving Customers in Saudi Arabia & India</div>
+
+<div class="owner-badge">
+MOHAMMAD MAHATAB ALAM
+</div>
+
+<h1>HAMZA TRAVELS</h1>
+
+<h2>
+Your Trusted Umrah & Travel Partner
+</h2>
+
+<p>
+
+Umrah Visa • Air Ticket Booking • Dummy Ticket •
+Indian New Passport • Indian Passport Renewal in Saudi Arabia •
+Hotel Booking • VFS Appointment • Complete Travel Services
+
+</p>
+
 <div class="hero-buttons">
-<a href="https://wa.me/966594388004" class="btn btn-whatsapp"><i class="fab fa-whatsapp"></i> 🟢 WhatsApp Now</a>
-<a href="tel:+966594388004" class="btn btn-call"><i class="fa-solid fa-phone"></i> Call Now</a>
-</div>
-</section>
 
-<!-- Services Section (Bullet Format) -->
-<section id="services">
-<h2 class="section-title">Our Premium Services</h2>
-<p class="section-subtitle">Reliable and Error-Free Travel Solutions</p>
-<div class="services-container">
-
-<div class="service-card">
-<div class="service-icon"><i class="fa-solid fa-kaaba"></i></div>
-<h3>Umrah Visa <span>उमरा वीज़ा सेवा</span></h3>
-<ul class="service-bullets">
-<li><i class="fa-solid fa-circle-check"></i> Fast Processing</li>
-<li><i class="fa-solid fa-circle-check"></i> Lowest Rates</li>
-<li><i class="fa-solid fa-circle-check"></i> Hotel Assistance</li>
-<li><i class="fa-solid fa-circle-check"></i> Transport Support</li>
-</ul>
-</div>
-
-<div class="service-card">
-<div class="service-icon"><i class="fa-solid fa-plane"></i></div>
-<h3>Air Ticket <span>हवाई टिकट बुकिंग</span></h3>
-<ul class="service-bullets">
-<li><i class="fa-solid fa-circle-check"></i> Domestic & International Flights</li>
-<li><i class="fa-solid fa-circle-check"></i> Lowest Fare Guarantee</li>
-<li><i class="fa-solid fa-circle-check"></i> Quick Booking & Reissues</li>
-</ul>
-</div>
-
-<div class="service-card">
-<div class="service-icon"><i class="fa-solid fa-hotel"></i></div>
-<h3>Hotel Booking <span>होटल बुकिंग</span></h3>
-<ul class="service-bullets">
-<li><i class="fa-solid fa-circle-check"></i> Nearest Hotels in Makkah & Madinah</li>
-<li><i class="fa-solid fa-circle-check"></i> Luxury & Budget Options</li>
-<li><i class="fa-solid fa-circle-check"></i> Confirmed Instant Vouchers</li>
-</ul>
-</div>
-
-<div class="service-card">
-<div class="service-icon"><i class="fa-solid fa-passport"></i></div>
-<h3>Passport Renewal <span>भारतीय पासपोर्ट नवीनीकरण</span></h3>
-<ul class="service-bullets">
-<li><i class="fa-solid fa-circle-check"></i> Easy & Fast Online Process</li>
-<li><i class="fa-solid fa-circle-check"></i> Document Verification Support</li>
-<li><i class="fa-solid fa-circle-check"></i> For Indians in Saudi Arabia</li>
-</ul>
-</div>
-
-<div class="service-card">
-<div class="service-icon"><i class="fa-solid fa-calendar-days"></i></div>
-<h3>VFS Appointment <span>वीएफएस अपॉइंटमेंट</span></h3>
-<ul class="service-bullets">
-<li><i class="fa-solid fa-circle-check"></i> Early Slot Booking</li>
-<li><i class="fa-solid fa-circle-check"></i> Complete Form Filling</li>
-<li><i class="fa-solid fa-circle-check"></i> Error-Free Guidance</li>
-</ul>
-</div>
-
-</div>
-</section>
-
-<!-- Trust Section -->
-<section class="trust-section">
-<div class="trust-grid">
-<div class="trust-box"><i class="fa-solid fa-bolt"></i><h4>Fast Service</h4></div>
-<div class="trust-box"><i class="fa-solid fa-hand-holding-dollar"></i><h4>Affordable Rates</h4></div>
-<div class="trust-box"><i class="fa-solid fa-shield-halved"></i><h4>Trusted Support</h4></div>
-<div class="trust-box"><i class="fa-solid fa-location-dot"></i><h4>Saudi Arabia Based</h4></div>
-<div class="trust-box"><i class="fa-solid fa-flag"></i><h4>India Assistance</h4></div>
-</div>
-</section>
-
-<!-- Image Gallery -->
-<section>
-<!-- Ziyarat & Travel Gallery Section Start -->
-<section>
-<h2 class="section-title">Ziyarat & Travel Gallery</h2>
-<p class="section-subtitle">Glimpses of Holy Places and Services</p>
-<div class="gallery-container">
-<div class="gallery-card">
-<!-- مکہ مکرمہ کی کعبہ شریف کی اصل تصویر -->
-<img src="https://upload.wikimedia.org/wikipedia/commons/thumb/e/e6/Kaaba_during_Hajj%2C_2008.jpg/640px-Kaaba_during_Hajj%2C_2008.jpg" alt="">
-<div class="gallery-overlay">🕋 Holy Makkah</div>
-</div>
-<div class="gallery-card">
-<!-- مسجدِ نبوی الشریف کے سبز گنبد کی اصل اور پائیدار تصویر -->
-<img src="https://upload.wikimedia.org/wikipedia/commons/thumb/0/04/Masjid_an-Nabawi_May_2016.jpg/640px-Masjid_an-Nabawi_May_2016.jpg" alt="">
-<div class="gallery-overlay">🕌 Masjid Al Nabawi</div>
-</div>
-<div class="gallery-card">
-<!-- انٹرنیشنل فلائٹ کی بہترین تصویر -->
-<img src="https://upload.wikimedia.org/wikipedia/commons/thumb/3/3a/Emirates_A380_HECA.jpg/640px-Emirates_A380_HECA.jpg" alt="">
-<div class="gallery-overlay">✈ Flight Bookings</div>
-</div>
-<div class="gallery-card">
-<!-- مکہ کلاک ٹاور اور ہوٹل کی اصل تصویر -->
-<img src="https://upload.wikimedia.org/wikipedia/commons/thumb/c/cc/Makkah_Royal_Clock_Tower_2023.jpg/640px-Makkah_Royal_Clock_Tower_2023.jpg" alt="">
-<div class="gallery-overlay">🏨 Luxury Hotels</div>
-</div>
-</div>
-</section>
-<!-- Ziyarat & Travel Gallery Section End -->
-</section>
-
-<!-- Customer Reviews Section -->
-<section>
-<h2 class="section-title">Our Customer Reviews</h2>
-<p class="section-subtitle">ग्राहक समीक्षा (100% Verified Customers)</p>
-<div class="reviews-container">
-<div class="review-box"><p>“उमरा वीज़ा बहुत जल्दी मिल गया और पूरी सर्विस बेहतरीन थी।”</p><h4>- Mohammad Arshad (KSA)</h4></div>
-<div class="review-box"><p>“टिकट बुकिंग सबसे सस्ती और भरोसेमंद थी। धन्यवाद।”</p><h4>- Abdul Rahman</h4></div>
-<div class="review-box"><p>“पासपोर्ट रिन्यूअल बहुत आसान और फास्ट प्रोसेस रहा।”</p><h4>- Salman Khan</h4></div>
-<div class="review-box"><p>“हज और उमरा की गाइडेंस बहुत अच्छी मिली।”</p><h4>- Hafiz Usman</h4></div>
-<div class="review-box"><p>“VFS अपॉइंटमेंट समय पर मिल गया, बहुत अच्छी सर्विस।”</p><h4>- Imran Qureshi</h4></div>
-<div class="review-box"><p>“पूरी यात्रा की जानकारी और सपोर्ट शानदार था।”</p><h4>- Mohammad Bilal</h4></div>
-<div class="review-box"><p>“सबसे भरोसेमंद ट्रैवल एजेंसी, मैं पूरी तरह संतुष्ट हूँ।”</p><h4>- Abdul Malik</h4></div>
-</div>
-</section>
-
-<!-- Contact Section -->
-<section class="contact-section">
-<div class="contact-grid">
-<div class="contact-info">
-<h3>MOHAMMAD MAHATAB ALAM</h3>
-<div class="proprietor">Proprietor | Hamza Travels</div>
-<div class="info-item"><i class="fa-solid fa-phone"></i><p>KSA: +966 594388004</p></div>
-<div class="info-item"><i class="fa-solid fa-phone"></i><p>INDIA: +91 8931048027</p></div>
-<div class="info-item"><i class="fa-solid fa-envelope"></i><p>info.hamzatravels@gmail.com</p></div>
-</div>
-<div class="form-box">
-<h4 style="margin-bottom:15px; color:var(--primary); font-weight:700;">Send Enquiry on WhatsApp</h4>
-<input type="text" id="name" placeholder="Your Name">
-<input type="text" id="phone" placeholder="Phone Number">
-<textarea id="msg" rows="4" placeholder="Your Message"></textarea>
-<button onclick="sendWhatsApp()">Send on WhatsApp</button>
-</div>
-</div>
-</section>
-
-<!-- Corporate Footer -->
-<footer>
-<div class="footer-grid">
-<div class="footer-col">
-<h4>Hamza Travels</h4>
-<p>Your premium and trusted partner for Umrah Visas, Flight Bookings, and Passport assistance.</p>
-<p style="color:var(--gold); margin-top:10px; font-weight:600;">🕋 Umrah Specialists</p>
-</div>
-<div class="footer-col">
-<h4>Our Services</h4>
-<ul>
-<li>✓ Umrah Visa</li>
-<li>✓ Air Ticket</li>
-<li>✓ Hotel Booking</li>
-<li>✓ Passport Renewal</li>
-<li>✓ VFS Appointment</li>
-</ul>
-</div>
-<div class="footer-col">
-<h4>Contact Support</h4>
-<p>Saudi Arabia: +966 594388004</p>
-<p>India: +91 8931048027</p>
-<p>Email: info.hamzatravels@gmail.com</p>
-</div>
-</div>
-<div class="footer-bottom">
-<p>© 2026 Hamza Travels | All Rights Reserved</p>
-</div>
-</footer>
-
-<a class="floating-whatsapp" href="https://wa.me/966594388004" target="_blank">
-<i class="fab fa-whatsapp"></i>
+<a href="https://wa.me/966594388004"
+class="btn btn-whatsapp">
+WhatsApp Now
 </a>
 
-<script>
-function updateClock(){
-let now=new Date();
-document.getElementById("clock").innerText = now.toLocaleTimeString('en-US',{hour12:true, hour:'2-digit', minute:'2-digit'});
+<a href="tel:+966594388004"
+class="btn btn-call">
+Call Now
+</a>
+
+</div>
+
+</section>
+
+<section class="feature-strip">
+
+<div class="feature-box">
+<i class="fa-solid fa-kaaba"></i>
+<h3>Umrah Visa</h3>
+<p>Fast Processing</p>
+</div>
+
+<div class="feature-box">
+<i class="fa-solid fa-plane"></i>
+<h3>Air Tickets</h3>
+<p>Best Fare Guarantee</p>
+</div>
+
+<div class="feature-box">
+<i class="fa-solid fa-passport"></i>
+<h3>Passport Services</h3>
+<p>New & Renewal</p>
+</div>
+
+<div class="feature-box">
+<i class="fa-solid fa-hotel"></i>
+<h3>Hotel Booking</h3>
+<p>Makkah & Madinah</p>
+</div>
+
+</section>
+
+<section class="stats">
+
+<div class="stats-grid">
+
+<div class="stat-card">
+<i class="fa-solid fa-users"></i>
+<h3>5000+</h3>
+<p>Happy Customers</p>
+</div>
+
+<div class="stat-card">
+<i class="fa-solid fa-kaaba"></i>
+<h3>2500+</h3>
+<p>Umrah Visas</p>
+</div>
+
+<div class="stat-card">
+<i class="fa-solid fa-plane"></i>
+<h3>10000+</h3>
+<p>Air Tickets</p>
+</div>
+
+<div class="stat-card">
+<i class="fa-solid fa-award"></i>
+<h3>5+</h3>
+<p>Years Experience</p>
+</div>
+
+</div>
+
+</section>
+<!-- ABOUT HAMZA TRAVELS -->
+
+<section class="about-section">
+
+<style>
+
+.about-section{
+padding:90px 20px;
+background:#ffffff;
 }
+
+.about-container{
+max-width:1200px;
+margin:auto;
+display:grid;
+grid-template-columns:1fr 1fr;
+gap:50px;
+align-items:center;
+}
+
+.about-image img{
+width:100%;
+border-radius:25px;
+box-shadow:0 15px 40px rgba(0,0,0,.10);
+}
+
+.about-content h2{
+font-size:42px;
+color:#061B3A;
+margin-bottom:20px;
+font-weight:800;
+}
+
+.about-content p{
+font-size:16px;
+line-height:1.9;
+color:#475569;
+margin-bottom:15px;
+}
+
+.about-points{
+margin-top:25px;
+}
+
+.about-points li{
+list-style:none;
+margin-bottom:12px;
+font-weight:600;
+color:#0f172a;
+}
+
+.about-points li i{
+color:#D4AF37;
+margin-right:10px;
+}
+
+@media(max-width:768px){
+
+.about-container{
+grid-template-columns:1fr;
+}
+
+.about-content h2{
+font-size:32px;
+}
+
+}
+
+</style>
+
+<div class="about-container">
+
+<div class="about-image">
+
+<img src="https://images.unsplash.com/photo-1542810634-71277d95dcbb?q=80&w=1400">
+
+</div>
+
+<div class="about-content">
+
+<h2>
+About Hamza Travels
+</h2>
+
+<p>
+
+Hamza Travels Saudi Arabia aur India ke customers ko professional travel solutions provide karta hai.
+
+Hamari services mein Umrah Visa, Air Ticket Booking, Dummy Ticket, Hotel Booking, Indian New Passport, Indian Passport Renewal, VFS Appointment aur Complete Travel Guidance shamil hai.
+
+</p>
+
+<p>
+
+Saudi Arabia mein rehne wale Indian brothers ke liye hum Passport Renewal ka complete support dete hain jisme online application, form filling, document checking, appointment booking aur file preparation shamil hai.
+
+</p>
+
+<ul class="about-points">
+
+<li>
+<i class="fa-solid fa-circle-check"></i>
+Trusted Travel Agency
+</li>
+
+<li>
+<i class="fa-solid fa-circle-check"></i>
+Lowest Market Rates
+</li>
+
+<li>
+<i class="fa-solid fa-circle-check"></i>
+Fast Processing
+</li>
+
+<li>
+<i class="fa-solid fa-circle-check"></i>
+24/7 Customer Support
+</li>
+
+<li>
+<i class="fa-solid fa-circle-check"></i>
+Saudi Arabia & India Services
+</li>
+
+</ul>
+
+</div>
+
+</div>
+
+</section>
+
+<!-- OUR SERVICES -->
+
+<section class="services-section">
+
+<style>
+
+.services-section{
+padding:90px 20px;
+background:#f8fafc;
+}
+
+.section-title{
+text-align:center;
+font-size:42px;
+font-weight:800;
+color:#061B3A;
+margin-bottom:60px;
+}
+
+.services-grid{
+max-width:1200px;
+margin:auto;
+display:grid;
+grid-template-columns:repeat(auto-fit,minmax(320px,1fr));
+gap:30px;
+}
+
+.service-card{
+background:white;
+padding:35px;
+border-radius:25px;
+box-shadow:0 10px 35px rgba(0,0,0,.06);
+transition:.3s;
+border-top:5px solid #D4AF37;
+}
+
+.service-card:hover{
+transform:translateY(-8px);
+}
+
+.service-icon{
+font-size:45px;
+color:#D4AF37;
+margin-bottom:20px;
+}
+
+.service-card h3{
+font-size:24px;
+margin-bottom:10px;
+color:#061B3A;
+}
+
+.hindi-title{
+font-size:15px;
+font-weight:600;
+color:#64748b;
+margin-bottom:15px;
+}
+
+.service-card p{
+line-height:1.8;
+color:#475569;
+}
+
+</style>
+
+<h2 class="section-title">
+
+Our Services
+
+</h2>
+
+<div class="services-grid">
+
+<div class="service-card">
+
+<div class="service-icon">
+🕋
+</div>
+
+<h3>
+Umrah Visa
+</h3>
+
+<div class="hindi-title">
+उमरा वीज़ा सेवा
+</div>
+
+<p>
+
+Fast Umrah Visa processing, hotel booking, transport arrangement aur ziyarat services.
+
+</p>
+
+</div>
+
+<div class="service-card">
+
+<div class="service-icon">
+✈️
+</div>
+
+<h3>
+Air Ticket Booking
+</h3>
+
+<div class="hindi-title">
+हवाई टिकट बुकिंग
+</div>
+
+<p>
+
+India, Saudi Arabia aur duniya bhar ki airlines ke confirmed tickets best rates par.
+
+</p>
+
+</div>
+
+<div class="service-card">
+
+<div class="service-icon">
+🎫
+</div>
+
+<h3>
+Dummy Ticket
+</h3>
+
+<div class="hindi-title">
+डमी टिकट
+</div>
+
+<p>
+
+Visa application aur travel requirements ke liye verified dummy ticket service.
+
+</p>
+
+</div>
+
+<div class="service-card">
+
+<div class="service-icon">
+🏨
+</div>
+
+<h3>
+Hotel Booking
+</h3>
+
+<div class="hindi-title">
+होटल बुकिंग
+</div>
+
+<p>
+
+Makkah, Madinah aur worldwide hotel reservation lowest rates par.
+
+</p>
+
+</div>
+
+<div class="service-card">
+
+<div class="service-icon">
+📘
+</div>
+
+<h3>
+Indian New Passport
+</h3>
+
+<div class="hindi-title">
+नया भारतीय पासपोर्ट
+</div>
+
+<p>
+
+New passport application ke liye guidance aur documentation support.
+
+</p>
+
+</div>
+
+<div class="service-card">
+
+<div class="service-icon">
+🛂
+</div>
+
+<h3>
+Passport Renewal
+</h3>
+
+<div class="hindi-title">
+पासपोर्ट नवीनीकरण
+</div>
+
+<p>
+
+Saudi Arabia mein Indian Passport Renewal ke liye complete file preparation service.
+
+</p>
+
+</div>
+
+<div class="service-card">
+
+<div class="service-icon">
+📅
+</div>
+
+<h3>
+VFS Appointment
+</h3>
+
+<div class="hindi-title">
+वीएफएस अपॉइंटमेंट
+</div>
+
+<p>
+
+VFS Global appointment booking aur document submission guidance.
+
+</p>
+
+</div>
+
+<div class="service-card">
+
+<div class="service-icon">
+🌍
+</div>
+
+<h3>
+Travel Guidance
+</h3>
+
+<div class="hindi-title">
+यात्रा मार्गदर्शन
+</div>
+
+<p>
+
+Travel documents, visa requirements aur journey planning mein professional assistance.
+
+</p>
+
+</div>
+
+</div>
+
+</section>
+
+<!-- WHY CHOOSE US -->
+
+<section style="padding:90px 20px;background:white;">
+
+<h2 class="section-title">
+Why Choose Hamza Travels
+</h2>
+
+<div class="services-grid">
+
+<div class="service-card">
+<h3>Lowest Rates</h3>
+<p>Market ke competitive aur affordable rates.</p>
+</div>
+
+<div class="service-card">
+<h3>Fast Processing</h3>
+<p>Visa aur passport services ki tez processing.</p>
+</div>
+
+<div class="service-card">
+<h3>Trusted Support</h3>
+<p>Har step par guidance aur support.</p>
+</div>
+
+<div class="service-card">
+<h3>Professional Service</h3>
+<p>Saudi Arabia aur India dono jagah reliable assistance.</p>
+</div>
+
+</div>
+
+</section>
+<!-- GALLERY SECTION -->
+
+<section class="gallery-section">
+
+<style>
+
+.gallery-section{
+padding:90px 20px;
+background:#f8fafc;
+}
+
+.gallery-grid{
+max-width:1200px;
+margin:auto;
+display:grid;
+grid-template-columns:repeat(auto-fit,minmax(280px,1fr));
+gap:25px;
+}
+
+.gallery-grid img{
+width:100%;
+height:250px;
+object-fit:cover;
+border-radius:20px;
+box-shadow:0 10px 30px rgba(0,0,0,.08);
+transition:.3s;
+}
+
+.gallery-grid img:hover{
+transform:scale(1.03);
+}
+
+</style>
+
+<h2 class="section-title">
+Makkah & Madinah Gallery
+</h2>
+
+<div class="gallery-grid">
+
+<img src="https://images.unsplash.com/photo-1564769625905-50e93615e769?q=80&w=1200">
+
+<img src="https://images.unsplash.com/photo-1542810634-71277d95dcbb?q=80&w=1200">
+
+<img src="https://images.unsplash.com/photo-1513077202514-c511b41bd4c7?q=80&w=1200">
+
+<img src="https://images.unsplash.com/photo-1521295121783-8a321d551ad2?q=80&w=1200">
+
+</div>
+
+</section>
+
+<!-- CUSTOMER REVIEWS -->
+
+<section style="padding:90px 20px;background:white;">
+
+<h2 class="section-title">
+Customer Reviews
+</h2>
+
+<div class="services-grid">
+
+<div class="service-card">
+<p>
+"उमरा वीज़ा बहुत जल्दी मिल गया और पूरी सर्विस शानदार रही।"
+</p>
+<br>
+<strong>Mohammad Arshad</strong>
+</div>
+
+<div class="service-card">
+<p>
+"हवाई टिकट सबसे अच्छे रेट पर मिला, बहुत भरोसेमंद एजेंसी है।"
+</p>
+<br>
+<strong>Abdul Rahman</strong>
+</div>
+
+<div class="service-card">
+<p>
+"सऊदी अरब में पासपोर्ट रिन्यूअल का पूरा काम आसानी से हो गया।"
+</p>
+<br>
+<strong>Salman Khan</strong>
+</div>
+
+<div class="service-card">
+<p>
+"VFS अपॉइंटमेंट समय पर मिल गया, सर्विस बेहतरीन रही।"
+</p>
+<br>
+<strong>Imran Qureshi</strong>
+</div>
+
+<div class="service-card">
+<p>
+"होटल बुकिंग और ट्रैवल गाइडेंस बहुत प्रोफेशनल था।"
+</p>
+<br>
+<strong>Mohammad Bilal</strong>
+</div>
+
+<div class="service-card">
+<p>
+"कम रेट और शानदार सर्विस, मैं पूरी तरह संतुष्ट हूँ।"
+</p>
+<br>
+<strong>Abdul Malik</strong>
+</div>
+
+<div class="service-card">
+<p>
+"डमी टिकट तुरंत मिल गया और वीज़ा प्रोसेस में मदद हुई।"
+</p>
+<br>
+<strong>Nadeem Akhtar</strong>
+</div>
+
+<div class="service-card">
+<p>
+"उमरा यात्रा के लिए पूरी गाइडेंस मिली, बहुत अच्छा अनुभव रहा।"
+</p>
+<br>
+<strong>Mohammad Faizan</strong>
+</div>
+
+</div>
+
+</section>
+
+<!-- CONTACT SECTION -->
+
+<section style="padding:90px 20px;background:#f8fafc;">
+
+<h2 class="section-title">
+Contact Hamza Travels
+</h2>
+
+<div class="services-grid">
+
+<div class="service-card">
+
+<h3>Saudi Arabia</h3>
+
+<p>
+📞 +966 594388004
+</p>
+
+</div>
+
+<div class="service-card">
+
+<h3>India</h3>
+
+<p>
+📞 +91 8931048027
+</p>
+
+</div>
+
+<div class="service-card">
+
+<h3>Email</h3>
+
+<p>
+info.hamzatravels@gmail.com
+</p>
+
+</div>
+
+</div>
+
+</section>
+
+<!-- WHATSAPP FORM -->
+
+<section style="padding:70px 20px;background:white;">
+
+<div style="max-width:700px;margin:auto;">
+
+<h2 class="section-title">
+Quick Enquiry
+</h2>
+
+<form onsubmit="sendWhatsApp();return false;">
+
+<input
+type="text"
+id="name"
+placeholder="Your Name"
+required
+style="width:100%;padding:15px;margin-bottom:15px;border:1px solid #ddd;border-radius:10px;">
+
+<input
+type="text"
+id="phone"
+placeholder="Phone Number"
+required
+style="width:100%;padding:15px;margin-bottom:15px;border:1px solid #ddd;border-radius:10px;">
+
+<textarea
+id="message"
+placeholder="Your Message"
+rows="5"
+required
+style="width:100%;padding:15px;margin-bottom:15px;border:1px solid #ddd;border-radius:10px;"></textarea>
+
+<button
+type="submit"
+style="width:100%;padding:16px;background:#25D366;color:white;border:none;border-radius:10px;font-size:18px;font-weight:700;cursor:pointer;">
+
+Send on WhatsApp
+
+</button>
+
+</form>
+
+</div>
+
+</section>
+
+<!-- FOOTER -->
+
+<footer style="background:#061B3A;color:white;padding:50px 20px;text-align:center;">
+
+<h2 style="margin-bottom:15px;">
+HAMZA TRAVELS
+</h2>
+
+<p style="max-width:800px;margin:auto;line-height:1.8;">
+
+Professional Umrah Visa, Air Ticket Booking, Dummy Ticket,
+Hotel Booking, Indian New Passport, Passport Renewal,
+VFS Appointment and Complete Travel Guidance Services.
+
+</p>
+
+<br>
+
+<p>
+
+MOHAMMAD MAHATAB ALAM
+
+</p>
+
+<p>
+Saudi Arabia:
++966 594388004
+</p>
+
+<p>
+India:
++91 8931048027
+</p>
+
+<p>
+info.hamzatravels@gmail.com
+</p>
+
+<br>
+
+<p>
+© 2026 Hamza Travels. All Rights Reserved.
+</p>
+
+</footer>
+
+<!-- FLOATING WHATSAPP -->
+
+<a
+href="https://wa.me/966594388004"
+target="_blank"
+style="
+position:fixed;
+right:25px;
+bottom:25px;
+background:#25D366;
+width:70px;
+height:70px;
+border-radius:50%;
+display:flex;
+align-items:center;
+justify-content:center;
+font-size:35px;
+color:white;
+text-decoration:none;
+box-shadow:0 10px 25px rgba(0,0,0,.25);
+z-index:9999;">
+
+💬
+
+</a>
+
+<!-- JAVASCRIPT -->
+
+<script>
+
+function updateClock(){
+
+const now = new Date();
+
+document.getElementById("clock").innerHTML =
+now.toLocaleTimeString();
+
+}
+
 setInterval(updateClock,1000);
+
 updateClock();
 
 function sendWhatsApp(){
-let name=document.getElementById("name").value;
-let phone=document.getElementById("phone").value;
-let msg=document.getElementById("msg").value;
-let url="https://wa.me/966594388004?text="+"Name: "+name+"%0a"+"Phone: "+phone+"%0a"+"Message: "+msg;
-window.open(url,"_blank");
+
+let name =
+document.getElementById("name").value;
+
+let phone =
+document.getElementById("phone").value;
+
+let message =
+document.getElementById("message").value;
+
+let text =
+`Name: ${name}%0APhone: ${phone}%0AMessage: ${message}`;
+
+window.open(
+`https://wa.me/966594388004?text=${text}`,
+'_blank'
+);
+
 }
+
 </script>
 
 </body>
