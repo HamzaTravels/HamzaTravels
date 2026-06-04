@@ -876,17 +876,91 @@ Why Choose Hamza Travels
 </section>
 <!-- GALLERY SECTION -->
 
+
+<!-- GALLERY SECTION -->
+<section class="gallery-section">
+
+<style>
+.gallery-section {
+    padding: 60px 20px;
+    background: #f8fafc;
+}
+
+.gallery-grid {
+    max-width: 1200px;
+    margin: auto;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 20px;
+}
+
+.gallery-card {
+    position: relative;
+    border-radius: 15px;
+    overflow: hidden;
+    height: 250px;
+    box-shadow: 0 8px 25px rgba(0,0,0,.08);
+}
+
+.gallery-card img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform .5s;
+    display: block;
+}
+
+.gallery-card:hover img {
+    transform: scale(1.05);
+}
+
+.gallery-overlay {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background: linear-gradient(transparent, rgba(6, 27, 58, 0.9));
+    padding: 15px;
+    color: white;
+    font-weight: 600;
+    font-size: 15px;
+    text-align: center;
+}
+</style>
+
+<h2 class="section-title" style="text-align: center; color: #061B3A; margin-bottom: 40px; font-size: 32px; font-weight: 700;">
+Makkah & Madinah Gallery
+</h2>
+
 <div class="gallery-grid">
 
-<img src="Kaaba.jpg" alt="Kaaba">
+  <!-- 1. Kaaba -->
+  <div class="gallery-card">
+    <img src="Kaaba.jpg" alt="Kaaba">
+    <div class="gallery-overlay">🕋 Holy Makkah</div>
+  </div>
 
-<img src="masjidnabawi.jpg" alt="Masjid Nabawi">
+  <!-- 2. Masjid Nabawi -->
+  <div class="gallery-card">
+    <img src="masjidnabawi.jpg" alt="Masjid Al Nabawi">
+    <div class="gallery-overlay">🕌 Masjid Al Nabawi</div>
+  </div>
 
-<img src="umrah.jpg" alt="Umrah Pilgrims">
+  <!-- 3. Umrah -->
+  <div class="gallery-card">
+    <img src="umrah.jpg" alt="Umrah Services">
+    <div class="gallery-overlay">✈️ Umrah Services</div>
+  </div>
 
-<img src="makkah.jpg" alt="Makkah Clock Tower">
+  <!-- 4. Makkah -->
+  <div class="gallery-card">
+    <img src="makkah.jpg" alt="Makkah City">
+    <div class="gallery-overlay">🏢 Makkah City</div>
+  </div>
 
 </div>
+
+</section>
 
 
 <!-- CUSTOMER REVIEWS -->
