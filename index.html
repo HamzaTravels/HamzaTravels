@@ -931,81 +931,166 @@ Makkah & Madinah Gallery
 
 <!-- CUSTOMER REVIEWS -->
 
-<section style="padding:90px 20px;background:white;">
+<!-- CUSTOMER REVIEWS -->
+<section class="reviews-section" style="padding: 60px 20px; background: #f8fafc;">
 
-<h2 class="section-title">
+<style>
+.reviews-grid {
+    max-width: 1200px;
+    margin: auto;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 25px;
+}
+
+.review-card {
+    background: #ffffff;
+    padding: 25px;
+    border-radius: 15px;
+    box-shadow: 0 8px 25px rgba(0,0,0,.05);
+    border-top: 4px solid #D4AF37;
+    transition: transform 0.3s;
+}
+
+.review-card:hover {
+    transform: translateY(-5px);
+}
+
+.stars {
+    color: #D4AF37;
+    font-size: 16px;
+    margin-bottom: 15px;
+}
+
+.review-text {
+    font-size: 15px;
+    line-height: 1.6;
+    color: #475569;
+    margin-bottom: 15px;
+    font-style: italic;
+}
+
+.reviewer-name {
+    font-weight: 700;
+    color: #061B3A;
+    font-size: 16px;
+}
+</style>
+
+<h2 class="section-title" style="text-align: center; color: #061B3A; margin-bottom: 40px; font-size: 32px; font-weight: 700;">
 Customer Reviews
 </h2>
 
-<div class="services-grid">
+<div class="reviews-grid">
 
-<div class="service-card">
-<p>
-"उमरा वीज़ा बहुत जल्दी मिल गया और पूरी सर्विस शानदार रही।"
-</p>
-<br>
-<strong>Mohammad Arshad</strong>
-</div>
+  <!-- Review 1 -->
+  <div class="review-card">
+    <div class="stars">
+      <i class="fa-solid fa-star"></i>
+      <i class="fa-solid fa-star"></i>
+      <i class="fa-solid fa-star"></i>
+      <i class="fa-solid fa-star"></i>
+      <i class="fa-solid fa-star"></i>
+    </div>
+    <p class="review-text">"Umrah visa bahut jaldi mil gaya aur poori service shandar rahi!"</p>
+    <div class="reviewer-name">Mohammad Arshad</div>
+  </div>
 
-<div class="service-card">
-<p>
-"हवाई टिकट सबसे अच्छे रेट पर मिला, बहुत भरोसेमंद एजेंसी है।"
-</p>
-<br>
-<strong>Abdul Rahman</strong>
-</div>
+  <!-- Review 2 -->
+  <div class="review-card">
+    <div class="stars">
+      <i class="fa-solid fa-star"></i>
+      <i class="fa-star"></i>
+      <i class="fa-solid fa-star"></i>
+      <i class="fa-solid fa-star"></i>
+      <i class="fa-solid fa-star"></i>
+    </div>
+    <p class="review-text">"Air ticket sabse acche rate par mila, bahut bharosemand agency hai."</p>
+    <div class="reviewer-name">Abdul Rahman</div>
+  </div>
 
-<div class="service-card">
-<p>
-"सऊदी अरब में पासपोर्ट रिन्यूअल का पूरा काम आसानी से हो गया।"
-</p>
-<br>
-<strong>Salman Khan</strong>
-</div>
+  <!-- Review 3 -->
+  <div class="review-card">
+    <div class="stars">
+      <i class="fa-solid fa-star"></i>
+      <i class="fa-solid fa-star"></i>
+      <i class="fa-solid fa-star"></i>
+      <i class="fa-solid fa-star"></i>
+      <i class="fa-solid fa-star"></i>
+    </div>
+    <p class="review-text">"Saudi Arabia mein passport renewal ka poora kaam aasaani se ho gaya."</p>
+    <div class="reviewer-name">Salman Khan</div>
+  </div>
 
-<div class="service-card">
-<p>
-"VFS अपॉइंटमेंट समय पर मिल गया, सर्विस बेहतरीन रही।"
-</p>
-<br>
-<strong>Imran Qureshi</strong>
-</div>
+  <!-- Review 4 -->
+  <div class="review-card">
+    <div class="stars">
+      <i class="fa-solid fa-star"></i>
+      <i class="fa-solid fa-star"></i>
+      <i class="fa-solid fa-star"></i>
+      <i class="fa-solid fa-star"></i>
+      <i class="fa-solid fa-star"></i>
+    </div>
+    <p class="review-text">"VFS appointment samay par mil gaya, service behtareen rahi."</p>
+    <div class="reviewer-name">Imran Qureshi</div>
+  </div>
 
-<div class="service-card">
-<p>
-"होटल बुकिंग और ट्रैवल गाइडेंस बहुत प्रोफेशनल था।"
-</p>
-<br>
-<strong>Mohammad Bilal</strong>
-</div>
+  <!-- Review 5 -->
+  <div class="review-card">
+    <div class="stars">
+      <i class="fa-solid fa-star"></i>
+      <i class="fa-solid fa-star"></i>
+      <i class="fa-solid fa-star"></i>
+      <i class="fa-solid fa-star"></i>
+      <i class="fa-solid fa-star"></i>
+    </div>
+    <p class="review-text">"Hotel booking aur travel guidance bahut professional tha."</p>
+    <div class="reviewer-name">Mohammad Bilal</div>
+  </div>
 
-<div class="service-card">
-<p>
-"कम रेट और शानदार सर्विस, मैं पूरी तरह संतुष्ट हूँ।"
-</p>
-<br>
-<strong>Abdul Malik</strong>
-</div>
+  <!-- Review 6 -->
+  <div class="review-card">
+    <div class="stars">
+      <i class="fa-solid fa-star"></i>
+      <i class="fa-solid fa-star"></i>
+      <i class="fa-solid fa-star"></i>
+      <i class="fa-solid fa-star"></i>
+      <i class="fa-solid fa-star"></i>
+    </div>
+    <p class="review-text">"Kam rate aur shandar service, main poori tarah santusht hoon."</p>
+    <div class="reviewer-name">Abdul Malik</div>
+  </div>
 
-<div class="service-card">
-<p>
-"डमी टिकट तुरंत मिल गया और वीज़ा प्रोसेस में मदद हुई।"
-</p>
-<br>
-<strong>Nadeem Akhtar</strong>
-</div>
+  <!-- Review 7 -->
+  <div class="review-card">
+    <div class="stars">
+      <i class="fa-solid fa-star"></i>
+      <i class="fa-solid fa-star"></i>
+      <i class="fa-solid fa-star"></i>
+      <i class="fa-solid fa-star"></i>
+      <i class="fa-solid fa-star"></i>
+    </div>
+    <p class="review-text">"Dummy ticket turant mil gaya aur visa process mein madad hui."</p>
+    <div class="reviewer-name">Nadeem Akhtar</div>
+  </div>
 
-<div class="service-card">
-<p>
-"उमरा यात्रा के लिए पूरी गाइडेंस मिली, बहुत अच्छा अनुभव रहा।"
-</p>
-<br>
-<strong>Mohammad Faizan</strong>
-</div>
+  <!-- Review 8 -->
+  <div class="review-card">
+    <div class="stars">
+      <i class="fa-solid fa-star"></i>
+      <i class="fa-solid fa-star"></i>
+      <i class="fa-solid fa-star"></i>
+      <i class="fa-solid fa-star"></i>
+      <i class="fa-solid fa-star"></i>
+    </div>
+    <p class="review-text">"Umrah yatra ke liye poori guidance mili, bahut accha anubhav raha."</p>
+    <div class="reviewer-name">Mohammad Faizan</div>
+  </div>
 
 </div>
 
 </section>
+
 
 <!-- CONTACT SECTION -->
 
