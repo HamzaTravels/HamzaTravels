@@ -693,6 +693,7 @@
         </div>
     </footer>
 
+    
     <script>
         function updateClock(){
             const now = new Date();
@@ -715,32 +716,77 @@
         const modalIcon = document.getElementById("modalIcon");
         const allServiceCards = document.querySelectorAll('.service-card');
 
+        // تمام پاپ اپس کے لیے پروفیشنل انگلش ڈیٹا اور گرین ٹکس
+        const serviceDetails = {
+            "Air Ticket Booking": {
+                desc: "<ul style='text-align:left; list-style:none; padding:10px 0;'><li style='margin-bottom:8px;'><i class='fa-solid fa-circle-check' style='color:#10B981; margin-right:10px;'></i> Guaranteed best market fares for all destinations.</li><li style='margin-bottom:8px;'><i class='fa-solid fa-circle-check' style='color:#10B981; margin-right:10px;'></i> Instant confirmed ticket booking and group bookings.</li><li style='margin-bottom:8px;'><i class='fa-solid fa-circle-check' style='color:#10B981; margin-right:10px;'></i> Full support for ticket reissuance, cancellation, and refunds.</li><li style='margin-bottom:8px;'><i class='fa-solid fa-circle-check' style='color:#10B981; margin-right:10px;'></i> Real-time multi-airline route comparison for seamless travel.</li></ul>",
+                icon: "✈️"
+            },
+            "Passport Renewal": {
+                desc: "<ul style='text-align:left; list-style:none; padding:10px 0;'><li style='margin-bottom:8px;'><i class='fa-solid fa-circle-check' style='color:#10B981; margin-right:10px;'></i> Error-free online passport application form filling.</li><li style='margin-bottom:8px;'><i class='fa-solid fa-circle-check' style='color:#10B981; margin-right:10px;'></i> Complete digital file preparation for Indian expats in KSA.</li><li style='margin-bottom:8px;'><i class='fa-solid fa-circle-check' style='color:#10B981; margin-right:10px;'></i> Systematic documentation verification prior to submission.</li><li style='margin-bottom:8px;'><i class='fa-solid fa-circle-check' style='color:#10B981; margin-right:10px;'></i> End-to-end processing guidance for smooth verification.</li></ul>",
+                icon: "🛂"
+            },
+            "Dummy Ticket": {
+                desc: "<ul style='text-align:left; list-style:none; padding:10px 0;'><li style='margin-bottom:8px;'><i class='fa-solid fa-circle-check' style='color:#10B981; margin-right:10px;'></i> Instant flight itinerary setup for visa requirements.</li><li style='margin-bottom:8px;'><i class='fa-solid fa-circle-check' style='color:#10B981; margin-right:10px;'></i> Valid dummy documentation accepted for official verification.</li><li style='margin-bottom:8px;'><i class='fa-solid fa-circle-check' style='color:#10B981; margin-right:10px;'></i> Fast delivery directly to your WhatsApp platform.</li></ul>",
+                icon: "🎫"
+            },
+            "Hotel Booking": {
+                desc: "<ul style='text-align:left; list-style:none; padding:10px 0;'><li style='margin-bottom:8px;'><i class='fa-solid fa-circle-check' style='color:#10B981; margin-right:10px;'></i> Budget-friendly accommodations in Makkah and Madinah.</li><li style='margin-bottom:8px;'><i class='fa-solid fa-circle-check' style='color:#10B981; margin-right:10px;'></i> Prime luxury hotel reservations near the Holy Masjids.</li><li style='margin-bottom:8px;'><i class='fa-solid fa-circle-check' style='color:#10B981; margin-right:10px;'></i> Worldwide hotel options with transparent pricing.</li></ul>",
+                icon: "🏨"
+            },
+            "Family Umrah Visa": {
+                desc: "<ul style='text-align:left; list-style:none; padding:10px 0;'><li style='margin-bottom:8px;'><i class='fa-solid fa-circle-check' style='color:#10B981; margin-right:10px;'></i> Direct visa assistance to bring family members from India.</li><li style='margin-bottom:8px;'><i class='fa-solid fa-circle-check' style='color:#10B981; margin-right:10px;'></i> Specialized documentation support for parents and spouse.</li><li style='margin-bottom:8px;'><i class='fa-solid fa-circle-check' style='color:#10B981; margin-right:10px;'></i> Complete travel requirement guidance for families.</li></ul>",
+                icon: "🕋"
+            },
+            "Indian New Passport": {
+                desc: "<ul style='text-align:left; list-style:none; padding:10px 0;'><li style='margin-bottom:8px;'><i class='fa-solid fa-circle-check' style='color:#10B981; margin-right:10px;'></i> Complete application processing for brand new passports.</li><li style='margin-bottom:8px;'><i class='fa-solid fa-circle-check' style='color:#10B981; margin-right:10px;'></i> Accurate affidavit setup and secondary document validation.</li><li style='margin-bottom:8px;'><i class='fa-solid fa-circle-check' style='color:#10B981; margin-right:10px;'></i> Step-by-step guidance for safe official submission.</li></ul>",
+                icon: "📘"
+            },
+            "VFS Appointment": {
+                desc: "<ul style='text-align:left; list-style:none; padding:10px 0;'><li style='margin-bottom:8px;'><i class='fa-solid fa-circle-check' style='color:#10B981; margin-right:10px;'></i> Quick scheduling for VFS Global appointment slots in KSA.</li><li style='margin-bottom:8px;'><i class='fa-solid fa-circle-check' style='color:#10B981; margin-right:10px;'></i> Pre-appointment file structure verification check.</li><li style='margin-bottom:8px;'><i class='fa-solid fa-circle-check' style='color:#10B981; margin-right:10px;'></i> Complete timeline guidance for application drop-off.</li></ul>",
+                icon: "📅"
+            },
+            "Travel Guidance": {
+                desc: "<ul style='text-align:left; list-style:none; padding:10px 0;'><li style='margin-bottom:8px;'><i class='fa-solid fa-circle-check' style='color:#10B981; margin-right:10px;'></i> Pre-flight checklist and international airline regulations.</li><li style='margin-bottom:8px;'><i class='fa-solid fa-circle-check' style='color:#10B981; margin-right:10px;'></i> Customized transit route planning for premium passengers.</li><li style='margin-bottom:8px;'><i class='fa-solid fa-circle-check' style='color:#10B981; margin-right:10px;'></i> Direct assistance for general travel queries.</li></ul>",
+                icon: "🌍"
+            }
+        };
+
+        // ٹاپ اسٹرپ فیچر کلک میپنگ مینو
+        const featureMapping = {
+            0: "Air Ticket Booking",
+            1: "Passport Renewal",
+            2: "Dummy Ticket",
+            3: "Hotel Booking"
+        };
+
         allServiceCards.forEach(card => {
             card.addEventListener('click', function() {
-                openCardDetails(this);
+                let title = this.querySelector('h3').innerText.trim();
+                openProfessionalModal(title);
             });
         });
 
-        function openCardDetails(element) {
-            let title = element.querySelector('h3').innerText;
-            let desc = element.querySelector('p').innerText;
-            let icon = element.querySelector('.service-icon').innerText;
-            
-            modalTitle.innerText = title;
-            modalDesc.innerText = desc;
-            modalIcon.innerText = icon;
-            
-            if(title.includes('Dummy Ticket') || title.includes('डमी टिकट')) {
-                modalExtra.style.display = "block";
-            } else {
-                modalExtra.style.display = "none";
+        function openProfessionalModal(serviceTitle) {
+            let data = serviceDetails[serviceTitle];
+            if(data) {
+                modalTitle.innerText = serviceTitle;
+                modalDesc.innerHTML = data.desc; // الٹیمیٹ گرین ٹکس لسٹ شو کرے گا
+                modalIcon.innerText = data.icon;
+                
+                if(serviceTitle.includes('Dummy Ticket')) {
+                    modalExtra.style.display = "block";
+                } else {
+                    modalExtra.style.display = "none";
+                }
+                modal.style.display = "block";
             }
-            modal.style.display = "block";
         }
 
         function triggerServiceCard(index) {
-            if(allServiceCards[index]) {
-                openCardDetails(allServiceCards[index]);
+            let mappedTitle = featureMapping[index];
+            if(mappedTitle) {
+                openProfessionalModal(mappedTitle);
             }
         }
 
@@ -754,5 +800,3 @@
             } 
         }
     </script>
-</body>
-</html>
