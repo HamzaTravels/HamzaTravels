@@ -1,1111 +1,816 @@
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
-    <title>Hamza Travels | Umrah Visa Assistance | Air Ticket | Passport Services Riyadh</title>
-
-    <!-- ADVANCED SEO META TAGS -->
-    <meta name="description" content="Hamza Travels provides professional Umrah Visa Assistance for Saudi residents bringing family members from India. Air Ticket Booking, Hotel Booking, Passport Renewal, New Passport Assistance, Dummy Ticket and VFS Appointment Services.">
-    <meta name="keywords" content="Umrah Visa Riyadh, Family Umrah Visa India, Umrah Visa Assistance Saudi Arabia, Indian Passport Renewal Riyadh, New Indian Passport Saudi Arabia, Air Ticket Booking Riyadh, Dummy Ticket Riyadh, Hotel Booking Makkah, Hotel Booking Madinah, VFS Appointment Riyadh, Hamza Travels Riyadh">
+    <title>Hamza Travels | Air Ticket Booking | Passport Services | Travel Agency</title>
+    <meta name="description" content="Hamza Travels provides Air Ticket Booking, Hotel Booking, Indian Passport Renewal, New Passport, Dummy Ticket, Umrah Visa Assistance and Travel Services.">
+    <meta name="theme-color" content="#061B3A">
+    <meta name="keywords" content="Air Ticket Booking Riyadh, Passport Renewal Saudi Arabia, Indian Passport Renewal Riyadh, Dummy Ticket Saudi Arabia, VFS Appointment Riyadh, Hotel Booking Makkah, Hotel Booking Madinah, Umrah Visa Saudi Arabia, Hamza Travels Riyadh, Hamza Travels Online">
     <meta name="author" content="Mohammad Mahatab Alam">
     <meta name="robots" content="index, follow">
-    <meta name="theme-color" content="#061B3A">
-    <meta name="geo.region" content="SA">
-    <meta name="geo.placename" content="Riyadh">
-    <meta name="language" content="English">
-    <meta name="distribution" content="global">
-    <meta name="rating" content="general">
-
+    <meta property="og:title" content="Hamza Travels">
+    <meta property="og:description" content="Air Ticket Booking, Passport Renewal, Hotel Booking, VFS Appointment and Travel Services">
+    <meta property="og:image" content="https://hamzatravelsonline.com/logo.jpg">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://hamzatravelsonline.com">
     <link rel="canonical" href="https://hamzatravelsonline.com">
 
-    <!-- OPEN GRAPH -->
-    <meta property="og:title" content="Hamza Travels | Trusted Umrah & Travel Services">
-    <meta property="og:description" content="Professional Umrah Visa Assistance, Air Tickets, Hotel Booking, Passport Services and Travel Documentation Support.">
-    <meta property="og:image" content="https://hamzatravelsonline.com/logo.jpg">
-    <meta property="og:url" content="https://hamzatravelsonline.com">
-    <meta property="og:type" content="website">
-    <meta property="og:site_name" content="Hamza Travels">
-
-    <!-- TWITTER CARDS -->
-    <meta name="twitter:card" content="summary_large_image">
-    <meta name="twitter:title" content="Hamza Travels">
-    <meta name="twitter:description" content="Trusted Umrah Visa & Travel Assistance">
-    <meta name="twitter:image" content="https://hamzatravelsonline.com/logo.jpg">
-
-    <!-- FONTS -->
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
-
-    <!-- FONT AWESOME Icons -->
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&family=Noto+Sans+Devanagari:wght@400;500;600;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css"/>
 
-    <!-- SCHEMA ORG (TRAVEL AGENCY & SERVICES) -->
-    <script type="application/ld+json">
-    {
-      "@context": "https://schema.org",
-      "@type": "TravelAgency",
-      "name": "Hamza Travels",
-      "url": "https://hamzatravelsonline.com",
-      "telephone": "+966594388004",
-      "email": "info.hamzatravels@gmail.com",
-      "address": {
-        "@type": "PostalAddress",
-        "addressLocality": "Riyadh",
-        "addressCountry": "Saudi Arabia"
-      },
-      "areaServed": [
-        "Saudi Arabia",
-        "India"
-      ],
-      "serviceType": [
-        "Umrah Visa Assistance",
-        "Air Ticket Booking",
-        "Hotel Booking",
-        "Indian Passport Renewal",
-        "New Passport Assistance",
-        "Dummy Ticket",
-        "VFS Appointment Assistance"
-      ]
-    }
-    </script>
-
     <style>
-        /* CSS PREMIUM FOUNDATION & VARIABLES */
-        :root {
-            --primary: #061B3A;
-            --gold: #D4AF37;
-            --white: #ffffff;
-            --light: #F8FAFC;
-            --dark: #0F172A;
-            --gray: #64748B;
-            --whatsapp: #25D366;
-            --radius: 18px;
-            --shadow: 0 10px 30px rgba(0,0,0,.08);
-            --transition: .35s ease;
-        }
+    :root {
+        --primary: #061B3A;
+        --gold: #D4AF37;
+        --light: #F8FAFC;
+        --dark: #0F172A;
+        --white: #ffffff;
+        --whatsapp: #25D366;
+        --success: #10B981;
+    }
 
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-            font-family: 'Poppins', sans-serif;
-            scroll-behavior: smooth;
-        }
+    * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+        font-family: 'Poppins', 'Noto Sans Devanagari', sans-serif;
+    }
 
-        body {
-            background-color: var(--light);
-            color: var(--dark);
-        }
+    html {
+        scroll-behavior: smooth;
+    }
 
-        /* HEADER & STICKY STYLES */
-        header {
-            position: sticky;
-            top: 0;
-            z-index: 9999;
-            backdrop-filter: blur(10px);
-            background: rgba(6, 27, 58, 0.95);
-            box-shadow: 0 10px 25px rgba(0,0,0,.08);
-            padding: 15px 20px;
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-        }
+    body {
+        background: #f5f7fb;
+        overflow-x: hidden;
+        color: var(--dark);
+    }
 
-        .logo-area {
-            color: var(--white);
-            font-size: 24px;
-            font-weight: 700;
-        }
-        .logo-area span { color: var(--gold); }
+    /* TOP BAR */
+    .top-bar {
+        background: var(--primary);
+        padding: 12px 20px;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        flex-wrap: wrap;
+        color: white;
+        font-size: 14px;
+        border-bottom: 2px solid var(--gold);
+    }
 
-        .nav-desktop a {
-            color: var(--white);
-            text-decoration: none;
-            margin-left: 20px;
-            font-weight: 500;
-            transition: var(--transition);
-        }
-        .nav-desktop a:hover { color: var(--gold); }
+    .top-bar-left {
+        font-weight: 600;
+    }
 
-        .clock-container {
-            color: var(--gold);
-            font-weight: 600;
-            font-size: 15px;
-        }
+    .top-bar-right {
+        display: flex;
+        gap: 20px;
+        flex-wrap: wrap;
+    }
 
-        .menu-toggle {
-            display: none;
-            background: none;
-            border: none;
-            font-size: 28px;
-            cursor: pointer;
-            color: white;
-        }
+    .top-bar-right a {
+        color: white;
+        text-decoration: none;
+    }
 
-        #mobileMenu { display: none; }
+    /* HEADER */
+    header {
+        background: white;
+        position: sticky;
+        top: 0;
+        z-index: 9999;
+        box-shadow: 0 5px 25px rgba(0,0,0,.08);
+    }
 
-        /* HERO SECTION */
-        .hero {
-            position: relative;
-            padding: 170px 20px;
-            text-align: center;
-            overflow: hidden;
-            background: linear-gradient(rgba(6,27,58,.88), rgba(6,27,58,.88)), url('hero.jpg');
-            background-size: cover;
-            background-position: center;
-            color: white;
-        }
+    .navbar {
+        max-width: 1200px;
+        margin: auto;
+        padding: 15px 20px;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+    }
 
-        .hero-content {
-            max-width: 1100px;
-            margin: auto;
-            position: relative;
-            z-index: 2;
-        }
+    .logo {
+        display: flex;
+        align-items: center;
+        gap: 15px;
+        text-decoration: none;
+    }
 
-        .owner-badge {
-            background: rgba(212, 175, 55, 0.2);
-            border: 1px solid var(--gold);
-            color: var(--gold);
-            padding: 8px 20px;
-            display: inline-block;
-            border-radius: 30px;
-            font-weight: 600;
-            font-size: 14px;
-            margin-bottom: 20px;
-            letter-spacing: 1px;
-        }
+    .logo img {
+        height: 65px;
+        width: auto;
+        object-fit: contain;
+    }
 
-        .hero h1 {
-            font-size: 62px;
-            font-weight: 800;
-            line-height: 1.15;
-            margin-bottom: 25px;
-        }
+    /* LOGO TEXT COLORS FIXED */
+    .logo-text {
+        font-size: 28px;
+        font-weight: 800;
+        color: var(--primary); /* Deep Blue */
+        line-height: 1;
+        letter-spacing: 0.5px;
+    }
 
-        .hero p {
-            max-width: 900px;
-            margin: auto;
-            font-size: 18px;
-            line-height: 1.9;
-            color: #e2e8f0;
-            margin-bottom: 40px;
-        }
+    .logo-text span {
+        color: var(--gold); /* Professional Gold */
+    }
 
-        .hero-buttons {
-            display: flex;
-            justify-content: center;
-            gap: 20px;
-            margin-bottom: 50px;
-            flex-wrap: wrap;
-        }
+    /* LIVE CLOCK */
+    .live-clock {
+        background: linear-gradient(135deg, #061B3A, #0F2D5E);
+        padding: 8px 18px;
+        border-radius: 12px;
+        color: white;
+        text-align: center;
+        box-shadow: 0 4px 15px rgba(0,0,0,.15);
+    }
 
-        .btn {
-            padding: 15px 35px;
-            border-radius: 50px;
-            text-decoration: none;
-            font-weight: 700;
-            font-size: 16px;
-            display: flex;
-            align-items: center;
-            gap: 10px;
-            transition: var(--transition);
-        }
+    .clock-title {
+        font-size: 11px;
+        color: #ddd;
+    }
 
-        .btn-whatsapp { background: var(--whatsapp); color: white; }
-        .btn-whatsapp:hover { transform: translateY(-3px); box-shadow: 0 10px 20px rgba(37, 211, 102, 0.3); }
-        .btn-call { background: var(--gold); color: var(--primary); }
-        .btn-call:hover { transform: translateY(-3px); box-shadow: 0 10px 20px rgba(212, 175, 87, 0.3); }
+    .clock-time {
+        font-size: 18px;
+        font-weight: 800;
+    }
 
-        .hero-stats {
-            display: flex;
-            justify-content: center;
-            gap: 25px;
-            margin-top: 50px;
-            flex-wrap: wrap;
-        }
+    /* HERO SECTION */
+    .hero {
+        background: linear-gradient(rgba(6,27,58,.82), rgba(6,27,58,.82)), url('hero.jpg');
+        background-size: cover;
+        background-position: center;
+        padding: 140px 20px;
+        text-align: center;
+        color: white;
+    }
+      
+    .owner-badge {
+        display: inline-block;
+        padding: 8px 25px;
+        border-radius: 50px;
+        border: 1px solid var(--gold);
+        background: rgba(212,175,55,.15);
+        margin-bottom: 25px;
+        font-size: 14px;
+        font-weight: 600;
+        letter-spacing: 1px;
+    }
 
-        .stat-box {
-            background: rgba(255,255,255,.08);
-            backdrop-filter: blur(10px);
-            padding: 20px 30px;
-            border-radius: var(--radius);
-            border: 1px solid rgba(255,255,255,.12);
-        }
+    .hero h1 {
+        font-size: 48px;
+        font-weight: 800;
+        margin-bottom: 15px;
+        color: var(--white);
+        letter-spacing: 1px;
+        line-height: 1.3;
+    }
 
-        .stat-box h3 { color: var(--gold); font-size: 28px; margin-bottom: 5px; }
-        .stat-box span { font-size: 14px; color: #cbd5e1; }
+    .hero h2 {
+        font-size: 22px;
+        font-weight: 500;
+        margin-bottom: 25px;
+        color: #f3f4f6;
+    }
 
-        /* FEATURE STRIP */
-        .feature-strip {
-            max-width: 1200px;
-            margin: auto;
-            margin-top: -70px;
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-            gap: 25px;
-            padding: 0 20px;
-            position: relative;
-            z-index: 5;
-        }
+    .hero p {
+        max-width: 900px;
+        margin: auto;
+        line-height: 1.9;
+        font-size: 17px;
+        color: #e2e8f0;
+    }
 
-        .feature-box {
-            background: white;
-            padding: 30px;
-            border-radius: 20px;
-            box-shadow: 0 15px 35px rgba(0,0,0,.08);
-            transition: var(--transition);
-            text-align: center;
-            border-bottom: 4px solid var(--gold);
-        }
+    .hero-buttons {
+        margin-top: 40px;
+    }
 
-        .feature-box:hover { transform: translateY(-8px); }
-        .feature-box i { font-size: 42px; color: var(--gold); margin-bottom: 15px; }
-        .feature-box h3 { font-size: 20px; margin-bottom: 10px; color: var(--primary); }
-        .feature-box p { font-size: 15px; line-height: 1.8; color: #475569; }
+    .btn {
+        display: inline-block;
+        padding: 15px 35px;
+        border-radius: 50px;
+        text-decoration: none;
+        font-weight: 700;
+        margin: 10px;
+        transition: .3s;
+        box-shadow: 0 4px 15px rgba(0,0,0,0.2);
+    }
 
-        /* TRUST & TRANSPARENCY SECTION */
-        .trust-section { padding: 90px 20px; background: #fff; }
-        .trust-container { max-width: 1200px; margin: auto; display: grid; grid-template-columns: 1fr 1fr; gap: 50px; align-items: center; }
-        .trust-left h2 { font-size: 42px; color: var(--primary); margin-bottom: 20px; font-weight: 800; }
-        .trust-left p { line-height: 1.9; color: #475569; margin-bottom: 25px; font-size: 16px; }
-        .trust-left ul { list-style: none; }
-        .trust-left li { margin-bottom: 15px; font-weight: 600; display: flex; align-items: center; font-size: 16px; }
-        .trust-left i { color: var(--gold); margin-right: 12px; font-size: 18px; }
-        .trust-card { background: var(--primary); color: white; padding: 40px; border-radius: 24px; box-shadow: 0 15px 35px rgba(0,0,0,.15); }
-        .trust-card h3 { color: var(--gold); margin-bottom: 15px; font-size: 24px; }
-        .trust-card p { color: #cbd5e1; line-height: 1.8; }
+    .btn-whatsapp {
+        background: var(--whatsapp);
+        color: white;
+    }
 
-        /* WHY CHOOSE US SECTION */
-        .why-choose-us { padding: 90px 20px; background: var(--light); }
-        .section-title { text-align: center; font-size: 40px; color: var(--primary); font-weight: 800; margin-bottom: 15px; }
-        .premium-grid { max-width: 1200px; margin: auto; display: grid; grid-template-columns: repeat(auto-fit, minmax(320px, 1fr)); gap: 30px; margin-top: 40px; }
-        .premium-card { background: white; padding: 35px; border-radius: 20px; box-shadow: var(--shadow); transition: var(--transition); }
-        .premium-card:hover { transform: translateY(-5px); }
-        .premium-card h3 { font-size: 20px; color: var(--primary); margin-bottom: 15px; display: flex; align-items: center; gap: 12px; }
-        .premium-card h3 i { color: var(--gold); }
-        .premium-card p { color: #475569; line-height: 1.8; font-size: 15px; }
+    .btn-call {
+        background: var(--gold);
+        color: white;
+    }
 
-        /* SERVICES SECTION */
-        .services-section { padding: 90px 20px; background: #fff; }
-        .section-subtitle { text-align: center; max-width: 850px; margin: auto; margin-bottom: 50px; font-size: 17px; line-height: 1.9; color: #64748b; }
-        .services-grid { max-width: 1200px; margin: auto; display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 30px; }
-        .service-card { background: var(--light); padding: 35px; border-radius: 24px; box-shadow: 0 15px 35px rgba(0,0,0,.04); transition: var(--transition); position: relative; overflow: hidden; text-align: center; border: 1px solid #e2e8f0; }
-        .service-card:hover { transform: translateY(-10px); box-shadow: 0 20px 40px rgba(0,0,0,0.08); }
-        .service-icon { font-size: 45px; margin-bottom: 20px; display: inline-block; }
-        .service-card h3 { font-size: 22px; color: var(--primary); margin-bottom: 15px; }
-        .service-card p { color: #64748b; line-height: 1.8; font-size: 15px; margin-bottom: 20px; }
-        .learn-btn { background: var(--primary); color: white; border: none; padding: 12px 28px; border-radius: 40px; cursor: pointer; font-weight: 700; transition: .3s; font-size: 14px; }
-        .learn-btn:hover { background: var(--gold); color: var(--primary); }
+    .btn:hover {
+        transform: translateY(-4px);
+        box-shadow: 0 6px 20px rgba(0,0,0,0.3);
+    }
 
-        /* SACRED GALLERY SECTION */
-        .gallery-section { padding: 90px 20px; background: var(--light); }
-        .gallery-grid { max-width: 1200px; margin: auto; display: grid; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); gap: 25px; }
-        .gallery-card { position: relative; overflow: hidden; border-radius: 24px; height: 320px; box-shadow: 0 15px 35px rgba(0,0,0,.10); }
-        .gallery-card img { width: 100%; height: 100%; object-fit: cover; transition: .6s; }
-        .gallery-card:hover img { transform: scale(1.08); }
-        .gallery-overlay { position: absolute; bottom: 0; left: 0; width: 100%; padding: 25px; background: linear-gradient(transparent, rgba(6,27,58,.95)); color: white; text-align: left; }
-        .gallery-overlay h3 { margin-bottom: 6px; font-size: 22px; color: var(--gold); }
-        .gallery-overlay p { font-size: 14px; color: #e2e8f0; }
+    /* COLORFUL PROFESSIONAL FEATURE STRIP */
+    .feature-strip {
+        max-width: 1200px;
+        margin: auto;
+        margin-top: -40px;
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+        gap: 20px;
+        padding: 0 20px;
+    }
 
-        /* REVIEWS SECTION */
-        .reviews-section { padding: 90px 20px; background: #fff; }
-        .reviews-grid { max-width: 1200px; margin: auto; display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 30px; }
-        .review-card { background: var(--light); padding: 30px; border-radius: 24px; box-shadow: 0 15px 35px rgba(0,0,0,.05); transition: var(--transition); border-top: 4px solid var(--gold); }
-        .review-card:hover { transform: translateY(-8px); }
-        .review-rating { font-size: 22px; color: var(--gold); margin-bottom: 15px; font-weight: 700; text-align: left; }
-        .review-card p { line-height: 1.9; color: #475569; margin-bottom: 20px; font-size: 15px; text-align: left; }
-        .review-footer { display: flex; justify-content: space-between; align-items: center; font-size: 14px; font-weight: 600; }
-        .verified { color: #10B981; display: flex; align-items: center; gap: 5px; }
+    .feature-box {
+        background: white;
+        padding: 25px;
+        border-radius: 18px;
+        box-shadow: 0 10px 25px rgba(0,0,0,.08);
+        text-align: center;
+        border-bottom: 3px solid var(--primary);
+        transition: 0.3s;
+    }
+    
+    .feature-box:hover {
+        transform: translateY(-5px);
+    }
 
-        /* TRUST BADGES */
-        .trust-badges { display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 20px; max-width: 1200px; margin: 50px auto 90px; padding: 0 20px; }
-        .badge { background: var(--light); padding: 30px; text-align: center; border-radius: 20px; box-shadow: 0 10px 25px rgba(0,0,0,.04); border: 1px solid #e2e8f0; }
-        .badge i { font-size: 40px; color: var(--gold); margin-bottom: 15px; }
-        .badge h3 { color: var(--primary); font-size: 18px; }
+    .feature-box i {
+        font-size: 28px;
+        width: 70px;
+        height: 70px;
+        line-height: 70px;
+        border-radius: 50%;
+        margin-bottom: 15px;
+        display: inline-block;
+    }
 
-        /* ABOUT SECTION */
-        .about-section { padding: 90px 20px; background: var(--primary); color: white; text-align: center; }
-        .about-content { max-width: 850px; margin: auto; }
-        .about-section h2 { font-size: 38px; color: var(--gold); margin-bottom: 25px; font-weight: 800; }
-        .about-section p { font-size: 16px; line-height: 1.9; color: #e2e8f0; margin-bottom: 20px; }
+    /* UNIQUE COLORS FOR ICONS */
+    .icon-blue { color: #2563EB; background: #DBEAFE; }
+    .icon-green { color: #059669; background: #D1FAE5; }
+    .icon-gold { color: #D97706; background: #FEF3C7; }
+    .icon-purple { color: #7C3AED; background: #EDE9FE; }
 
-        /* FAQ SECTION */
-        .faq-section { padding: 100px 20px; background: #fff; }
-        .faq-container { max-width: 900px; margin: auto; }
-        .faq-item { background: var(--light); margin-bottom: 15px; border-radius: 16px; overflow: hidden; box-shadow: 0 8px 20px rgba(0,0,0,.04); border: 1px solid #e2e8f0; }
-        .faq-question { width: 100%; padding: 22px; border: none; background: transparent; font-size: 18px; font-weight: 600; cursor: pointer; display: flex; justify-content: space-between; align-items: center; color: var(--primary); text-align: left; }
-        .faq-question span { font-size: 22px; color: var(--gold); }
-        .faq-answer { display: none; padding: 0 22px 22px; line-height: 1.8; color: #64748b; font-size: 15px; text-align: left; }
+    .feature-box h3 {
+        font-size: 18px;
+        color: var(--primary);
+        margin-bottom: 10px;
+    }
 
-        /* HIGH-CONVERSION WHATSAPP SECTION */
-        .whatsapp-section { padding: 100px 20px; background: linear-gradient(135deg, #061B3A, #0F2D5C); text-align: center; color: white; }
-        .whatsapp-box { max-width: 1000px; margin: auto; }
-        .whatsapp-box h2 { font-size: 48px; margin-bottom: 20px; font-weight: 800; }
-        .whatsapp-box p { font-size: 18px; line-height: 1.9; max-width: 850px; margin: auto auto 35px; color: #cbd5e1; }
-        .whatsapp-main-btn { display: inline-block; background: var(--whatsapp); color: white; padding: 18px 40px; border-radius: 50px; text-decoration: none; font-size: 18px; font-weight: 700; transition: var(--transition); box-shadow: 0 10px 25px rgba(37, 211, 102, 0.4); }
-        .whatsapp-main-btn:hover { transform: translateY(-3px); box-shadow: 0 15px 30px rgba(37, 211, 102, 0.5); }
+    /* WHY CHOOSE US */
+    .why-choose-us {
+        padding: 80px 20px;
+        background: var(--white);
+    }
 
-        /* CONTACT SECTION */
-        .contact-section { padding: 90px 20px; background: var(--light); }
-        .contact-grid { max-width: 1200px; margin: auto; display: grid; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); gap: 25px; margin-top: 40px; }
-        .contact-card { background: white; padding: 35px; border-radius: 20px; text-align: center; box-shadow: 0 10px 25px rgba(0,0,0,.05); border-bottom: 3px solid var(--gold); }
-        .contact-card i { font-size: 42px; color: var(--gold); margin-bottom: 15px; }
-        .contact-card h3 { color: var(--primary); font-size: 20px; margin-bottom: 10px; }
-        .contact-card p { color: #475569; font-weight: 500; }
+    .section-title {
+        text-align: center;
+        font-size: 36px;
+        font-weight: 800;
+        color: var(--primary);
+        margin-bottom: 50px;
+        position: relative;
+    }
 
-        /* PREMIUM FOOTER */
-        .footer { background: #061B3A; color: white; padding-top: 70px; border-top: 3px solid var(--gold); }
-        .footer-container { max-width: 1200px; margin: auto; display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 40px; padding: 0 20px 50px; }
-        .footer-about h3 { font-size: 24px; color: var(--gold); margin-bottom: 15px; }
-        .footer-about p { color: #cbd5e1; line-height: 1.8; }
-        .footer-links h4, .footer-contact h4 { font-size: 18px; color: var(--gold); margin-bottom: 20px; position: relative; }
-        .footer-links ul { list-style: none; }
-        .footer-links li { margin-bottom: 12px; color: #cbd5e1; }
-        .footer-contact p { margin-bottom: 12px; color: #cbd5e1; }
-        .copyright { text-align: center; padding: 25px; border-top: 1px solid rgba(255,255,255,.10); font-size: 14px; color: #94a3b8; }
+    .section-title::after {
+        content: '';
+        display: block;
+        width: 60px;
+        height: 3px;
+        background: var(--gold);
+        margin: 10px auto 0;
+    }
 
-        /* MODAL STYLES */
-        .service-modal { display: none; position: fixed; top: 0; left: 0; width: 100%; height: 100%; background: rgba(0,0,0,.75); z-index: 99999; padding: 20px; overflow: auto; }
-        .modal-content { background: white; max-width: 600px; margin: 80px auto; padding: 40px; border-radius: 24px; animation: modalPop .35s ease; position: relative; border-top: 5px solid var(--gold); }
-        @keyframes modalPop { from { opacity: 0; transform: scale(.9); } to { opacity: 1; transform: scale(1); } }
-        .close { position: absolute; right: 25px; top: 15px; font-size: 36px; cursor: pointer; color: var(--gray); transition: .2s; }
-        .close:hover { color: var(--dark); }
-        .modal-content h2 { color: var(--primary); margin-bottom: 20px; font-size: 26px; }
-        .modal-content p { color: #475569; line-height: 1.8; margin-bottom: 20px; font-size: 16px; }
-        .modal-content ul { list-style: none; margin-bottom: 25px; }
-        .modal-content li { margin-bottom: 10px; font-weight: 600; color: var(--primary); display: flex; align-items: center; gap: 10px; }
-        .modal-content li::before { content: "✓"; color: var(--gold); font-weight: bold; font-size: 18px; }
-        .modal-whatsapp { display: inline-block; background: var(--whatsapp); color: white; padding: 14px 30px; border-radius: 40px; text-decoration: none; font-weight: 700; text-align: center; transition: var(--transition); box-shadow: 0 5px 15px rgba(37,211,102,0.3); }
-        .modal-whatsapp:hover { transform: translateY(-2px); box-shadow: 0 8px 20px rgba(37,211,102,0.4); }
+    .premium-grid {
+        max-width: 1140px;
+        margin: auto;
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+        gap: 30px;
+    }
 
-        /* UTILITIES & ANIMATION CLASSES */
-        .fade-up { opacity: 0; transform: translateY(40px); transition: all .8s ease; }
-        .fade-up.show { opacity: 1; transform: translateY(0); }
+    .premium-card {
+        background: var(--light);
+        padding: 30px;
+        border-radius: 15px;
+        box-shadow: 0 5px 15px rgba(0,0,0,.03);
+        transition: .3s;
+        border-left: 5px solid var(--gold);
+    }
 
-        /* FLOATING WIDGETS */
-        .floating-whatsapp { position: fixed; right: 20px; bottom: 20px; width: 60px; height: 60px; background: var(--whatsapp); color: white; display: flex; justify-content: center; align-items: center; border-radius: 50%; font-size: 32px; text-decoration: none; z-index: 99999; box-shadow: 0 10px 25px rgba(0,0,0,.25); animation: pulse 2s infinite; }
-        @keyframes pulse { 0% { transform: scale(1); } 50% { transform: scale(1.08); } 100% { transform: scale(1); } }
-        
-        #backToTop { position: fixed; left: 20px; bottom: 20px; width: 50px; height: 50px; border: none; background: var(--gold); color: var(--primary); border-radius: 50%; cursor: pointer; display: none; z-index: 99999; font-size: 20px; box-shadow: 0 5px 15px rgba(0,0,0,0.2); transition: var(--transition); }
-        #backToTop:hover { background: var(--primary); color: white; }
+    .premium-card:hover {
+        transform: translateY(-5px);
+        background: var(--white);
+        box-shadow: 0 10px 25px rgba(0,0,0,.08);
+    }
 
-        /* MOBILE RESPONSIVENESS */
-        @media(max-width: 768px) {
-            .nav-desktop, .clock-container { display: none; }
-            .menu-toggle { display: block; }
-            
-            #mobileMenu {
-                display: block; position: fixed; top: 0; left: -100%; width: 280px; height: 100vh; background: #061B3A; padding: 40px 30px; transition: .4s; z-index: 999999; box-shadow: 5px 0 25px rgba(0,0,0,0.3);
-            }
-            #mobileMenu.active { left: 0; }
-            #mobileMenu a { display: block; color: white; text-decoration: none; margin-bottom: 25px; font-size: 18px; font-weight: 500; }
-            #mobileMenu .mobile-clock { color: var(--gold); font-weight: 600; margin-top: 30px; font-size: 16px; }
-            
-            .hero { padding: 120px 20px; }
-            .hero h1 { font-size: 36px; }
-            .hero p { font-size: 16px; }
-            .feature-strip { margin-top: -40px; }
-            .trust-container { grid-template-columns: 1fr; gap: 35px; }
-            .trust-left h2 { font-size: 32px; }
-            .section-title { font-size: 30px; }
-            .whatsapp-box h2 { font-size: 32px; }
-            .whatsapp-box p { font-size: 16px; }
-        }
+    .premium-card h3 i {
+        color: var(--gold);
+        margin-right: 8px;
+    }
+
+    .premium-card p {
+        line-height: 1.7;
+        color: #475569;
+        font-size: 15px;
+        margin-top: 10px;
+    }
+
+    /* ABOUT SECTION */
+    .about-section {
+        padding: 80px 20px;
+        background: var(--light);
+    }
+
+    .about-container {
+        max-width: 1200px;
+        margin: auto;
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 50px;
+        align-items: center;
+    }
+
+    .about-image {
+        height: 400px;
+        border-radius: 20px;
+        overflow: hidden;
+        box-shadow: 0 15px 35px rgba(0,0,0,.10);
+        border: 4px solid var(--white);
+    }
+
+    .about-image img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+    }
+
+    .about-content h2 {
+        font-size: 36px;
+        color: var(--primary);
+        margin-bottom: 25px;
+        font-weight: 800;
+    }
+
+    .about-content p {
+        font-size: 15px;
+        line-height: 1.8;
+        color: #475569;
+        margin-bottom: 20px;
+        text-align: justify;
+    }
+
+    /* SERVICES */
+    .services-section {
+        padding: 80px 20px;
+        background: var(--white);
+    }
+
+    .services-grid {
+        max-width: 1200px;
+        margin: auto;
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+        gap: 25px;
+    }
+
+    .service-card {
+        background: var(--light);
+        padding: 30px;
+        border-radius: 20px;
+        box-shadow: 0 8px 20px rgba(0,0,0,.04);
+        transition: .3s;
+        border-top: 4px solid var(--gold);
+    }
+
+    .service-card:hover {
+        transform: translateY(-5px);
+        background: var(--white);
+        box-shadow: 0 12px 30px rgba(0,0,0,0.08);
+    }
+
+    .service-icon {
+        font-size: 40px;
+        margin-bottom: 15px;
+    }
+
+    .service-card h3 {
+        font-size: 22px;
+        margin-bottom: 8px;
+        color: var(--primary);
+    }
+
+    .hindi-title {
+        font-size: 14px;
+        font-weight: 600;
+        color: #64748b;
+        margin-bottom: 15px;
+    }
+
+    .service-card p {
+        line-height: 1.7;
+        color: #475569;
+        font-size: 14px;
+    }
+
+    /* CONTACT SECTION - FULLY FUNCTIONAL */
+    .contact-section {
+        padding: 80px 20px;
+        background: var(--light);
+    }
+
+    .contact-grid {
+        max-width: 1100px;
+        margin: auto;
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+        gap: 30px;
+    }
+
+    .contact-card {
+        background: var(--white);
+        padding: 40px 20px;
+        border-radius: 15px;
+        text-align: center;
+        text-decoration: none;
+        color: var(--dark);
+        box-shadow: 0 5px 20px rgba(0,0,0,0.05);
+        transition: 0.3s;
+        display: block;
+        border-bottom: 4px solid transparent;
+    }
+
+    .contact-card:hover {
+        transform: translateY(-8px);
+        box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+    }
+
+    /* Hover colors for specific boxes */
+    .hover-call:hover { border-bottom-color: var(--primary); }
+    .hover-wa:hover { border-bottom-color: var(--whatsapp); }
+    .hover-loc:hover { border-bottom-color: #EF4444; }
+
+    .contact-card i {
+        font-size: 45px;
+        margin-bottom: 20px;
+    }
+
+    .contact-card h3 {
+        font-size: 22px;
+        margin-bottom: 10px;
+        color: var(--primary);
+        font-weight: 700;
+    }
+
+    .contact-card p {
+        color: #64748b;
+        font-size: 16px;
+    }
+
+    /* FOOTER */
+    footer {
+        background: var(--primary);
+        color: white;
+        padding: 60px 20px 20px;
+        border-top: 4px solid var(--gold);
+    }
+
+    .footer-container {
+        max-width: 1200px;
+        margin: auto;
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+        gap: 40px;
+        padding-bottom: 40px;
+        border-bottom: 1px solid rgba(255,255,255,0.1);
+    }
+
+    .footer-box h3 {
+        color: var(--gold);
+        font-size: 18px;
+        margin-bottom: 20px;
+        font-weight: 700;
+        letter-spacing: 0.5px;
+    }
+
+    .footer-box p {
+        line-height: 1.8;
+        color: #cbd5e1;
+        font-size: 14px;
+    }
+
+    .footer-links {
+        list-style: none;
+    }
+
+    .footer-links li {
+        margin-bottom: 12px;
+        font-size: 14px;
+        color: #cbd5e1;
+        display: flex;
+        align-items: center;
+        gap: 8px;
+    }
+
+    .footer-links li i {
+        color: var(--gold);
+        font-size: 12px;
+    }
+
+    .footer-contact li {
+        margin-bottom: 15px;
+        font-size: 14px;
+        color: #cbd5e1;
+        display: flex;
+        align-items: center;
+        gap: 10px;
+    }
+
+    .footer-contact li i {
+        color: var(--gold);
+        font-size: 16px;
+    }
+
+    .footer-bottom {
+        text-align: center;
+        padding-top: 20px;
+        font-size: 13px;
+        color: #94a3b8;
+    }
+
+    /* FLOATING WHATSAPP */
+    .floating-whatsapp {
+        position: fixed;
+        bottom: 30px;
+        right: 30px;
+        background: var(--whatsapp);
+        color: white;
+        padding: 12px 25px;
+        border-radius: 50px;
+        box-shadow: 0 5px 20px rgba(0,0,0,0.3);
+        display: flex;
+        align-items: center;
+        gap: 10px;
+        text-decoration: none;
+        font-weight: 700;
+        z-index: 99999;
+        transition: .3s;
+    }
+
+    .floating-whatsapp:hover {
+        transform: scale(1.05);
+    }
+
+    @media(max-width:768px){
+        .hero h1 { font-size:32px; }
+        .hero h2 { font-size:18px; }
+        .navbar { flex-direction:column; gap:15px; text-align: center; }
+        .logo { flex-direction: column; gap: 8px; }
+        .live-clock { width:100%; }
+        .about-container { grid-template-columns: 1fr; }
+        .about-image { height: 250px; }
+        .floating-whatsapp { bottom: 20px; right: 20px; padding: 10px 20px; font-size: 14px; }
+    }
     </style>
 </head>
 <body>
 
-    <!-- HEADER -->
-    <header>
-        <div class="logo-area">Hamza <span>Travels</span></div>
-        
-        <nav class="nav-desktop">
-            <a href="#home">Home</a>
-            <a href="#about">About</a>
-            <a href="#services">Services</a>
-            <a href="#gallery">Gallery</a>
-            <a href="#reviews">Reviews</a>
-            <a href="#faq">FAQ</a>
-            <a href="#contact">Contact</a>
-        </nav>
+<a href="https://wa.me/966594388004" class="floating-whatsapp">
+<i class="fa-brands fa-whatsapp" style="font-size: 22px;"></i>
+<span>Need Help? Chat on WhatsApp</span>
+</a>
 
-        <div class="clock-container" id="riyadhClock">
-            <i class="fa-regular fa-clock"></i> Loading Riyadh Time...
-        </div>
+<div class="top-bar">
+<div class="top-bar-left">
+✈️ Professional Air Ticket & Travel Services
+</div>
+<div class="top-bar-right">
+<a href="tel:+966594388004">🇸🇦 +966 594388004</a>
+<a href="tel:+918931048027">🇮🇳 +91 8931048027</a>
+</div>
+</div>
 
-        <button class="menu-toggle" id="menuToggle">
-            <i class="fa-solid fa-bars"></i>
-        </button>
-    </header>
+<header>
+<div class="navbar">
+<a href="#" class="logo">
+    <img src="logo.jpg" alt="Hamza Travels Logo">
+    <!-- نام کا کلر اب لوگو کے حساب سے سیٹ کر دیا ہے -->
+    <div class="logo-text">HAMZA <span>TRAVELS</span></div>
+</a>
+<div class="live-clock">
+<div class="clock-title">RIYADH TIME</div>
+<div class="clock-time" id="clock">00:00:00</div>
+</div>
+</div>
+</header>
 
-    <!-- MOBILE NAVIGATION MENU -->
-    <nav id="mobileMenu">
-        <span class="close" id="closeMobileMenu" style="color: white; top: 15px; right: 20px;">&times;</span>
-        <h3 style="color: var(--gold); margin-bottom: 30px;">Navigation</h3>
-        <a href="#home">Home</a>
-        <a href="#about">About</a>
-        <a href="#services">Services</a>
-        <a href="#gallery">Gallery</a>
-        <a href="#reviews">Reviews</a>
-        <a href="#faq">FAQ</a>
-        <a href="#contact">Contact</a>
-        <div class="mobile-clock" id="riyadhClockMobile"><i class="fa-regular fa-clock"></i> Riyadh Time</div>
-    </nav>
+<section class="hero">
+<div class="owner-badge">MOHAMMAD MAHATAB ALAM</div>
+<h1>Book Worldwide Air Tickets & <br>Travel Services Comfortably</h1>
+<h2>Your Reliable Flight, Hotel & Documentation Partner</h2>
+<p>
+Best Air Fare Tickets • Indian Passport Renewal in KSA • New Passport Services • Verified Dummy Tickets • Hotel Booking Worldwide • Family Umrah Visa Assistance • VFS Appointment Support
+</p>
+<div class="hero-buttons">
+<a href="https://wa.me/966594388004" class="btn btn-whatsapp">WhatsApp Now</a>
+<a href="tel:+966594388004" class="btn btn-call">Call Now</a>
+</div>
+</section>
 
-    <!-- HERO SECTION -->
-    <section class="hero" id="home">
-        <div class="hero-content">
-            <div class="owner-badge">TRUSTED BY FAMILIES IN SAUDI ARABIA & INDIA</div>
-            <h1>Bring Your Loved Ones From India For Umrah With Confidence</h1>
-            <p>Professional Umrah Visa Assistance for Saudi Residents who want to bring their parents, spouse, children, relatives or loved ones from India. We also provide Air Ticket Booking, Hotel Reservations, Passport Services, Dummy Tickets and VFS Appointment Assistance.</p>
-            
-            <div class="hero-buttons">
-                <a href="https://wa.me/966594388004" class="btn btn-whatsapp" target="_blank">
-                    <i class="fa-brands fa-whatsapp"></i> WhatsApp Now
-                </a>
-                <a href="tel:+966594388004" class="btn btn-call">
-                    <i class="fa-solid fa-phone"></i> Call Now
-                </a>
-            </div>
+<!-- کلر فل اور پروفیشنل سروس باکسز -->
+<section class="feature-strip">
+<div class="feature-box">
+<i class="fa-solid fa-plane icon-blue"></i>
+<h3>Air Tickets</h3>
+<p>Best Fare Guarantee</p>
+</div>
+<div class="feature-box">
+<i class="fa-solid fa-passport icon-green"></i>
+<h3>Passport Services</h3>
+<p>New & Renewal Support</p>
+</div>
+<div class="feature-box">
+<i class="fa-solid fa-ticket icon-gold"></i>
+<h3>Dummy Ticket</h3>
+<p>Quick Verification</p>
+</div>
+<div class="feature-box">
+<i class="fa-solid fa-hotel icon-purple"></i>
+<h3>Hotel Booking</h3>
+<p>Worldwide Options</p>
+</div>
+</section>
 
-            <div class="hero-stats">
-                <div class="stat-box">
-                    <h3>100%</h3>
-                    <span>Personal Guidance</span>
-                </div>
-                <div class="stat-box">
-                    <h3>Fast</h3>
-                    <span>Processing Support</span>
-                </div>
-                <div class="stat-box">
-                    <h3>Trusted</h3>
-                    <span>Service Experience</span>
-                </div>
-            </div>
-        </div>
-    </section>
+<section class="why-choose-us">
+<h2 class="section-title">Why Choose Hamza Travels</h2>
+<div class="premium-grid">
+<div class="premium-card">
+<h3><i class="fa-solid fa-shield-halved"></i> Reliable Travel Solutions</h3>
+<p>We offer transparent and legal flight bookings, passport support, and travel documentation tailored specifically for expatriates.</p>
+</div>
+<div class="premium-card">
+<h3><i class="fa-solid fa-bolt"></i> Fast Ticket & File Processing</h3>
+<p>No waiting in long queues. We guarantee rapid processing for air tickets, dummy routes, and passport renewal files.</p>
+</div>
+<div class="premium-card">
+<h3><i class="fa-solid fa-tags"></i> Competitive Market Rates</h3>
+<p>Avail the absolute best airfares for seasonal travels, affordable worldwide hotel options, and upfront service charges without any hidden pricing.</p>
+</div>
+<div class="premium-card">
+<h3><i class="fa-solid fa-headset"></i> Dual-Country Assistance</h3>
+<p>Active support based in both Saudi Arabia and India to assist your journey or help manage family documentation updates seamlessly.</p>
+</div>
+</div>
+</section>
 
-    <!-- FEATURE STRIP -->
-    <section class="feature-strip">
-        <div class="feature-box fade-up">
-            <i class="fa-solid fa-kaaba"></i>
-            <h3>Family Umrah Assistance</h3>
-            <p>Specialized support for Saudi residents inviting family members from India for Umrah.</p>
-        </div>
-        <div class="feature-box fade-up">
-            <i class="fa-solid fa-passport"></i>
-            <h3>Passport Services</h3>
-            <p>Indian Passport Renewal and New Passport Assistance with complete guidance.</p>
-        </div>
-        <div class="feature-box fade-up">
-            <i class="fa-solid fa-plane-departure"></i>
-            <h3>Travel Booking</h3>
-            <p>Air Tickets, Hotel Reservations and travel planning support.</p>
-        </div>
-        <div class="feature-box fade-up">
-            <i class="fa-solid fa-headset"></i>
-            <h3>Dedicated Support</h3>
-            <p>Fast responses and personalized assistance through WhatsApp.</p>
-        </div>
-    </section>
+<section class="about-section">
+<div class="about-container">
+<div class="about-image">
+<img src="makkah.jpg" alt="Hamza Travels Services">
+</div>
+<div class="about-content">
+<h2>About Hamza Travels</h2>
+<p>Hamza Travels is a trusted travel agency specializing in complete booking and documentation solutions for passengers and expatriates in Saudi Arabia and India. Our mainstream focus centers on providing international and domestic Air Ticket Bookings, Hotel Reservations, Dummy Tickets, Indian Passport Renewal, New Passport Applications, and VFS Appointment support.</p>
+<p>For Indian nationals residing in the Kingdom, we extend end-to-end file preparation for passport renewals, scheduling online submission slots, and managing flight returns efficiently. Additionally, we facilitate legal Umrah Visa support for residents wishing to bring their parents, spouses, and relatives directly from India to share peaceful family stays.</p>
+<p>At Hamza Travels, customer comfort, honesty, and professional delivery define our values. Whether planning a routine holiday visit, looking for budget hotel stays, or handling crucial passport applications, we make travel effortless.</p>
+</div>
+</div>
+</section>
 
-    <!-- TRUST & TRANSPARENCY SECTION -->
-    <section class="trust-section">
-        <div class="trust-container">
-            <div class="trust-left fade-up">
-                <h2>Trust & Transparency</h2>
-                <p>Hamza Travels is committed to providing clear guidance, honest communication and professional travel assistance. We focus on helping customers understand documentation requirements, travel procedures and available service options before moving forward.</p>
-                <ul>
-                    <li><i class="fa-solid fa-circle-check"></i> Clear Communication</li>
-                    <li><i class="fa-solid fa-circle-check"></i> No Hidden Commitments</li>
-                    <li><i class="fa-solid fa-circle-check"></i> Professional Guidance</li>
-                    <li><i class="fa-solid fa-circle-check"></i> Personalized Assistance</li>
-                </ul>
-            </div>
-            <div class="trust-right fade-up">
-                <div class="trust-card">
-                    <h3><i class="fa-solid fa-award"></i> Reliable Support</h3>
-                    <p>Focused on helping families and travelers navigate travel documentation with confidence.</p>
-                </div>
-            </div>
-        </div>
-    </section>
+<section class="services-section">
+<h2 class="section-title">Our Main Services</h2>
+<div class="services-grid">
+<div class="service-card">
+<div class="service-icon">✈️</div>
+<h3>Air Ticket Booking</h3>
+<div class="hindi-title">हवाई टिकट बुकिंग</div>
+<p>India, Saudi Arabia aur globally sabhi major airlines ke confirm air tickets best price par book karein.</p>
+</div>
+<div class="service-card">
+<div class="service-icon">🛂</div>
+<h3>Passport Renewal</h3>
+<div class="hindi-title">पासपोर्ट  रिनुअल</div>
+<p>Saudi Arabia mein rehne wale Indian citizens ke liye error-free Passport Renewal file preparation service.</p>
+</div>
+<div class="service-card">
+<div class="service-icon">🎫</div>
+<h3>Dummy Ticket</h3>
+<div class="hindi-title">डमी टिकट</div>
+<p>Official visa documentation aur travel procedures ke liye quickly verified dummy ticket generate karwayen.</p>
+</div>
+<div class="service-card">
+<div class="service-icon">🏨</div>
+<h3>Hotel Booking</h3>
+<div class="hindi-title">होटल बुकिंग</div>
+<p>Makkah, Madinah samait duniya bhar ke prime cities mein verified budget-friendly hotel reservations.</p>
+</div>
+<div class="service-card">
+<div class="service-icon">🕋</div>
+<h3>Family Umrah Visa</h3>
+<div class="hindi-title">फैमिली उमरा वीज़ा सहायता</div>
+<p>Saudi residents ke parents, spouse aur relatives ko India se bulane ke liye smooth visa assistance.</p>
+</div>
+<div class="service-card">
+<div class="service-icon">📘</div>
+<h3>Indian New Passport</h3>
+<div class="hindi-title">नया भारतीय पासपोर्ट</div>
+<p>Naye Indian passport application process ke liye systematic guidance aur accurate documentation support.</p>
+</div>
+<div class="service-card">
+<div class="service-icon">📅</div>
+<h3>VFS Appointment</h3>
+<div class="hindi-title">वीएफएस अपॉइंटमेंट</div>
+<p>VFS Global submission slots ki easy booking aur documentation cross-verification facility.</p>
+</div>
+<div class="service-card">
+<div class="service-icon">🌍</div>
+<h3>Travel Guidance</h3>
+<div class="hindi-title">यात्रा मार्गदर्शन</div>
+<p>International routes, baggage policies aur travel safety standard guidelines ki pre-flight complete check.</p>
+</div>
+</div>
+</section>
 
-    <!-- WHY CHOOSE US SECTION -->
-    <section class="why-choose-us">
-        <h2 class="section-title">Why Families Choose Hamza Travels</h2>
-        <div class="premium-grid">
-            <div class="premium-card fade-up">
-                <h3><i class="fa-solid fa-shield-halved"></i> Trusted & Transparent</h3>
-                <p>We believe in honest communication, clear guidance and transparent service without hidden surprises.</p>
-            </div>
-            <div class="premium-card fade-up">
-                <h3><i class="fa-solid fa-bolt"></i> Fast Response</h3>
-                <p>Quick assistance for Umrah Visa support, ticket booking, passport services and appointments.</p>
-            </div>
-            <div class="premium-card fade-up">
-                <h3><i class="fa-solid fa-user-group"></i> Family Focused</h3>
-                <p>Helping Saudi residents bring parents, spouses, children and relatives from India for Umrah.</p>
-            </div>
-            <div class="premium-card fade-up">
-                <h3><i class="fa-solid fa-headset"></i> Personal Assistance</h3>
-                <p>Every case receives individual attention with direct communication and guidance.</p>
-            </div>
-            <div class="premium-card fade-up">
-                <h3><i class="fa-solid fa-passport"></i> Documentation Support</h3>
-                <p>Complete assistance for passport-related requirements and travel documentation.</p>
-            </div>
-            <div class="premium-card fade-up">
-                <h3><i class="fa-solid fa-star"></i> Customer Satisfaction</h3>
-                <p>Our goal is to provide reliable service that builds long-term trust and confidence.</p>
-            </div>
-        </div>
-    </section>
-
-    <!-- SERVICES SECTION -->
-    <section class="services-section" id="services">
-        <h2 class="section-title">Our Professional Services</h2>
-        <p class="section-subtitle">Reliable travel assistance and documentation support for families, travelers and Indian expatriates in Saudi Arabia.</p>
-        
-        <div class="services-grid">
-            <!-- SERVICE 1 -->
-            <div class="service-card fade-up">
-                <div class="service-icon">🕋</div>
-                <h3>Umrah Visa Assistance</h3>
-                <p>Professional guidance for Saudi residents who want to bring family members, relatives or loved ones from India for Umrah.</p>
-                <button class="learn-btn" onclick="openModal('umrahModal')">Learn More</button>
-            </div>
-            <!-- SERVICE 2 -->
-            <div class="service-card fade-up">
-                <div class="service-icon">✈️</div>
-                <h3>Air Ticket Booking</h3>
-                <p>Domestic and international flight reservations with competitive pricing and travel support.</p>
-                <button class="learn-btn" onclick="openModal('ticketModal')">Learn More</button>
-            </div>
-            <!-- SERVICE 3 -->
-            <div class="service-card fade-up">
-                <div class="service-icon">🏨</div>
-                <h3>Hotel Booking</h3>
-                <p>Hotel reservations in Makkah, Madinah and major destinations worldwide.</p>
-                <button class="learn-btn" onclick="openModal('hotelModal')">Learn More</button>
-            </div>
-            <!-- SERVICE 4 -->
-            <div class="service-card fade-up">
-                <div class="service-icon">🛂</div>
-                <h3>Passport Renewal</h3>
-                <p>Complete assistance for Indian passport renewal procedures in Saudi Arabia.</p>
-                <button class="learn-btn" onclick="openModal('renewalModal')">Learn More</button>
-            </div>
-            <!-- SERVICE 5 -->
-            <div class="service-card fade-up">
-                <div class="service-icon">📘</div>
-                <h3>New Passport Assistance</h3>
-                <p>Professional guidance for new passport applications and documentation.</p>
-                <button class="learn-btn" onclick="openModal('passportModal')">Learn More</button>
-            </div>
-            <!-- SERVICE 6 -->
-            <div class="service-card fade-up">
-                <div class="service-icon">🎫</div>
-                <h3>Dummy Ticket</h3>
-                <p>Travel itinerary and booking support for documentation requirements.</p>
-                <button class="learn-btn" onclick="openModal('dummyModal')">Learn More</button>
-            </div>
-            <!-- SERVICE 7 -->
-            <div class="service-card fade-up">
-                <div class="service-icon">📅</div>
-                <h3>VFS Appointment</h3>
-                <p>Appointment booking guidance and document preparation support.</p>
-                <button class="learn-btn" onclick="openModal('vfsModal')">Learn More</button>
-            </div>
-            <!-- SERVICE 8 -->
-            <div class="service-card fade-up">
-                <div class="service-icon">🌍</div>
-                <h3>Travel Guidance</h3>
-                <p>Documentation support and personalized travel assistance.</p>
-                <button class="learn-btn" onclick="openModal('travelModal')">Learn More</button>
-            </div>
-        </div>
-    </section>
-
-    <!-- SACRED JOURNEY GALLERY -->
-    <section class="gallery-section" id="gallery">
-        <h2 class="section-title">Sacred Journey Gallery</h2>
-        <p class="section-subtitle">A glimpse of the holy destinations that inspire millions of pilgrims every year.</p>
-        <div class="gallery-grid">
-            <div class="gallery-card fade-up">
-                <img src="Kaaba.jpg" alt="Holy Kaaba" loading="lazy">
-                <div class="gallery-overlay">
-                    <h3>Holy Kaaba</h3>
-                    <p>Makkah Al Mukarramah</p>
-                </div>
-            </div>
-            <div class="gallery-card fade-up">
-                <img src="masjidnabawi.jpg" alt="Masjid Al Nabawi" loading="lazy">
-                <div class="gallery-overlay">
-                    <h3>Masjid Al Nabawi</h3>
-                    <p>Madinah Munawwarah</p>
-                </div>
-            </div>
-            <div class="gallery-card fade-up">
-                <img src="umrah.jpg" alt="Umrah Pilgrims" loading="lazy">
-                <div class="gallery-overlay">
-                    <h3>Umrah Pilgrims</h3>
-                    <p>Spiritual Journey</p>
-                </div>
-            </div>
-            <div class="gallery-card fade-up">
-                <img src="makkah.jpg" alt="Clock Tower" loading="lazy">
-                <div class="gallery-overlay">
-                    <h3>Clock Tower</h3>
-                    <p>Makkah City</p>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- REVIEWS SECTION -->
-    <section class="reviews-section" id="reviews">
-        <h2 class="section-title">Verified Customer Reviews</h2>
-        <p class="section-subtitle">Feedback from customers who trusted Hamza Travels.</p>
-        <div class="reviews-grid">
-            <div class="review-card fade-up">
-                <div class="review-rating">★★★★★</div>
-                <p>Excellent Umrah assistance. Everything was explained clearly and the process was smooth.</p>
-                <div class="review-footer">
-                    <span class="verified"><i class="fa-solid fa-circle-check"></i> Verified Review</span>
-                    <span>Saudi Arabia</span>
-                </div>
-            </div>
-            <div class="review-card fade-up">
-                <div class="review-rating">★★★★☆</div>
-                <p>Professional passport renewal support and excellent communication.</p>
-                <div class="review-footer">
-                    <span class="verified"><i class="fa-solid fa-circle-check"></i> Verified Review</span>
-                    <span>India</span>
-                </div>
-            </div>
-            <div class="review-card fade-up">
-                <div class="review-rating">★★★★½</div>
-                <p>Fast response and helpful travel guidance throughout the process.</p>
-                <div class="review-footer">
-                    <span class="verified"><i class="fa-solid fa-circle-check"></i> Verified Review</span>
-                    <span>Saudi Arabia</span>
-                </div>
-            </div>
-            <div class="review-card fade-up">
-                <div class="review-rating">★★★★★</div>
-                <p>Reliable service with transparent communication and genuine support.</p>
-                <div class="review-footer">
-                    <span class="verified"><i class="fa-solid fa-circle-check"></i> Verified Review</span>
-                    <span>India</span>
-                </div>
-            </div>
-            <div class="review-card fade-up">
-                <div class="review-rating">★★★★☆</div>
-                <p>Helpful assistance for documentation and travel planning.</p>
-                <div class="review-footer">
-                    <span class="verified"><i class="fa-solid fa-circle-check"></i> Verified Review</span>
-                    <span>Saudi Arabia</span>
-                </div>
-            </div>
-            <div class="review-card fade-up">
-                <div class="review-rating">★★★★★</div>
-                <p>Very satisfied with the service and guidance received.</p>
-                <div class="review-footer">
-                    <span class="verified"><i class="fa-solid fa-circle-check"></i> Verified Review</span>
-                    <span>India</span>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- TRUST BADGES -->
-    <section class="trust-badges">
-        <div class="badge fade-up">
-            <i class="fa-solid fa-shield-halved"></i>
-            <h3>Trusted Guidance</h3>
-        </div>
-        <div class="badge fade-up">
-            <i class="fa-solid fa-headset"></i>
-            <h3>Personal Support</h3>
-        </div>
-        <div class="badge fade-up">
-            <i class="fa-solid fa-passport"></i>
-            <h3>Documentation Help</h3>
-        </div>
-        <div class="badge fade-up">
-            <i class="fa-solid fa-kaaba"></i>
-            <h3>Umrah Assistance</h3>
-        </div>
-    </section>
-
-    <!-- ABOUT HAMZA TRAVELS -->
-    <section class="about-section" id="about">
-        <div class="about-content fade-up">
-            <h2>About Hamza Travels</h2>
-            <p>Hamza Travels is a trusted travel assistance provider serving customers in Saudi Arabia and India. We specialize in helping Saudi residents arrange Umrah-related travel support for family members and loved ones travelling from India.</p>
-            <p>Our services include Air Ticket Booking, Hotel Reservations, Indian Passport Renewal Assistance, New Passport Guidance, Dummy Ticket Support and VFS Appointment Assistance.</p>
-            <p>We are committed to delivering clear communication, reliable guidance and personalized support throughout every stage of the process.</p>
-        </div>
-    </section>
-
-    <!-- FAQ SECTION -->
-    <section class="faq-section" id="faq">
-        <div class="faq-container">
-            <h2 class="section-title">Frequently Asked Questions</h2>
-            <p class="section-subtitle">Answers to common questions about our travel and documentation assistance services.</p>
-            
-            <div class="faq-container">
-                <div class="faq-item fade-up">
-                    <button class="faq-question">
-                        Can Saudi residents bring family members from India for Umrah? <span>+</span>
-                    </button>
-                    <div class="faq-answer">
-                        <p>Yes. We provide professional guidance and assistance regarding documentation and travel requirements for eligible family members travelling from India.</p>
-                    </div>
-                </div>
-                <div class="faq-item fade-up">
-                    <button class="faq-question">
-                        Do you assist with Indian Passport Renewal? <span>+</span>
-                    </button>
-                    <div class="faq-answer">
-                        <p>Yes. We provide complete guidance for Indian Passport Renewal and related documentation requirements.</p>
-                    </div>
-                </div>
-                <div class="faq-item fade-up">
-                    <button class="faq-question">
-                        Do you provide hotel bookings in Makkah and Madinah? <span>+</span>
-                    </button>
-                    <div class="faq-answer">
-                        <p>Yes. We assist with hotel reservations in Makkah, Madinah and other destinations.</p>
-                    </div>
-                </div>
-                <div class="faq-item fade-up">
-                    <button class="faq-question">
-                        Can I contact you through WhatsApp? <span>+</span>
-                    </button>
-                    <div class="faq-answer">
-                        <p>Absolutely. WhatsApp is the fastest way to reach us for assistance and enquiries.</p>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- HIGH-CONVERSION WHATSAPP CTA -->
-    <section class="whatsapp-section">
-        <div class="whatsapp-box fade-up">
-            <h2>Need Quick Assistance?</h2>
-            <p>Contact Hamza Travels directly on WhatsApp for fast support regarding Umrah Visa Assistance, Air Tickets, Hotels, Passport Services and VFS Appointments.</p>
-            <a href="https://wa.me/966594388004" class="whatsapp-main-btn" target="_blank">
-                <i class="fa-brands fa-whatsapp"></i> Chat On WhatsApp
-            </a>
-        </div>
-    </section>
-
-    <!-- CONTACT SECTION -->
-    <section class="contact-section" id="contact">
-        <h2 class="section-title">Contact Hamza Travels</h2>
-        <div class="contact-grid">
-            <div class="contact-card fade-up">
-                <i class="fa-solid fa-phone"></i>
-                <h3>Call Us</h3>
-                <p>+966 594388004</p>
-            </div>
-            <div class="contact-card fade-up">
-                <i class="fa-brands fa-whatsapp"></i>
-                <h3>WhatsApp</h3>
-                <p>Available for quick support</p>
-            </div>
-            <div class="contact-card fade-up">
-                <i class="fa-solid fa-location-dot"></i>
-                <h3>Location</h3>
-                <p>Riyadh, Saudi Arabia</p>
-            </div>
-        </div>
-    </section>
-
-    <!-- LUXURY MODAL SYSTEM (Placed before footer) -->
-    <!-- 1. Umrah Modal -->
-    <div id="umrahModal" class="service-modal">
-        <div class="modal-content">
-            <span class="close" onclick="closeModal('umrahModal')">&times;</span>
-            <h2>Umrah Visa Assistance</h2>
-            <p>Specialized assistance for Saudi residents who wish to bring family members, parents, spouses, children and relatives from India for Umrah.</p>
-            <ul>
-                <li>Document Guidance</li>
-                <li>Application Assistance</li>
-                <li>Travel Planning Support</li>
-                <li>Hotel Coordination</li>
-            </ul>
-            <a href="https://wa.me/966594388004" class="modal-whatsapp" target="_blank"><i class="fa-brands fa-whatsapp"></i> WhatsApp Assistance</a>
-        </div>
-    </div>
-
-    <!-- 2. Ticket Modal -->
-    <div id="ticketModal" class="service-modal">
-        <div class="modal-content">
-            <span class="close" onclick="closeModal('ticketModal')">&times;</span>
-            <h2>Air Ticket Booking</h2>
-            <p>Flight reservations with travel guidance, route assistance and booking support for domestic and international flights.</p>
-            <ul>
-                <li>Best Route Selection</li>
-                <li>Competitive Fares</li>
-                <li>Instant Booking Support</li>
-            </ul>
-            <a href="https://wa.me/966594388004" class="modal-whatsapp" target="_blank"><i class="fa-brands fa-whatsapp"></i> WhatsApp Assistance</a>
-        </div>
-    </div>
-
-    <!-- 3. Hotel Modal -->
-    <div id="hotelModal" class="service-modal">
-        <div class="modal-content">
-            <span class="close" onclick="closeModal('hotelModal')">&times;</span>
-            <h2>Hotel Booking</h2>
-            <p>Hotel reservation assistance in Makkah, Madinah and major holiday destinations at reasonable rates.</p>
-            <ul>
-                <li>Near Haram Accommodations</li>
-                <li>Budget & Luxury Options</li>
-                <li>Family Friendly Stays</li>
-            </ul>
-            <a href="https://wa.me/966594388004" class="modal-whatsapp" target="_blank"><i class="fa-brands fa-whatsapp"></i> WhatsApp Assistance</a>
-        </div>
-    </div>
-
-    <!-- 4. Renewal Modal -->
-    <div id="renewalModal" class="service-modal">
-        <div class="modal-content">
-            <span class="close" onclick="closeModal('renewalModal')">&times;</span>
-            <h2>Passport Renewal</h2>
-            <p>Complete assistance for Indian passport renewal procedures, online application forms, and documentation guidance for residents in Saudi Arabia.</p>
-            <ul>
-                <li>Form Filling Support</li>
-                <li>Document Verification Check</li>
-                <li>Process Guidance</li>
-            </ul>
-            <a href="https://wa.me/966594388004" class="modal-whatsapp" target="_blank"><i class="fa-brands fa-whatsapp"></i> WhatsApp Assistance</a>
-        </div>
-    </div>
-
-    <!-- 5. New Passport Modal -->
-    <div id="passportModal" class="service-modal">
-        <div class="modal-content">
-            <span class="close" onclick="closeModal('passportModal')">&times;</span>
-            <h2>New Passport Assistance</h2>
-            <p>Professional guidance for new Indian passport applications, baby passports, and legal documentation requirements.</p>
-            <ul>
-                <li>Newborn Passport Support</li>
-                <li>Fresh Application Process</li>
-                <li>Required Certificate Check</li>
-            </ul>
-            <a href="https://wa.me/966594388004" class="modal-whatsapp" target="_blank"><i class="fa-brands fa-whatsapp"></i> WhatsApp Assistance</a>
-        </div>
-    </div>
-
-    <!-- 6. Dummy Ticket Modal -->
-    <div id="dummyModal" class="service-modal">
-        <div class="modal-content">
-            <span class="close" onclick="closeModal('dummyModal')">&times;</span>
-            <h2>Dummy Ticket Assistance</h2>
-            <p>Get a valid flight itinerary and dummy tickets required for visa applications, passport procedures, or other official travel documentation.</p>
-            <ul>
-                <li>Visa Application Support</li>
-                <li>Verifiable Itineraries</li>
-                <li>Fast Delivery</li>
-            </ul>
-            <a href="https://wa.me/966594388004" class="modal-whatsapp" target="_blank"><i class="fa-brands fa-whatsapp"></i> WhatsApp Assistance</a>
-        </div>
-    </div>
-
-    <!-- 7. VFS Appointment Modal -->
-    <div id="vfsModal" class="service-modal">
-        <div class="modal-content">
-            <span class="close" onclick="closeModal('vfsModal')">&times;</span>
-            <h2>VFS Appointment Help</h2>
-            <p>Appointment booking guidance, date scheduling support, and complete file preparation for VFS global centers.</p>
-            <ul>
-                <li>Slot Availability Guidance</li>
-                <li>Appointment Scheduling</li>
-                <li>Document Assembly Support</li>
-            </ul>
-            <a href="https://wa.me/966594388004" class="modal-whatsapp" target="_blank"><i class="fa-brands fa-whatsapp"></i> WhatsApp Assistance</a>
-        </div>
-    </div>
-
-    <!-- 8. Travel Guidance Modal -->
-    <div id="travelModal" class="service-modal">
-        <div class="modal-content">
-            <span class="close" onclick="closeModal('travelModal')">&times;</span>
-            <h2>Personal Travel Guidance</h2>
-            <p>Custom travel consultation and paperwork assistance to ensure a hassle-free journey between Saudi Arabia and India.</p>
-            <ul>
-                <li>Customized Itineraries</li>
-                <li>Travel Advisory Updates</li>
-                <li>24/7 WhatsApp Support Chat</li>
-            </ul>
-            <a href="https://wa.me/966594388004" class="modal-whatsapp" target="_blank"><i class="fa-brands fa-whatsapp"></i> WhatsApp Assistance</a>
-        </div>
-    </div>
-
-    <!-- FLOATING & BACK TO TOP WIDGETS -->
-    <a href="https://wa.me/966594388004" class="floating-whatsapp" target="_blank">
-        <i class="fa-brands fa-whatsapp"></i>
+<!-- کلک ایبل اور پرفیکٹ کانٹیکٹ سیکشن -->
+<section class="contact-section">
+<h2 class="section-title">Contact Hamza Travels</h2>
+<div class="contact-grid">
+    <!-- کال کا ورکنگ لنک -->
+    <a href="tel:+966594388004" class="contact-card hover-call">
+        <i class="fa-solid fa-phone" style="color: var(--primary);"></i>
+        <h3>Call Us</h3>
+        <p>+966 594388004</p>
+    </a>
+    
+    <!-- واٹس ایپ کا اصلی سبز رنگ اور ورکنگ لنک -->
+    <a href="https://wa.me/966594388004" class="contact-card hover-wa">
+        <i class="fa-brands fa-whatsapp" style="color: #25D366;"></i>
+        <h3>WhatsApp</h3>
+        <p>Available for quick support</p>
     </a>
 
-    <button id="backToTop">
-        <i class="fa-solid fa-arrow-up"></i>
-    </button>
+    <!-- لوکیشن -->
+    <div class="contact-card hover-loc">
+        <i class="fa-solid fa-location-dot" style="color: #EF4444;"></i>
+        <h3>Location</h3>
+        <p>Riyadh, Saudi Arabia</p>
+    </div>
+</div>
+</section>
 
-    <!-- PREMIUM FOOTER -->
-    <footer class="footer">
-        <div class="footer-container">
-            <div class="footer-about">
-                <h3>Hamza Travels</h3>
-                <p>Professional travel assistance services for customers in Saudi Arabia and India. Focused on family trust and reliability.</p>
-            </div>
-            <div class="footer-links">
-                <h4>Services</h4>
-                <ul>
-                    <li>Umrah Visa Assistance</li>
-                    <li>Air Ticket Booking</li>
-                    <li>Hotel Booking</li>
-                    <li>Passport Renewal</li>
-                    <li>New Passport Assistance</li>
-                    <li>VFS Appointment</li>
-                </ul>
-            </div>
-            <div class="footer-contact">
-                <h4>Contact</h4>
-                <p><i class="fa-solid fa-phone" style="color: var(--gold); margin-right: 5px;"></i> +966 594388004</p>
-                <p><i class="fa-solid fa-location-dot" style="color: var(--gold); margin-right: 5px;"></i> Riyadh, Saudi Arabia</p>
-            </div>
-        </div>
-        <div class="copyright">
-            © 2026 Hamza Travels. All Rights Reserved.
-        </div>
-    </footer>
+<footer>
+<div class="footer-container">
+<div class="footer-box">
+<h3>Hamza Travels</h3>
+<p>Providing trusted and professional travel solutions for international flights, passport documentation, and custom travel arrangements. Your efficiency is our commitment.</p>
+</div>
+<div class="footer-box">
+<h3>Our Main Focus</h3>
+<ul class="footer-links">
+<li><i class="fa-solid fa-chevron-right"></i> Air Ticket Booking</li>
+<li><i class="fa-solid fa-chevron-right"></i> Indian Passport Renewal</li>
+<li><i class="fa-solid fa-chevron-right"></i> Dummy Ticket</li>
+<li><i class="fa-solid fa-chevron-right"></i> Hotel Booking Worldwide</li>
+<li><i class="fa-solid fa-chevron-right"></i> New Indian Passport</li>
+<li><i class="fa-solid fa-chevron-right"></i> Family Umrah Visa Assistance</li>
+<li><i class="fa-solid fa-chevron-right"></i> VFS Appointment Support</li>
+</ul>
+</div>
+<div class="footer-box">
+<h3>Contact Details</h3>
+<ul class="footer-contact">
+<li><i class="fa-solid fa-location-dot"></i> Riyadh, Saudi Arabia</li>
+<li><i class="fa-solid fa-phone"></i> KSA: +966 594388004</li>
+<li><i class="fa-solid fa-phone"></i> India: +91 8931048027</li>
+<li><i class="fa-solid fa-envelope"></i> info.hamzatravels@gmail.com</li>
+</ul>
+</div>
+</div>
+<div class="footer-bottom">
+&copy; 2026 Hamza Travels. All Rights Reserved. Built with Pride.
+</div>
+</footer>
 
-    <!-- INTERACTIVE JAVASCRIPT -->
-    <script>
-        // 1. RIYADH LIVE CLOCK
-        function updateClock(){
-            const options = {
-                timeZone: 'Asia/Riyadh',
-                hour: '2-digit',
-                minute: '2-digit',
-                second: '2-digit'
-            };
-            const time = new Date().toLocaleTimeString('en-US', options);
-            const clockText = '<i class="fa-regular fa-clock"></i> ' + time;
-            
-            if(document.getElementById('riyadhClock')) {
-                document.getElementById('riyadhClock').innerHTML = clockText;
-            }
-            if(document.getElementById('riyadhClockMobile')) {
-                document.getElementById('riyadhClockMobile').innerHTML = clockText;
-            }
-        }
-        setInterval(updateClock, 1000);
-        updateClock();
+<script>
+function updateClock(){
+    const now = new Date();
+    const options = {
+        timeZone:'Asia/Riyadh',
+        hour:'2-digit',
+        minute:'2-digit',
+        second:'2-digit',
+        hour12: false
+    };
+    document.getElementById("clock").innerHTML = now.toLocaleTimeString('en-US', options);
+}
+setInterval(updateClock, 1000);
+updateClock();
+</script>
 
-        // 2. LUXURY MODAL SYSTEM
-        function openModal(id){
-            document.getElementById(id).style.display = "block";
-            document.body.style.overflow = "hidden"; // Prevent background scroll
-        }
-
-        function closeModal(id){
-            document.getElementById(id).style.display = "none";
-            document.body.style.overflow = "auto"; // Restore scroll
-        }
-
-        window.onclick = function(event){
-            const modals = document.querySelectorAll(".service-modal");
-            modals.forEach(modal => {
-                if(event.target === modal){
-                    modal.style.display = "none";
-                    document.body.style.overflow = "auto";
-                }
-            });
-        }
-
-        // 3. MOBILE MENU TOGGLE
-        const menuToggle = document.getElementById('menuToggle');
-        const mobileMenu = document.getElementById('mobileMenu');
-        const closeMobileMenu = document.getElementById('closeMobileMenu');
-
-        if(menuToggle && mobileMenu) {
-            menuToggle.addEventListener('click', () => {
-                mobileMenu.classList.add('active');
-            });
-        }
-
-        if(closeMobileMenu && mobileMenu) {
-            closeMobileMenu.addEventListener('click', () => {
-                mobileMenu.classList.remove('active');
-            });
-        }
-
-        // Close mobile menu when clicking a link
-        document.querySelectorAll('#mobileMenu a').forEach(link => {
-            link.addEventListener('click', () => {
-                mobileMenu.classList.remove('active');
-            });
-        });
-
-        // 4. ACCORDION FAQ SYSTEM
-        document.querySelectorAll('.faq-question').forEach(btn => {
-            btn.addEventListener('click', () => {
-                const answer = btn.nextElementSibling;
-                const span = btn.querySelector('span');
-                
-                if(answer.style.display === "block"){
-                    answer.style.display = "none";
-                    span.textContent = "+";
-                } else {
-                    answer.style.display = "block";
-                    span.textContent = "-";
-                }
-            });
-        });
-
-        // 5. BACK TO TOP BUTTON
-        const topBtn = document.getElementById('backToTop');
-        window.addEventListener('scroll', () => {
-            if(window.scrollY > 300){
-                topBtn.style.display = 'block';
-            } else {
-                topBtn.style.display = 'none';
-            }
-        });
-
-        if(topBtn) {
-            topBtn.addEventListener('click', () => {
-                window.scrollTo({
-                    top: 0,
-                    behavior: 'smooth'
-                });
-            });
-        }
-
-        // 6. SCROLL ANIMATION (FADE-UP) WITH INTERSECTION OBSERVER
-        const observer = new IntersectionObserver(entries => {
-            entries.forEach(entry => {
-                if(entry.isIntersecting){
-                    entry.target.classList.add('show');
-                }
-            });
-        }, { threshold: 0.1 });
-
-        document.querySelectorAll('.fade-up').forEach(el => {
-            observer.observe(el);
-        });
-    </script>
 </body>
 </html>
