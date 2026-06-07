@@ -129,7 +129,7 @@
     color:var(--gold);
     }
 
-    /* LUXURY DIGITAL CLOCK UPGRADE */
+    /* LUXURY DIGITAL CLOCK */
     .live-clock{
     background: #030d1c;
     padding: 8px 20px;
@@ -505,7 +505,7 @@
     .modal-container {
     background: var(--white);
     width: 100%;
-    max-width: 520px;
+    max-width: 550px; /* Upgraded Box Size */
     border-radius: 20px;
     box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.25);
     border-top: 6px solid var(--gold);
@@ -537,7 +537,7 @@
     font-weight: 800;
     }
 
-    .modal-close {
+    .close-modal-btn {
     position: absolute;
     top: 20px;
     right: 20px;
@@ -551,10 +551,12 @@
     align-items: center;
     justify-content: center;
     color: #64748b;
+    font-size: 16px;
+    line-height: 1;
     transition: all 0.2s;
     }
 
-    .modal-close:hover {
+    .close-modal-btn:hover {
     background: #e2e8f0;
     color: var(--dark);
     }
@@ -970,71 +972,71 @@ Umrah Visa Processing • Air Ticket Booking • Dummy Ticket • Indian Passpor
 <section class="services-section">
 <h2 class="section-title">Our Services</h2>
 <div class="services-grid">
-<div class="service-card" onclick="openServiceModal('umrah')">
+<div class="service-card" onclick="openModal('umrah')">
 <div class="service-icon">🕋</div>
 <h3>Umrah Visa</h3>
 <div class="hindi-title">उमरा वीज़ा सेवा</div>
-<p>Fast Umrah Visa processing, hotel booking, transport arrangement aur ziyarat services.</p>
+<p>Professional visa assistance with fast processing and affordable rates for inviting family and relatives to Saudi Arabia.</p>
 <button class="btn-learn-more">Learn More <i class="fa-solid fa-arrow-right"></i></button>
 </div>
-<div class="service-card" onclick="openServiceModal('tickets')">
+<div class="service-card" onclick="openModal('tickets')">
 <div class="service-icon">✈️</div>
 <h3>Air Ticket Booking</h3>
 <div class="hindi-title">हवाई टिकट बुकिंग</div>
-<p>India, Saudi Arabia aur duniya bhar ki airlines ke confirmed tickets best rates par.</p>
+<p>Flight booking service with competitive fares and quick confirmation.</p>
 <button class="btn-learn-more">Learn More <i class="fa-solid fa-arrow-right"></i></button>
 </div>
-<div class="service-card" onclick="openServiceModal('dummy')">
+<div class="service-card" onclick="openModal('dummy')">
 <div class="service-icon">🎫</div>
 <h3>Dummy Ticket</h3>
 <div class="hindi-title">डमी टिकट</div>
-<p>Visa application aur travel requirements ke liye verified dummy ticket service.</p>
+<p>PNR-based reservation for visa and travel requirements.</p>
 <button class="btn-learn-more">Learn More <i class="fa-solid fa-arrow-right"></i></button>
 </div>
-<div class="service-card" onclick="openServiceModal('hotel')">
+<div class="service-card" onclick="openModal('hotel')">
 <div class="service-icon">🏨</div>
 <h3>Hotel Booking</h3>
 <div class="hindi-title">होटल बुकिंग</div>
-<p>Makkah, Madinah aur worldwide hotel reservation lowest rates par.</p>
+<p>Easy hotel reservations at affordable rates.</p>
 <button class="btn-learn-more">Learn More <i class="fa-solid fa-arrow-right"></i></button>
 </div>
-<div class="service-card" onclick="openServiceModal('new_passport')">
+<div class="service-card" onclick="openModal('new_passport')">
 <div class="service-icon">📘</div>
 <h3>Indian New Passport</h3>
 <div class="hindi-title">नया भारतीय पासपोर्ट</div>
-<p>New passport application ke liye guidance aur documentation support.</p>
+<p>Guidance and support for new Indian passport applications.</p>
 <button class="btn-learn-more">Learn More <i class="fa-solid fa-arrow-right"></i></button>
 </div>
-<div class="service-card" onclick="openServiceModal('renewal')">
+<div class="service-card" onclick="openModal('renewal')">
 <div class="service-icon">🛂</div>
 <h3>Passport Renewal</h3>
 <div class="hindi-title">पासपोर्ट  रिनुअल</div>
-<p>Saudi Arabia mein Indian Passport Renewal ke liye complete file preparation service.</p>
+<p>Complete assistance for Indian passport renewal in Saudi Arabia.</p>
 <button class="btn-learn-more">Learn More <i class="fa-solid fa-arrow-right"></i></button>
 </div>
-<div class="service-card" onclick="openServiceModal('vfs')">
+<div class="service-card" onclick="openModal('vfs')">
 <div class="service-icon">📅</div>
 <h3>VFS Appointment</h3>
 <div class="hindi-title">वीएफएस अपॉइंटमेंट</div>
-<p>VFS Global appointment booking aur document submission guidance.</p>
+<p>Support for appointment booking and document preparation.</p>
 <button class="btn-learn-more">Learn More <i class="fa-solid fa-arrow-right"></i></button>
 </div>
-<div class="service-card" onclick="openServiceModal('guidance')">
+<div class="service-card" onclick="openModal('guidance')">
 <div class="service-icon">🌍</div>
 <h3>Travel Guidance</h3>
 <div class="hindi-title">यात्रा मार्गदर्शन</div>
-<p>Travel documents, visa requirements aur journey planning mein professional assistance.</p>
+<p>Helpful information and assistance for travel-related requirements.</p>
 <button class="btn-learn-more">Learn More <i class="fa-solid fa-arrow-right"></i></button>
 </div>
 </div>
 </section>
 
-<div class="modal-overlay" id="serviceModal" onclick="closeServiceModal(event)">
-    <div class="modal-container">
-        <button class="modal-close" onclick="closeServiceModal(force=true)"><i class="fa-solid fa-xmark"></i></button>
+<div class="modal-overlay" id="popupModal" onclick="handleOutsideClick(event)">
+    <div class="modal-container" onclick="event.stopPropagation()">
+        <button class="close-modal-btn" onclick="closeModal()"><i class="fa-solid fa-xmark"></i></button>
         <div class="modal-header">
-            <div class="modal-icon" id="modalIcon">🕋</div>
-            <h3 id="modalTitle">Service Details</h3>
+            <span class="modal-icon" id="modalIcon">🕋</span>
+            <h3 id="modalTitle">Service Title</h3>
         </div>
         <div class="modal-body">
             <ul class="benefit-list" id="modalBenefits">
@@ -1043,7 +1045,7 @@ Umrah Visa Processing • Air Ticket Booking • Dummy Ticket • Indian Passpor
         </div>
         <div class="modal-footer">
             <a href="https://wa.me/966594388004" class="modal-btn-whatsapp" target="_blank">
-                <i class="fa-brands fa-whatsapp"></i> Inquire via WhatsApp
+                <i class="fa-brands fa-whatsapp"></i> Instant Inquiry via WhatsApp
             </a>
         </div>
     </div>
@@ -1187,126 +1189,137 @@ function updateClock(){
 setInterval(updateClock, 1000);
 updateClock();
 
-// PREMIUM POPUP DATA (Pure Professional English)
-const serviceData = {
+// 100% CLEAN BUSINESS ENGLISH OBJECT (ROMAN URDU REMOVED)
+const popupDetails = {
     umrah: {
         icon: "🕋",
         title: "Umrah Visa Services",
         benefits: [
-            "Fast-track official tourist & electronic Umrah visa issuance.",
-            "Tailored premium travel itineraries featuring reliable transport setups.",
-            "Complete end-to-end holy Ziyarat arrangements in Makkah & Madinah.",
-            "Full compliance checking for effortless immigration clearance."
+            "Express electronic Umrah visa processing with fast administrative setup.",
+            "Complete dynamic hotel allocation arrangements across Holy locations.",
+            "Reliable family transportation tracking paths inside Makkah and Madinah.",
+            "Meticulous data checks safeguarding hassle-free airport immigration clearance."
         ]
     },
     tickets: {
         icon: "✈️",
         title: "Air Ticket Booking",
         benefits: [
-            "Guaranteed direct access to lowest premium market fares.",
-            "Instant verified reservations with elite regional and global airlines.",
-            "Flexible re-issuance, swift schedule adjustments, and cancellation care.",
-            "Dedicated booking paths for group tours and individual family travels."
+            "Affordable flight options matching your exact individual travel targets.",
+            "Instant verified reservations generated directly across major global airlines.",
+            "Professional handling of booking re-issuances and itinerary cancellations.",
+            "Custom group booking tracking tools specialized for traveling families."
         ]
     },
     dummy: {
         icon: "🎫",
         title: "Dummy Ticket Service",
         benefits: [
-            "Perfectly suited for worldwide visa processing arrangements.",
-            "Widely accepted by major international embassies and security checkpoints.",
-            "Fastest dynamic digital turnaround times on short notice flights.",
-            "Fully managed documentation aligned with target aviation rules."
+            "Verifiable onward flight reservations ideal for embassy visa rules.",
+            "Fully accepted across global immigration windows and processing targets.",
+            "Swift document generation aligned safely with strict submission timelines.",
+            "Authentic flight paths synchronized with real-time operational database systems."
         ],
-        showNotice: true
+        isDummy: true
     },
     hotel: {
         icon: "🏨",
         title: "Hotel Booking",
         benefits: [
-            "Exclusive handpicked selections near Haram and Masjid Al Nabawi.",
-            "Premium budget-friendly options tailored to personal travel demands.",
-            "Immediate confirmation links provided directly upon allocation request.",
-            "Transparent upfront seasonal pricing structures with zero hidden fees."
+            "Selected room options within close walking range of Holy locations.",
+            "Flexible pricing variants scaling from standard rooms to premium suites.",
+            "Instant booking verification vouchers shared upon confirmation steps.",
+            "Transparent transactional rates protected against hidden service fees."
         ]
     },
     new_passport: {
         icon: "📘",
-        title: "New Indian Passport Assistance",
+        title: "Indian New Passport Assistance",
         benefits: [
-            "Comprehensive step-by-step administrative application guidance.",
-            "Precise file verification to confirm absolute data correctness.",
-            "Accelerated processing for new family members and newborn applications.",
-            "Strategic documentation assembly protecting legal identity records."
+            "Step-by-step documentation mapping aligned with formal standards.",
+            "Detailed profile validation tracking errors to prevent file rejections.",
+            "Accelerated application preparation specialized for minors and dependents.",
+            "Comprehensive review methods ensuring absolute personal data alignment."
         ]
     },
     renewal: {
         icon: "🛂",
-        title: "Indian Passport Renewal",
+        title: "Indian Passport Renewal in KSA",
         benefits: [
-            "Stress-free professional document collection and profile preparation.",
-            "Full alignment with Embassy regulations for Indian citizens inside KSA.",
-            "Expedited application tracking avoiding lengthy procedural delays.",
-            "Expert advice resolving complex data changes or expired record issues."
+            "Complete document package assembly meeting official Indian Embassy laws.",
+            "Efficient profile management built for expatriates residing within KSA.",
+            "Proactive submission assistance ensuring fast operational appointment loops.",
+            "Specialist profile assistance solving data adjustments and name corrections."
         ]
     },
     vfs: {
         icon: "📅",
         title: "VFS Appointment Booking",
         benefits: [
-            "Swift scheduling for highly demanded operational time slots.",
-            "Thorough structural audit of required visa submission files.",
-            "Proactive status updates tracking your critical embassy timeline.",
-            "Reliable processing for family visits, business setups, and tourism."
+            "Fast appointment slot allocation matching your specific travel schedule.",
+            "Thorough document auditing ensuring complete submission file sets.",
+            "Milestone tracking maps safeguarding vital entry application dates.",
+            "Clear administrative advice protecting family visit or tourist pathways."
         ]
     },
     guidance: {
         icon: "🌍",
         title: "Professional Travel Guidance",
         benefits: [
-            "Expert legal consultations mapping global entry regulations.",
-            "Clear pre-departure checklists ensuring absolute journey safety.",
-            "24/7 dedicated remote support lines solving unexpected itinerary changes.",
-            "Up-to-date travel advisory notices directly safeguarding cross-border transits."
+            "Clear advice mapping changing destination entry regulations safely.",
+            "Detailed journey checklists clarifying mandatory border requirements.",
+            "Helpful system monitoring resolving unexpected operational transit changes.",
+            "Up-to-date travel brief information protecting custom cross-border trips."
         ]
     }
 };
 
-function openServiceModal(serviceKey) {
-    const data = serviceData[serviceKey];
+function openModal(serviceKey) {
+    const data = popupDetails[serviceKey];
     if (!data) return;
 
     document.getElementById('modalIcon').innerText = data.icon;
     document.getElementById('modalTitle').innerText = data.title;
 
-    const listContainer = document.getElementById('modalBenefits');
-    listContainer.innerHTML = '';
+    const listElement = document.getElementById('modalBenefits');
+    listElement.innerHTML = '';
+    
     data.benefits.forEach(benefit => {
-        const li = document.createElement('li');
-        li.className = 'benefit-item';
-        li.innerHTML = `<i class="fa-solid fa-circle-check"></i> <span>${benefit}</span>`;
-        listContainer.appendChild(li);
+        const item = document.createElement('li');
+        item.className = 'benefit-item';
+        item.innerHTML = `<i class="fa-solid fa-circle-check"></i> <span>✔ ${benefit}</span>`;
+        listElement.appendChild(item);
     });
 
-    const noticeContainer = document.getElementById('modalNoticeContainer');
-    if (data.showNotice) {
-        noticeContainer.innerHTML = `
+    const noticeBox = document.getElementById('modalNoticeContainer');
+    if (data.isDummy) {
+        noticeBox.innerHTML = `
             <div class="notice-badge">
                 <i class="fa-solid fa-circle-check" style="color: var(--success);"></i>
-                <span>You will receive a 100% original ticket with a Live verifiable PNR.</span>
+                <span>✔ You will receive a 100% original ticket with a Live verifiable PNR.</span>
             </div>`;
     } else {
-        noticeContainer.innerHTML = '';
+        noticeBox.innerHTML = '';
     }
 
-    document.getElementById('serviceModal').classList.add('active');
+    document.getElementById('popupModal').classList.add('active');
 }
 
-function closeServiceModal(event, force = false) {
-    if (force || event.target.classList.contains('modal-overlay')) {
-        document.getElementById('serviceModal').classList.remove('active');
+function closeModal() {
+    document.getElementById('popupModal').classList.remove('active');
+}
+
+function handleOutsideClick(event) {
+    if (event.target.classList.contains('modal-overlay')) {
+        closeModal();
     }
 }
+
+window.addEventListener('keydown', function(event) {
+    if (event.key === 'Escape' || event.key === 'Esc' || event.keyCode === 27) {
+        closeModal();
+    }
+});
 </script>
 
 </body>
