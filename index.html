@@ -132,21 +132,31 @@
     /* LIVE CLOCK */
     .live-clock{
     background:linear-gradient(135deg,#061B3A,#0F2D5E);
-    padding:12px 22px;
-    border-radius:15px;
+    padding:14px 26px;
+    border-radius:16px;
     color:white;
     text-align:center;
-    box-shadow:0 8px 20px rgba(0,0,0,.15);
+    box-shadow:0 8px 24px rgba(0,0,0,.20), 0 0 0 1px rgba(212,175,55,.35);
+    border:1px solid rgba(212,175,55,.3);
+    min-width:140px;
     }
 
     .clock-title{
-    font-size:12px;
-    color:#ddd;
+    font-size:10px;
+    font-weight:600;
+    color:var(--gold);
+    letter-spacing:2px;
+    text-transform:uppercase;
+    margin-bottom:4px;
     }
 
     .clock-time{
-    font-size:22px;
+    font-size:26px;
     font-weight:800;
+    letter-spacing:2px;
+    color:#ffffff;
+    text-shadow:0 0 12px rgba(212,175,55,.4);
+    font-variant-numeric:tabular-nums;
     }
 
     /* HERO SECTION */
@@ -645,7 +655,182 @@
     .about-container{ grid-template-columns: 1fr; }
     .about-image{ height: 250px; }
     .floating-whatsapp { bottom: 20px; right: 20px; padding: 10px 20px; font-size: 14px; }
+    .feature-strip{ margin-top:20px; padding:0 15px; }
+    .top-bar{ gap:8px; }
+    .top-bar-right{ gap:12px; font-size:13px; }
+    .services-grid{ grid-template-columns:1fr; }
+    .service-card{ padding:22px; }
+    .modal-box{ margin:15px; padding:25px 20px; max-height:90vh; overflow-y:auto; }
+    .modal-detail-item{ flex-direction:column; gap:6px; }
     }
+    /* ── SERVICE MODALS ── */
+    .modal-overlay{
+    display:none;
+    position:fixed;
+    inset:0;
+    background:rgba(6,27,58,.75);
+    z-index:99998;
+    align-items:center;
+    justify-content:center;
+    backdrop-filter:blur(4px);
+    animation:fadeInOverlay .2s ease;
+    }
+
+    .modal-overlay.active{
+    display:flex;
+    }
+
+    @keyframes fadeInOverlay{
+    from{opacity:0}
+    to{opacity:1}
+    }
+
+    .modal-box{
+    background:#ffffff;
+    border-radius:20px;
+    padding:35px 30px;
+    max-width:520px;
+    width:calc(100% - 30px);
+    position:relative;
+    box-shadow:0 25px 60px rgba(0,0,0,.25);
+    border-top:5px solid var(--gold);
+    animation:slideUpModal .25s ease;
+    }
+
+    @keyframes slideUpModal{
+    from{transform:translateY(30px);opacity:0}
+    to{transform:translateY(0);opacity:1}
+    }
+
+    .modal-close{
+    position:absolute;
+    top:15px;
+    right:18px;
+    background:none;
+    border:none;
+    font-size:22px;
+    cursor:pointer;
+    color:#94a3b8;
+    line-height:1;
+    transition:.2s;
+    }
+
+    .modal-close:hover{ color:var(--primary); }
+
+    .modal-icon{
+    font-size:44px;
+    margin-bottom:10px;
+    }
+
+    .modal-box h2{
+    font-size:22px;
+    font-weight:800;
+    color:var(--primary);
+    margin-bottom:4px;
+    }
+
+    .modal-hindi{
+    font-size:13px;
+    font-weight:600;
+    color:#64748b;
+    margin-bottom:14px;
+    }
+
+    .modal-desc{
+    font-size:14.5px;
+    line-height:1.8;
+    color:#475569;
+    margin-bottom:18px;
+    }
+
+    .modal-details{
+    background:var(--light);
+    border-radius:12px;
+    padding:16px 18px;
+    margin-bottom:20px;
+    }
+
+    .modal-details-title{
+    font-size:12px;
+    font-weight:700;
+    color:var(--primary);
+    letter-spacing:1px;
+    text-transform:uppercase;
+    margin-bottom:10px;
+    }
+
+    .modal-detail-item{
+    display:flex;
+    align-items:flex-start;
+    gap:10px;
+    padding:6px 0;
+    border-bottom:1px solid #e2e8f0;
+    font-size:13.5px;
+    color:#334155;
+    }
+
+    .modal-detail-item:last-child{ border-bottom:none; }
+
+    .modal-detail-item i{
+    color:var(--gold);
+    font-size:13px;
+    margin-top:3px;
+    flex-shrink:0;
+    }
+
+    .modal-cta{
+    display:flex;
+    gap:10px;
+    flex-wrap:wrap;
+    }
+
+    .modal-btn{
+    flex:1;
+    min-width:130px;
+    padding:12px 18px;
+    border-radius:50px;
+    text-align:center;
+    text-decoration:none;
+    font-weight:700;
+    font-size:14px;
+    transition:.3s;
+    border:none;
+    cursor:pointer;
+    }
+
+    .modal-btn-wa{
+    background:var(--whatsapp);
+    color:white;
+    }
+
+    .modal-btn-call{
+    background:var(--primary);
+    color:white;
+    }
+
+    .modal-btn:hover{ transform:translateY(-2px); opacity:.9; }
+
+    /* "View Details" button on each service card */
+    .service-details-btn{
+    display:inline-block;
+    margin-top:14px;
+    padding:8px 20px;
+    border-radius:50px;
+    background:var(--primary);
+    color:white;
+    font-size:13px;
+    font-weight:600;
+    border:none;
+    cursor:pointer;
+    transition:.3s;
+    }
+
+    .service-details-btn:hover{
+    background:var(--gold);
+    color:white;
+    transform:translateY(-2px);
+    }
+
     </style>
 </head>
 <body>
@@ -758,48 +943,56 @@ Umrah Visa Processing • Air Ticket Booking • Dummy Ticket • Indian Passpor
 <h3>Umrah Visa</h3>
 <div class="hindi-title">उमरा वीज़ा सेवा</div>
 <p>Fast Umrah Visa processing, hotel booking, transport arrangement aur ziyarat services.</p>
+<button class="service-details-btn" onclick="openModal('modal-umrah')">View Details</button>
 </div>
 <div class="service-card">
 <div class="service-icon">✈️</div>
 <h3>Air Ticket Booking</h3>
 <div class="hindi-title">हवाई टिकट बुकिंग</div>
 <p>India, Saudi Arabia aur duniya bhar ki airlines ke confirmed tickets best rates par.</p>
+<button class="service-details-btn" onclick="openModal('modal-airticket')">View Details</button>
 </div>
 <div class="service-card">
 <div class="service-icon">🎫</div>
 <h3>Dummy Ticket</h3>
 <div class="hindi-title">डमी टिकट</div>
 <p>Visa application aur travel requirements ke liye verified dummy ticket service.</p>
+<button class="service-details-btn" onclick="openModal('modal-dummy')">View Details</button>
 </div>
 <div class="service-card">
 <div class="service-icon">🏨</div>
 <h3>Hotel Booking</h3>
 <div class="hindi-title">होटल बुकिंग</div>
 <p>Makkah, Madinah aur worldwide hotel reservation lowest rates par.</p>
+<button class="service-details-btn" onclick="openModal('modal-hotel')">View Details</button>
 </div>
 <div class="service-card">
 <div class="service-icon">📘</div>
 <h3>Indian New Passport</h3>
 <div class="hindi-title">नया भारतीय पासपोर्ट</div>
 <p>New passport application ke liye guidance aur documentation support.</p>
+<button class="service-details-btn" onclick="openModal('modal-newpassport')">View Details</button>
 </div>
 <div class="service-card">
 <div class="service-icon">🛂</div>
 <h3>Passport Renewal</h3>
 <div class="hindi-title">पासपोर्ट  रिनुअल</div>
 <p>Saudi Arabia mein Indian Passport Renewal ke liye complete file preparation service.</p>
+<button class="service-details-btn" onclick="openModal('modal-renewal')">View Details</button>
 </div>
 <div class="service-card">
 <div class="service-icon">📅</div>
 <h3>VFS Appointment</h3>
 <div class="hindi-title">वीएफएस अपॉइंटमेंट</div>
 <p>VFS Global appointment booking aur document submission guidance.</p>
+<button class="service-details-btn" onclick="openModal('modal-vfs')">View Details</button>
 </div>
 <div class="service-card">
 <div class="service-icon">🌍</div>
 <h3>Travel Guidance</h3>
 <div class="hindi-title">यात्रा मार्गदर्शन</div>
 <p>Travel documents, visa requirements aur journey planning mein professional assistance.</p>
+<button class="service-details-btn" onclick="openModal('modal-travel')">View Details</button>
 </div>
 </div>
 </section>
@@ -927,6 +1120,191 @@ Umrah Visa Processing • Air Ticket Booking • Dummy Ticket • Indian Passpor
 </div>
 </footer>
 
+<!-- ═══════════════════════════════════════════
+     SERVICE MODALS — 8 popups
+═══════════════════════════════════════════ -->
+
+<!-- Modal 1: Umrah Visa -->
+<div class="modal-overlay" id="modal-umrah">
+<div class="modal-box">
+<button class="modal-close" onclick="closeModal('modal-umrah')">&times;</button>
+<div class="modal-icon">🕋</div>
+<h2>Umrah Visa</h2>
+<div class="modal-hindi">उमरा वीज़ा सेवा</div>
+<p class="modal-desc">We provide complete Umrah Visa assistance for individuals and families. Our service covers everything from online application filing to document verification, ensuring a smooth and stress-free process for your sacred journey to Makkah and Madinah.</p>
+<div class="modal-details">
+<div class="modal-details-title">What's Included</div>
+<div class="modal-detail-item"><i class="fa-solid fa-check"></i><span>Umrah Visa application filing & submission</span></div>
+<div class="modal-detail-item"><i class="fa-solid fa-check"></i><span>Document checklist & verification support</span></div>
+<div class="modal-detail-item"><i class="fa-solid fa-check"></i><span>Hotel booking in Makkah & Madinah</span></div>
+<div class="modal-detail-item"><i class="fa-solid fa-check"></i><span>Transport & Ziyarat arrangement guidance</span></div>
+<div class="modal-detail-item"><i class="fa-solid fa-check"></i><span>Fast processing with status updates</span></div>
+</div>
+<div class="modal-cta">
+<a href="https://wa.me/966594388004?text=Assalamu%20Alaikum%2C%20I%20need%20help%20with%20Umrah%20Visa%20service." class="modal-btn modal-btn-wa"><i class="fa-brands fa-whatsapp"></i> WhatsApp</a>
+<a href="tel:+966594388004" class="modal-btn modal-btn-call"><i class="fa-solid fa-phone"></i> Call Now</a>
+</div>
+</div>
+</div>
+
+<!-- Modal 2: Air Ticket Booking -->
+<div class="modal-overlay" id="modal-airticket">
+<div class="modal-box">
+<button class="modal-close" onclick="closeModal('modal-airticket')">&times;</button>
+<div class="modal-icon">✈️</div>
+<h2>Air Ticket Booking</h2>
+<div class="modal-hindi">हवाई टिकट बुकिंग</div>
+<p class="modal-desc">We book confirmed airline tickets at the most competitive fares for all major routes between India, Saudi Arabia, and destinations worldwide. Whether it is a planned journey or an emergency travel need, we arrange your tickets quickly and reliably.</p>
+<div class="modal-details">
+<div class="modal-details-title">What's Included</div>
+<div class="modal-detail-item"><i class="fa-solid fa-check"></i><span>Confirmed tickets on all major airlines</span></div>
+<div class="modal-detail-item"><i class="fa-solid fa-check"></i><span>India ↔ Saudi Arabia & worldwide routes</span></div>
+<div class="modal-detail-item"><i class="fa-solid fa-check"></i><span>Best available fare comparison</span></div>
+<div class="modal-detail-item"><i class="fa-solid fa-check"></i><span>Emergency & last-minute ticket support</span></div>
+<div class="modal-detail-item"><i class="fa-solid fa-check"></i><span>E-ticket delivery on WhatsApp</span></div>
+</div>
+<div class="modal-cta">
+<a href="https://wa.me/966594388004?text=Assalamu%20Alaikum%2C%20I%20need%20help%20with%20Air%20Ticket%20Booking." class="modal-btn modal-btn-wa"><i class="fa-brands fa-whatsapp"></i> WhatsApp</a>
+<a href="tel:+966594388004" class="modal-btn modal-btn-call"><i class="fa-solid fa-phone"></i> Call Now</a>
+</div>
+</div>
+</div>
+
+<!-- Modal 3: Dummy Ticket -->
+<div class="modal-overlay" id="modal-dummy">
+<div class="modal-box">
+<button class="modal-close" onclick="closeModal('modal-dummy')">&times;</button>
+<div class="modal-icon">🎫</div>
+<h2>Dummy Ticket</h2>
+<div class="modal-hindi">डमी टिकट</div>
+<p class="modal-desc">A dummy ticket is a verified flight reservation document widely used to fulfil visa application requirements and travel formalities. We provide genuine PNR-verified dummy tickets that are accepted for visa submissions and travel documentation purposes.</p>
+<div class="modal-details">
+<div class="modal-details-title">What's Included</div>
+<div class="modal-detail-item"><i class="fa-solid fa-check"></i><span>PNR-verified flight reservation document</span></div>
+<div class="modal-detail-item"><i class="fa-solid fa-check"></i><span>Accepted for all visa applications</span></div>
+<div class="modal-detail-item"><i class="fa-solid fa-check"></i><span>Delivered quickly via WhatsApp or email</span></div>
+<div class="modal-detail-item"><i class="fa-solid fa-check"></i><span>Any route, any date as per requirement</span></div>
+</div>
+<div class="modal-cta">
+<a href="https://wa.me/966594388004?text=Assalamu%20Alaikum%2C%20I%20need%20a%20Dummy%20Ticket%20service." class="modal-btn modal-btn-wa"><i class="fa-brands fa-whatsapp"></i> WhatsApp</a>
+<a href="tel:+966594388004" class="modal-btn modal-btn-call"><i class="fa-solid fa-phone"></i> Call Now</a>
+</div>
+</div>
+</div>
+
+<!-- Modal 4: Hotel Booking -->
+<div class="modal-overlay" id="modal-hotel">
+<div class="modal-box">
+<button class="modal-close" onclick="closeModal('modal-hotel')">&times;</button>
+<div class="modal-icon">🏨</div>
+<h2>Hotel Booking</h2>
+<div class="modal-hindi">होटल बुकिंग</div>
+<p class="modal-desc">We arrange hotel reservations in Makkah, Madinah, and destinations across the world at the most affordable rates. Whether you need a budget stay or a premium hotel close to Haram, we find the best option to suit your travel plans and budget.</p>
+<div class="modal-details">
+<div class="modal-details-title">What's Included</div>
+<div class="modal-detail-item"><i class="fa-solid fa-check"></i><span>Hotels near Masjid Al Haram, Makkah</span></div>
+<div class="modal-detail-item"><i class="fa-solid fa-check"></i><span>Hotels near Masjid Al Nabawi, Madinah</span></div>
+<div class="modal-detail-item"><i class="fa-solid fa-check"></i><span>Worldwide hotel reservations</span></div>
+<div class="modal-detail-item"><i class="fa-solid fa-check"></i><span>Budget to premium options available</span></div>
+<div class="modal-detail-item"><i class="fa-solid fa-check"></i><span>Confirmed booking voucher provided</span></div>
+</div>
+<div class="modal-cta">
+<a href="https://wa.me/966594388004?text=Assalamu%20Alaikum%2C%20I%20need%20help%20with%20Hotel%20Booking." class="modal-btn modal-btn-wa"><i class="fa-brands fa-whatsapp"></i> WhatsApp</a>
+<a href="tel:+966594388004" class="modal-btn modal-btn-call"><i class="fa-solid fa-phone"></i> Call Now</a>
+</div>
+</div>
+</div>
+
+<!-- Modal 5: Indian New Passport -->
+<div class="modal-overlay" id="modal-newpassport">
+<div class="modal-box">
+<button class="modal-close" onclick="closeModal('modal-newpassport')">&times;</button>
+<div class="modal-icon">📘</div>
+<h2>Indian New Passport</h2>
+<div class="modal-hindi">नया भारतीय पासपोर्ट</div>
+<p class="modal-desc">If you are an Indian national applying for a fresh passport for the first time, we provide complete end-to-end assistance. From filling the online application on the Passport Seva portal to preparing your full document file, we guide you at every step.</p>
+<div class="modal-details">
+<div class="modal-details-title">What's Included</div>
+<div class="modal-detail-item"><i class="fa-solid fa-check"></i><span>Online application on Passport Seva portal</span></div>
+<div class="modal-detail-item"><i class="fa-solid fa-check"></i><span>Complete document checklist & preparation</span></div>
+<div class="modal-detail-item"><i class="fa-solid fa-check"></i><span>File review before submission</span></div>
+<div class="modal-detail-item"><i class="fa-solid fa-check"></i><span>Step-by-step guidance throughout the process</span></div>
+<div class="modal-detail-item"><i class="fa-solid fa-check"></i><span>Support for applicants based in Saudi Arabia</span></div>
+</div>
+<div class="modal-cta">
+<a href="https://wa.me/966594388004?text=Assalamu%20Alaikum%2C%20I%20need%20help%20with%20New%20Indian%20Passport%20application." class="modal-btn modal-btn-wa"><i class="fa-brands fa-whatsapp"></i> WhatsApp</a>
+<a href="tel:+966594388004" class="modal-btn modal-btn-call"><i class="fa-solid fa-phone"></i> Call Now</a>
+</div>
+</div>
+</div>
+
+<!-- Modal 6: Passport Renewal -->
+<div class="modal-overlay" id="modal-renewal">
+<div class="modal-box">
+<button class="modal-close" onclick="closeModal('modal-renewal')">&times;</button>
+<div class="modal-icon">🛂</div>
+<h2>Passport Renewal</h2>
+<div class="modal-hindi">पासपोर्ट रिनुअल</div>
+<p class="modal-desc">We specialize in Indian Passport Renewal services for expatriates living in Saudi Arabia. Our team helps you prepare a complete and error-free file, reducing the chances of rejection or delays. We assist with online applications, document collection, and VFS appointment coordination.</p>
+<div class="modal-details">
+<div class="modal-details-title">What's Included</div>
+<div class="modal-detail-item"><i class="fa-solid fa-check"></i><span>Online renewal application filing</span></div>
+<div class="modal-detail-item"><i class="fa-solid fa-check"></i><span>Complete document file preparation</span></div>
+<div class="modal-detail-item"><i class="fa-solid fa-check"></i><span>Verification of Iqama, Visa, & ID documents</span></div>
+<div class="modal-detail-item"><i class="fa-solid fa-check"></i><span>VFS appointment scheduling support</span></div>
+<div class="modal-detail-item"><i class="fa-solid fa-check"></i><span>Post-submission tracking guidance</span></div>
+</div>
+<div class="modal-cta">
+<a href="https://wa.me/966594388004?text=Assalamu%20Alaikum%2C%20I%20need%20help%20with%20Indian%20Passport%20Renewal." class="modal-btn modal-btn-wa"><i class="fa-brands fa-whatsapp"></i> WhatsApp</a>
+<a href="tel:+966594388004" class="modal-btn modal-btn-call"><i class="fa-solid fa-phone"></i> Call Now</a>
+</div>
+</div>
+</div>
+
+<!-- Modal 7: VFS Appointment -->
+<div class="modal-overlay" id="modal-vfs">
+<div class="modal-box">
+<button class="modal-close" onclick="closeModal('modal-vfs')">&times;</button>
+<div class="modal-icon">📅</div>
+<h2>VFS Appointment</h2>
+<div class="modal-hindi">वीएफएस अपॉइंटमेंट</div>
+<p class="modal-desc">Securing a VFS Global appointment slot can be challenging due to high demand. We monitor available slots and book your appointment at the earliest opportunity. We also help you prepare the correct documents for a successful submission at the VFS centre.</p>
+<div class="modal-details">
+<div class="modal-details-title">What's Included</div>
+<div class="modal-detail-item"><i class="fa-solid fa-check"></i><span>VFS appointment slot booking in Riyadh</span></div>
+<div class="modal-detail-item"><i class="fa-solid fa-check"></i><span>Document checklist for VFS submission</span></div>
+<div class="modal-detail-item"><i class="fa-solid fa-check"></i><span>Pre-appointment file review</span></div>
+<div class="modal-detail-item"><i class="fa-solid fa-check"></i><span>Guidance on what to carry on appointment day</span></div>
+</div>
+<div class="modal-cta">
+<a href="https://wa.me/966594388004?text=Assalamu%20Alaikum%2C%20I%20need%20help%20with%20VFS%20Appointment%20booking." class="modal-btn modal-btn-wa"><i class="fa-brands fa-whatsapp"></i> WhatsApp</a>
+<a href="tel:+966594388004" class="modal-btn modal-btn-call"><i class="fa-solid fa-phone"></i> Call Now</a>
+</div>
+</div>
+</div>
+
+<!-- Modal 8: Travel Guidance -->
+<div class="modal-overlay" id="modal-travel">
+<div class="modal-box">
+<button class="modal-close" onclick="closeModal('modal-travel')">&times;</button>
+<div class="modal-icon">🌍</div>
+<h2>Travel Guidance</h2>
+<div class="modal-hindi">यात्रा मार्गदर्शन</div>
+<p class="modal-desc">Not sure where to begin with your travel plans? Our professional travel guidance service helps you understand visa requirements, required documents, travel insurance, and journey planning for both international and domestic travel. We provide honest, clear advice tailored to your situation.</p>
+<div class="modal-details">
+<div class="modal-details-title">What's Included</div>
+<div class="modal-detail-item"><i class="fa-solid fa-check"></i><span>Visa requirements & eligibility guidance</span></div>
+<div class="modal-detail-item"><i class="fa-solid fa-check"></i><span>Required travel document advisory</span></div>
+<div class="modal-detail-item"><i class="fa-solid fa-check"></i><span>Journey planning & itinerary assistance</span></div>
+<div class="modal-detail-item"><i class="fa-solid fa-check"></i><span>Guidance for both KSA-based & India-based clients</span></div>
+</div>
+<div class="modal-cta">
+<a href="https://wa.me/966594388004?text=Assalamu%20Alaikum%2C%20I%20need%20Travel%20Guidance%20assistance." class="modal-btn modal-btn-wa"><i class="fa-brands fa-whatsapp"></i> WhatsApp</a>
+<a href="tel:+966594388004" class="modal-btn modal-btn-call"><i class="fa-solid fa-phone"></i> Call Now</a>
+</div>
+</div>
+</div>
+
 <script>
 function updateClock(){
     const now = new Date();
@@ -941,6 +1319,30 @@ function updateClock(){
 }
 setInterval(updateClock, 1000);
 updateClock();
+
+/* ── Modal helpers ── */
+function openModal(id){
+    document.getElementById(id).classList.add('active');
+    document.body.style.overflow='hidden';
+}
+function closeModal(id){
+    document.getElementById(id).classList.remove('active');
+    document.body.style.overflow='';
+}
+/* Close on overlay click */
+document.querySelectorAll('.modal-overlay').forEach(function(overlay){
+    overlay.addEventListener('click', function(e){
+        if(e.target === overlay){ closeModal(overlay.id); }
+    });
+});
+/* Close on Escape key */
+document.addEventListener('keydown', function(e){
+    if(e.key === 'Escape'){
+        document.querySelectorAll('.modal-overlay.active').forEach(function(m){
+            closeModal(m.id);
+        });
+    }
+});
 </script>
 
 </body>
