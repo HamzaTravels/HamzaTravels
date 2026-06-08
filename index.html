@@ -724,6 +724,7 @@
     margin: 0;
     }
 
+    /* Restored High-Contrast Close Button Styles */
     .close-modal-btn {
     position: absolute;
     top: 20px;
@@ -731,20 +732,23 @@
     width: 36px;
     height: 36px;
     border-radius: 50%;
-    background: rgba(255, 255, 255, 0.1);
+    background: rgba(255, 255, 255, 0.15);
     border: none;
-    color: var(--white);
-    font-size: 18px;
+    color: #ffffff !important;
+    font-size: 22px;
+    font-weight: 700;
     cursor: pointer;
     display: flex;
     align-items: center;
     justify-content: center;
     transition: background 0.3s ease, transform 0.3s ease;
+    z-index: 999999;
+    line-height: 1;
     }
 
     .close-modal-btn:hover {
-    background: rgba(239, 68, 68, 0.2);
-    color: #ef4444;
+    background: rgba(239, 68, 68, 0.4);
+    color: #ffffff !important;
     transform: rotate(90deg);
     }
 
@@ -906,6 +910,7 @@ Umrah Visa Processing • Air Ticket Booking • Dummy Ticket • Indian Passpor
 <section class="why-choose-us">
 <h2 class="section-title">Why Choose Hamza Travels</h2>
 <div class="premium-grid">
+<div class="premium-grid">
 <div class="premium-card">
 <h3><i class="fa-solid fa-shield-halved"></i> Trusted Travel Services</h3>
 <p>We provide completely transparent, legal, and highly reliable travel solutions tailored for Indian expatriates and pilgrims.</p>
@@ -973,7 +978,7 @@ Umrah Visa Processing • Air Ticket Booking • Dummy Ticket • Indian Passpor
 <div>
 <div class="service-icon">🏨</div>
 <h3>Hotel Booking</h3>
-<div class="hindi-title">होटल बुकिंग</div>
+<div class="hindi-title">हোটल बुकिंग</div>
 <p>Affordable accommodation options and secure hotel reservations in Makkah, Madinah, and worldwide. ✔</p>
 </div>
 <button class="learn-more-btn">Learn More</button>
@@ -1026,11 +1031,11 @@ Umrah Visa Processing • Air Ticket Booking • Dummy Ticket • Indian Passpor
 </div>
 <div class="gallery-card">
 <img src="masjidnabawi.jpg" alt="Masjid Al Nabawi">
-<div class="gallery-overlay">¼¼ Masjid Al Nabawi</div>
+<div class="gallery-overlay">🕌 Masjid Al Nabawi</div>
 </div>
 <div class="gallery-card">
 <img src="umrah.jpg" alt="Umrah Services">
-<div class="gallery-overlay">Âœˆ Umrah Pilgrims</div>
+<div class="gallery-overlay">✈️ Umrah Pilgrims</div>
 </div>
 <div class="gallery-card">
 <img src="makkah.jpg" alt="Makkah City">
@@ -1072,7 +1077,7 @@ Umrah Visa Processing • Air Ticket Booking • Dummy Ticket • Indian Passpor
 <div class="stars"><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i></div>
 <div class="verified-badge"><i class="fa-solid fa-circle-check"></i> Customer Review</div>
 </div>
-<p class="review-text">"महताब सर से मैंने इमरजेंसी में लखनऊ की एयर टिकट बुक करवाई थी। उन्होंने बहुत ही बेस्ट प्राइस पर कन्फर्म टिकट तुरंत अरेंज कर दी। बहुत भरोसेमंद सर्विस है।"</p>
+<p class="review-text">"महताब सर से मैंने इमरजेंसी میں لکھنؤ کی ایئر ٹکٹ بک کروائی تھی۔ انہوں نے بہت ہی بیسٹ پرائس پر کنفرم ٹکٹ ترنت ارینج کر دی۔ بہت بھروسے مند سروس ہے۔"</p>
 <div class="reviewer-info">
 <div class="reviewer-name">Mohammad Tariq</div>
 <div class="reviewer-location">Gorakhpur</div>
@@ -1142,8 +1147,8 @@ Umrah Visa Processing • Air Ticket Booking • Dummy Ticket • Indian Passpor
 
 <div class="modal-overlay" id="popupModal" onclick="handleOutsideClick(event)">
     <div class="modal-box">
-        <button class="close-modal-btn" onclick="closeModal()">×</button>
         <div class="modal-header">
+            <button class="close-modal-btn" onclick="closeModal()">×</button>
             <span class="modal-icon" id="modalIcon">🕋</span>
             <h3 class="modal-title" id="modalTitle">Umrah Visa</h3>
         </div>
@@ -1286,7 +1291,7 @@ function openModal(serviceKey) {
         noticeBox.innerHTML = `
             <div class="notice-badge">
                 <i class="fa-solid fa-circle-check" style="color: var(--success);"></i>
-                <span>You will receive a 100% original ticket with a Live verifiable PNR. ✔</span>
+                <span>✔ You will receive a 100% original ticket with a Live verifiable PNR.</span>
             </div>`;
     } else {
         noticeBox.innerHTML = '';
