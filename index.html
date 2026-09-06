@@ -3,19 +3,19 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Hamza Travels | Professional Travel, Umrah & Passport Assistance | Saudi Arabia & India</title>
-  <meta name="description" content="Hamza Travels, managed by Mohammad Mahatab Alam (GSTIN: 09BFLPN1044Q1ZV). Professional travel and Umrah assistance, competitive flight bookings across India, and Indian passport documentation support in Saudi Arabia.">
-  <meta name="keywords" content="Hamza Travels, Mohammad Mahatab Alam, Umrah travel assistance, flight booking Saudi Arabia India, Indian passport renewal Saudi Arabia, Indian passport services Riyadh, flight booking across India, Umrah assistance Saudi Arabia">
+  <title>Hamza Travels | Flight Booking, Umrah & Passport Assistance in Saudi Arabia & India</title>
+  <meta name="description" content="Hamza Travels provides flight booking, Umrah travel assistance, Indian passport renewal guidance and VFS appointment assistance for customers in Saudi Arabia and India.">
+  <meta name="keywords" content="Hamza Travels, Mohammad Mahatab Alam, Umrah travel assistance, flight booking Saudi Arabia India, Indian passport renewal Saudi Arabia, VFS appointment assistance, Layla Al Aflaj travel, Maharajganj travel agency">
   <link rel="canonical" href="https://hamzatravelsonline.com/">
 
   <!-- Open Graph Metadata -->
-  <meta property="og:title" content="Hamza Travels | Professional Travel, Umrah & Passport Assistance">
+  <meta property="og:title" content="Hamza Travels | Flight Booking, Umrah & Passport Assistance">
   <meta property="og:description" content="Professional assistance for Umrah travel, flight bookings across India, and Indian passport services in Saudi Arabia.">
-  <meta property="og:image" content="https://hamzatravelsonline.com/logo.png">
+  <meta property="og:image" content="logo.jpg">
   <meta property="og:url" content="https://hamzatravelsonline.com/">
   <meta property="og:type" content="website">
 
-  <!-- Fonts & Icons -->
+  <!-- Typography & Styling -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
@@ -31,8 +31,8 @@
           },
           colors: {
             brand: {
-              navy: '#0b192e',
-              slate: '#152b48',
+              navy: '#07162c',
+              slate: '#0f2444',
               blue: '#1d4ed8',
               sky: '#f0f6fe',
               amber: '#d97706',
@@ -52,14 +52,14 @@
     ::-webkit-scrollbar-thumb { background: #cbd5e1; border-radius: 4px; }
     ::-webkit-scrollbar-thumb:hover { background: #94a3b8; }
     .hero-pattern {
-      background-color: #0b192e;
-      background-image: radial-gradient(#1e3a8a 0.75px, transparent 0.75px), radial-gradient(#1e3a8a 0.75px, #0b192e 0.75px);
+      background-color: #07162c;
+      background-image: radial-gradient(#1e3a8a 0.75px, transparent 0.75px), radial-gradient(#1e3a8a 0.75px, #07162c 0.75px);
       background-size: 30px 30px;
       background-position: 0 0, 15px 15px;
     }
   </style>
 
-  <!-- Factual & Non-Invented Structured Data -->
+  <!-- Factual Structured Data -->
   <script type="application/ld+json">
   {
     "@context": "https://schema.org",
@@ -67,9 +67,9 @@
     "name": "Hamza Travels",
     "alternateName": "HAMZA TRAVELS",
     "url": "https://hamzatravelsonline.com",
-    "logo": "https://hamzatravelsonline.com/logo.png",
-    "image": "https://hamzatravelsonline.com/logo.png",
-    "description": "Hamza Travels is a travel service business managed by Mohammad Mahatab Alam, providing travel and Umrah assistance along with Indian passport documentation support for customers in Saudi Arabia and India.",
+    "logo": "https://hamzatravelsonline.com/logo.jpg",
+    "image": "https://hamzatravelsonline.com/logo.jpg",
+    "description": "Hamza Travels provides flight booking, Umrah travel assistance, Indian passport renewal guidance and VFS appointment assistance for customers in Saudi Arabia and India.",
     "taxID": "09BFLPN1044Q1ZV",
     "founder": {
       "@type": "Person",
@@ -108,8 +108,8 @@
 </head>
 <body class="bg-white text-slate-800 antialiased selection:bg-brand-amber selection:text-white flex flex-col min-h-screen">
 
-  <!-- 1. TOP UTILITY BAR -->
-  <div class="bg-brand-navy text-slate-300 text-xs py-2 px-4 border-b border-slate-800">
+  <!-- 1. TOP INFORMATION BAR -->
+  <div class="bg-brand-navy text-slate-300 text-xs py-2.5 px-4 border-b border-slate-800">
     <div class="max-w-7xl mx-auto flex flex-wrap justify-between items-center gap-3">
       <div class="flex items-center flex-wrap gap-x-4 gap-y-1">
         <span class="inline-flex items-center text-amber-400 font-semibold">
@@ -120,8 +120,12 @@
           <i class="fa-regular fa-clock mr-1.5 text-amber-400"></i> Hours: 9:00 AM – 11:00 PM Daily
         </span>
         <span class="hidden md:inline text-slate-600">|</span>
-        <span class="hidden md:inline-flex items-center text-slate-300">
-          KSA Local: <span id="ksaClock" class="ml-1 font-mono font-bold text-white">--:--:--</span>
+        <span class="inline-flex items-center text-slate-300">
+          <i class="fa-solid fa-location-dot mr-1.5 text-amber-400"></i> KSA Location: Layla, Al Aflaj
+        </span>
+        <span class="hidden lg:inline text-slate-600">|</span>
+        <span class="inline-flex items-center text-slate-300">
+          <i class="fa-solid fa-earth-asia mr-1.5 text-amber-400"></i> KSA Local Time: <span id="ksaClock" class="ml-1.5 font-mono font-bold text-white tracking-wide">--:--:--</span>
         </span>
       </div>
 
@@ -137,13 +141,15 @@
     </div>
   </div>
 
-  <!-- NAVIGATION BAR -->
+  <!-- 2. HEADER & NAVIGATION -->
   <header class="bg-white/95 backdrop-blur-md border-b border-slate-200 sticky top-0 z-40 transition-all">
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
       <div class="flex justify-between items-center h-20">
-        <!-- Brand Logo -->
-        <a href="#home" class="flex items-center space-x-3 group">
-          <img src="logo.png" alt="Hamza Travels Logo" class="h-12 sm:h-14 w-auto object-contain" onerror="this.onerror=null; this.src='https://hamzatravelsonline.com/logo.png';">
+        <!-- Logo Image: logo.jpg -->
+        <a href="#home" class="flex items-center space-x-3 group py-2">
+          <img src="logo.jpg" 
+               alt="Hamza Travels Logo" 
+               class="h-12 sm:h-14 w-auto max-w-[210px] object-contain block">
           <div class="hidden sm:block">
             <span class="text-xs uppercase font-extrabold tracking-widest text-slate-400 block leading-tight">Hamza Travels</span>
             <span class="text-[11px] font-medium text-slate-500 block">Saudi Arabia & India Travel Support</span>
@@ -163,14 +169,14 @@
           <a href="#contact" class="hover:text-brand-blue transition">Contact</a>
         </nav>
 
-        <!-- Primary CTA -->
+        <!-- Header WhatsApp Button -->
         <div class="hidden sm:flex items-center space-x-3">
-          <a href="https://wa.me/966594388004?text=Hello%20Hamza%20Travels,%20I%20would%20like%20to%20inquire%20about%20your%20services" target="_blank" class="inline-flex items-center px-5 py-2.5 rounded-lg text-sm font-bold text-white bg-green-600 hover:bg-green-700 shadow-sm transition transform hover:-translate-y-0.5">
+          <a href="https://wa.me/918931048027?text=Hello%20Hamza%20Travels,%20I%20would%20like%20to%20inquire%20about%20your%20services" target="_blank" class="inline-flex items-center px-5 py-2.5 rounded-lg text-sm font-bold text-white bg-green-600 hover:bg-green-700 shadow-sm transition transform hover:-translate-y-0.5">
             <i class="fa-brands fa-whatsapp text-base mr-2"></i> WhatsApp Us
           </a>
         </div>
 
-        <!-- Mobile Toggle -->
+        <!-- Mobile Drawer Button -->
         <div class="lg:hidden flex items-center">
           <button id="mobileNavToggle" aria-label="Toggle Navigation Menu" class="p-2 text-slate-700 hover:text-brand-blue rounded-lg focus:outline-none">
             <i class="fa-solid fa-bars text-2xl"></i>
@@ -179,7 +185,7 @@
       </div>
     </div>
 
-    <!-- Mobile Drawer Navigation -->
+    <!-- Mobile Drawer Menu -->
     <div id="mobileNavMenu" class="hidden lg:hidden bg-white border-b border-slate-200 px-5 pt-3 pb-6 space-y-3 shadow-lg">
       <a href="#home" class="block py-2 text-base font-semibold text-slate-800 hover:text-brand-blue border-b border-slate-100">Home</a>
       <a href="#services" class="block py-2 text-base font-semibold text-slate-800 hover:text-brand-blue border-b border-slate-100">Services</a>
@@ -191,91 +197,98 @@
       <a href="#faq" class="block py-2 text-base font-semibold text-slate-800 hover:text-brand-blue border-b border-slate-100">FAQs</a>
       <a href="#contact" class="block py-2 text-base font-semibold text-slate-800 hover:text-brand-blue">Contact</a>
       <div class="pt-3">
-        <a href="https://wa.me/966594388004?text=Hello%20Hamza%20Travels,%20I%20would%20like%20to%20inquire%20about%20your%20services" class="w-full text-center py-3 rounded-lg font-bold text-white bg-green-600 flex items-center justify-center">
-          <i class="fa-brands fa-whatsapp text-lg mr-2"></i> WhatsApp Us (+966 594388004)
+        <a href="https://wa.me/918931048027?text=Hello%20Hamza%20Travels,%20I%20would%20like%20to%20inquire%20about%20your%20services" target="_blank" class="w-full text-center py-3 rounded-lg font-bold text-white bg-green-600 flex items-center justify-center">
+          <i class="fa-brands fa-whatsapp text-lg mr-2"></i> WhatsApp Us (+91 8931048027)
         </a>
       </div>
     </div>
   </header>
 
-  <!-- 2. HERO SECTION -->
-  <section id="home" class="relative hero-pattern text-white py-16 sm:py-20 lg:py-24 overflow-hidden">
+  <!-- 3. HERO SECTION -->
+  <section id="home" class="relative hero-pattern text-white py-14 sm:py-18 lg:py-20 overflow-hidden">
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
       <div class="grid lg:grid-cols-12 gap-10 items-center">
-        <!-- Headline and Narrative -->
+        <!-- Headline & Narrative -->
         <div class="lg:col-span-7 text-center lg:text-left space-y-5">
           <div class="inline-flex items-center px-3.5 py-1.5 rounded-full bg-slate-800/80 border border-slate-700 text-amber-400 text-xs font-semibold tracking-wide uppercase">
             <i class="fa-solid fa-plane-departure mr-2"></i> Professional Travel, Umrah & Passport Assistance
           </div>
 
           <h1 class="text-3xl sm:text-5xl lg:text-5xl font-extrabold tracking-tight leading-tight text-white">
-            Your Trusted Travel Partner Across <span class="text-amber-400">Saudi Arabia & India</span>
+            Your Trusted Travel Partner<br class="hidden sm:inline">
+            <span class="text-amber-400">Across Saudi Arabia & India</span>
           </h1>
 
           <p class="text-base sm:text-lg text-slate-300 max-w-2xl mx-auto lg:mx-0 font-normal leading-relaxed">
             Professional assistance for Umrah travel, flight bookings and Indian passport services — helping expatriates, families and pilgrims travel with confidence.
           </p>
 
-          <!-- CTAs -->
+          <!-- Buttons -->
           <div class="pt-2 flex flex-col sm:flex-row items-center justify-center lg:justify-start gap-4">
-            <a href="#contact" class="w-full sm:w-auto inline-flex items-center justify-center px-7 py-3 rounded-lg font-bold text-brand-navy bg-amber-400 hover:bg-amber-300 shadow-md transition transform hover:-translate-y-0.5">
+            <a href="#services" class="w-full sm:w-auto inline-flex items-center justify-center px-7 py-3 rounded-lg font-bold text-brand-navy bg-amber-400 hover:bg-amber-300 shadow-md transition transform hover:-translate-y-0.5">
               Plan Your Journey
             </a>
-            <a href="https://wa.me/966594388004?text=Hello%20Hamza%20Travels,%20I%20am%20interested%20in%20your%20services" target="_blank" class="w-full sm:w-auto inline-flex items-center justify-center px-7 py-3 rounded-lg font-bold text-white bg-slate-800 hover:bg-slate-700 border border-slate-700 transition">
+            <a href="https://wa.me/918931048027?text=Hello%20Hamza%20Travels,%20I%20am%20interested%20in%20your%20services" target="_blank" class="w-full sm:w-auto inline-flex items-center justify-center px-7 py-3 rounded-lg font-bold text-white bg-slate-800 hover:bg-slate-700 border border-slate-700 transition">
               <i class="fa-brands fa-whatsapp text-lg mr-2 text-green-400"></i> WhatsApp Us
             </a>
           </div>
 
-          <!-- Direct Line Quick Reference -->
-          <div class="pt-4 flex flex-wrap items-center justify-center lg:justify-start gap-6 text-xs text-slate-300 border-t border-slate-800">
-            <div>
-              <span class="text-slate-400 block text-[11px]">Saudi Arabia Service Base:</span>
-              <a href="tel:+966594388004" class="text-white font-semibold hover:text-amber-400 transition">+966 594388004</a>
-            </div>
-            <div>
-              <span class="text-slate-400 block text-[11px]">India Registered Business:</span>
-              <a href="tel:+918931048027" class="text-white font-semibold hover:text-amber-400 transition">+91 8931048027</a>
-            </div>
-            <div>
-              <span class="text-slate-400 block text-[11px]">Business Email:</span>
-              <a href="mailto:info.hamzatravels@gmail.com" class="text-white font-semibold hover:text-amber-400 transition">info.hamzatravels@gmail.com</a>
+          <!-- Hero Image Banner: hero.jpg -->
+          <div class="pt-4 max-w-xl mx-auto lg:mx-0">
+            <div class="rounded-xl overflow-hidden border border-slate-700 shadow-lg relative h-40 sm:h-44">
+              <img src="hero.jpg" 
+                   alt="Hamza Travels Travel and Umrah Visual" 
+                   class="w-full h-full object-cover">
+              <div class="absolute inset-0 bg-gradient-to-r from-brand-navy/80 via-brand-navy/40 to-transparent flex items-end p-3.5">
+                <span class="text-xs text-slate-200 font-medium"><i class="fa-solid fa-shield-halved text-amber-400 mr-1.5"></i> Connecting Saudi Arabia & India</span>
+              </div>
             </div>
           </div>
         </div>
 
-        <!-- Quick Inquiry Card -->
+        <!-- Right Column: WhatsApp Inquiry Form -->
         <div class="lg:col-span-5">
           <div class="bg-white rounded-2xl p-6 sm:p-7 shadow-xl text-slate-900 border border-slate-200">
             <div class="border-b border-slate-100 pb-3 mb-4">
-              <span class="text-xs font-bold text-brand-blue uppercase tracking-wider">Direct Communication</span>
+              <span class="text-xs font-bold text-brand-blue uppercase tracking-wider">Fast & Transparent</span>
               <h2 class="text-xl font-bold text-slate-900 mt-0.5">Inquire via WhatsApp</h2>
               <p class="text-xs text-slate-500 mt-0.5">Direct guidance for flight tickets, Umrah, or passport paperwork.</p>
             </div>
 
             <form class="space-y-3" onsubmit="handleHeroInquiry(event)">
               <div>
-                <label for="heroCustName" class="block text-xs font-bold text-slate-700 uppercase mb-1">Your Full Name</label>
-                <input type="text" id="heroCustName" required placeholder="Full Name" class="w-full px-3.5 py-2.5 rounded-lg border border-slate-300 text-sm focus:ring-2 focus:ring-brand-blue focus:border-brand-blue focus:outline-none">
+                <label for="heroCustName" class="block text-xs font-bold text-slate-700 uppercase mb-1">Full Name</label>
+                <input type="text" id="heroCustName" required placeholder="Your Name" class="w-full px-3.5 py-2 rounded-lg border border-slate-300 text-sm focus:ring-2 focus:ring-brand-blue focus:outline-none">
               </div>
 
               <div>
                 <label for="heroService" class="block text-xs font-bold text-slate-700 uppercase mb-1">Service Required</label>
-                <select id="heroService" class="w-full px-3.5 py-2.5 rounded-lg border border-slate-300 text-sm focus:ring-2 focus:ring-brand-blue focus:border-brand-blue focus:outline-none bg-white font-medium">
-                  <option value="Umrah Travel Assistance">Umrah Travel Assistance & Packages</option>
+                <select id="heroService" class="w-full px-3.5 py-2 rounded-lg border border-slate-300 text-sm focus:ring-2 focus:ring-brand-blue focus:outline-none bg-white font-medium">
+                  <option value="Umrah Travel Assistance & Packages">Umrah Travel Assistance & Packages</option>
                   <option value="Flight Ticket Booking">Flight Ticket Booking</option>
                   <option value="Indian Passport Renewal in Saudi Arabia">Indian Passport Renewal in Saudi Arabia</option>
                   <option value="VFS Appointment Assistance">VFS Appointment Assistance</option>
                   <option value="Flight Reservations for Visa Documentation">Flight Reservations for Visa Documentation</option>
-                  <option value="Makkah & Madinah Hotel Booking">Makkah & Madinah Hotel Booking</option>
+                  <option value="Travel Related Query">Travel Related Query</option>
                 </select>
               </div>
 
               <div>
-                <label for="heroMsg" class="block text-xs font-bold text-slate-700 uppercase mb-1">Route or Details</label>
-                <textarea id="heroMsg" rows="2" placeholder="e.g. Flight route, travel dates, or passport inquiry..." class="w-full px-3.5 py-2 rounded-lg border border-slate-300 text-sm focus:ring-2 focus:ring-brand-blue focus:border-brand-blue focus:outline-none"></textarea>
+                <label for="heroRoute" class="block text-xs font-bold text-slate-700 uppercase mb-1">Route / Details</label>
+                <input type="text" id="heroRoute" placeholder="e.g. Riyadh to Delhi, Lucknow, etc." class="w-full px-3.5 py-2 rounded-lg border border-slate-300 text-sm focus:ring-2 focus:ring-brand-blue focus:outline-none">
               </div>
 
-              <button type="submit" class="w-full py-3 px-4 rounded-lg font-bold text-white bg-green-600 hover:bg-green-700 shadow transition flex items-center justify-center space-x-2">
+              <div>
+                <label for="heroDate" class="block text-xs font-bold text-slate-700 uppercase mb-1">Travel Date (optional)</label>
+                <input type="date" id="heroDate" class="w-full px-3.5 py-2 rounded-lg border border-slate-300 text-sm focus:ring-2 focus:ring-brand-blue focus:outline-none">
+              </div>
+
+              <div>
+                <label for="heroMsg" class="block text-xs font-bold text-slate-700 uppercase mb-1">Message (optional)</label>
+                <textarea id="heroMsg" rows="2" placeholder="Specific questions or passenger details..." class="w-full px-3.5 py-1.5 rounded-lg border border-slate-300 text-sm focus:ring-2 focus:ring-brand-blue focus:outline-none"></textarea>
+              </div>
+
+              <button type="submit" class="w-full py-2.5 px-4 rounded-lg font-bold text-white bg-green-600 hover:bg-green-700 shadow transition flex items-center justify-center space-x-2 text-sm">
                 <i class="fa-brands fa-whatsapp text-lg"></i>
                 <span>Send WhatsApp Inquiry</span>
               </button>
@@ -286,15 +299,15 @@
     </div>
   </section>
 
-  <!-- 3. TRUST & SERVICE HIGHLIGHTS -->
-  <section class="py-7 bg-brand-bgMuted border-b border-slate-200">
+  <!-- 4. TRUST & SERVICE HIGHLIGHTS -->
+  <section class="py-6 bg-brand-bgMuted border-b border-slate-200">
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
       <div class="grid grid-cols-2 md:grid-cols-4 gap-6">
         <div class="flex items-start space-x-3">
           <div class="text-brand-blue text-xl mt-0.5"><i class="fa-solid fa-earth-asia"></i></div>
           <div>
             <h3 class="text-sm font-bold text-slate-900">Saudi Arabia & India Support</h3>
-            <p class="text-xs text-slate-600 mt-0.5">Supporting travelers from across India with flight bookings to and from Saudi Arabia.</p>
+            <p class="text-xs text-slate-600 mt-0.5">Supporting travelers across India with flights to and from Saudi Arabia.</p>
           </div>
         </div>
 
@@ -302,7 +315,7 @@
           <div class="text-brand-blue text-xl mt-0.5"><i class="fa-solid fa-user-check"></i></div>
           <div>
             <h3 class="text-sm font-bold text-slate-900">Professional Assistance</h3>
-            <p class="text-xs text-slate-600 mt-0.5">Direct and attentive guidance for families, individuals, and pilgrims.</p>
+            <p class="text-xs text-slate-600 mt-0.5">Direct guidance for expatriates, families, and pilgrims.</p>
           </div>
         </div>
 
@@ -310,7 +323,7 @@
           <div class="text-brand-blue text-xl mt-0.5"><i class="fa-solid fa-clipboard-check"></i></div>
           <div>
             <h3 class="text-sm font-bold text-slate-900">Transparent Guidance</h3>
-            <p class="text-xs text-slate-600 mt-0.5">Clear information regarding requirements, itineraries, and terms.</p>
+            <p class="text-xs text-slate-600 mt-0.5">Clear advice on requirements, itineraries, and terms.</p>
           </div>
         </div>
 
@@ -318,20 +331,20 @@
           <div class="text-brand-blue text-xl mt-0.5"><i class="fa-solid fa-comments"></i></div>
           <div>
             <h3 class="text-sm font-bold text-slate-900">Responsive Customer Support</h3>
-            <p class="text-xs text-slate-600 mt-0.5">Fast communication over WhatsApp and direct telephone lines.</p>
+            <p class="text-xs text-slate-600 mt-0.5">Prompt communication over WhatsApp and direct phone lines.</p>
           </div>
         </div>
       </div>
     </div>
   </section>
 
-  <!-- 4. CORE SERVICES -->
+  <!-- 5. CORE SERVICES -->
   <section id="services" class="py-16 bg-white">
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
       <div class="text-center max-w-3xl mx-auto mb-12">
         <span class="text-xs font-bold text-brand-blue uppercase tracking-widest bg-blue-50 px-3.5 py-1 rounded-full border border-blue-100">Our Services</span>
-        <h2 class="text-2xl sm:text-3xl font-extrabold text-slate-900 mt-2.5">Core Travel & Assistance Services</h2>
-        <p class="text-slate-600 mt-2 text-sm">Professional travel and documentation support for Indian expatriates, families, and pilgrims.</p>
+        <h2 class="text-2xl sm:text-3xl font-extrabold text-slate-900 mt-2">Core Travel & Assistance Services</h2>
+        <p class="text-slate-600 mt-1.5 text-sm">Professional travel and documentation support for Indian expatriates, families, and pilgrims.</p>
       </div>
 
       <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
@@ -362,7 +375,7 @@
               Coordinated travel packages bundling flight ticketing, hotel reservations in holy cities, and ground transportation assistance.
             </p>
           </div>
-          <a href="#umrah" class="text-xs font-bold text-brand-blue hover:text-amber-600 transition inline-flex items-center">
+          <a href="#umrah-packages" class="text-xs font-bold text-brand-blue hover:text-amber-600 transition inline-flex items-center">
             View Package Inclusions <i class="fa-solid fa-arrow-right ml-1 text-[10px]"></i>
           </a>
         </div>
@@ -389,7 +402,7 @@
             <div class="w-11 h-11 rounded-lg bg-emerald-50 text-emerald-700 flex items-center justify-center text-lg mb-4">
               <i class="fa-solid fa-passport"></i>
             </div>
-            <h3 class="text-base font-bold text-slate-900 mb-1.5">4. Indian Passport Renewal in KSA</h3>
+            <h3 class="text-base font-bold text-slate-900 mb-1.5">4. Indian Passport Renewal in Saudi Arabia</h3>
             <p class="text-slate-600 text-xs leading-relaxed mb-4">
               Professional assistance with application preparation, document checking, online filing support, and appointment guidance.
             </p>
@@ -410,7 +423,7 @@
               Support in checking appointment availability, understanding necessary requirements, and reviewing document checklists.
             </p>
           </div>
-          <a href="#passport" class="text-xs font-bold text-brand-blue hover:text-amber-600 transition inline-flex items-center">
+          <a href="#vfs-details" class="text-xs font-bold text-brand-blue hover:text-amber-600 transition inline-flex items-center">
             Appointment Details <i class="fa-solid fa-arrow-right ml-1 text-[10px]"></i>
           </a>
         </div>
@@ -421,163 +434,153 @@
             <div class="w-11 h-11 rounded-lg bg-purple-50 text-purple-700 flex items-center justify-center text-lg mb-4">
               <i class="fa-solid fa-file-lines"></i>
             </div>
-            <h3 class="text-base font-bold text-slate-900 mb-1.5">6. Flight Reservations for Visa Docs</h3>
+            <h3 class="text-base font-bold text-slate-900 mb-1.5">6. Flight Reservations for Visa Documentation</h3>
             <p class="text-slate-600 text-xs leading-relaxed mb-4">
-              Genuine flight reservation options provided for visa applications, subject to airline availability and embassy requirements.
+              Genuine flight reservation options for visa applications, subject to airline availability and applicable embassy, consulate or authority requirements.
             </p>
           </div>
-          <a href="#contact" class="text-xs font-bold text-brand-blue hover:text-amber-600 transition inline-flex items-center">
+          <a href="https://wa.me/918931048027?text=Hello%20Hamza%20Travels,%20I%20need%20flight%20reservation%20assistance%20for%20visa%20documentation.%20Please%20guide%20me%20regarding%20the%20available%20options%20and%20requirements." target="_blank" class="text-xs font-bold text-brand-blue hover:text-amber-600 transition inline-flex items-center">
             Inquire for Documentation <i class="fa-solid fa-arrow-right ml-1 text-[10px]"></i>
           </a>
         </div>
 
-        <!-- 7. Makkah & Madinah Hotel Booking -->
+        <!-- 7. Travel Related Query -->
         <div class="bg-brand-bgMuted rounded-xl p-6 border border-slate-200 hover:border-brand-blue transition flex flex-col justify-between md:col-span-2 lg:col-span-1">
           <div>
             <div class="w-11 h-11 rounded-lg bg-teal-50 text-teal-700 flex items-center justify-center text-lg mb-4">
-              <i class="fa-solid fa-hotel"></i>
+              <i class="fa-solid fa-circle-question"></i>
             </div>
-            <h3 class="text-base font-bold text-slate-900 mb-1.5">7. Makkah & Madinah Hotel Booking</h3>
+            <h3 class="text-base font-bold text-slate-900 mb-1.5">7. Travel Related Query</h3>
             <p class="text-slate-600 text-xs leading-relaxed mb-4">
-              Selected accommodation in Makkah and Madinah, ranging from budget lodging with shuttle facilities to hotels near the Harams.
+              Have specific travel requirements, itinerary questions, or documentation inquiries? Contact us directly for personalized guidance.
             </p>
           </div>
-          <a href="#umrah" class="text-xs font-bold text-brand-blue hover:text-amber-600 transition inline-flex items-center">
-            View Hotel Options <i class="fa-solid fa-arrow-right ml-1 text-[10px]"></i>
+          <a href="https://wa.me/918931048027?text=Hello%20Hamza%20Travels,%20I%20have%20a%20travel%20related%20query.%20Please%20assist%20me." target="_blank" class="text-xs font-bold text-brand-blue hover:text-amber-600 transition inline-flex items-center">
+            Travel Related Query <i class="fa-solid fa-arrow-right ml-1 text-[10px]"></i>
           </a>
         </div>
       </div>
     </div>
   </section>
 
-  <!-- 5. FLIGHT BOOKING ACROSS INDIA (Exactly 6 Representative Cards) -->
+  <!-- 6. FLIGHT BOOKING MADE SIMPLE -->
   <section class="py-16 bg-brand-bgMuted border-y border-slate-200">
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-      <div class="flex flex-col md:flex-row md:items-end justify-between mb-8 gap-4">
-        <div>
-          <span class="text-xs font-bold text-brand-blue uppercase tracking-widest bg-blue-50 px-3.5 py-1 rounded-full border border-blue-100">Flight Booking Across India</span>
-          <h2 class="text-2xl sm:text-3xl font-extrabold text-slate-900 mt-2">Flight Booking to Destinations Across India</h2>
-          <p class="text-slate-600 text-sm mt-1 max-w-2xl">
-            Serving travelers across India with flight booking support to and from Saudi Arabia and destinations worldwide.
+      <div class="text-center max-w-3xl mx-auto mb-12">
+        <span class="text-xs font-bold text-brand-blue uppercase tracking-widest bg-blue-50 px-3.5 py-1 rounded-full border border-blue-100">Ticketing Services</span>
+        <h2 class="text-2xl sm:text-3xl font-extrabold text-slate-900 mt-2">Flight Booking Made Simple</h2>
+        <p class="text-slate-600 text-sm mt-2">
+          Flight booking assistance for journeys across India, Saudi Arabia and worldwide destinations.
+        </p>
+      </div>
+
+      <!-- 4 Clean Highlights -->
+      <div class="grid sm:grid-cols-2 lg:grid-cols-4 gap-5">
+        <div class="bg-white p-6 rounded-xl border border-slate-200 hover:shadow-sm transition">
+          <div class="w-10 h-10 rounded-lg bg-blue-50 text-brand-blue flex items-center justify-center text-lg mb-3">
+            <i class="fa-solid fa-plane"></i>
+          </div>
+          <h3 class="font-bold text-slate-900 text-base mb-1.5">Domestic & International Flights</h3>
+          <p class="text-xs text-slate-600 leading-relaxed">
+            Flight bookings across major scheduled carriers connecting Saudi Arabia with all destinations across India and global routes.
           </p>
         </div>
-        <div>
-          <a href="#contact" class="inline-flex items-center px-5 py-2.5 rounded-lg text-sm font-bold text-white bg-brand-blue hover:bg-blue-800 transition shadow-sm">
-            Request a Fare
-          </a>
+
+        <div class="bg-white p-6 rounded-xl border border-slate-200 hover:shadow-sm transition">
+          <div class="w-10 h-10 rounded-lg bg-amber-50 text-amber-600 flex items-center justify-center text-lg mb-3">
+            <i class="fa-solid fa-people-roof"></i>
+          </div>
+          <h3 class="font-bold text-slate-900 text-base mb-1.5">Family & Group Bookings</h3>
+          <p class="text-xs text-slate-600 leading-relaxed">
+            Attentive coordination and convenient flight schedules for expatriates and families traveling together.
+          </p>
+        </div>
+
+        <div class="bg-white p-6 rounded-xl border border-slate-200 hover:shadow-sm transition">
+          <div class="w-10 h-10 rounded-lg bg-emerald-50 text-emerald-700 flex items-center justify-center text-lg mb-3">
+            <i class="fa-solid fa-arrows-rotate"></i>
+          </div>
+          <h3 class="font-bold text-slate-900 text-base mb-1.5">Date Change & Reissue Assistance</h3>
+          <p class="text-xs text-slate-600 leading-relaxed">
+            Direct customer support with airline date modifications, reissues, and cancellations according to airline fare rules.
+          </p>
+        </div>
+
+        <div class="bg-white p-6 rounded-xl border border-slate-200 hover:shadow-sm transition">
+          <div class="w-10 h-10 rounded-lg bg-purple-50 text-purple-700 flex items-center justify-center text-lg mb-3">
+            <i class="fa-solid fa-compass"></i>
+          </div>
+          <h3 class="font-bold text-slate-900 text-base mb-1.5">Fare & Schedule Guidance</h3>
+          <p class="text-xs text-slate-600 leading-relaxed">
+            Clear and transparent advice on available flight options, baggage allowances, and convenient transit schedules.
+          </p>
         </div>
       </div>
 
-      <!-- Exactly 6 Representative Route Cards -->
-      <div class="grid sm:grid-cols-2 lg:grid-cols-3 gap-5">
-        <!-- 1. Delhi -->
-        <div class="bg-white p-5 rounded-xl border border-slate-200 hover:shadow-sm transition flex flex-col justify-between">
-          <div>
-            <div class="flex justify-between items-center text-xs font-semibold text-slate-500 mb-1.5">
-              <span>Saudi Arabia</span>
-              <i class="fa-solid fa-arrow-right text-brand-blue"></i>
-              <span>Delhi (DEL)</span>
-            </div>
-            <h3 class="text-base font-bold text-slate-900">Delhi</h3>
-            <p class="text-xs text-slate-500 mt-1">Regular flight options are available subject to airline schedules and availability.</p>
-          </div>
-          <a href="https://wa.me/966594388004?text=Fare%20inquiry%20for%20Saudi%20to%20Delhi" class="mt-4 inline-block text-xs font-bold text-brand-blue hover:text-amber-600">
-            Request a Fare &rarr;
-          </a>
-        </div>
-
-        <!-- 2. Mumbai -->
-        <div class="bg-white p-5 rounded-xl border border-slate-200 hover:shadow-sm transition flex flex-col justify-between">
-          <div>
-            <div class="flex justify-between items-center text-xs font-semibold text-slate-500 mb-1.5">
-              <span>Saudi Arabia</span>
-              <i class="fa-solid fa-arrow-right text-brand-blue"></i>
-              <span>Mumbai (BOM)</span>
-            </div>
-            <h3 class="text-base font-bold text-slate-900">Mumbai</h3>
-            <p class="text-xs text-slate-500 mt-1">Regular flight options are available subject to airline schedules and availability.</p>
-          </div>
-          <a href="https://wa.me/966594388004?text=Fare%20inquiry%20for%20Saudi%20to%20Mumbai" class="mt-4 inline-block text-xs font-bold text-brand-blue hover:text-amber-600">
-            Request a Fare &rarr;
-          </a>
-        </div>
-
-        <!-- 3. Kerala (Kochi / Kozhikode) -->
-        <div class="bg-white p-5 rounded-xl border border-slate-200 hover:shadow-sm transition flex flex-col justify-between">
-          <div>
-            <div class="flex justify-between items-center text-xs font-semibold text-slate-500 mb-1.5">
-              <span>Saudi Arabia</span>
-              <i class="fa-solid fa-arrow-right text-brand-blue"></i>
-              <span>Kochi / Kozhikode</span>
-            </div>
-            <h3 class="text-base font-bold text-slate-900">Kerala (Kochi / Kozhikode)</h3>
-            <p class="text-xs text-slate-500 mt-1">Regular flight options are available subject to airline schedules and availability.</p>
-          </div>
-          <a href="https://wa.me/966594388004?text=Fare%20inquiry%20for%20Saudi%20to%20Kerala" class="mt-4 inline-block text-xs font-bold text-brand-blue hover:text-amber-600">
-            Request a Fare &rarr;
-          </a>
-        </div>
-
-        <!-- 4. Hyderabad -->
-        <div class="bg-white p-5 rounded-xl border border-slate-200 hover:shadow-sm transition flex flex-col justify-between">
-          <div>
-            <div class="flex justify-between items-center text-xs font-semibold text-slate-500 mb-1.5">
-              <span>Saudi Arabia</span>
-              <i class="fa-solid fa-arrow-right text-brand-blue"></i>
-              <span>Hyderabad (HYD)</span>
-            </div>
-            <h3 class="text-base font-bold text-slate-900">Hyderabad</h3>
-            <p class="text-xs text-slate-500 mt-1">Regular flight options are available subject to airline schedules and availability.</p>
-          </div>
-          <a href="https://wa.me/966594388004?text=Fare%20inquiry%20for%20Saudi%20to%20Hyderabad" class="mt-4 inline-block text-xs font-bold text-brand-blue hover:text-amber-600">
-            Request a Fare &rarr;
-          </a>
-        </div>
-
-        <!-- 5. Bengaluru / Chennai -->
-        <div class="bg-white p-5 rounded-xl border border-slate-200 hover:shadow-sm transition flex flex-col justify-between">
-          <div>
-            <div class="flex justify-between items-center text-xs font-semibold text-slate-500 mb-1.5">
-              <span>Saudi Arabia</span>
-              <i class="fa-solid fa-arrow-right text-brand-blue"></i>
-              <span>Bengaluru / Chennai</span>
-            </div>
-            <h3 class="text-base font-bold text-slate-900">Bengaluru / Chennai</h3>
-            <p class="text-xs text-slate-500 mt-1">Regular flight options are available subject to airline schedules and availability.</p>
-          </div>
-          <a href="https://wa.me/966594388004?text=Fare%20inquiry%20for%20Saudi%20to%20Bengaluru%20or%20Chennai" class="mt-4 inline-block text-xs font-bold text-brand-blue hover:text-amber-600">
-            Request a Fare &rarr;
-          </a>
-        </div>
-
-        <!-- 6. Other Indian Destinations -->
-        <div class="bg-white p-5 rounded-xl border border-slate-200 hover:shadow-sm transition flex flex-col justify-between">
-          <div>
-            <div class="flex justify-between items-center text-xs font-semibold text-slate-500 mb-1.5">
-              <span>Saudi Arabia</span>
-              <i class="fa-solid fa-arrow-right text-brand-blue"></i>
-              <span>All Airports</span>
-            </div>
-            <h3 class="text-base font-bold text-slate-900">Other Indian Destinations</h3>
-            <p class="text-xs text-slate-500 mt-1">Regular flight options are available subject to airline schedules and availability.</p>
-          </div>
-          <a href="https://wa.me/966594388004?text=Fare%20inquiry%20for%20other%20Indian%20destinations" class="mt-4 inline-block text-xs font-bold text-brand-blue hover:text-amber-600">
-            Request a Fare &rarr;
-          </a>
-        </div>
-      </div>
-
-      <!-- Clear Non-Limiting Statement -->
-      <div class="mt-6 text-center">
-        <p class="text-xs sm:text-sm text-slate-600 font-medium">
-          The routes shown are selected examples. We also assist with bookings to major airports and regional destinations across India.
-        </p>
+      <!-- Action Button -->
+      <div class="mt-8 text-center">
+        <a href="https://wa.me/918931048027?text=Hello%20Hamza%20Travels,%20I%20would%20like%20to%20request%20a%20flight%20fare%20quote%20between%20Saudi%20Arabia%20and%20India." target="_blank" class="inline-flex items-center px-6 py-2.5 rounded-lg text-sm font-bold text-white bg-brand-blue hover:bg-blue-800 transition shadow-sm">
+          <i class="fa-solid fa-ticket mr-2"></i> Request a Fare
+        </a>
       </div>
     </div>
   </section>
 
-  <!-- 6. UMRAH SECTION -->
-  <section id="umrah" class="py-16 bg-white">
+  <!-- 7. VISUAL GALLERY (Kaaba.jpg, makkah.jpg, masjidnabawi.jpg, umrah.jpg) -->
+  <section class="py-16 bg-white border-b border-slate-200">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="text-center max-w-2xl mx-auto mb-10">
+        <span class="text-xs font-bold text-brand-blue uppercase tracking-widest bg-blue-50 px-3.5 py-1 rounded-full border border-blue-100">Gallery</span>
+        <h2 class="text-2xl sm:text-3xl font-extrabold text-slate-900 mt-2">Sacred Journeys & Travel Assistance</h2>
+        <p class="text-slate-600 text-xs sm:text-sm mt-1">Dedicated coordination for pilgrims and international travelers.</p>
+      </div>
+
+      <div class="grid grid-cols-2 md:grid-cols-4 gap-4">
+        <!-- Image 1: Kaaba.jpg -->
+        <div class="relative rounded-xl overflow-hidden shadow-sm h-56 group">
+          <img src="Kaaba.jpg" 
+               alt="Holy Kaaba Makkah" 
+               class="w-full h-full object-cover group-hover:scale-105 transition duration-300">
+          <div class="absolute inset-0 bg-gradient-to-t from-black/70 via-transparent to-transparent flex items-end p-3.5">
+            <span class="text-white text-xs font-semibold">Umrah Journeys</span>
+          </div>
+        </div>
+
+        <!-- Image 2: makkah.jpg -->
+        <div class="relative rounded-xl overflow-hidden shadow-sm h-56 group">
+          <img src="makkah.jpg" 
+               alt="Makkah City" 
+               class="w-full h-full object-cover group-hover:scale-105 transition duration-300">
+          <div class="absolute inset-0 bg-gradient-to-t from-black/70 via-transparent to-transparent flex items-end p-3.5">
+            <span class="text-white text-xs font-semibold">Makkah</span>
+          </div>
+        </div>
+
+        <!-- Image 3: masjidnabawi.jpg -->
+        <div class="relative rounded-xl overflow-hidden shadow-sm h-56 group">
+          <img src="masjidnabawi.jpg" 
+               alt="Masjid An Nabawi Madinah" 
+               class="w-full h-full object-cover group-hover:scale-105 transition duration-300">
+          <div class="absolute inset-0 bg-gradient-to-t from-black/70 via-transparent to-transparent flex items-end p-3.5">
+            <span class="text-white text-xs font-semibold">Madinah</span>
+          </div>
+        </div>
+
+        <!-- Image 4: umrah.jpg -->
+        <div class="relative rounded-xl overflow-hidden shadow-sm h-56 group">
+          <img src="umrah.jpg" 
+               alt="Umrah Pilgrims" 
+               class="w-full h-full object-cover group-hover:scale-105 transition duration-300">
+          <div class="absolute inset-0 bg-gradient-to-t from-black/70 via-transparent to-transparent flex items-end p-3.5">
+            <span class="text-white text-xs font-semibold">Travel Assistance</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 8. UMRAH DETAILED SECTION -->
+  <section id="umrah" class="py-16 bg-brand-bgMuted border-b border-slate-200">
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
       <div class="grid lg:grid-cols-12 gap-10 items-center">
         <div class="lg:col-span-7 space-y-5">
@@ -586,51 +589,51 @@
             Comprehensive Umrah Travel Assistance
           </h2>
           <p class="text-slate-600 text-sm leading-relaxed">
-            Assistance for eligible pilgrims and families travelling for Umrah, subject to current Saudi regulations and applicable requirements.
+            Assistance for eligible pilgrims and families travelling for Umrah, subject to current Saudi regulations and applicable requirements. We coordinate visas, flights, accommodation, and transfers smoothly.
           </p>
 
-          <div class="grid sm:grid-cols-2 gap-4 pt-1">
-            <div class="border border-slate-200 p-3.5 rounded-lg">
+          <div id="umrah-packages" class="grid sm:grid-cols-2 gap-4 pt-1">
+            <div class="border border-slate-200 p-3.5 rounded-lg bg-white">
               <h4 class="font-bold text-slate-900 text-xs flex items-center"><i class="fa-solid fa-passport text-amber-600 mr-2"></i> Umrah Visa Assistance</h4>
               <p class="text-[11px] text-slate-600 mt-1">Guidance on visa options for families and individual travelers.</p>
             </div>
-            <div class="border border-slate-200 p-3.5 rounded-lg">
+            <div class="border border-slate-200 p-3.5 rounded-lg bg-white">
               <h4 class="font-bold text-slate-900 text-xs flex items-center"><i class="fa-solid fa-plane text-amber-600 mr-2"></i> Flight Booking</h4>
               <p class="text-[11px] text-slate-600 mt-1">Coordinated flights arriving into Jeddah or Madinah.</p>
             </div>
-            <div class="border border-slate-200 p-3.5 rounded-lg">
+            <div class="border border-slate-200 p-3.5 rounded-lg bg-white">
               <h4 class="font-bold text-slate-900 text-xs flex items-center"><i class="fa-solid fa-hotel text-amber-600 mr-2"></i> Makkah Accommodation</h4>
               <p class="text-[11px] text-slate-600 mt-1">Selected hotel options near Masjid al-Haram to match your budget.</p>
             </div>
-            <div class="border border-slate-200 p-3.5 rounded-lg">
+            <div class="border border-slate-200 p-3.5 rounded-lg bg-white">
               <h4 class="font-bold text-slate-900 text-xs flex items-center"><i class="fa-solid fa-mosque text-amber-600 mr-2"></i> Madinah Accommodation</h4>
               <p class="text-[11px] text-slate-600 mt-1">Selected lodging within accessible distance to the Prophet's Mosque.</p>
             </div>
-            <div class="border border-slate-200 p-3.5 rounded-lg sm:col-span-2">
-              <h4 class="font-bold text-slate-900 text-xs flex items-center"><i class="fa-solid fa-van-shuttle text-amber-600 mr-2"></i> Transport & Ziyarat Assistance</h4>
+            <div class="border border-slate-200 p-3.5 rounded-lg sm:col-span-2 bg-white">
+              <h4 class="font-bold text-slate-900 text-xs flex items-center"><i class="fa-solid fa-van-shuttle text-amber-600 mr-2"></i> Transport Assistance & Ziyarat</h4>
               <p class="text-[11px] text-slate-600 mt-1">Airport pickup, intercity travel, and holy site visits where applicable.</p>
             </div>
           </div>
 
           <div class="pt-2">
-            <a href="https://wa.me/966594388004?text=Assalamu%20Alaikum,%20I%20would%20like%20to%20plan%20an%20Umrah%20journey" target="_blank" class="inline-flex items-center px-6 py-3 rounded-lg font-bold text-white bg-amber-600 hover:bg-amber-700 shadow transition text-sm">
+            <a href="https://wa.me/918931048027?text=Assalamu%20Alaikum,%20I%20would%20like%20to%20plan%20an%20Umrah%20journey" target="_blank" class="inline-flex items-center px-6 py-3 rounded-lg font-bold text-white bg-amber-600 hover:bg-amber-700 shadow transition text-sm">
               <i class="fa-solid fa-kaaba mr-2"></i> Plan Your Umrah
             </a>
           </div>
         </div>
 
         <div class="lg:col-span-5">
-          <div class="bg-brand-bgMuted p-6 rounded-2xl border border-slate-200 space-y-4">
-            <h3 class="text-sm font-bold text-slate-900 border-b border-slate-200 pb-2.5">Clear & Honest Guidance</h3>
+          <div class="bg-white p-6 rounded-2xl border border-slate-200 space-y-4">
+            <h3 class="text-sm font-bold text-slate-900 border-b border-slate-100 pb-2.5">Clear & Honest Guidance</h3>
             <ul class="space-y-2.5 text-xs text-slate-600">
               <li class="flex items-start"><i class="fa-solid fa-circle-check text-green-600 mt-0.5 mr-2"></i> Realistic explanations of walking distances and shuttle services.</li>
               <li class="flex items-start"><i class="fa-solid fa-circle-check text-green-600 mt-0.5 mr-2"></i> Attentive scheduling for elderly family members and small groups.</li>
               <li class="flex items-start"><i class="fa-solid fa-circle-check text-green-600 mt-0.5 mr-2"></i> Simultaneous coordination for families departing India and sponsors in KSA.</li>
             </ul>
 
-            <div class="bg-white p-3.5 rounded-xl border border-slate-200 text-xs text-slate-500">
-              <p class="font-semibold text-slate-700 mb-0.5">Regulatory Disclaimer:</p>
-              <p>All Umrah travel assistance and visa facilitation are subject to current Saudi regulatory guidelines, applicant eligibility and applicable official requirements.</p>
+            <div class="bg-amber-50 p-3.5 rounded-xl border border-amber-200 text-xs text-amber-900">
+              <p class="font-semibold text-amber-950 mb-0.5">Regulatory Disclaimer:</p>
+              <p>All assistance is subject to current Saudi regulations, applicant eligibility and official requirements.</p>
             </div>
           </div>
         </div>
@@ -638,13 +641,13 @@
     </div>
   </section>
 
-  <!-- 7. FLIGHT BOOKING SERVICE SECTION -->
-  <section id="flights" class="py-16 bg-brand-bgMuted border-t border-slate-200">
+  <!-- 9. FLIGHT BOOKING DETAILED SECTION -->
+  <section id="flights" class="py-16 bg-white border-b border-slate-200">
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
       <div class="grid lg:grid-cols-12 gap-10 items-center">
         <div class="lg:col-span-5 order-2 lg:order-1">
-          <div class="bg-white p-6 rounded-2xl border border-slate-200 space-y-3">
-            <h3 class="text-sm font-bold text-slate-900 border-b border-slate-100 pb-2">Services Included</h3>
+          <div class="bg-brand-bgMuted p-6 rounded-2xl border border-slate-200 space-y-3">
+            <h3 class="text-sm font-bold text-slate-900 border-b border-slate-200 pb-2">Flight Services Included</h3>
             <ul class="space-y-2 text-xs text-slate-600">
               <li class="flex items-center"><i class="fa-solid fa-check text-brand-blue mr-2"></i> New ticket booking</li>
               <li class="flex items-center"><i class="fa-solid fa-check text-brand-blue mr-2"></i> Domestic and international bookings</li>
@@ -656,7 +659,7 @@
               <li class="flex items-center"><i class="fa-solid fa-check text-brand-blue mr-2"></i> Baggage rule guidance</li>
             </ul>
             <div class="pt-2">
-              <a href="https://wa.me/966594388004?text=I%20need%20assistance%20with%20a%20flight%20booking" target="_blank" class="w-full text-center py-2.5 rounded-lg text-xs font-bold text-white bg-brand-blue hover:bg-blue-800 transition block">
+              <a href="https://wa.me/918931048027?text=I%20need%20assistance%20with%20a%20flight%20booking" target="_blank" class="w-full text-center py-2.5 rounded-lg text-xs font-bold text-white bg-brand-blue hover:bg-blue-800 transition block">
                 Speak with a Ticketing Agent
               </a>
             </div>
@@ -685,8 +688,8 @@
     </div>
   </section>
 
-  <!-- 8. INDIAN PASSPORT SERVICES IN SAUDI ARABIA -->
-  <section id="passport" class="py-16 bg-white">
+  <!-- 10. INDIAN PASSPORT SERVICES IN SAUDI ARABIA & VFS SECTION -->
+  <section id="passport" class="py-16 bg-brand-bgMuted border-b border-slate-200">
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
       <div class="max-w-3xl mx-auto text-center mb-12">
         <span class="text-xs font-bold text-emerald-700 uppercase tracking-widest bg-emerald-50 px-3.5 py-1 rounded-full border border-emerald-100">Consular Documentation</span>
@@ -696,69 +699,78 @@
         </p>
       </div>
 
-      <div class="grid sm:grid-cols-2 lg:grid-cols-4 gap-4 mb-8">
-        <div class="p-4 rounded-xl border border-slate-200 bg-brand-bgMuted">
-          <div class="text-emerald-700 text-base mb-1.5"><i class="fa-solid fa-id-card"></i></div>
-          <h3 class="font-bold text-slate-900 text-xs mb-1">Passport Renewal Assistance</h3>
-          <p class="text-[11px] text-slate-600 leading-relaxed">Step-by-step guidance for form completion and file assembly.</p>
+      <div class="grid sm:grid-cols-2 lg:grid-cols-3 gap-5 mb-8">
+        <div class="p-5 rounded-xl border border-slate-200 bg-white">
+          <div class="text-emerald-700 text-lg mb-2"><i class="fa-solid fa-id-card"></i></div>
+          <h3 class="font-bold text-slate-900 text-sm mb-1">Passport Renewal Assistance</h3>
+          <p class="text-xs text-slate-600 leading-relaxed">Step-by-step guidance for form completion, photo compliance, and file assembly.</p>
         </div>
-        <div class="p-4 rounded-xl border border-slate-200 bg-brand-bgMuted">
-          <div class="text-emerald-700 text-base mb-1.5"><i class="fa-solid fa-baby"></i></div>
-          <h3 class="font-bold text-slate-900 text-xs mb-1">New & Minor Passports</h3>
-          <p class="text-[11px] text-slate-600 leading-relaxed">Guidance for newborn and minor passport applications where applicable.</p>
+        <div class="p-5 rounded-xl border border-slate-200 bg-white">
+          <div class="text-emerald-700 text-lg mb-2"><i class="fa-solid fa-baby"></i></div>
+          <h3 class="font-bold text-slate-900 text-sm mb-1">New & Minor Passport Guidance</h3>
+          <p class="text-xs text-slate-600 leading-relaxed">Guidance for newborn and minor passport applications where applicable.</p>
         </div>
-        <div class="p-4 rounded-xl border border-slate-200 bg-brand-bgMuted">
-          <div class="text-emerald-700 text-base mb-1.5"><i class="fa-solid fa-list-check"></i></div>
-          <h3 class="font-bold text-slate-900 text-xs mb-1">Document Checking</h3>
-          <p class="text-[11px] text-slate-600 leading-relaxed">Review of mandatory attachments, Iqama copies, and required details.</p>
+        <div class="p-5 rounded-xl border border-slate-200 bg-white">
+          <div class="text-emerald-700 text-lg mb-2"><i class="fa-solid fa-list-check"></i></div>
+          <h3 class="font-bold text-slate-900 text-sm mb-1">Document Checking</h3>
+          <p class="text-xs text-slate-600 leading-relaxed">Thorough review of mandatory attachments, Iqama copies, and required details.</p>
         </div>
-        <div class="p-4 rounded-xl border border-slate-200 bg-brand-bgMuted">
-          <div class="text-emerald-700 text-base mb-1.5"><i class="fa-solid fa-image"></i></div>
-          <h3 class="font-bold text-slate-900 text-xs mb-1">Photo Specification Guidance</h3>
-          <p class="text-[11px] text-slate-600 leading-relaxed">Ensuring photograph dimensions meet official VFS and consular guidelines.</p>
+        <div class="p-5 rounded-xl border border-slate-200 bg-white">
+          <div class="text-emerald-700 text-lg mb-2"><i class="fa-solid fa-laptop"></i></div>
+          <h3 class="font-bold text-slate-900 text-sm mb-1">Online Application Assistance</h3>
+          <p class="text-xs text-slate-600 leading-relaxed">Accurate data entry into official online government application portals.</p>
         </div>
-        <div class="p-4 rounded-xl border border-slate-200 bg-brand-bgMuted">
-          <div class="text-emerald-700 text-base mb-1.5"><i class="fa-solid fa-laptop"></i></div>
-          <h3 class="font-bold text-slate-900 text-xs mb-1">Online Application Assistance</h3>
-          <p class="text-[11px] text-slate-600 leading-relaxed">Accurate data entry into official online government portals.</p>
+        <div class="p-5 rounded-xl border border-slate-200 bg-white">
+          <div class="text-emerald-700 text-lg mb-2"><i class="fa-solid fa-image"></i></div>
+          <h3 class="font-bold text-slate-900 text-sm mb-1">Photo Specification Guidance</h3>
+          <p class="text-xs text-slate-600 leading-relaxed">Ensuring photograph dimensions meet official VFS and consular guidelines.</p>
         </div>
-        <div class="p-4 rounded-xl border border-slate-200 bg-brand-bgMuted">
-          <div class="text-emerald-700 text-base mb-1.5"><i class="fa-solid fa-calendar-days"></i></div>
-          <h3 class="font-bold text-slate-900 text-xs mb-1">Appointment Guidance</h3>
-          <p class="text-[11px] text-slate-600 leading-relaxed">Support in tracking open appointment slots at designated VFS centers in KSA.</p>
-        </div>
-        <div class="p-4 rounded-xl border border-slate-200 bg-brand-bgMuted sm:col-span-2">
-          <div class="text-emerald-700 text-base mb-1.5"><i class="fa-solid fa-folder-open"></i></div>
-          <h3 class="font-bold text-slate-900 text-xs mb-1">File Preparation</h3>
-          <p class="text-[11px] text-slate-600 leading-relaxed">Organizing and structuring your complete paperwork bundle for smooth submission.</p>
+        <div class="p-5 rounded-xl border border-slate-200 bg-white">
+          <div class="text-emerald-700 text-lg mb-2"><i class="fa-solid fa-folder-open"></i></div>
+          <h3 class="font-bold text-slate-900 text-sm mb-1">File Preparation</h3>
+          <p class="text-xs text-slate-600 leading-relaxed">Structuring your complete paperwork bundle for smooth center submission.</p>
         </div>
       </div>
 
-      <!-- Formal Disclaimer -->
+      <!-- VFS Appointment Assistance Sub-card (Anchor for #vfs-details) -->
+      <div id="vfs-details" class="bg-white p-6 rounded-2xl border border-slate-200 mb-8 max-w-3xl mx-auto">
+        <div class="flex items-center space-x-2.5 text-slate-900 font-bold text-base mb-2">
+          <i class="fa-solid fa-calendar-check text-rose-600 text-lg"></i>
+          <h3>VFS Appointment Assistance</h3>
+        </div>
+        <p class="text-xs text-slate-600 leading-relaxed mb-3">
+          We assist with checking appointment availability, understanding application requirements and preparing document checklists.
+        </p>
+        <div class="bg-rose-50 p-3.5 rounded-xl border border-rose-200 text-xs text-rose-900">
+          <strong>VFS Notice:</strong> Appointment slots are controlled by VFS and the relevant authorities. Appointment availability cannot be guaranteed.
+        </div>
+      </div>
+
+      <!-- Passport Formal Disclaimer -->
       <div class="bg-amber-50 border border-amber-200 rounded-xl p-4 text-center max-w-3xl mx-auto">
         <p class="text-xs text-amber-900 leading-relaxed">
-          <strong>Important Notice:</strong> Hamza Travels is an independent travel and documentation assistance service. We are not a government authority, embassy or consulate. Passport decisions, issuance timelines and appointment allocations remain under the control of the relevant authorities and authorized service centers.
+          <strong>Important Notice:</strong> Hamza Travels is an independent travel and documentation assistance service. Passport issuance, appointments, processing decisions and timelines are controlled by the relevant authorities.
         </p>
       </div>
 
       <div class="text-center mt-6">
-        <a href="https://wa.me/966594388004?text=I%20need%20assistance%20with%20Indian%20Passport%20Renewal%20in%20Saudi%20Arabia" target="_blank" class="inline-flex items-center px-6 py-3 rounded-lg font-bold text-white bg-emerald-700 hover:bg-emerald-800 transition text-sm">
+        <a href="https://wa.me/918931048027?text=I%20need%20assistance%20with%20Indian%20Passport%20Renewal%20in%20Saudi%20Arabia" target="_blank" class="inline-flex items-center px-6 py-3 rounded-lg font-bold text-white bg-emerald-700 hover:bg-emerald-800 transition text-sm">
           <i class="fa-solid fa-passport mr-2"></i> Get Passport Assistance
         </a>
       </div>
     </div>
   </section>
 
-  <!-- 9. WHY CHOOSE HAMZA TRAVELS -->
-  <section id="why-us" class="py-16 bg-brand-bgMuted border-y border-slate-200">
+  <!-- 11. WHY CHOOSE HAMZA TRAVELS -->
+  <section id="why-us" class="py-16 bg-white border-b border-slate-200">
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
       <div class="text-center max-w-3xl mx-auto mb-12">
         <h2 class="text-2xl sm:text-3xl font-extrabold text-slate-900">Why Choose Hamza Travels</h2>
         <p class="text-slate-600 mt-2 text-sm">Practical, direct, and transparent assistance for your travel and paperwork.</p>
       </div>
 
-      <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
-        <div class="bg-white p-5 rounded-xl border border-slate-200">
+      <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
+        <div class="bg-brand-bgMuted p-5 rounded-xl border border-slate-200">
           <div class="text-brand-blue text-xl mb-2"><i class="fa-solid fa-earth-asia"></i></div>
           <h3 class="font-bold text-slate-900 text-sm mb-1.5">Saudi Arabia & India Support</h3>
           <p class="text-xs text-slate-600 leading-relaxed">
@@ -766,15 +778,15 @@
           </p>
         </div>
 
-        <div class="bg-white p-5 rounded-xl border border-slate-200">
+        <div class="bg-brand-bgMuted p-5 rounded-xl border border-slate-200">
           <div class="text-brand-blue text-xl mb-2"><i class="fa-solid fa-handshake"></i></div>
-          <h3 class="font-bold text-slate-900 text-sm mb-1.5">Direct Customer Assistance</h3>
+          <h3 class="font-bold text-slate-900 text-sm mb-1.5">Professional Assistance</h3>
           <p class="text-xs text-slate-600 leading-relaxed">
-            You deal directly with Mohammad Mahatab Alam and dedicated staff for personalized, attentive communication.
+            Attentive, personalized guidance from Mohammad Mahatab Alam and dedicated staff for your itineraries and documents.
           </p>
         </div>
 
-        <div class="bg-white p-5 rounded-xl border border-slate-200">
+        <div class="bg-brand-bgMuted p-5 rounded-xl border border-slate-200">
           <div class="text-brand-blue text-xl mb-2"><i class="fa-solid fa-scale-balanced"></i></div>
           <h3 class="font-bold text-slate-900 text-sm mb-1.5">Transparent Communication</h3>
           <p class="text-xs text-slate-600 leading-relaxed">
@@ -782,35 +794,19 @@
           </p>
         </div>
 
-        <div class="bg-white p-5 rounded-xl border border-slate-200">
-          <div class="text-brand-blue text-xl mb-2"><i class="fa-solid fa-kaaba"></i></div>
-          <h3 class="font-bold text-slate-900 text-sm mb-1.5">Travel & Umrah Expertise</h3>
-          <p class="text-xs text-slate-600 leading-relaxed">
-            Practical knowledge of major airline sectors, seasonal travel windows, and holy city accommodations.
-          </p>
-        </div>
-
-        <div class="bg-white p-5 rounded-xl border border-slate-200">
+        <div class="bg-brand-bgMuted p-5 rounded-xl border border-slate-200">
           <div class="text-brand-blue text-xl mb-2"><i class="fa-brands fa-whatsapp"></i></div>
-          <h3 class="font-bold text-slate-900 text-sm mb-1.5">Convenient WhatsApp Support</h3>
+          <h3 class="font-bold text-slate-900 text-sm mb-1.5">Responsive Customer Support</h3>
           <p class="text-xs text-slate-600 leading-relaxed">
-            Fast responses, simple document reviews, and prompt delivery of electronic itineraries on your mobile.
-          </p>
-        </div>
-
-        <div class="bg-white p-5 rounded-xl border border-slate-200">
-          <div class="text-brand-blue text-xl mb-2"><i class="fa-solid fa-users"></i></div>
-          <h3 class="font-bold text-slate-900 text-sm mb-1.5">Assistance for Indian Expatriates</h3>
-          <p class="text-xs text-slate-600 leading-relaxed">
-            Dedicated support tailored to the specific documentation and travel routines of expatriates living in KSA.
+            Prompt communication over WhatsApp and direct phone lines to address questions and deliver electronic documents.
           </p>
         </div>
       </div>
     </div>
   </section>
 
-  <!-- 10. ABOUT HAMZA TRAVELS -->
-  <section id="about" class="py-16 bg-white">
+  <!-- 12. ABOUT HAMZA TRAVELS -->
+  <section id="about" class="py-16 bg-brand-bgMuted border-b border-slate-200">
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
       <div class="grid lg:grid-cols-12 gap-10 items-center">
         <div class="lg:col-span-7 space-y-4">
@@ -826,11 +822,11 @@
           </p>
 
           <div class="grid sm:grid-cols-2 gap-4 pt-1">
-            <div class="p-3.5 rounded-lg border border-slate-200 bg-brand-bgMuted">
+            <div class="p-3.5 rounded-lg border border-slate-200 bg-white">
               <h4 class="text-xs font-bold text-slate-500 uppercase tracking-wider">Owner / Proprietor</h4>
               <p class="text-sm font-bold text-slate-900 mt-0.5">Mohammad Mahatab Alam</p>
             </div>
-            <div class="p-3.5 rounded-lg border border-slate-200 bg-brand-bgMuted">
+            <div class="p-3.5 rounded-lg border border-slate-200 bg-white">
               <h4 class="text-xs font-bold text-slate-500 uppercase tracking-wider">Indian GSTIN</h4>
               <p class="text-sm font-bold text-slate-900 font-mono mt-0.5">09BFLPN1044Q1ZV</p>
             </div>
@@ -839,7 +835,7 @@
 
         <div class="lg:col-span-5 space-y-4">
           <!-- Saudi Arabia Service Base -->
-          <div class="bg-brand-bgMuted p-5 rounded-xl border border-slate-200">
+          <div class="bg-white p-5 rounded-xl border border-slate-200">
             <div class="flex items-center space-x-2 text-slate-900 font-bold text-sm mb-1.5">
               <span class="text-lg">🇸🇦</span>
               <span>Saudi Arabia Service Base</span>
@@ -853,7 +849,7 @@
           </div>
 
           <!-- India Registered Business -->
-          <div class="bg-brand-bgMuted p-5 rounded-xl border border-slate-200">
+          <div class="bg-white p-5 rounded-xl border border-slate-200">
             <div class="flex items-center space-x-2 text-slate-900 font-bold text-sm mb-1.5">
               <span class="text-lg">🇮🇳</span>
               <span>India Registered Business</span>
@@ -870,8 +866,8 @@
     </div>
   </section>
 
-  <!-- 11. CONTACT & INQUIRY SECTION (Mobile-Friendly Form) -->
-  <section id="contact" class="py-16 bg-brand-bgMuted border-t border-slate-200">
+  <!-- 13. CONTACT & INQUIRY SECTION -->
+  <section id="contact" class="py-16 bg-white border-b border-slate-200">
     <div class="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8">
       <div class="text-center mb-10">
         <span class="text-xs font-bold text-brand-blue uppercase tracking-widest bg-blue-50 px-3.5 py-1 rounded-full border border-blue-100">Inquiry Form</span>
@@ -879,16 +875,16 @@
         <p class="text-slate-600 text-sm mt-1">Fill out the details below to open a formatted chat directly on WhatsApp.</p>
       </div>
 
-      <div class="bg-white rounded-2xl p-6 sm:p-8 shadow-sm border border-slate-200">
+      <div class="bg-brand-bgMuted rounded-2xl p-6 sm:p-8 shadow-sm border border-slate-200">
         <form class="space-y-4" onsubmit="handleMainInquiry(event)">
           <div class="grid sm:grid-cols-2 gap-4">
             <div>
               <label for="mainCustName" class="block text-xs font-bold text-slate-700 uppercase mb-1">Full Name</label>
-              <input type="text" id="mainCustName" required placeholder="Your Name" class="w-full px-3.5 py-2.5 rounded-lg border border-slate-300 text-sm focus:ring-2 focus:ring-brand-blue focus:outline-none">
+              <input type="text" id="mainCustName" required placeholder="Your Name" class="w-full px-3.5 py-2.5 rounded-lg border border-slate-300 text-sm focus:ring-2 focus:ring-brand-blue focus:outline-none bg-white">
             </div>
             <div>
               <label for="mainCustPhone" class="block text-xs font-bold text-slate-700 uppercase mb-1">WhatsApp Number</label>
-              <input type="tel" id="mainCustPhone" required placeholder="e.g. +966 / +91 ..." class="w-full px-3.5 py-2.5 rounded-lg border border-slate-300 text-sm focus:ring-2 focus:ring-brand-blue focus:outline-none">
+              <input type="tel" id="mainCustPhone" required placeholder="e.g. +966 / +91 ..." class="w-full px-3.5 py-2.5 rounded-lg border border-slate-300 text-sm focus:ring-2 focus:ring-brand-blue focus:outline-none bg-white">
             </div>
           </div>
 
@@ -896,29 +892,28 @@
             <div>
               <label for="mainService" class="block text-xs font-bold text-slate-700 uppercase mb-1">Service Required</label>
               <select id="mainService" class="w-full px-3.5 py-2.5 rounded-lg border border-slate-300 text-sm focus:ring-2 focus:ring-brand-blue focus:outline-none bg-white">
-                <option value="Umrah Travel Assistance">Umrah Travel Assistance</option>
-                <option value="Umrah Packages">Umrah Packages</option>
+                <option value="Umrah Travel Assistance & Packages">Umrah Travel Assistance & Packages</option>
                 <option value="Flight Ticket Booking">Flight Ticket Booking</option>
                 <option value="Indian Passport Renewal in Saudi Arabia">Indian Passport Renewal in Saudi Arabia</option>
                 <option value="VFS Appointment Assistance">VFS Appointment Assistance</option>
                 <option value="Flight Reservations for Visa Documentation">Flight Reservations for Visa Documentation</option>
-                <option value="Makkah & Madinah Hotel Booking">Makkah & Madinah Hotel Booking</option>
+                <option value="Travel Related Query">Travel Related Query</option>
               </select>
             </div>
             <div>
               <label for="mainRoute" class="block text-xs font-bold text-slate-700 uppercase mb-1">Travel Route</label>
-              <input type="text" id="mainRoute" placeholder="e.g. Riyadh to Delhi, Jeddah to Mumbai..." class="w-full px-3.5 py-2.5 rounded-lg border border-slate-300 text-sm focus:ring-2 focus:ring-brand-blue focus:outline-none">
+              <input type="text" id="mainRoute" placeholder="e.g. Riyadh to Delhi, Jeddah to Mumbai..." class="w-full px-3.5 py-2.5 rounded-lg border border-slate-300 text-sm focus:ring-2 focus:ring-brand-blue focus:outline-none bg-white">
             </div>
           </div>
 
           <div>
             <label for="mainDate" class="block text-xs font-bold text-slate-700 uppercase mb-1">Travel Date (optional)</label>
-            <input type="date" id="mainDate" class="w-full px-3.5 py-2.5 rounded-lg border border-slate-300 text-sm focus:ring-2 focus:ring-brand-blue focus:outline-none">
+            <input type="date" id="mainDate" class="w-full px-3.5 py-2.5 rounded-lg border border-slate-300 text-sm focus:ring-2 focus:ring-brand-blue focus:outline-none bg-white">
           </div>
 
           <div>
-            <label for="mainMsg" class="block text-xs font-bold text-slate-700 uppercase mb-1">Message</label>
-            <textarea id="mainMsg" rows="3" placeholder="Please mention any specific details, passenger counts, or questions..." class="w-full px-3.5 py-2.5 rounded-lg border border-slate-300 text-sm focus:ring-2 focus:ring-brand-blue focus:outline-none"></textarea>
+            <label for="mainMsg" class="block text-xs font-bold text-slate-700 uppercase mb-1">Message (optional)</label>
+            <textarea id="mainMsg" rows="3" placeholder="Please mention any specific details, passenger counts, or questions..." class="w-full px-3.5 py-2.5 rounded-lg border border-slate-300 text-sm focus:ring-2 focus:ring-brand-blue focus:outline-none bg-white"></textarea>
           </div>
 
           <div class="pt-1">
@@ -932,8 +927,8 @@
     </div>
   </section>
 
-  <!-- 12. FAQS SECTION -->
-  <section id="faq" class="py-16 bg-white">
+  <!-- 14. FAQS SECTION -->
+  <section id="faq" class="py-16 bg-brand-bgMuted border-b border-slate-200">
     <div class="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8">
       <div class="text-center mb-10">
         <span class="text-xs font-bold text-brand-blue uppercase tracking-widest bg-blue-50 px-3.5 py-1 rounded-full border border-blue-100">Clear Information</span>
@@ -942,49 +937,49 @@
       </div>
 
       <div class="space-y-3.5 text-sm">
-        <div class="border border-slate-200 rounded-xl p-4">
+        <div class="border border-slate-200 rounded-xl p-4 bg-white">
           <h3 class="font-bold text-slate-900 text-sm">How does flight ticket booking work with Hamza Travels?</h3>
           <p class="text-slate-600 text-xs mt-1.5 leading-relaxed">
             Share your preferred dates and route with us. We check schedules across available airlines, share competitive fare options, and issue confirmed tickets subject to airline availability upon payment.
           </p>
         </div>
 
-        <div class="border border-slate-200 rounded-xl p-4">
+        <div class="border border-slate-200 rounded-xl p-4 bg-white">
           <h3 class="font-bold text-slate-900 text-sm">What Umrah services do you offer?</h3>
           <p class="text-slate-600 text-xs mt-1.5 leading-relaxed">
             We assist eligible pilgrims with Umrah visa guidance, flight ticketing arriving in Jeddah or Madinah, hotel accommodation in Makkah and Madinah, and local transfer arrangements, subject to current Saudi regulatory guidelines.
           </p>
         </div>
 
-        <div class="border border-slate-200 rounded-xl p-4">
+        <div class="border border-slate-200 rounded-xl p-4 bg-white">
           <h3 class="font-bold text-slate-900 text-sm">Can Hamza Travels renew my Indian passport directly?</h3>
           <p class="text-slate-600 text-xs mt-1.5 leading-relaxed">
             No travel agency can issue passports. We provide professional application and documentation assistance — helping you complete online government forms, verify photo and document checklists, and schedule appointments at authorized VFS centers.
           </p>
         </div>
 
-        <div class="border border-slate-200 rounded-xl p-4">
+        <div class="border border-slate-200 rounded-xl p-4 bg-white">
           <h3 class="font-bold text-slate-900 text-sm">Do you guarantee VFS appointment slots?</h3>
           <p class="text-slate-600 text-xs mt-1.5 leading-relaxed">
             No agency can guarantee appointment slots because they are controlled directly by VFS Global and relevant authorities. We assist by checking appointment availability, understanding application requirements and preparing document checklists.
           </p>
         </div>
 
-        <div class="border border-slate-200 rounded-xl p-4">
+        <div class="border border-slate-200 rounded-xl p-4 bg-white">
           <h3 class="font-bold text-slate-900 text-sm">What are "Flight Reservations for Visa Documentation"?</h3>
           <p class="text-slate-600 text-xs mt-1.5 leading-relaxed">
             Genuine flight reservation and itinerary options may be provided for travel documentation and visa applications, subject to airline availability and the specific requirements of the relevant embassy, consulate or authority.
           </p>
         </div>
 
-        <div class="border border-slate-200 rounded-xl p-4">
+        <div class="border border-slate-200 rounded-xl p-4 bg-white">
           <h3 class="font-bold text-slate-900 text-sm">How are Makkah and Madinah hotels arranged?</h3>
           <p class="text-slate-600 text-xs mt-1.5 leading-relaxed">
             We provide selected lodging options ranging from budget-friendly hotels with scheduled shuttle services to accommodations closer to the Holy Harams, giving you clear distances so you can decide comfortably.
           </p>
         </div>
 
-        <div class="border border-slate-200 rounded-xl p-4">
+        <div class="border border-slate-200 rounded-xl p-4 bg-white">
           <h3 class="font-bold text-slate-900 text-sm">Where does Hamza Travels operate?</h3>
           <p class="text-slate-600 text-xs mt-1.5 leading-relaxed">
             Our Saudi Arabia service base is in Layla, Al Aflaj (Riyadh Province), while our registered business office is in Maharajganj, Uttar Pradesh (India) under GSTIN: 09BFLPN1044Q1ZV. We assist clients from across India traveling to and from Saudi Arabia.
@@ -994,7 +989,7 @@
     </div>
   </section>
 
-  <!-- 13. FINAL CALL TO ACTION -->
+  <!-- 15. FINAL CALL TO ACTION -->
   <section class="py-14 bg-brand-navy text-white text-center">
     <div class="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8 space-y-4">
       <h2 class="text-2xl sm:text-3xl font-extrabold tracking-tight">Planning Your Next Journey?</h2>
@@ -1003,11 +998,11 @@
       </p>
 
       <div class="pt-3 flex flex-wrap justify-center items-center gap-3">
-        <a href="https://wa.me/966594388004?text=Hello%20Hamza%20Travels,%20I%20am%20planning%20a%20journey" target="_blank" class="inline-flex items-center px-6 py-2.5 rounded-lg font-bold text-white bg-green-600 hover:bg-green-700 shadow transition text-sm">
+        <a href="https://wa.me/918931048027?text=Hello%20Hamza%20Travels,%20I%20am%20planning%20a%20journey" target="_blank" class="inline-flex items-center px-6 py-2.5 rounded-lg font-bold text-white bg-green-600 hover:bg-green-700 shadow transition text-sm">
           <i class="fa-brands fa-whatsapp text-base mr-2"></i> WhatsApp Us
         </a>
         <a href="tel:+966594388004" class="inline-flex items-center px-5 py-2.5 rounded-lg font-bold text-white bg-slate-800 hover:bg-slate-700 border border-slate-700 transition text-sm">
-          <i class="fa-solid fa-phone mr-2 text-amber-400"></i> Call Saudi Office
+          <i class="fa-solid fa-phone mr-2 text-amber-400"></i> Call Saudi Base
         </a>
         <a href="tel:+918931048027" class="inline-flex items-center px-5 py-2.5 rounded-lg font-bold text-white bg-slate-800 hover:bg-slate-700 border border-slate-700 transition text-sm">
           <i class="fa-solid fa-phone mr-2 text-amber-400"></i> Call India Office
@@ -1016,12 +1011,15 @@
     </div>
   </section>
 
-  <!-- 14. FOOTER -->
+  <!-- 16. FOOTER -->
   <footer class="bg-slate-950 text-slate-400 pt-14 pb-10 border-t border-slate-800 text-xs">
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
       <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 mb-10">
-        <!-- Col 1: Brand -->
-        <div class="space-y-2.5">
+        <!-- Col 1: Brand & Logo -->
+        <div class="space-y-3">
+          <img src="logo.jpg" 
+               alt="Hamza Travels Logo" 
+               class="h-10 w-auto object-contain brightness-0 invert opacity-90 block">
           <span class="text-base font-extrabold text-white tracking-wider block">HAMZA TRAVELS</span>
           <p class="text-amber-400 font-semibold text-[11px]">Professional Travel, Umrah & Passport Assistance</p>
           <p class="text-slate-400 leading-relaxed text-xs">
@@ -1111,13 +1109,13 @@
   </footer>
 
   <!-- FLOATING WHATSAPP BUTTON -->
-  <a href="https://wa.me/966594388004?text=Hello%20Hamza%20Travels" target="_blank" aria-label="Contact Hamza Travels on WhatsApp" class="fixed bottom-6 right-6 z-50 bg-green-600 hover:bg-green-700 text-white rounded-full p-4 shadow-xl flex items-center justify-center transform hover:scale-105 transition duration-200">
+  <a href="https://wa.me/918931048027?text=Hello%20Hamza%20Travels" target="_blank" aria-label="Contact Hamza Travels on WhatsApp" class="fixed bottom-6 right-6 z-50 bg-green-600 hover:bg-green-700 text-white rounded-full p-4 shadow-xl flex items-center justify-center transform hover:scale-105 transition duration-200">
     <i class="fa-brands fa-whatsapp text-2xl"></i>
   </a>
 
-  <!-- CLIENT-SIDE LOGIC -->
+  <!-- SCRIPTS -->
   <script>
-    // Live Clock
+    // Live KSA Local Time (Asia/Riyadh)
     function updateKsaClock() {
       try {
         const formatter = new Intl.DateTimeFormat([], {
@@ -1131,12 +1129,14 @@
         if (clockElem) {
           clockElem.textContent = formatter.format(new Date());
         }
-      } catch (e) {}
+      } catch (e) {
+        // Fallback gracefully
+      }
     }
     setInterval(updateKsaClock, 1000);
     updateKsaClock();
 
-    // Mobile Navigation Drawer Toggle
+    // Mobile Drawer Toggle
     const navBtn = document.getElementById('mobileNavToggle');
     const navMenu = document.getElementById('mobileNavMenu');
     if (navBtn && navMenu) {
@@ -1155,13 +1155,15 @@
       e.preventDefault();
       const name = document.getElementById('heroCustName').value.trim();
       const service = document.getElementById('heroService').value;
+      const route = document.getElementById('heroRoute').value.trim();
+      const date = document.getElementById('heroDate').value;
       const msg = document.getElementById('heroMsg').value.trim();
 
-      const text = `*Inquiry - Hamza Travels Website*%0A*Name:* ${encodeURIComponent(name)}%0A*Service:* ${encodeURIComponent(service)}%0A*Details:* ${encodeURIComponent(msg || 'None provided')}`;
-      window.open(`https://wa.me/966594388004?text=${text}`, '_blank');
+      const text = `*Inquiry - Hamza Travels Website*%0A*Name:* ${encodeURIComponent(name)}%0A*Service:* ${encodeURIComponent(service)}%0A*Route/Details:* ${encodeURIComponent(route || 'N/A')}%0A*Travel Date:* ${encodeURIComponent(date || 'Flexible')}%0A*Message:* ${encodeURIComponent(msg || 'None provided')}`;
+      window.open(`https://wa.me/918931048027?text=${text}`, '_blank');
     }
 
-    // Main Contact Form WhatsApp Handler
+    // Main Form WhatsApp Handler
     function handleMainInquiry(e) {
       e.preventDefault();
       const name = document.getElementById('mainCustName').value.trim();
@@ -1172,7 +1174,7 @@
       const msg = document.getElementById('mainMsg').value.trim();
 
       const text = `*New Travel Inquiry - Hamza Travels*%0A*Name:* ${encodeURIComponent(name)}%0A*Phone:* ${encodeURIComponent(phone)}%0A*Service:* ${encodeURIComponent(service)}%0A*Route:* ${encodeURIComponent(route || 'N/A')}%0A*Travel Date:* ${encodeURIComponent(date || 'Flexible')}%0A*Message:* ${encodeURIComponent(msg || 'None provided')}`;
-      window.open(`https://wa.me/966594388004?text=${text}`, '_blank');
+      window.open(`https://wa.me/918931048027?text=${text}`, '_blank');
     }
   </script>
 </body>
