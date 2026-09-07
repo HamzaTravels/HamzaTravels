@@ -260,7 +260,8 @@
                 <label for="heroService" class="block text-xs font-bold text-slate-700 uppercase mb-1">Service Required</label>
                 <select id="heroService" required onchange="updateInquiryFields()" class="w-full px-3.5 py-2 rounded-lg border border-slate-300 text-sm focus:ring-2 focus:ring-brand-blue focus:outline-none bg-white font-medium">
                   <option value="Flight Ticket Booking">Flight Ticket Booking</option>
-                  <option value="Umrah Travel & Packages">Umrah Travel & Packages</option>
+                  <option value="Umrah Individual Visa">Umrah Individual Visa</option>
+                  <option value="Umrah Package">Umrah Package</option>
                   <option value="Indian Passport Services">Indian Passport Services</option>
                   <option value="VFS Appointment Assistance">VFS Appointment Assistance</option>
                   <option value="Flight Reservations for Visa Documentation">Flight Reservations for Visa Documentation</option>
@@ -351,7 +352,7 @@
         <div class="bg-brand-bgMuted rounded-xl p-6 border border-slate-200 hover:border-brand-blue transition flex flex-col justify-between">
           <div>
             <div class="w-11 h-11 rounded-lg bg-amber-50 text-amber-600 flex items-center justify-center text-lg mb-4"><i class="fa-solid fa-kaaba"></i></div>
-            <h3 class="text-base font-bold text-slate-900 mb-1.5">Umrah Travel & Packages</h3>
+            <h3 class="text-base font-bold text-slate-900 mb-1.5">Umrah Individual Visa & Packages</h3>
             <p class="text-slate-600 text-xs leading-relaxed mb-4">Flight, accommodation and travel coordination for eligible pilgrims, subject to current Saudi requirements.</p>
           </div>
           <a href="https://wa.me/918931048027?text=Hello%20Hamza%20Travels,%20I%20would%20like%20to%20enquire%20about%20Umrah%20Travel%20%26%20Packages." target="_blank" class="text-xs font-bold text-brand-blue hover:text-amber-600 transition inline-flex items-center">Enquire &rarr;</a>
@@ -939,11 +940,8 @@
         } else {
           html += `<p class="text-[11px] text-slate-500 bg-slate-50 border border-slate-200 rounded-lg px-3 py-2">Please provide the exact route required for the visa documentation reservation.</p>`;
         }
-      } else if (service === 'Umrah Travel & Packages') {
-        html += fieldInput('inqUmrahPersons', 'Number of Pilgrims', 'How many people are travelling?', 'number');
-        html += fieldInput('inqUmrahDate', 'Preferred Travel Date', '', 'date');
-        html += fieldInput('inqUmrahDuration', 'Approx. Umrah Duration', 'e.g. 10 days', 'text', false);
-        html += fieldSelect('inqUmrahPreference', 'Travel Preference', [['Package','Package'],['Flight + Hotel','Flight + Hotel'],['Flight Only','Flight Only'],['Need Guidance','Need Guidance']]);
+      } else if (service === 'Umrah Individual Visa' || service === 'Umrah Package') {
+        html += `<p class="text-[11px] text-slate-500 bg-slate-50 border border-slate-200 rounded-lg px-3 py-2">Please send your Umrah requirement on WhatsApp. Our team will guide you regarding availability, requirements and pricing.</p>`;
       } else if (service === 'Indian Passport Services') {
         html += fieldSelect('inqPassportType', 'Passport Service', [['Renewal / Re-issue','Renewal / Re-issue'],['New Passport','New Passport'],['Minor / Newborn Passport','Minor / Newborn Passport'],['Other Passport Assistance','Other Passport Assistance']]);
         html += fieldInput('inqPassportCity', 'VFS / Application City', 'e.g. Riyadh, Jeddah, Dammam', 'text', false);
@@ -971,8 +969,7 @@
       const values = [];
       const labels = [
         ['inqFrom','From'], ['inqTo','To'], ['inqTravelDate','Travel Date'], ['inqPassengers','Passengers'],
-        ['inqTripType','Trip Type'], ['inqUmrahPersons','Number of Pilgrims'], ['inqUmrahDate','Preferred Travel Date'],
-        ['inqUmrahDuration','Approx. Umrah Duration'], ['inqUmrahPreference','Travel Preference'], ['inqPassportType','Passport Service'],
+        ['inqTripType','Trip Type'], ['inqPassportType','Passport Service'],
         ['inqPassportCity','VFS / Application City'], ['inqVfsType','Appointment Type'], ['inqVfsCity','Preferred City'],
         ['inqSaudiWorkVisaStage','Service Needed'], ['inqSaudiWorkVisaCity','City'], ['inqSaudiWorkVisaApplicants','Number of Applicants'], ['inqDetails','Travel Details']
       ];
@@ -1072,12 +1069,19 @@
       submitBtn.innerText = "Submitting...";
 
       try {
-        await addDoc(collection(db, "reviews"), {
+        const reviewWrite = addDoc(collection(db, "reviews"), {
           name: name,
           stars: stars,
           comment: comment,
           createdAt: serverTimestamp()
         });
+
+        await Promise.race([
+          reviewWrite,
+          new Promise((_, reject) =>
+            setTimeout(() => reject(new Error("Review submission timed out. Check Firebase connection/rules.")), 10000)
+          )
+        ]);
 
         statusMsg.innerText = "Thank you! Your review has been submitted.";
         statusMsg.className = "text-xs text-center font-medium mt-2 text-green-600 block";
@@ -1085,7 +1089,7 @@
         loadReviews();
       } catch (err) {
         console.error("Submit error:", err);
-        statusMsg.innerText = "Error submitting review. Please try again.";
+        statusMsg.innerText = "Review could not be submitted. Please try again.";
         statusMsg.className = "text-xs text-center font-medium mt-2 text-rose-600 block";
       } finally {
         submitBtn.disabled = false;
