@@ -172,6 +172,12 @@
     .ht-help-fab:hover { transform: translateY(-2px); background: #0f2444; box-shadow: 0 16px 36px rgba(2,8,23,.38); }
     .ht-help-fab i { color: #22c55e; font-size: 18px; }
 
+    /* Premium customer review cards */
+    .ht-review-card { background: linear-gradient(145deg,#ffffff,#f8fafc); border: 1px solid #e2e8f0; border-radius: 20px; padding: 18px; box-shadow: 0 10px 30px rgba(15,23,42,.06); transition: transform .25s ease, box-shadow .25s ease, border-color .25s ease; }
+    .ht-review-card:hover { transform: translateY(-3px); box-shadow: 0 16px 36px rgba(15,23,42,.10); border-color: #fbbf24; }
+    .ht-review-avatar { width: 40px; height: 40px; flex: 0 0 40px; display: grid; place-items: center; border-radius: 50%; background: linear-gradient(135deg,#dbeafe,#fef3c7); color: #0f2444; font-weight: 900; font-size: 14px; }
+    .ht-review-stars { color: #f59e0b; letter-spacing: .08em; white-space: nowrap; font-size: 13px; }
+
     body.ht-modal-open { overflow: hidden; }
 
     @media (max-width: 767px) {
@@ -390,7 +396,7 @@
 
               <div>
                 <label for="heroService" class="block text-xs font-bold text-slate-700 uppercase mb-1">Select Service *</label>
-                <select id="heroService" onchange="updateHeroServiceFields()" class="w-full px-3.5 py-2 rounded-lg border border-slate-300 text-sm focus:ring-2 focus:ring-brand-blue focus:outline-none bg-white font-medium text-slate-800">
+                <select id="heroService" onchange="toggleHeroDynamicFields()" class="w-full px-3.5 py-2 rounded-lg border border-slate-300 text-sm focus:ring-2 focus:ring-brand-blue focus:outline-none bg-white font-medium text-slate-800">
                   <option value="Flight Ticket Booking">1. Flight Ticket Booking (Featured)</option>
                   <option value="Indian Passport Services">2. Indian Passport Services</option>
                   <option value="VFS Appointment Assistance">3. VFS Appointment Assistance</option>
@@ -400,34 +406,34 @@
                 </select>
               </div>
 
-              <!-- A. Dynamic Container: Flight Ticket Booking -->
-              <div id="heroFields_flight" class="space-y-3">
+              <!-- Dynamic Container: Flight Ticket Fields -->
+              <div id="heroFlightFields" class="space-y-3">
                 <div class="grid grid-cols-2 gap-2">
                   <div>
-                    <label for="hero_flight_from" class="block text-[11px] font-bold text-slate-700 uppercase mb-1">Departure (From) *</label>
-                    <input type="text" id="hero_flight_from" placeholder="e.g. Riyadh, Dammam, Jeddah" class="w-full px-3 py-1.5 rounded-lg border border-slate-300 text-xs focus:ring-2 focus:ring-brand-blue focus:outline-none bg-white">
+                    <label for="heroFlightFrom" class="block text-[11px] font-bold text-slate-700 uppercase mb-1">Departure (From) *</label>
+                    <input type="text" id="heroFlightFrom" placeholder="e.g. Riyadh, Dammam, Jeddah" class="w-full px-3 py-1.5 rounded-lg border border-slate-300 text-xs focus:ring-2 focus:ring-brand-blue focus:outline-none bg-white">
                   </div>
                   <div>
-                    <label for="hero_flight_to" class="block text-[11px] font-bold text-slate-700 uppercase mb-1">Destination (To) *</label>
-                    <input type="text" id="hero_flight_to" placeholder="e.g. Delhi, Lucknow, Mumbai" class="w-full px-3 py-1.5 rounded-lg border border-slate-300 text-xs focus:ring-2 focus:ring-brand-blue focus:outline-none bg-white">
+                    <label for="heroFlightTo" class="block text-[11px] font-bold text-slate-700 uppercase mb-1">Destination (To) *</label>
+                    <input type="text" id="heroFlightTo" placeholder="e.g. Delhi, Lucknow, Mumbai" class="w-full px-3 py-1.5 rounded-lg border border-slate-300 text-xs focus:ring-2 focus:ring-brand-blue focus:outline-none bg-white">
                   </div>
                 </div>
 
                 <div class="grid grid-cols-3 gap-2">
                   <div>
-                    <label for="hero_flight_date" class="block text-[11px] font-bold text-slate-700 uppercase mb-1">Travel Date</label>
-                    <input type="date" id="hero_flight_date" class="w-full px-2 py-1.5 rounded-lg border border-slate-300 text-xs focus:ring-2 focus:ring-brand-blue focus:outline-none bg-white">
+                    <label for="heroFlightDate" class="block text-[11px] font-bold text-slate-700 uppercase mb-1">Travel Date</label>
+                    <input type="date" id="heroFlightDate" class="w-full px-2 py-1.5 rounded-lg border border-slate-300 text-xs focus:ring-2 focus:ring-brand-blue focus:outline-none bg-white">
                   </div>
                   <div>
-                    <label for="hero_flight_trip" class="block text-[11px] font-bold text-slate-700 uppercase mb-1">Trip Type</label>
-                    <select id="hero_flight_trip" class="w-full px-2 py-1.5 rounded-lg border border-slate-300 text-xs focus:ring-2 focus:ring-brand-blue focus:outline-none bg-white">
+                    <label for="heroTripType" class="block text-[11px] font-bold text-slate-700 uppercase mb-1">Trip Type</label>
+                    <select id="heroTripType" class="w-full px-2 py-1.5 rounded-lg border border-slate-300 text-xs focus:ring-2 focus:ring-brand-blue focus:outline-none bg-white">
                       <option value="One Way">One Way</option>
                       <option value="Round Trip">Round Trip</option>
                     </select>
                   </div>
                   <div>
-                    <label for="hero_flight_pax" class="block text-[11px] font-bold text-slate-700 uppercase mb-1">Passengers</label>
-                    <select id="hero_flight_pax" class="w-full px-2 py-1.5 rounded-lg border border-slate-300 text-xs focus:ring-2 focus:ring-brand-blue focus:outline-none bg-white">
+                    <label for="heroPassengers" class="block text-[11px] font-bold text-slate-700 uppercase mb-1">Passengers</label>
+                    <select id="heroPassengers" class="w-full px-2 py-1.5 rounded-lg border border-slate-300 text-xs focus:ring-2 focus:ring-brand-blue focus:outline-none bg-white">
                       <option value="1 Passenger">1 Pax</option>
                       <option value="2 Passengers">2 Pax</option>
                       <option value="3-4 Passengers">3-4 Pax</option>
@@ -437,143 +443,83 @@
                 </div>
               </div>
 
-              <!-- B. Dynamic Container: Indian Passport Services -->
-              <div id="heroFields_passport" class="space-y-3 hidden">
-                <div>
-                  <label for="hero_passport_type" class="block text-[11px] font-bold text-slate-700 uppercase mb-1">Passport Service Type</label>
-                  <select id="hero_passport_type" class="w-full px-3 py-1.5 rounded-lg border border-slate-300 text-xs focus:ring-2 focus:ring-brand-blue focus:outline-none bg-white">
-                    <option value="Passport Renewal">Passport Renewal</option>
-                    <option value="New Passport">New Passport</option>
-                    <option value="Other Passport Assistance">Other Passport Assistance</option>
-                  </select>
-                </div>
+              <!-- Service-specific dynamic fields -->
+              <div id="heroPassportFields" class="space-y-3 hidden">
                 <div class="grid grid-cols-2 gap-2">
                   <div>
-                    <label for="hero_passport_city" class="block text-[11px] font-bold text-slate-700 uppercase mb-1">City / Location</label>
-                    <input type="text" id="hero_passport_city" placeholder="e.g. Riyadh, Jeddah, Layla" class="w-full px-3 py-1.5 rounded-lg border border-slate-300 text-xs focus:ring-2 focus:ring-brand-blue focus:outline-none bg-white">
-                  </div>
-                  <div>
-                    <label for="hero_passport_applicants" class="block text-[11px] font-bold text-slate-700 uppercase mb-1">Number of Applicants</label>
-                    <select id="hero_passport_applicants" class="w-full px-2 py-1.5 rounded-lg border border-slate-300 text-xs focus:ring-2 focus:ring-brand-blue focus:outline-none bg-white">
-                      <option value="1 Applicant">1 Applicant</option>
-                      <option value="2 Applicants">2 Applicants</option>
-                      <option value="3+ Applicants">3+ Applicants</option>
-                    </select>
-                  </div>
-                </div>
-              </div>
-
-              <!-- C. Dynamic Container: VFS Appointment Assistance -->
-              <div id="heroFields_vfs" class="space-y-3 hidden">
-                <div class="grid grid-cols-2 gap-2">
-                  <div>
-                    <label for="hero_vfs_type" class="block text-[11px] font-bold text-slate-700 uppercase mb-1">Appointment Type</label>
-                    <input type="text" id="hero_vfs_type" placeholder="e.g. Passport, Visa, Attestation" class="w-full px-3 py-1.5 rounded-lg border border-slate-300 text-xs focus:ring-2 focus:ring-brand-blue focus:outline-none bg-white">
-                  </div>
-                  <div>
-                    <label for="hero_vfs_city" class="block text-[11px] font-bold text-slate-700 uppercase mb-1">VFS City / Center</label>
-                    <input type="text" id="hero_vfs_city" placeholder="e.g. Riyadh, Jeddah, Al Khobar" class="w-full px-3 py-1.5 rounded-lg border border-slate-300 text-xs focus:ring-2 focus:ring-brand-blue focus:outline-none bg-white">
-                  </div>
-                </div>
-                <div class="grid grid-cols-2 gap-2">
-                  <div>
-                    <label for="hero_vfs_applicants" class="block text-[11px] font-bold text-slate-700 uppercase mb-1">Number of Applicants</label>
-                    <select id="hero_vfs_applicants" class="w-full px-2 py-1.5 rounded-lg border border-slate-300 text-xs focus:ring-2 focus:ring-brand-blue focus:outline-none bg-white">
-                      <option value="1 Applicant">1 Applicant</option>
-                      <option value="2 Applicants">2 Applicants</option>
-                      <option value="3+ Applicants">3+ Applicants</option>
+                    <label for="heroPassportType" class="block text-[11px] font-bold text-slate-700 uppercase mb-1">Passport Service</label>
+                    <select id="heroPassportType" class="w-full px-3 py-1.5 rounded-lg border border-slate-300 text-xs focus:ring-2 focus:ring-brand-blue focus:outline-none bg-white">
+                      <option>New Passport</option><option>Passport Renewal</option><option>Other Passport Assistance</option>
                     </select>
                   </div>
                   <div>
-                    <label for="hero_vfs_date" class="block text-[11px] font-bold text-slate-700 uppercase mb-1">Preferred Date (Optional)</label>
-                    <input type="date" id="hero_vfs_date" class="w-full px-2 py-1.5 rounded-lg border border-slate-300 text-xs focus:ring-2 focus:ring-brand-blue focus:outline-none bg-white">
-                  </div>
-                </div>
-              </div>
-
-              <!-- D. Dynamic Container: Flight Reservations for Visa Documentation -->
-              <div id="heroFields_flightVisa" class="space-y-3 hidden">
-                <div class="grid grid-cols-2 gap-2">
-                  <div>
-                    <label for="hero_fv_from" class="block text-[11px] font-bold text-slate-700 uppercase mb-1">Departure (From) *</label>
-                    <input type="text" id="hero_fv_from" placeholder="e.g. Riyadh, Dammam" class="w-full px-3 py-1.5 rounded-lg border border-slate-300 text-xs focus:ring-2 focus:ring-brand-blue focus:outline-none bg-white">
-                  </div>
-                  <div>
-                    <label for="hero_fv_to" class="block text-[11px] font-bold text-slate-700 uppercase mb-1">Destination (To) *</label>
-                    <input type="text" id="hero_fv_to" placeholder="e.g. London, Paris, Delhi" class="w-full px-3 py-1.5 rounded-lg border border-slate-300 text-xs focus:ring-2 focus:ring-brand-blue focus:outline-none bg-white">
-                  </div>
-                </div>
-                <div class="grid grid-cols-2 gap-2">
-                  <div>
-                    <label for="hero_fv_date" class="block text-[11px] font-bold text-slate-700 uppercase mb-1">Travel Date</label>
-                    <input type="date" id="hero_fv_date" class="w-full px-2 py-1.5 rounded-lg border border-slate-300 text-xs focus:ring-2 focus:ring-brand-blue focus:outline-none bg-white">
-                  </div>
-                  <div>
-                    <label for="hero_fv_pax" class="block text-[11px] font-bold text-slate-700 uppercase mb-1">Passengers</label>
-                    <select id="hero_fv_pax" class="w-full px-2 py-1.5 rounded-lg border border-slate-300 text-xs focus:ring-2 focus:ring-brand-blue focus:outline-none bg-white">
-                      <option value="1 Passenger">1 Pax</option>
-                      <option value="2 Passengers">2 Pax</option>
-                      <option value="3-4 Passengers">3-4 Pax</option>
-                      <option value="5+ Passengers">5+ Pax</option>
-                    </select>
-                  </div>
-                </div>
-              </div>
-
-              <!-- E. Dynamic Container: Saudi Work Visa Medical & Visa Stamping -->
-              <div id="heroFields_saudiVisa" class="space-y-3 hidden">
-                <div>
-                  <label for="hero_saudi_type" class="block text-[11px] font-bold text-slate-700 uppercase mb-1">Service Required</label>
-                  <select id="hero_saudi_type" class="w-full px-3 py-1.5 rounded-lg border border-slate-300 text-xs focus:ring-2 focus:ring-brand-blue focus:outline-none bg-white">
-                    <option value="Medical Appointment (Gamca/Wafid)">Medical Appointment</option>
-                    <option value="Visa Stamping">Visa Stamping</option>
-                    <option value="Both Medical & Visa Stamping">Both</option>
-                  </select>
-                </div>
-                <div class="grid grid-cols-3 gap-2">
-                  <div>
-                    <label for="hero_saudi_city" class="block text-[11px] font-bold text-slate-700 uppercase mb-1">City</label>
-                    <input type="text" id="hero_saudi_city" placeholder="e.g. Mumbai, Delhi, Lucknow" class="w-full px-3 py-1.5 rounded-lg border border-slate-300 text-xs focus:ring-2 focus:ring-brand-blue focus:outline-none bg-white">
-                  </div>
-                  <div>
-                    <label for="hero_saudi_applicants" class="block text-[11px] font-bold text-slate-700 uppercase mb-1">Applicants</label>
-                    <select id="hero_saudi_applicants" class="w-full px-2 py-1.5 rounded-lg border border-slate-300 text-xs focus:ring-2 focus:ring-brand-blue focus:outline-none bg-white">
-                      <option value="1 Applicant">1 Pax</option>
-                      <option value="2 Passengers">2 Pax</option>
-                      <option value="3+ Applicants">3+ Pax</option>
-                    </select>
-                  </div>
-                  <div>
-                    <label for="hero_saudi_date" class="block text-[11px] font-bold text-slate-700 uppercase mb-1">Preferred Date</label>
-                    <input type="date" id="hero_saudi_date" class="w-full px-2 py-1.5 rounded-lg border border-slate-300 text-xs focus:ring-2 focus:ring-brand-blue focus:outline-none bg-white">
-                  </div>
-                </div>
-              </div>
-
-              <!-- F. Dynamic Container: Umrah Package Inquiry -->
-              <div id="heroFields_umrah" class="space-y-3 hidden">
-                <div class="grid grid-cols-2 gap-2">
-                  <div>
-                    <label for="hero_umrah_departure" class="block text-[11px] font-bold text-slate-700 uppercase mb-1">Departure City</label>
-                    <input type="text" id="hero_umrah_departure" placeholder="e.g. Riyadh, Lucknow, Delhi" class="w-full px-3 py-1.5 rounded-lg border border-slate-300 text-xs focus:ring-2 focus:ring-brand-blue focus:outline-none bg-white">
-                  </div>
-                  <div>
-                    <label for="hero_umrah_date" class="block text-[11px] font-bold text-slate-700 uppercase mb-1">Travel Date / Month</label>
-                    <input type="text" id="hero_umrah_date" placeholder="e.g. October 2026 / Ramadan" class="w-full px-3 py-1.5 rounded-lg border border-slate-300 text-xs focus:ring-2 focus:ring-brand-blue focus:outline-none bg-white">
+                    <label for="heroPassportCity" class="block text-[11px] font-bold text-slate-700 uppercase mb-1">City / Location</label>
+                    <input type="text" id="heroPassportCity" placeholder="e.g. Riyadh, Jeddah" class="w-full px-3 py-1.5 rounded-lg border border-slate-300 text-xs focus:ring-2 focus:ring-brand-blue focus:outline-none bg-white">
                   </div>
                 </div>
                 <div>
-                  <label for="hero_umrah_pax" class="block text-[11px] font-bold text-slate-700 uppercase mb-1">Number of Passengers</label>
-                  <select id="hero_umrah_pax" class="w-full px-3 py-1.5 rounded-lg border border-slate-300 text-xs focus:ring-2 focus:ring-brand-blue focus:outline-none bg-white">
-                    <option value="1-2 Persons">1-2 Persons</option>
-                    <option value="Family (3-4 Persons)">Family (3-4 Persons)</option>
-                    <option value="Group (5+ Persons)">Group (5+ Persons)</option>
+                  <label for="heroPassportApplicants" class="block text-[11px] font-bold text-slate-700 uppercase mb-1">Applicants</label>
+                  <select id="heroPassportApplicants" class="w-full px-3 py-1.5 rounded-lg border border-slate-300 text-xs focus:ring-2 focus:ring-brand-blue focus:outline-none bg-white">
+                    <option>1 Applicant</option><option>2 Applicants</option><option>3-4 Applicants</option><option>5+ Applicants</option>
                   </select>
                 </div>
+              </div>
+
+              <div id="heroVfsFields" class="space-y-3 hidden">
+                <div class="grid grid-cols-2 gap-2">
+                  <div>
+                    <label for="heroVfsType" class="block text-[11px] font-bold text-slate-700 uppercase mb-1">Appointment Type</label>
+                    <input type="text" id="heroVfsType" placeholder="e.g. Visa / Biometrics" class="w-full px-3 py-1.5 rounded-lg border border-slate-300 text-xs focus:ring-2 focus:ring-brand-blue focus:outline-none bg-white">
+                  </div>
+                  <div>
+                    <label for="heroVfsCity" class="block text-[11px] font-bold text-slate-700 uppercase mb-1">VFS City / Center</label>
+                    <input type="text" id="heroVfsCity" placeholder="e.g. Riyadh VFS Center" class="w-full px-3 py-1.5 rounded-lg border border-slate-300 text-xs focus:ring-2 focus:ring-brand-blue focus:outline-none bg-white">
+                  </div>
+                </div>
+                <div class="grid grid-cols-2 gap-2">
+                  <div>
+                    <label for="heroVfsApplicants" class="block text-[11px] font-bold text-slate-700 uppercase mb-1">Applicants</label>
+                    <select id="heroVfsApplicants" class="w-full px-3 py-1.5 rounded-lg border border-slate-300 text-xs focus:ring-2 focus:ring-brand-blue focus:outline-none bg-white"><option>1 Applicant</option><option>2 Applicants</option><option>3-4 Applicants</option><option>5+ Applicants</option></select>
+                  </div>
+                  <div>
+                    <label for="heroVfsDate" class="block text-[11px] font-bold text-slate-700 uppercase mb-1">Preferred Appointment Date</label>
+                    <input type="date" id="heroVfsDate" class="w-full px-2 py-1.5 rounded-lg border border-slate-300 text-xs focus:ring-2 focus:ring-brand-blue focus:outline-none bg-white">
+                  </div>
+                </div>
+              </div>
+
+              <div id="heroReservationFields" class="space-y-3 hidden">
+                <div class="grid grid-cols-2 gap-2">
+                  <div><label for="heroResFrom" class="block text-[11px] font-bold text-slate-700 uppercase mb-1">From</label><input type="text" id="heroResFrom" placeholder="e.g. Riyadh" class="w-full px-3 py-1.5 rounded-lg border border-slate-300 text-xs focus:ring-2 focus:ring-brand-blue focus:outline-none bg-white"></div>
+                  <div><label for="heroResTo" class="block text-[11px] font-bold text-slate-700 uppercase mb-1">To</label><input type="text" id="heroResTo" placeholder="e.g. Delhi" class="w-full px-3 py-1.5 rounded-lg border border-slate-300 text-xs focus:ring-2 focus:ring-brand-blue focus:outline-none bg-white"></div>
+                </div>
+                <div class="grid grid-cols-2 gap-2">
+                  <div><label for="heroResDate" class="block text-[11px] font-bold text-slate-700 uppercase mb-1">Travel Date</label><input type="date" id="heroResDate" class="w-full px-2 py-1.5 rounded-lg border border-slate-300 text-xs focus:ring-2 focus:ring-brand-blue focus:outline-none bg-white"></div>
+                  <div><label for="heroResPassengers" class="block text-[11px] font-bold text-slate-700 uppercase mb-1">Passengers</label><select id="heroResPassengers" class="w-full px-3 py-1.5 rounded-lg border border-slate-300 text-xs focus:ring-2 focus:ring-brand-blue focus:outline-none bg-white"><option>1 Passenger</option><option>2 Passengers</option><option>3-4 Passengers</option><option>5+ Passengers</option></select></div>
+                </div>
+              </div>
+
+              <div id="heroWorkVisaFields" class="space-y-3 hidden">
+                <div class="grid grid-cols-2 gap-2">
+                  <div><label for="heroWorkVisaService" class="block text-[11px] font-bold text-slate-700 uppercase mb-1">Service Required</label><select id="heroWorkVisaService" class="w-full px-3 py-1.5 rounded-lg border border-slate-300 text-xs focus:ring-2 focus:ring-brand-blue focus:outline-none bg-white"><option>Medical Appointment</option><option>Visa Stamping</option><option>Both</option></select></div>
+                  <div><label for="heroWorkVisaCity" class="block text-[11px] font-bold text-slate-700 uppercase mb-1">City</label><input type="text" id="heroWorkVisaCity" placeholder="e.g. Riyadh, Mumbai" class="w-full px-3 py-1.5 rounded-lg border border-slate-300 text-xs focus:ring-2 focus:ring-brand-blue focus:outline-none bg-white"></div>
+                </div>
+                <div class="grid grid-cols-2 gap-2">
+                  <div><label for="heroWorkVisaApplicants" class="block text-[11px] font-bold text-slate-700 uppercase mb-1">Applicants</label><select id="heroWorkVisaApplicants" class="w-full px-3 py-1.5 rounded-lg border border-slate-300 text-xs focus:ring-2 focus:ring-brand-blue focus:outline-none bg-white"><option>1 Applicant</option><option>2 Applicants</option><option>3-4 Applicants</option><option>5+ Applicants</option></select></div>
+                  <div><label for="heroWorkVisaDate" class="block text-[11px] font-bold text-slate-700 uppercase mb-1">Preferred Date</label><input type="date" id="heroWorkVisaDate" class="w-full px-2 py-1.5 rounded-lg border border-slate-300 text-xs focus:ring-2 focus:ring-brand-blue focus:outline-none bg-white"></div>
+                </div>
+              </div>
+
+              <div id="heroUmrahFields" class="space-y-3 hidden">
+                <div class="grid grid-cols-2 gap-2">
+                  <div><label for="heroUmrahFrom" class="block text-[11px] font-bold text-slate-700 uppercase mb-1">Departure City</label><input type="text" id="heroUmrahFrom" placeholder="e.g. Mumbai, Delhi" class="w-full px-3 py-1.5 rounded-lg border border-slate-300 text-xs focus:ring-2 focus:ring-brand-blue focus:outline-none bg-white"></div>
+                  <div><label for="heroUmrahDate" class="block text-[11px] font-bold text-slate-700 uppercase mb-1">Preferred Travel Date / Month</label><input type="date" id="heroUmrahDate" class="w-full px-2 py-1.5 rounded-lg border border-slate-300 text-xs focus:ring-2 focus:ring-brand-blue focus:outline-none bg-white"></div>
+                </div>
+                <div><label for="heroUmrahPassengers" class="block text-[11px] font-bold text-slate-700 uppercase mb-1">Passengers</label><select id="heroUmrahPassengers" class="w-full px-3 py-1.5 rounded-lg border border-slate-300 text-xs focus:ring-2 focus:ring-brand-blue focus:outline-none bg-white"><option>1 Passenger</option><option>2 Passengers</option><option>3-4 Passengers</option><option>5+ Passengers</option></select></div>
               </div>
 
               <div>
-                <label for="heroMsg" class="block text-xs font-bold text-slate-700 uppercase mb-1">Specific Requirement / Message (Optional)</label>
+                <label for="heroMsg" class="block text-xs font-bold text-slate-700 uppercase mb-1">Specific Requirements / Message (Optional)</label>
                 <textarea id="heroMsg" rows="2" placeholder="Specific notes, preferred airlines, or questions..." class="w-full px-3.5 py-1.5 rounded-lg border border-slate-300 text-xs focus:ring-2 focus:ring-brand-blue focus:outline-none bg-white"></textarea>
               </div>
 
@@ -974,7 +920,7 @@
             <span id="reviewCountBadge" class="text-xs font-semibold px-2.5 py-1 rounded-full bg-slate-100 text-slate-600 border border-slate-200">Loading reviews...</span>
           </div>
 
-          <div id="reviewsList" class="space-y-4 max-h-[560px] overflow-y-auto pr-1.5">
+          <div id="reviewsList" class="space-y-4 pr-1">
             <div class="text-center py-8 text-xs text-slate-400">Loading reviews from database...</div>
           </div>
         </div>
@@ -1383,7 +1329,7 @@
 
         <div>
           <label for="modalService" class="block text-xs font-bold text-slate-700 uppercase mb-1">Service Required *</label>
-          <select id="modalService" onchange="updateModalServiceFields()" class="w-full px-3.5 py-2.5 rounded-xl border border-slate-300 text-sm focus:ring-2 focus:ring-brand-blue focus:outline-none bg-white font-medium text-slate-800">
+          <select id="modalService" onchange="toggleModalDynamicFields()" class="w-full px-3.5 py-2.5 rounded-xl border border-slate-300 text-sm focus:ring-2 focus:ring-brand-blue focus:outline-none bg-white font-medium text-slate-800">
             <option value="Flight Ticket Booking">1. Flight Ticket Booking (Featured)</option>
             <option value="Indian Passport Services">2. Indian Passport Services</option>
             <option value="VFS Appointment Assistance">3. VFS Appointment Assistance</option>
@@ -1393,34 +1339,34 @@
           </select>
         </div>
 
-        <!-- A. Dynamic Container: Flight Ticket Booking -->
-        <div id="modalFields_flight" class="space-y-3">
+        <!-- Dynamic Container: Flight Ticket Fields -->
+        <div id="modalFlightFields" class="space-y-3">
           <div class="grid grid-cols-2 gap-2.5">
             <div>
-              <label for="modal_flight_from" class="block text-[11px] font-bold text-slate-700 uppercase mb-1">Departure (From) *</label>
-              <input type="text" id="modal_flight_from" placeholder="e.g. Riyadh, Dammam" class="w-full px-3 py-2 rounded-lg border border-slate-300 text-xs focus:ring-2 focus:ring-brand-blue focus:outline-none bg-white">
+              <label for="modalFlightFrom" class="block text-[11px] font-bold text-slate-700 uppercase mb-1">Departure (From) *</label>
+              <input type="text" id="modalFlightFrom" placeholder="e.g. Riyadh, Dammam" class="w-full px-3 py-2 rounded-lg border border-slate-300 text-xs focus:ring-2 focus:ring-brand-blue focus:outline-none bg-white">
             </div>
             <div>
-              <label for="modal_flight_to" class="block text-[11px] font-bold text-slate-700 uppercase mb-1">Destination (To) *</label>
-              <input type="text" id="modal_flight_to" placeholder="e.g. Delhi, Lucknow" class="w-full px-3 py-2 rounded-lg border border-slate-300 text-xs focus:ring-2 focus:ring-brand-blue focus:outline-none bg-white">
+              <label for="modalFlightTo" class="block text-[11px] font-bold text-slate-700 uppercase mb-1">Destination (To) *</label>
+              <input type="text" id="modalFlightTo" placeholder="e.g. Delhi, Lucknow" class="w-full px-3 py-2 rounded-lg border border-slate-300 text-xs focus:ring-2 focus:ring-brand-blue focus:outline-none bg-white">
             </div>
           </div>
 
           <div class="grid grid-cols-3 gap-2">
             <div>
-              <label for="modal_flight_date" class="block text-[11px] font-bold text-slate-700 uppercase mb-1">Travel Date</label>
-              <input type="date" id="modal_flight_date" class="w-full px-2 py-2 rounded-lg border border-slate-300 text-xs focus:ring-2 focus:ring-brand-blue focus:outline-none bg-white">
+              <label for="modalFlightDate" class="block text-[11px] font-bold text-slate-700 uppercase mb-1">Date</label>
+              <input type="date" id="modalFlightDate" class="w-full px-2 py-2 rounded-lg border border-slate-300 text-xs focus:ring-2 focus:ring-brand-blue focus:outline-none bg-white">
             </div>
             <div>
-              <label for="modal_flight_trip" class="block text-[11px] font-bold text-slate-700 uppercase mb-1">Trip Type</label>
-              <select id="modal_flight_trip" class="w-full px-2 py-2 rounded-lg border border-slate-300 text-xs focus:ring-2 focus:ring-brand-blue focus:outline-none bg-white">
+              <label for="modalTripType" class="block text-[11px] font-bold text-slate-700 uppercase mb-1">Trip</label>
+              <select id="modalTripType" class="w-full px-2 py-2 rounded-lg border border-slate-300 text-xs focus:ring-2 focus:ring-brand-blue focus:outline-none bg-white">
                 <option value="One Way">One Way</option>
                 <option value="Round Trip">Round Trip</option>
               </select>
             </div>
             <div>
-              <label for="modal_flight_pax" class="block text-[11px] font-bold text-slate-700 uppercase mb-1">Passengers</label>
-              <select id="modal_flight_pax" class="w-full px-2 py-2 rounded-lg border border-slate-300 text-xs focus:ring-2 focus:ring-brand-blue focus:outline-none bg-white">
+              <label for="modalPassengers" class="block text-[11px] font-bold text-slate-700 uppercase mb-1">Passengers</label>
+              <select id="modalPassengers" class="w-full px-2 py-2 rounded-lg border border-slate-300 text-xs focus:ring-2 focus:ring-brand-blue focus:outline-none bg-white">
                 <option value="1 Passenger">1 Pax</option>
                 <option value="2 Passengers">2 Pax</option>
                 <option value="3-4 Passengers">3-4 Pax</option>
@@ -1430,99 +1376,473 @@
           </div>
         </div>
 
-        <!-- B. Dynamic Container: Indian Passport Services -->
-        <div id="modalFields_passport" class="space-y-3 hidden">
-          <div>
-            <label for="modal_passport_type" class="block text-[11px] font-bold text-slate-700 uppercase mb-1">Passport Service Type</label>
-            <select id="modal_passport_type" class="w-full px-3 py-2 rounded-lg border border-slate-300 text-xs focus:ring-2 focus:ring-brand-blue focus:outline-none bg-white">
-              <option value="Passport Renewal">Passport Renewal</option>
-              <option value="New Passport">New Passport</option>
-              <option value="Other Passport Assistance">Other Passport Assistance</option>
-            </select>
-          </div>
-          <div class="grid grid-cols-2 gap-2.5">
-            <div>
-              <label for="modal_passport_city" class="block text-[11px] font-bold text-slate-700 uppercase mb-1">City / Location</label>
-              <input type="text" id="modal_passport_city" placeholder="e.g. Riyadh, Jeddah, Layla" class="w-full px-3 py-2 rounded-lg border border-slate-300 text-xs focus:ring-2 focus:ring-brand-blue focus:outline-none bg-white">
-            </div>
-            <div>
-              <label for="modal_passport_applicants" class="block text-[11px] font-bold text-slate-700 uppercase mb-1">Number of Applicants</label>
-              <select id="modal_passport_applicants" class="w-full px-2 py-2 rounded-lg border border-slate-300 text-xs focus:ring-2 focus:ring-brand-blue focus:outline-none bg-white">
-                <option value="1 Applicant">1 Applicant</option>
-                <option value="2 Applicants">2 Applicants</option>
-                <option value="3+ Applicants">3+ Applicants</option>
-              </select>
-            </div>
-          </div>
+              <!-- Service-specific dynamic fields -->
+              <div id="modalPassportFields" class="space-y-3 hidden">
+                <div class="grid grid-cols-2 gap-2">
+                  <div>
+                    <label for="modalPassportType" class="block text-[11px] font-bold text-slate-700 uppercase mb-1">Passport Service</label>
+                    <select id="modalPassportType" class="w-full px-3 py-2 rounded-lg border border-slate-300 text-xs focus:ring-2 focus:ring-brand-blue focus:outline-none bg-white">
+                      <option>New Passport</option><option>Passport Renewal</option><option>Other Passport Assistance</option>
+                    </select>
+                  </div>
+                  <div>
+                    <label for="modalPassportCity" class="block text-[11px] font-bold text-slate-700 uppercase mb-1">City / Location</label>
+                    <input type="text" id="modalPassportCity" placeholder="e.g. Riyadh, Jeddah" class="w-full px-3 py-2 rounded-lg border border-slate-300 text-xs focus:ring-2 focus:ring-brand-blue focus:outline-none bg-white">
+                  </div>
+                </div>
+                <div>
+                  <label for="modalPassportApplicants" class="block text-[11px] font-bold text-slate-700 uppercase mb-1">Applicants</label>
+                  <select id="modalPassportApplicants" class="w-full px-3 py-2 rounded-lg border border-slate-300 text-xs focus:ring-2 focus:ring-brand-blue focus:outline-none bg-white">
+                    <option>1 Applicant</option><option>2 Applicants</option><option>3-4 Applicants</option><option>5+ Applicants</option>
+                  </select>
+                </div>
+              </div>
+
+              <div id="modalVfsFields" class="space-y-3 hidden">
+                <div class="grid grid-cols-2 gap-2">
+                  <div>
+                    <label for="modalVfsType" class="block text-[11px] font-bold text-slate-700 uppercase mb-1">Appointment Type</label>
+                    <input type="text" id="modalVfsType" placeholder="e.g. Visa / Biometrics" class="w-full px-3 py-2 rounded-lg border border-slate-300 text-xs focus:ring-2 focus:ring-brand-blue focus:outline-none bg-white">
+                  </div>
+                  <div>
+                    <label for="modalVfsCity" class="block text-[11px] font-bold text-slate-700 uppercase mb-1">VFS City / Center</label>
+                    <input type="text" id="modalVfsCity" placeholder="e.g. Riyadh VFS Center" class="w-full px-3 py-2 rounded-lg border border-slate-300 text-xs focus:ring-2 focus:ring-brand-blue focus:outline-none bg-white">
+                  </div>
+                </div>
+                <div class="grid grid-cols-2 gap-2">
+                  <div>
+                    <label for="modalVfsApplicants" class="block text-[11px] font-bold text-slate-700 uppercase mb-1">Applicants</label>
+                    <select id="modalVfsApplicants" class="w-full px-3 py-2 rounded-lg border border-slate-300 text-xs focus:ring-2 focus:ring-brand-blue focus:outline-none bg-white"><option>1 Applicant</option><option>2 Applicants</option><option>3-4 Applicants</option><option>5+ Applicants</option></select>
+                  </div>
+                  <div>
+                    <label for="modalVfsDate" class="block text-[11px] font-bold text-slate-700 uppercase mb-1">Preferred Appointment Date</label>
+                    <input type="date" id="modalVfsDate" class="w-full px-2 py-2 rounded-lg border border-slate-300 text-xs focus:ring-2 focus:ring-brand-blue focus:outline-none bg-white">
+                  </div>
+                </div>
+              </div>
+
+              <div id="modalReservationFields" class="space-y-3 hidden">
+                <div class="grid grid-cols-2 gap-2">
+                  <div><label for="modalResFrom" class="block text-[11px] font-bold text-slate-700 uppercase mb-1">From</label><input type="text" id="modalResFrom" placeholder="e.g. Riyadh" class="w-full px-3 py-2 rounded-lg border border-slate-300 text-xs focus:ring-2 focus:ring-brand-blue focus:outline-none bg-white"></div>
+                  <div><label for="modalResTo" class="block text-[11px] font-bold text-slate-700 uppercase mb-1">To</label><input type="text" id="modalResTo" placeholder="e.g. Delhi" class="w-full px-3 py-2 rounded-lg border border-slate-300 text-xs focus:ring-2 focus:ring-brand-blue focus:outline-none bg-white"></div>
+                </div>
+                <div class="grid grid-cols-2 gap-2">
+                  <div><label for="modalResDate" class="block text-[11px] font-bold text-slate-700 uppercase mb-1">Travel Date</label><input type="date" id="modalResDate" class="w-full px-2 py-2 rounded-lg border border-slate-300 text-xs focus:ring-2 focus:ring-brand-blue focus:outline-none bg-white"></div>
+                  <div><label for="modalResPassengers" class="block text-[11px] font-bold text-slate-700 uppercase mb-1">Passengers</label><select id="modalResPassengers" class="w-full px-3 py-2 rounded-lg border border-slate-300 text-xs focus:ring-2 focus:ring-brand-blue focus:outline-none bg-white"><option>1 Passenger</option><option>2 Passengers</option><option>3-4 Passengers</option><option>5+ Passengers</option></select></div>
+                </div>
+              </div>
+
+              <div id="modalWorkVisaFields" class="space-y-3 hidden">
+                <div class="grid grid-cols-2 gap-2">
+                  <div><label for="modalWorkVisaService" class="block text-[11px] font-bold text-slate-700 uppercase mb-1">Service Required</label><select id="modalWorkVisaService" class="w-full px-3 py-2 rounded-lg border border-slate-300 text-xs focus:ring-2 focus:ring-brand-blue focus:outline-none bg-white"><option>Medical Appointment</option><option>Visa Stamping</option><option>Both</option></select></div>
+                  <div><label for="modalWorkVisaCity" class="block text-[11px] font-bold text-slate-700 uppercase mb-1">City</label><input type="text" id="modalWorkVisaCity" placeholder="e.g. Riyadh, Mumbai" class="w-full px-3 py-2 rounded-lg border border-slate-300 text-xs focus:ring-2 focus:ring-brand-blue focus:outline-none bg-white"></div>
+                </div>
+                <div class="grid grid-cols-2 gap-2">
+                  <div><label for="modalWorkVisaApplicants" class="block text-[11px] font-bold text-slate-700 uppercase mb-1">Applicants</label><select id="modalWorkVisaApplicants" class="w-full px-3 py-2 rounded-lg border border-slate-300 text-xs focus:ring-2 focus:ring-brand-blue focus:outline-none bg-white"><option>1 Applicant</option><option>2 Applicants</option><option>3-4 Applicants</option><option>5+ Applicants</option></select></div>
+                  <div><label for="modalWorkVisaDate" class="block text-[11px] font-bold text-slate-700 uppercase mb-1">Preferred Date</label><input type="date" id="modalWorkVisaDate" class="w-full px-2 py-2 rounded-lg border border-slate-300 text-xs focus:ring-2 focus:ring-brand-blue focus:outline-none bg-white"></div>
+                </div>
+              </div>
+
+              <div id="modalUmrahFields" class="space-y-3 hidden">
+                <div class="grid grid-cols-2 gap-2">
+                  <div><label for="modalUmrahFrom" class="block text-[11px] font-bold text-slate-700 uppercase mb-1">Departure City</label><input type="text" id="modalUmrahFrom" placeholder="e.g. Mumbai, Delhi" class="w-full px-3 py-2 rounded-lg border border-slate-300 text-xs focus:ring-2 focus:ring-brand-blue focus:outline-none bg-white"></div>
+                  <div><label for="modalUmrahDate" class="block text-[11px] font-bold text-slate-700 uppercase mb-1">Preferred Travel Date / Month</label><input type="date" id="modalUmrahDate" class="w-full px-2 py-2 rounded-lg border border-slate-300 text-xs focus:ring-2 focus:ring-brand-blue focus:outline-none bg-white"></div>
+                </div>
+                <div><label for="modalUmrahPassengers" class="block text-[11px] font-bold text-slate-700 uppercase mb-1">Passengers</label><select id="modalUmrahPassengers" class="w-full px-3 py-2 rounded-lg border border-slate-300 text-xs focus:ring-2 focus:ring-brand-blue focus:outline-none bg-white"><option>1 Passenger</option><option>2 Passengers</option><option>3-4 Passengers</option><option>5+ Passengers</option></select></div>
+              </div>
+
+        <div>
+          <label for="modalMsg" class="block text-xs font-bold text-slate-700 uppercase mb-1">Specific Requirements / Message</label>
+          <textarea id="modalMsg" rows="2" placeholder="Tell us what you need..." class="w-full px-3.5 py-2 rounded-xl border border-slate-300 text-xs focus:ring-2 focus:ring-brand-blue focus:outline-none bg-white"></textarea>
         </div>
 
-        <!-- C. Dynamic Container: VFS Appointment Assistance -->
-        <div id="modalFields_vfs" class="space-y-3 hidden">
-          <div class="grid grid-cols-2 gap-2.5">
-            <div>
-              <label for="modal_vfs_type" class="block text-[11px] font-bold text-slate-700 uppercase mb-1">Appointment Type</label>
-              <input type="text" id="modal_vfs_type" placeholder="e.g. Passport, Visa, Attestation" class="w-full px-3 py-2 rounded-lg border border-slate-300 text-xs focus:ring-2 focus:ring-brand-blue focus:outline-none bg-white">
-            </div>
-            <div>
-              <label for="modal_vfs_city" class="block text-[11px] font-bold text-slate-700 uppercase mb-1">VFS City / Center</label>
-              <input type="text" id="modal_vfs_city" placeholder="e.g. Riyadh, Jeddah, Al Khobar" class="w-full px-3 py-2 rounded-lg border border-slate-, Al Khobar" class="w-full px-3 py-2 rounded-lg border border-slate-300 text-xs focus:ring-2 focus:ring-brand-blue focus:outline-none bg-white">
-            </div>
-          </div>
-          <div class="grid grid-cols-2 gap-2.5">
-            <div>
-              <label for="modal_vfs_applicants" class="block text-[11px] font-bold text-slate-700 uppercase mb-1">Number of Applicants</label>
-              <select id="modal_vfs_applicants" class="w-full px-2 py-2 rounded-lg border border-slate-300 text-xs focus:ring-2 focus:ring-brand-blue focus:outline-none bg-white">
-                <option value="1 Applicant">1 Applicant</option>
-                <option value="2 Applicants">2 Applicants</option>
-                <option value="3+ Applicants">3+ Applicants</option>
-              </select>
-            </div>
-            <div>
-              <label for="modal_vfs_date" class="block text-[11px] font-bold text-slate-700 uppercase mb-1">Preferred Date (Optional)</label>
-              <input type="date" id="modal_vfs_date" class="w-full px-2 py-2 rounded-lg border border-slate-300 text-xs focus:ring-2 focus:ring-brand-blue focus:outline-none bg-white">
-            </div>
-          </div>
-        </div>
+        <button type="submit" class="w-full py-3 px-4 rounded-xl font-bold text-white bg-green-600 hover:bg-green-700 shadow-md transition flex items-center justify-center space-x-2 text-sm">
+          <i class="fa-brands fa-whatsapp text-lg"></i>
+          <span>Send Request on WhatsApp</span>
+        </button>
+        <p class="text-[11px] text-center text-slate-400 mt-2">Opens WhatsApp directly with pre-filled details for Hamza Travels.</p>
+      </form>
+    </div>
+  </div>
 
-        <!-- D. Dynamic Container: Flight Reservations for Visa Documentation -->
-        <div id="modalFields_flightVisa" class="space-y-3 hidden">
-          <div class="grid grid-cols-2 gap-2.5">
-            <div>
-              <label for="modal_fv_from" class="block text-[11px] font-bold text-slate-700 uppercase mb-1">Departure (From) *</label>
-              <input type="text" id="modal_fv_from" placeholder="e.g. Riyadh, Dammam" class="w-full px-3 py-2 rounded-lg border border-slate-300 text-xs focus:ring-2 focus:ring-brand-blue focus:outline-none bg-white">
-            </div>
-            <div>
-              <label for="modal_fv_to" class="block text-[11px] font-bold text-slate-700 uppercase mb-1">Destination (To) *</label>
-              <input type="text" id="modal_fv_to" placeholder="e.g. London, Paris, Delhi" class="w-full px-3 py-2 rounded-lg border border-slate-300 text-xs focus:ring-2 focus:ring-brand-blue focus:outline-none bg-white">
-            </div>
-          </div>
-          <div class="grid grid-cols-2 gap-2.5">
-            <div>
-              <label for="modal_fv_date" class="block text-[11px] font-bold text-slate-700 uppercase mb-1">Travel Date</label>
-              <input type="date" id="modal_fv_date" class="w-full px-2 py-2 rounded-lg border border-slate-300 text-xs focus:ring-2 focus:ring-brand-blue focus:outline-none bg-white">
-            </div>
-            <div>
-              <label for="modal_fv_pax" class="block text-[11px] font-bold text-slate-700 uppercase mb-1">Passengers</label>
-              <select id="modal_fv_pax" class="w-full px-2 py-2 rounded-lg border border-slate-300 text-xs focus:ring-2 focus:ring-brand-blue focus:outline-none bg-white">
-                <option value="1 Passenger">1 Pax</option>
-                <option value="2 Passengers">2 Pax</option>
-                <option value="3-4 Passengers">3-4 Pax</option>
-                <option value="5+ Passengers">5+ Pax</option>
-              </select>
-            </div>
-          </div>
-        </div>
+  <!-- ALL SCRIPTS PLACED CLEANLY INSIDE SCRIPT TAGS -->
+  <script>
+    // 1. Live Saudi Arabia + India World Clocks
+    (() => {
+      const zones = {
+        ksa: { timeZone: 'Asia/Riyadh', locale: 'en-SA' },
+        india: { timeZone: 'Asia/Kolkata', locale: 'en-IN' }
+      };
+      const els = {
+        ksa: document.getElementById('ksaClock'),
+        india: document.getElementById('indiaClock'),
+        ksaLarge: document.getElementById('ksaClockLarge'),
+        indiaLarge: document.getElementById('indiaClockLarge'),
+        ksaDate: document.getElementById('ksaDate'),
+        indiaDate: document.getElementById('indiaDate')
+      };
+      const formatTime = (date, zone) => new Intl.DateTimeFormat(zone.locale, {
+        timeZone: zone.timeZone, hour: '2-digit', minute: '2-digit', second: '2-digit', hour12: true
+      }).format(date);
+      const formatDate = (date, zone) => new Intl.DateTimeFormat(zone.locale, {
+        timeZone: zone.timeZone, weekday: 'long', day: 'numeric', month: 'long', year: 'numeric'
+      }).format(date);
 
-        <!-- E. Dynamic Container: Saudi Work Visa Medical & Visa Stamping -->
-        <div id="modalFields_saudiVisa" class="space-y-3 hidden">
-          <div>
-            <label for="modal_saudi_type" class="block text-[11px] font-bold text-slate-700 uppercase mb-1">Service Required</label>
-            <select id="modal_saudi_type" class="w-full px-3 py-2 rounded-lg border border-slate-300 text-xs focus:ring-2 focus:ring-brand-blue focus:outline-none bg-white">
-              <option value="Medical Appointment (Gamca/Wafid)">Medical Appointment</option>
-              <option value="Visa Stamping">Visa Stamping</option>
-              <option value="Both Medical & Visa Stamping">Both</option>
-            </select>
+      function updateWorldClocks() {
+        const now = new Date();
+        const ksa = formatTime(now, zones.ksa), india = formatTime(now, zones.india);
+        if (els.ksa) els.ksa.textContent = ksa;
+        if (els.india) els.india.textContent = india;
+        if (els.ksaLarge) els.ksaLarge.textContent = ksa;
+        if (els.indiaLarge) els.indiaLarge.textContent = india;
+        if (els.ksaDate) els.ksaDate.textContent = formatDate(now, zones.ksa);
+        if (els.indiaDate) els.indiaDate.textContent = formatDate(now, zones.india);
+      }
+      updateWorldClocks();
+      setInterval(updateWorldClocks, 1000);
+
+      const modal = document.getElementById('clockModal');
+      const trigger = document.getElementById('clockTrigger');
+      const close = () => {
+        if (modal) {
+          modal.classList.remove('open');
+          modal.setAttribute('aria-hidden', 'true');
+          document.body.classList.remove('ht-modal-open');
+        }
+      };
+      const open = () => {
+        if (modal) {
+          updateWorldClocks();
+          modal.classList.add('open');
+          modal.setAttribute('aria-hidden', 'false');
+          document.body.classList.add('ht-modal-open');
+        }
+      };
+      if (trigger) trigger.addEventListener('click', open);
+      document.querySelectorAll('[data-close-clock]').forEach(btn => btn.addEventListener('click', close));
+      if (modal) modal.addEventListener('click', e => { if (e.target === modal) close(); });
+      document.addEventListener('keydown', e => { if (e.key === 'Escape') close(); });
+    })();
+
+    // 2. Mobile Drawer Navigation Toggle
+    const navBtn = document.getElementById('mobileNavToggle');
+    const navMenu = document.getElementById('mobileNavMenu');
+    if (navBtn && navMenu) {
+      navBtn.addEventListener('click', () => {
+        navMenu.classList.toggle('hidden');
+      });
+      navMenu.querySelectorAll('a').forEach(link => {
+        link.addEventListener('click', () => {
+          navMenu.classList.add('hidden');
+        });
+      });
+    }
+
+    // 3. Truly service-specific dynamic fields for Hero Form & Inquiry Modal
+    function setDynamicFields(prefix, service) {
+      const groups = ['FlightFields','PassportFields','VfsFields','ReservationFields','WorkVisaFields','UmrahFields'];
+      groups.forEach(g => {
+        const el = document.getElementById(prefix + g);
+        if (el) el.classList.add('hidden');
+      });
+      const map = {
+        'Flight Ticket Booking': prefix + 'FlightFields',
+        'Indian Passport Services': prefix + 'PassportFields',
+        'VFS Appointment Assistance': prefix + 'VfsFields',
+        'Flight Reservations for Visa Documentation': prefix + 'ReservationFields',
+        'Saudi Work Visa Medical & Visa Stamping': prefix + 'WorkVisaFields',
+        'Umrah Package Inquiry': prefix + 'UmrahFields'
+      };
+      const active = document.getElementById(map[service]);
+      if (active) active.classList.remove('hidden');
+    }
+
+    function toggleHeroDynamicFields() {
+      const service = document.getElementById('heroService')?.value || 'Flight Ticket Booking';
+      setDynamicFields('hero', service);
+    }
+
+    function toggleModalDynamicFields() {
+      const service = document.getElementById('modalService')?.value || 'Flight Ticket Booking';
+      setDynamicFields('modal', service);
+    }
+
+    // 4. Quick Inquiry Modal Open / Close Logic
+    const inquiryModal = document.getElementById('inquiryModal');
+    const inquiryModalClose = document.getElementById('inquiryModalCloseBtn');
+    const helpFab = document.getElementById('helpFab');
+
+    function openInquiryModal(serviceToSelect) {
+      if (!inquiryModal) return;
+      if (serviceToSelect) {
+        const sel = document.getElementById('modalService');
+        if (sel) {
+          sel.value = serviceToSelect;
+          toggleModalDynamicFields();
+        }
+      }
+      inquiryModal.classList.add('open');
+      inquiryModal.setAttribute('aria-hidden', 'false');
+      document.body.classList.add('ht-modal-open');
+      const nameInput = document.getElementById('modalCustName');
+      if (nameInput) setTimeout(() => nameInput.focus(), 250);
+    }
+
+    function closeInquiryModal() {
+      if (!inquiryModal) return;
+      inquiryModal.classList.remove('open');
+      inquiryModal.setAttribute('aria-hidden', 'true');
+      document.body.classList.remove('ht-modal-open');
+    }
+
+    if (inquiryModalClose) inquiryModalClose.addEventListener('click', closeInquiryModal);
+    if (helpFab) helpFab.addEventListener('click', () => openInquiryModal());
+    if (inquiryModal) inquiryModal.addEventListener('click', e => {
+      if (e.target === inquiryModal) closeInquiryModal();
+    });
+
+    // 5. Beautiful First-Visit Welcome Popup Modal
+    const welcomeModal = document.getElementById('welcomePopupModal');
+    const welcomeCloseBtn = document.getElementById('welcomePopupCloseBtn');
+
+    function closeWelcomePopup() {
+      if (!welcomeModal) return;
+      welcomeModal.classList.remove('open');
+      welcomeModal.setAttribute('aria-hidden', 'true');
+      document.body.classList.remove('ht-modal-open');
+      try {
+        sessionStorage.setItem('ht_welcome_seen', '1');
+      } catch (_) {}
+    }
+
+    function openWelcomePopup() {
+      if (!welcomeModal) return;
+      welcomeModal.classList.add('open');
+      welcomeModal.setAttribute('aria-hidden', 'false');
+      document.body.classList.add('ht-modal-open');
+    }
+
+    function selectWelcomeService(serviceName) {
+      closeWelcomePopup();
+      setTimeout(() => {
+        openInquiryModal(serviceName);
+      }, 180);
+    }
+
+    if (welcomeCloseBtn) welcomeCloseBtn.addEventListener('click', closeWelcomePopup);
+    if (welcomeModal) welcomeModal.addEventListener('click', e => {
+      if (e.target === welcomeModal) closeWelcomePopup();
+    });
+
+    document.addEventListener('keydown', e => {
+      if (e.key === 'Escape') {
+        if (welcomeModal && welcomeModal.classList.contains('open')) closeWelcomePopup();
+        if (inquiryModal && inquiryModal.classList.contains('open')) closeInquiryModal();
+      }
+    });
+
+    // Automatically trigger Welcome Popup once per browser session after short delay (1.8s)
+    window.addEventListener('DOMContentLoaded', () => {
+      try {
+        const seen = sessionStorage.getItem('ht_welcome_seen');
+        if (!seen) {
+          setTimeout(openWelcomePopup, 1800);
+        }
+      } catch (_) {
+        setTimeout(openWelcomePopup, 1800);
+      }
+
+      // Initialize dynamic inquiry fields to the selected service.
+      toggleHeroDynamicFields();
+      toggleModalDynamicFields();
+
+      // Review URL auto-scroll (?review=1)
+      try {
+        const urlParams = new URLSearchParams(window.location.search);
+        if (urlParams.get('review') === '1' || window.location.hash === '#reviews') {
+          setTimeout(() => {
+            const el = document.getElementById('reviews');
+            if (el) {
+              el.scrollIntoView({ behavior: 'smooth' });
+              const nameInput = document.getElementById('revName');
+              if (nameInput) nameInput.focus();
+            }
+          }, 350);
+        }
+      } catch (_) {}
+    });
+
+    // 6. WhatsApp Submission Handlers — service-specific messages
+    function val(id, fallback='Not specified') {
+      const el = document.getElementById(id);
+      return el && el.value ? el.value.trim() : fallback;
+    }
+
+    function buildServiceWhatsAppText(prefix, name, service, msg) {
+      let text = `*HAMZA TRAVELS — Website Inquiry*\n*Name:* ${name}\n*Service:* ${service}\n`;
+      if (service === 'Flight Ticket Booking') {
+        text += `*From:* ${val(prefix+'FlightFrom','Flexible')}\n*To:* ${val(prefix+'FlightTo','Flexible')}\n*Travel Date:* ${val(prefix+'FlightDate','Flexible')}\n*Trip Type:* ${val(prefix+'TripType','One Way')}\n*Passengers:* ${val(prefix+'Passengers','1 Passenger')}\n`;
+      } else if (service === 'Indian Passport Services') {
+        text += `*Passport Service:* ${val(prefix+'PassportType')}\n*City / Location:* ${val(prefix+'PassportCity')}\n*Applicants:* ${val(prefix+'PassportApplicants')}\n`;
+      } else if (service === 'VFS Appointment Assistance') {
+        text += `*Appointment Type:* ${val(prefix+'VfsType')}\n*VFS City / Center:* ${val(prefix+'VfsCity')}\n*Applicants:* ${val(prefix+'VfsApplicants')}\n*Preferred Appointment Date:* ${val(prefix+'VfsDate','Flexible')}\n`;
+      } else if (service === 'Flight Reservations for Visa Documentation') {
+        text += `*From:* ${val(prefix+'ResFrom')}\n*To:* ${val(prefix+'ResTo')}\n*Travel Date:* ${val(prefix+'ResDate','Flexible')}\n*Passengers:* ${val(prefix+'ResPassengers')}\n`;
+      } else if (service === 'Saudi Work Visa Medical & Visa Stamping') {
+        text += `*Service Required:* ${val(prefix+'WorkVisaService')}\n*City:* ${val(prefix+'WorkVisaCity')}\n*Applicants:* ${val(prefix+'WorkVisaApplicants')}\n*Preferred Date:* ${val(prefix+'WorkVisaDate','Flexible')}\n`;
+      } else if (service === 'Umrah Package Inquiry') {
+        text += `*Departure City:* ${val(prefix+'UmrahFrom')}\n*Preferred Travel Date / Month:* ${val(prefix+'UmrahDate','Flexible')}\n*Passengers:* ${val(prefix+'UmrahPassengers')}\n`;
+      }
+      if (msg) text += `*Message / Notes:* ${msg}\n`;
+      return text;
+    }
+
+    function handleHeroInquiry(e) {
+      e.preventDefault();
+      const name = val('heroCustName','Customer');
+      const service = val('heroService','Flight Ticket Booking');
+      const msg = val('heroMsg','');
+      const text = buildServiceWhatsAppText('hero', name, service, msg);
+      window.open('https://wa.me/918931048027?text=' + encodeURIComponent(text), '_blank', 'noopener');
+    }
+
+    function handleModalInquiry(e) {
+      e.preventDefault();
+      const name = val('modalCustName','Customer');
+      const service = val('modalService','Flight Ticket Booking');
+      const msg = val('modalMsg','');
+      const text = buildServiceWhatsAppText('modal', name, service, msg);
+      closeInquiryModal();
+      window.open('https://wa.me/918931048027?text=' + encodeURIComponent(text), '_blank', 'noopener');
+    }
+  </script>
+
+  <!-- 7. Firebase Customer Reviews: preserve existing Firestore reviews + legacy RTDB reviews -->
+  <script type="module">
+    import { initializeApp } from "https://www.gstatic.com/firebasejs/12.18.0/firebase-app.js";
+    import { getFirestore, collection, addDoc, getDocs, query, orderBy, serverTimestamp } from "https://www.gstatic.com/firebasejs/12.18.0/firebase-firestore.js";
+    import { getDatabase, ref, onValue } from "https://www.gstatic.com/firebasejs/12.18.0/firebase-database.js";
+
+    const firebaseConfig = {
+      apiKey: "AIzaSyCQ1Ti_F4FeJvf42n4QbgCTxZP_KbyMPcs",
+      authDomain: "hamza-travels-da47f.firebaseapp.com",
+      databaseURL: "https://hamza-travels-da47f-default-rtdb.firebaseio.com",
+      projectId: "hamza-travels-da47f",
+      storageBucket: "hamza-travels-da47f.firebasestorage.app",
+      messagingSenderId: "158965213718",
+      appId: "1:158965213718:web:0e565cadf394895741a337",
+      measurementId: "G-227BD2NRF6"
+    };
+
+    const app = initializeApp(firebaseConfig);
+    const db = getFirestore(app);
+    const rtdb = getDatabase(app);
+    const reviewsListElem = document.getElementById('reviewsList');
+    const reviewCountBadge = document.getElementById('reviewCountBadge');
+    const statusMsg = document.getElementById('revStatusMsg');
+    const submitBtn = document.getElementById('revSubmitBtn');
+
+    function escapeHTML(str) {
+      const p = document.createElement('p');
+      p.appendChild(document.createTextNode(String(str ?? '')));
+      return p.innerHTML;
+    }
+
+    function normalizeReview(item, source, id) {
+      let time = 0;
+      if (item?.createdAt?.toMillis) time = item.createdAt.toMillis();
+      else if (typeof item?.createdAt === 'number') time = item.createdAt;
+      else if (item?.createdAt?._seconds) time = item.createdAt._seconds * 1000;
+      return { id: source + ':' + id, name: item?.name || 'Anonymous', stars: item?.stars || 5, comment: item?.comment || '', time, source };
+    }
+
+    function renderReviews(items) {
+      const cleaned = items.filter(x => x.comment || x.name).sort((a,b) => (b.time||0) - (a.time||0));
+      if (!cleaned.length) {
+        reviewsListElem.innerHTML = `<div class="text-center py-10 text-sm text-slate-400 bg-slate-50 rounded-2xl border border-dashed border-slate-200">No reviews published yet. Be the first to share your experience!</div>`;
+        reviewCountBadge.innerText = '0 Reviews';
+        return;
+      }
+      reviewCountBadge.innerText = `${cleaned.length} Review${cleaned.length === 1 ? '' : 's'}`;
+      reviewsListElem.innerHTML = cleaned.map(item => {
+        const safeName = escapeHTML(item.name);
+        const safeComment = escapeHTML(item.comment);
+        const starCount = Math.max(1, Math.min(5, parseInt(item.stars,10) || 5));
+        const initials = escapeHTML((String(item.name || 'A').trim().charAt(0) || 'A').toUpperCase());
+        const starsText = '★'.repeat(starCount) + '☆'.repeat(5-starCount);
+        return `<article class="ht-review-card">
+          <div class="flex items-start justify-between gap-3">
+            <div class="flex items-center gap-3 min-w-0">
+              <div class="ht-review-avatar">${initials}</div>
+              <div class="min-w-0"><div class="font-extrabold text-slate-900 text-sm truncate">${safeName}</div><div class="text-[10px] text-slate-400 mt-0.5">Customer feedback</div></div>
+            </div>
+            <div class="ht-review-stars" aria-label="${starCount} out of 5 stars">${starsText}</div>
           </div>
-          <div class="grid grid-cols-3 gap-2">
-            <div>
-              <label for="modal_saudi_city" class="block text-[11px] font-bold text-slate-
+          <p class="mt-4 text-sm text-slate-600 leading-7">${safeComment}</p>
+        </article>`;
+      }).join('');
+    }
+
+    async function loadReviews() {
+      const all = [];
+      try {
+        const snap = await getDocs(query(collection(db, 'reviews'), orderBy('createdAt','desc')));
+        snap.forEach(doc => all.push(normalizeReview(doc.data(), 'firestore', doc.id)));
+      } catch (err) {
+        try {
+          const snap = await getDocs(collection(db, 'reviews'));
+          snap.forEach(doc => all.push(normalizeReview(doc.data(), 'firestore', doc.id)));
+        } catch (e) { console.warn('Firestore reviews unavailable:', e); }
+      }
+      try {
+        const snap = await new Promise((resolve, reject) => {
+          onValue(ref(rtdb, 'reviews'), resolve, { onlyOnce: true });
+        });
+        const data = snap.val();
+        if (data) Object.keys(data).forEach(id => all.push(normalizeReview(data[id], 'rtdb', id)));
+      } catch (err) { console.warn('Realtime Database legacy reviews unavailable:', err); }
+
+      // Avoid accidental duplicates when the same review exists in both databases.
+      const seen = new Set();
+      const unique = all.filter(item => {
+        const key = `${String(item.name).trim().toLowerCase()}|${String(item.comment).trim().toLowerCase()}|${item.stars}`;
+        if (seen.has(key)) return false;
+        seen.add(key); return true;
+      });
+      renderReviews(unique);
+    }
+
+    window.handleReviewSubmit = async function(e) {
+      e.preventDefault();
+      const name = document.getElementById('revName').value.trim();
+      const email = document.getElementById('revEmail').value.trim();
+      const stars = parseInt(document.getElementById('revStars').value,10) || 5;
+      const comment = document.getElementById('revComment').value.trim();
+      if (!name || !comment) return;
+      if (email && !/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email)) {
+        statusMsg.innerText = 'Please enter a valid email address, or leave it blank.';
+        statusMsg.className = 'text-xs text-center font-medium mt-2 text-rose-600 block';
+        return;
+      }
+      submitBtn.disabled = true; submitBtn.innerText = 'Submitting...';
+      try {
+        // Store only public review fields. Email is collected but never displayed or stored in the public review document.
+        await addDoc(collection(db, 'reviews'), { name, stars, comment, createdAt: serverTimestamp() });
+        statusMsg.innerText = 'Thank you! Your review has been submitted.';
+        statusMsg.className = 'text-xs text-center font-medium mt-2 text-green-600 block';
+        document.getElementById('reviewForm').reset();
+        await loadReviews();
+      } catch (err) {
+        console.error('Review submit error:', err);
+        statusMsg.innerText = 'Error submitting review. Please try again.';
+        statusMsg.className = 'text-xs text-center font-medium mt-2 text-rose-600 block';
+      } finally {
+        submitBtn.disabled = false; submitBtn.innerText = 'Submit Review';
+        setTimeout(() => statusMsg.classList.add('hidden'), 5000);
+      }
+    };
+
+    loadReviews();
+  </script>
+</body>
+</html>
