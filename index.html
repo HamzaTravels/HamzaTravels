@@ -88,23 +88,36 @@ rel="stylesheet">
 .ht-clock-foot{padding:0 18px 18px;color:#64748b;font-size:11px}
 .ht-inquiry-overlay{position:fixed;inset:0;z-index:110;display:flex;align-items:center;justify-content:center;padding:18px;background:rgba(2,8,23,.62);backdrop-filter:blur(8px);opacity:0;visibility:hidden;transition:opacity .28s ease,visibility .28s ease}
 .ht-inquiry-overlay.open{opacity:1;visibility:visible}
-.ht-inquiry-card{width:min(510px,100%);max-height:min(92vh,760px);overflow:auto;background:#fff;border:1px solid rgba(226,232,240,.9);border-radius:24px;box-shadow:0 28px 90px rgba(2,8,23,.35);transform:translateY(18px) scale(.97);transition:transform .32s cubic-bezier(.2,.8,.2,1)}
+.ht-inquiry-card{width:min(470px,100%);max-height:min(88vh,700px);overflow:auto;background:#fff;border:1px solid rgba(226,232,240,.9);border-radius:24px;box-shadow:0 28px 90px rgba(2,8,23,.35);transform:translateY(18px) scale(.97);transition:transform .32s cubic-bezier(.2,.8,.2,1)}
 .ht-inquiry-overlay.open .ht-inquiry-card{transform:translateY(0) scale(1)}
-.ht-inquiry-top{padding:20px 21px 16px;background:linear-gradient(135deg,#07162c,#102a4e);color:#fff;position:relative;overflow:hidden}
+.ht-inquiry-top{padding:17px 19px 14px;background:linear-gradient(135deg,#07162c,#102a4e);color:#fff;position:relative;overflow:hidden}
 .ht-inquiry-top:before{content:"";position:absolute;width:190px;height:190px;right:-90px;top:-105px;border-radius:50%;background:rgba(245,158,11,.18)}
 .ht-inquiry-kicker{display:inline-flex;align-items:center;gap:7px;font-size:10px;font-weight:800;letter-spacing:.12em;text-transform:uppercase;color:#fbbf24}
 .ht-inquiry-title{font-size:20px;font-weight:800;margin-top:5px;position:relative}
 .ht-inquiry-sub{font-size:11px;color:#cbd5e1;margin-top:4px;position:relative;line-height:1.5}
 .ht-close{position:absolute;right:13px;top:12px;width:34px;height:34px;border-radius:50%;border:1px solid rgba(255,255,255,.16);background:rgba(255,255,255,.08);color:#fff;display:grid;place-items:center;cursor:pointer;z-index:2;transition:.2s}
 .ht-close:hover{background:rgba(255,255,255,.17);transform:rotate(90deg)}
-.ht-inquiry-body{padding:18px 20px 20px}
-.ht-field{margin-bottom:12px}.ht-field label{display:block;font-size:10px;font-weight:800;letter-spacing:.07em;text-transform:uppercase;color:#334155;margin-bottom:5px}.ht-field input,.ht-field select,.ht-field textarea{width:100%;border:1px solid #cbd5e1;border-radius:11px;padding:10px 11px;font:inherit;font-size:13px;color:#0f172a;background:#fff;outline:none;transition:.2s;box-sizing:border-box}.ht-field input:focus,.ht-field select:focus,.ht-field textarea:focus{border-color:#1d4ed8;box-shadow:0 0 0 3px rgba(29,78,216,.1)}
-.ht-field textarea{min-height:72px;resize:vertical}.ht-field-row{display:grid;grid-template-columns:1fr 1fr;gap:10px}
+.ht-inquiry-body{padding:15px 18px 17px}
+.ht-field{margin-bottom:9px}.ht-field label{display:block;font-size:10px;font-weight:800;letter-spacing:.07em;text-transform:uppercase;color:#334155;margin-bottom:5px}.ht-field input,.ht-field select,.ht-field textarea{width:100%;border:1px solid #cbd5e1;border-radius:11px;padding:10px 11px;font:inherit;font-size:13px;color:#0f172a;background:#fff;outline:none;transition:.2s;box-sizing:border-box}.ht-field input:focus,.ht-field select:focus,.ht-field textarea:focus{border-color:#1d4ed8;box-shadow:0 0 0 3px rgba(29,78,216,.1)}
+.ht-field textarea{min-height:58px;resize:vertical}.ht-field-row{display:grid;grid-template-columns:1fr 1fr;gap:10px}
 .ht-wa-submit{width:100%;border:0;border-radius:12px;padding:12px 14px;background:#16a34a;color:#fff;font-size:13px;font-weight:800;cursor:pointer;display:flex;align-items:center;justify-content:center;gap:8px;box-shadow:0 8px 20px rgba(22,163,74,.18);transition:.2s}.ht-wa-submit:hover{background:#15803d;transform:translateY(-1px)}
 .ht-inquiry-note{text-align:center;font-size:10px;color:#94a3b8;margin-top:9px;line-height:1.45}
 .ht-help-fab{position:fixed;right:18px;bottom:18px;z-index:90;border:1px solid rgba(255,255,255,.3);background:#07162c;color:#fff;border-radius:999px;padding:11px 15px;display:flex;align-items:center;gap:8px;font-size:11px;font-weight:800;box-shadow:0 12px 28px rgba(2,8,23,.2);cursor:pointer;transition:.25s}.ht-help-fab:hover{transform:translateY(-2px);background:#0f2444}.ht-help-fab i{color:#4ade80}
 body.ht-modal-open{overflow:hidden}
 @media(max-width:767px){.ht-clock-grid{grid-template-columns:1fr}.ht-clock-modal{padding-top:72px}.ht-inquiry-card{border-radius:20px}.ht-field-row{grid-template-columns:1fr}.ht-help-fab{right:12px;bottom:12px}.ht-help-fab span{display:none}.ht-help-fab{width:46px;height:46px;padding:0;justify-content:center;border-radius:50%}}
+
+
+/* Clear separated live clock cards */
+.ht-clock-trigger{gap:0;padding:.22rem .32rem;border-radius:14px;background:rgba(7,22,44,.9);border:1px solid rgba(148,163,184,.28);box-shadow:0 5px 18px rgba(0,0,0,.14)}
+.ht-clock-zone-mini{display:flex;align-items:center;gap:.45rem;padding:.28rem .62rem;border-radius:10px;min-width:138px}
+.ht-clock-ksa-mini{background:linear-gradient(135deg,rgba(22,163,74,.14),rgba(34,197,94,.05))}
+.ht-clock-india-mini{background:linear-gradient(135deg,rgba(249,115,22,.14),rgba(245,158,11,.05))}
+.ht-mini-label{font-size:9px;font-weight:800;letter-spacing:.055em;text-transform:uppercase;color:#cbd5e1;white-space:nowrap}
+.ht-clock-ksa-mini .ht-mini-label{color:#86efac}.ht-clock-india-mini .ht-mini-label{color:#fdba74}
+.ht-clock-mini{font-size:11px;color:#fff;white-space:nowrap;line-height:1}
+.ht-clock-divider{width:1px;height:22px;background:rgba(148,163,184,.3);margin:0 2px}
+.ht-clock-chevron{font-size:9px;color:#94a3b8;margin:0 .45rem}
+@media(max-width:767px){.ht-clock-zone-mini{min-width:0;padding:.25rem .42rem;gap:.25rem;flex-direction:column;align-items:flex-start}.ht-mini-label{font-size:8px}.ht-clock-mini{font-size:10px}.ht-clock-divider{height:30px}.ht-clock-chevron{margin:0 .2rem}}
 
 /* Premium contact cards */
 .ht-contact-card{position:relative;border-radius:24px;padding:0;overflow:hidden;background:#fff;border:1px solid #e2e8f0;box-shadow:0 14px 38px rgba(15,23,42,.08);transition:transform .28s ease,box-shadow .28s ease,border-color .28s ease}
@@ -118,7 +131,7 @@ body.ht-modal-open{overflow:hidden}
 .ht-contact-ksa .ht-contact-icon{background:linear-gradient(135deg,#dcfce7,#bbf7d0);color:#15803d}
 .ht-contact-india .ht-contact-icon{background:linear-gradient(135deg,#ffedd5,#fed7aa);color:#ea580c}
 .ht-contact-bank .ht-contact-icon{background:linear-gradient(135deg,#dbeafe,#bfdbfe);color:#1d4ed8}
-.ht-contact-card-head h3{font-size:18px;line-height:1.2;font-weight:800;color:#0f172a;margin:0}
+.ht-contact-card-head h3{font-size:19px;line-height:1.2;font-weight:800;color:#0f172a;margin:0}
 .ht-contact-card-head span{display:block;font-size:10px;font-weight:700;letter-spacing:.04em;text-transform:uppercase;color:#64748b;margin-top:5px}
 .ht-contact-details{padding:0 22px 22px}
 .ht-contact-row{display:flex;gap:11px;padding:11px 0;border-top:1px solid #eef2f7;align-items:flex-start}
@@ -214,14 +227,17 @@ ml-1">09BFLPN1044Q1ZV</span>
          <i class="fa-solid fa-location-dot mr-1.5 text-amber-400"></i> KSA Location: Layla, Al Aflaj
        </span>
        <span class="hidden lg:inline text-slate-600">|</span>
-       <button type="button" id="clockTrigger" class="ht-clock-trigger text-slate-100" aria-haspopup="dialog" aria-controls="clockModal" aria-label="Open Saudi Arabia and India live clocks">
-         <span class="ht-live-dot" aria-hidden="true"></span>
-         <i class="fa-solid fa-earth-asia text-amber-400" aria-hidden="true"></i>
-         <span class="hidden sm:inline font-semibold">KSA & India Time</span>
-         <span id="ksaClock" class="ht-clock-mini font-mono font-bold text-white">--:--</span>
-         <span class="text-slate-500">•</span>
-         <span id="indiaClock" class="ht-clock-mini font-mono font-bold text-white">--:--</span>
-         <i class="fa-solid fa-chevron-down text-[9px] text-slate-400" aria-hidden="true"></i>
+       <button type="button" id="clockTrigger" class="ht-clock-trigger" aria-haspopup="dialog" aria-controls="clockModal" aria-label="Open Saudi Arabia and India live clocks">
+         <span class="ht-clock-zone-mini ht-clock-ksa-mini">
+           <span class="ht-mini-label">Saudi Arabia</span>
+           <span id="ksaClock" class="ht-clock-mini font-mono font-bold">--:--:--</span>
+         </span>
+         <span class="ht-clock-divider" aria-hidden="true"></span>
+         <span class="ht-clock-zone-mini ht-clock-india-mini">
+           <span class="ht-mini-label">India</span>
+           <span id="indiaClock" class="ht-clock-mini font-mono font-bold">--:--:--</span>
+         </span>
+         <i class="fa-solid fa-chevron-down ht-clock-chevron" aria-hidden="true"></i>
        </button>
       </div>
 
@@ -370,7 +386,7 @@ Connecting Saudi Arabia & India</span>
        <div class="border-b border-slate-100 pb-3 mb-4">
            <span class="text-xs font-bold text-brand-blue uppercase tracking-wider">Fast & Transparent</span>
            <h2 class="text-xl font-bold text-slate-900 mt-0.5">Inquire via WhatsApp</h2>
-           <p class="text-xs text-slate-500 mt-0.5">Direct guidance for flight tickets, Umrah, or passport paperwork.</p>
+           <p class="text-xs text-slate-500 mt-0.5">Direct guidance for flight tickets, passport services, VFS, and travel documentation.</p>
        </div>
 
        <form class="space-y-3" onsubmit="handleHeroInquiry(event)">
@@ -384,7 +400,6 @@ border border-slate-300 text-sm focus:ring-2 focus:ring-brand-blue focus:outline
             <label for="heroService" class="block text-xs font-bold text-slate-700 uppercase mb-1">Service Required</label>
             <select id="heroService" class="w-full px-3.5 py-2 rounded-lg border border-slate-300 text-sm focus:ring-2
 focus:ring-brand-blue focus:outline-none bg-white font-medium">
-             <option value="Umrah Travel Assistance & Packages">Umrah Travel Assistance & Packages</option>
              <option value="Flight Ticket Booking">Flight Ticket Booking</option>
              <option value="Indian Passport Renewal in Saudi Arabia">Indian Passport Renewal in Saudi Arabia</option>
              <option value="VFS Appointment Assistance">VFS Appointment Assistance</option>
@@ -476,52 +491,14 @@ and pilgrims.</p>
       </div>
 
       <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
-       <!-- 1. Umrah Travel Assistance -->
-       <div class="bg-brand-bgMuted rounded-xl p-6 border border-slate-200 hover:border-brand-blue transition flex flex-col
-justify-between">
-        <div>
-          <div class="w-11 h-11 rounded-lg bg-amber-50 text-amber-600 flex items-center justify-center text-lg mb-4">
-           <i class="fa-solid fa-kaaba"></i>
-          </div>
-          <h3 class="text-base font-bold text-slate-900 mb-1.5">1. Umrah Travel Assistance</h3>
-          <p class="text-slate-600 text-xs leading-relaxed mb-4">
-           Comprehensive guidance for eligible pilgrims and families planning their pilgrimage, subject to current Saudi
-regulations.
-          </p>
-        </div>
-        <a href="#umrah" class="text-xs font-bold text-brand-blue hover:text-amber-600 transition inline-flex items-center">
-          Learn More →
-        </a>
-       </div>
-
-       <!-- 2. Umrah Packages -->
-       <div class="bg-brand-bgMuted rounded-xl p-6 border border-slate-200 hover:border-brand-blue transition flex flex-col
-justify-between">
-        <div>
-          <div class="w-11 h-11 rounded-lg bg-amber-50 text-amber-600 flex items-center justify-center text-lg mb-4">
-
-           <i class="fa-solid fa-box-archive"></i>
-          </div>
-          <h3 class="text-base font-bold text-slate-900 mb-1.5">2. Umrah Packages</h3>
-          <p class="text-slate-600 text-xs leading-relaxed mb-4">
-           Coordinated travel packages bundling flight ticketing, hotel reservations in holy cities, and ground transportation
-assistance.
-          </p>
-      </div>
-      <a href="#umrah-packages" class="text-xs font-bold text-brand-blue hover:text-amber-600 transition inline-flex
-items-center">
-          Learn More →
-      </a>
-     </div>
-
-     <!-- 3. Flight Ticket Booking -->
+       <!-- 3. Flight Ticket Booking -->
      <div class="bg-brand-bgMuted rounded-xl p-6 border border-slate-200 hover:border-brand-blue transition flex flex-col
 justify-between">
       <div>
           <div class="w-11 h-11 rounded-lg bg-blue-50 text-brand-blue flex items-center justify-center text-lg mb-4">
            <i class="fa-solid fa-plane-up"></i>
           </div>
-          <h3 class="text-base font-bold text-slate-900 mb-1.5">3. Flight Ticket Booking</h3>
+          <h3 class="text-base font-bold text-slate-900 mb-1.5">1. Flight Ticket Booking</h3>
           <p class="text-slate-600 text-xs leading-relaxed mb-4">
            Domestic and international flight bookings across major carriers with competitive fares, reissues, and cancellation
 support.
@@ -539,7 +516,7 @@ justify-between">
           <div class="w-11 h-11 rounded-lg bg-emerald-50 text-emerald-700 flex items-center justify-center text-lg mb-4">
            <i class="fa-solid fa-passport"></i>
           </div>
-          <h3 class="text-base font-bold text-slate-900 mb-1.5">4. Indian Passport Renewal in Saudi Arabia</h3>
+          <h3 class="text-base font-bold text-slate-900 mb-1.5">2. Indian Passport Renewal in Saudi Arabia</h3>
           <p class="text-slate-600 text-xs leading-relaxed mb-4">
            Professional guidance with form preparation, document checking, online filing support, and appointment scheduling.
           </p>
@@ -557,7 +534,7 @@ justify-between">
        <div class="w-11 h-11 rounded-lg bg-rose-50 text-rose-700 flex items-center justify-center text-lg mb-4">
         <i class="fa-solid fa-calendar-check"></i>
        </div>
-       <h3 class="text-base font-bold text-slate-900 mb-1.5">5. VFS Appointment Assistance</h3>
+       <h3 class="text-base font-bold text-slate-900 mb-1.5">3. VFS Appointment Assistance</h3>
        <p class="text-slate-600 text-xs leading-relaxed mb-4">
         Support with checking appointment availability, requirements checking, and preparing document checklists.
        </p>
@@ -1274,14 +1251,13 @@ shadow-xl flex items-center justify-center transform hover:scale-105 transition 
         <div class="ht-inquiry-top">
           <button type="button" class="ht-close" id="inquiryClose" aria-label="Close service request"><i class="fa-solid fa-xmark"></i></button>
           <div class="ht-inquiry-kicker"><i class="fa-brands fa-whatsapp"></i> Hamza Travels</div>
-          <div id="inquiryTitle" class="ht-inquiry-title">How can we help you?</div>
-          <div class="ht-inquiry-sub">Share your requirement and send it directly to our WhatsApp team.</div>
+          <div id="inquiryTitle" class="ht-inquiry-title">Request Assistance</div>
+          <div class="ht-inquiry-sub">Tell us what you need and send your request directly to WhatsApp.</div>
         </div>
         <form id="visitorInquiryForm" class="ht-inquiry-body">
           <div class="ht-field"><label for="visitorName">Full Name *</label><input id="visitorName" name="name" type="text" autocomplete="name" required placeholder="Your name"></div>
           <div class="ht-field"><label for="visitorService">Service Required *</label><select id="visitorService" name="service" required>
             <option value="Flight Ticket Booking">Flight Ticket Booking</option>
-            <option value="Umrah Travel Assistance">Umrah Travel Assistance</option>
             <option value="Indian Passport Services">Indian Passport Services</option>
             <option value="VFS Appointment Assistance">VFS Appointment Assistance</option>
             <option value="Visa / Immigration Assistance">Visa / Immigration Assistance</option>
@@ -1394,7 +1370,7 @@ ${encodeURIComponent(date || 'Flexible')}%0A*Message:* ${encodeURIComponent(msg 
       if (popup) popup.addEventListener('click', e => { if (e.target === popup) closePopup(); });
       document.addEventListener('keydown', e => { if (e.key === 'Escape' && popup && popup.classList.contains('open')) closePopup(); });
       // Show automatically once per browser session, after the page has had time to render.
-      try { if (!sessionStorage.getItem('htInquirySeen')) setTimeout(openPopup, 2800); } catch (_) { setTimeout(openPopup, 2800); }
+      try { if (!sessionStorage.getItem('htInquirySeen')) setTimeout(openPopup, 3200); } catch (_) { setTimeout(openPopup, 3200); }
       if (form) form.addEventListener('submit', e => {
         e.preventDefault();
         const name = document.getElementById('visitorName').value.trim();
