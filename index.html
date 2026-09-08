@@ -82,7 +82,7 @@
     .ht-mini-label { font-size: 9px; font-weight: 800; letter-spacing: .055em; text-transform: uppercase; color: #cbd5e1; white-space: nowrap; }
     .ht-clock-ksa-mini .ht-mini-label { color: #86efac; }
     .ht-clock-india-mini .ht-mini-label { color: #fdba74; }
-    .ht-clock-mini { font-size: 11px; color: #fff; white-space: nowrap; line-height: 1; font-variant-numeric: tabular-nums; }
+    .ht-clock-mini { font-size: 14px; color: #fff; white-space: nowrap; line-height: 1; font-variant-numeric: tabular-nums; }
     .ht-clock-divider { width: 1px; height: 22px; background: rgba(148,163,184,.3); margin: 0 2px; }
     .ht-clock-chevron { font-size: 9px; color: #94a3b8; margin: 0 .45rem; }
 
@@ -183,7 +183,7 @@
     @media (max-width: 767px) {
       .ht-clock-zone-mini { min-width: 0; padding: .25rem .42rem; gap: .25rem; flex-direction: column; align-items: flex-start; }
       .ht-mini-label { font-size: 8px; }
-      .ht-clock-mini { font-size: 10px; }
+      .ht-clock-mini { font-size: 13px; }
       .ht-clock-divider { height: 28px; }
       .ht-clock-chevron { margin: 0 .2rem; }
       .ht-help-fab { right: 14px; bottom: 14px; width: 48px; height: 48px; padding: 0; justify-content: center; border-radius: 50%; }
@@ -1717,11 +1717,11 @@
     }
   </script>
 
-  <!-- 7. Firebase Customer Reviews: preserve existing Firestore reviews + legacy RTDB reviews -->
+  <!-- 7. Firebase Customer Reviews: robust loading from existing Firestore + Realtime Database -->
   <script type="module">
-    import { initializeApp } from "https://www.gstatic.com/firebasejs/12.18.0/firebase-app.js";
+    import { initializeApp, getApps, getApp } from "https://www.gstatic.com/firebasejs/12.18.0/firebase-app.js";
     import { getFirestore, collection, addDoc, getDocs, query, orderBy, serverTimestamp } from "https://www.gstatic.com/firebasejs/12.18.0/firebase-firestore.js";
-    import { getDatabase, ref, onValue } from "https://www.gstatic.com/firebasejs/12.18.0/firebase-database.js";
+    import { getDatabase, ref, get } from "https://www.gstatic.com/firebasejs/12.18.0/firebase-database.js";
 
     const firebaseConfig = {
       apiKey: "AIzaSyCQ1Ti_F4FeJvf42n4QbgCTxZP_KbyMPcs",
@@ -1734,7 +1734,7 @@
       measurementId: "G-227BD2NRF6"
     };
 
-    const app = initializeApp(firebaseConfig);
+    const app = getApps().length ? getApp() : initializeApp(firebaseConfig);
     const db = getFirestore(app);
     const rtdb = getDatabase(app);
     const reviewsListElem = document.getElementById('reviewsList');
@@ -1757,12 +1757,22 @@
     }
 
     function renderReviews(items) {
-      const cleaned = items.filter(x => x.comment || x.name).sort((a,b) => (b.time||0) - (a.time||0));
+      const seen = new Set();
+      const cleaned = items
+        .filter(x => x.comment || x.name)
+        .filter(x => {
+          const key = `${String(x.name).trim().toLowerCase()}|${String(x.comment).trim().toLowerCase()}|${x.stars}`;
+          if (seen.has(key)) return false;
+          seen.add(key); return true;
+        })
+        .sort((a,b) => (b.time || 0) - (a.time || 0));
+
       if (!cleaned.length) {
         reviewsListElem.innerHTML = `<div class="text-center py-10 text-sm text-slate-400 bg-slate-50 rounded-2xl border border-dashed border-slate-200">No reviews published yet. Be the first to share your experience!</div>`;
         reviewCountBadge.innerText = '0 Reviews';
         return;
       }
+
       reviewCountBadge.innerText = `${cleaned.length} Review${cleaned.length === 1 ? '' : 's'}`;
       reviewsListElem.innerHTML = cleaned.map(item => {
         const safeName = escapeHTML(item.name);
@@ -1785,31 +1795,43 @@
 
     async function loadReviews() {
       const all = [];
+      let sourceWorked = false;
+
+      // Read Firestore without waiting forever. This is the primary source for the current review system.
       try {
-        const snap = await getDocs(query(collection(db, 'reviews'), orderBy('createdAt','desc')));
+        const firestoreRead = getDocs(collection(db, 'reviews'));
+        const snap = await Promise.race([
+          firestoreRead,
+          new Promise((_, reject) => setTimeout(() => reject(new Error('Firestore read timeout')), 7000))
+        ]);
         snap.forEach(doc => all.push(normalizeReview(doc.data(), 'firestore', doc.id)));
+        sourceWorked = true;
       } catch (err) {
-        try {
-          const snap = await getDocs(collection(db, 'reviews'));
-          snap.forEach(doc => all.push(normalizeReview(doc.data(), 'firestore', doc.id)));
-        } catch (e) { console.warn('Firestore reviews unavailable:', e); }
+        console.warn('Firestore reviews unavailable:', err);
       }
+
+      // Also read the existing Realtime Database reviews so older reviews are preserved.
       try {
-        const snap = await new Promise((resolve, reject) => {
-          onValue(ref(rtdb, 'reviews'), resolve, { onlyOnce: true });
-        });
+        const rtdbRead = get(ref(rtdb, 'reviews'));
+        const snap = await Promise.race([
+          rtdbRead,
+          new Promise((_, reject) => setTimeout(() => reject(new Error('Realtime Database read timeout')), 7000))
+        ]);
         const data = snap.val();
         if (data) Object.keys(data).forEach(id => all.push(normalizeReview(data[id], 'rtdb', id)));
-      } catch (err) { console.warn('Realtime Database legacy reviews unavailable:', err); }
+        sourceWorked = true;
+      } catch (err) {
+        console.warn('Realtime Database reviews unavailable:', err);
+      }
 
-      // Avoid accidental duplicates when the same review exists in both databases.
-      const seen = new Set();
-      const unique = all.filter(item => {
-        const key = `${String(item.name).trim().toLowerCase()}|${String(item.comment).trim().toLowerCase()}|${item.stars}`;
-        if (seen.has(key)) return false;
-        seen.add(key); return true;
-      });
-      renderReviews(unique);
+      // Never leave the customer staring at an endless loading state.
+      if (!sourceWorked) {
+        reviewsListElem.innerHTML = `<div class="text-center py-10 text-sm text-slate-500 bg-amber-50 rounded-2xl border border-amber-200">Reviews could not be loaded right now. Please refresh the page and try again.</div>`;
+        reviewCountBadge.innerText = 'Unable to load';
+        return;
+      }
+
+      renderReviews(all);
     }
 
     window.handleReviewSubmit = async function(e) {
@@ -1826,7 +1848,6 @@
       }
       submitBtn.disabled = true; submitBtn.innerText = 'Submitting...';
       try {
-        // Store only public review fields. Email is collected but never displayed or stored in the public review document.
         await addDoc(collection(db, 'reviews'), { name, stars, comment, createdAt: serverTimestamp() });
         statusMsg.innerText = 'Thank you! Your review has been submitted.';
         statusMsg.className = 'text-xs text-center font-medium mt-2 text-green-600 block';
