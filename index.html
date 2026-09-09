@@ -514,7 +514,7 @@
 
               <div id="heroUmrahIndividualFields" class="space-y-3 hidden">
                 <div class="grid grid-cols-2 gap-2">
-                  <div><label for="heroUmrahIndividualFrom" class="block text-[11px] font-bold text-slate-700 uppercase mb-1">Departure City</label><input type="text" id="heroUmrahIndividualFrom" placeholder="e.g. Mumbai, Delhi" class="w-full px-3 py-1.5 rounded-lg border border-slate-300 text-xs focus:ring-2 focus:ring-brand-blue focus:outline-none bg-white"></div>
+                  <div><label for="heroUmrahIndividualArrival" class="block text-[11px] font-bold text-slate-700 uppercase mb-1">Arrival City</label><input type="text" id="heroUmrahIndividualArrival" placeholder="e.g. Jeddah, Madinah, Riyadh, Dammam" class="w-full px-3 py-1.5 rounded-lg border border-slate-300 text-xs focus:ring-2 focus:ring-brand-blue focus:outline-none bg-white"></div>
                   <div><label for="heroUmrahIndividualDate" class="block text-[11px] font-bold text-slate-700 uppercase mb-1">Preferred Travel Date</label><input type="date" id="heroUmrahIndividualDate" class="w-full px-2 py-1.5 rounded-lg border border-slate-300 text-xs focus:ring-2 focus:ring-brand-blue focus:outline-none bg-white"></div>
                 </div>
                 <div><label for="heroUmrahIndividualApplicants" class="block text-[11px] font-bold text-slate-700 uppercase mb-1">Pilgrims / Applicants</label><select id="heroUmrahIndividualApplicants" class="w-full px-3 py-1.5 rounded-lg border border-slate-300 text-xs focus:ring-2 focus:ring-brand-blue focus:outline-none bg-white"><option>1 Pilgrim</option><option>2 Pilgrims</option><option>3-4 Pilgrims</option><option>5+ Pilgrims</option></select></div>
@@ -795,7 +795,43 @@
     </div>
   </section>
 
-  <!-- 7. UMRAH SERVICES -->
+  <!-- 7. SACRED JOURNEYS PHOTO GALLERY - ORIGINAL GITHUB PHOTOS -->
+  <section class="py-12 bg-white border-b border-slate-200" aria-label="Sacred Journeys & Travel Assistance">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="text-center mb-7">
+        <h2 class="text-2xl sm:text-3xl font-extrabold text-slate-900">Sacred Journeys &amp; Travel Assistance</h2>
+        <p class="text-slate-600 text-xs sm:text-sm mt-1">Dedicated coordination for pilgrims and international travelers.</p>
+      </div>
+      <div class="grid grid-cols-2 md:grid-cols-4 gap-4">
+        <div class="relative rounded-xl overflow-hidden shadow-sm h-56 group">
+          <img src="Kaaba.jpg" alt="Holy Kaaba Makkah" class="w-full h-full object-cover group-hover:scale-105 transition duration-300">
+          <div class="absolute inset-0 bg-gradient-to-t from-black/70 via-transparent to-transparent flex items-end p-3.5">
+            <span class="text-white text-xs font-semibold">Umrah Journeys</span>
+          </div>
+        </div>
+        <div class="relative rounded-xl overflow-hidden shadow-sm h-56 group">
+          <img src="makkah.jpg" alt="Makkah City" class="w-full h-full object-cover group-hover:scale-105 transition duration-300">
+          <div class="absolute inset-0 bg-gradient-to-t from-black/70 via-transparent to-transparent flex items-end p-3.5">
+            <span class="text-white text-xs font-semibold">Makkah</span>
+          </div>
+        </div>
+        <div class="relative rounded-xl overflow-hidden shadow-sm h-56 group">
+          <img src="masjidnabawi.jpg" alt="Masjid An Nabawi Madinah" class="w-full h-full object-cover group-hover:scale-105 transition duration-300">
+          <div class="absolute inset-0 bg-gradient-to-t from-black/70 via-transparent to-transparent flex items-end p-3.5">
+            <span class="text-white text-xs font-semibold">Madinah</span>
+          </div>
+        </div>
+        <div class="relative rounded-xl overflow-hidden shadow-sm h-56 group">
+          <img src="umrah.jpg" alt="Umrah Pilgrims" class="w-full h-full object-cover group-hover:scale-105 transition duration-300">
+          <div class="absolute inset-0 bg-gradient-to-t from-black/70 via-transparent to-transparent flex items-end p-3.5">
+            <span class="text-white text-xs font-semibold">Travel Assistance</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 8. UMRAH SERVICES -->
   <section id="umrah" class="py-16 bg-slate-50 border-b border-slate-200">
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
       <div class="text-center max-w-3xl mx-auto mb-10">
@@ -807,7 +843,7 @@
       <div class="grid md:grid-cols-2 gap-6 max-w-5xl mx-auto">
         <article class="bg-white rounded-2xl overflow-hidden border border-slate-200 shadow-sm hover:shadow-lg transition group">
           <div class="h-44 sm:h-52 overflow-hidden bg-slate-100">
-            <img src="makkah.jpg" alt="Makkah for Umrah travel" class="w-full h-full object-cover group-hover:scale-105 transition duration-500">
+            <img src="makkah.jpg" alt="Makkah City" class="w-full h-full object-cover group-hover:scale-105 transition duration-500">
           </div>
           <div class="p-6">
             <div class="text-[11px] font-extrabold tracking-wider uppercase text-emerald-700 mb-1">Individual Umrah Visa</div>
@@ -821,7 +857,7 @@
 
         <article class="bg-white rounded-2xl overflow-hidden border border-slate-200 shadow-sm hover:shadow-lg transition group">
           <div class="h-44 sm:h-52 overflow-hidden bg-slate-100">
-            <img src="masjidnabawi.jpg" alt="Madinah for Umrah package" class="w-full h-full object-cover group-hover:scale-105 transition duration-500">
+            <img src="masjidnabawi.jpg" alt="Masjid An Nabawi Madinah" class="w-full h-full object-cover group-hover:scale-105 transition duration-500">
           </div>
           <div class="p-6">
             <div class="text-[11px] font-extrabold tracking-wider uppercase text-amber-700 mb-1">Complete Travel Package</div>
@@ -846,33 +882,33 @@
       </div>
 
       <div class="grid sm:grid-cols-2 lg:grid-cols-3 gap-5 mb-8">
-        <div class="p-5 rounded-xl border border-slate-200 bg-brand-bgMuted">
-          <div class="text-emerald-700 text-lg mb-2"><i class="fa-solid fa-id-card"></i></div>
+        <div class="p-5 rounded-2xl border border-emerald-200 border-t-4 border-t-emerald-500 bg-gradient-to-br from-emerald-50 to-white shadow-sm hover:shadow-md hover:-translate-y-1 transition">
+          <div class="w-10 h-10 rounded-xl bg-emerald-100 text-emerald-700 flex items-center justify-center text-lg mb-3"><i class="fa-solid fa-id-card"></i></div>
           <h3 class="font-bold text-slate-900 text-sm mb-1">Passport Renewal</h3>
           <p class="text-xs text-slate-600 leading-relaxed">Guidance for online re-issue form completion and supporting paperwork assembly across Saudi Arabia.</p>
         </div>
-        <div class="p-5 rounded-xl border border-slate-200 bg-brand-bgMuted">
-          <div class="text-emerald-700 text-lg mb-2"><i class="fa-solid fa-baby"></i></div>
+        <div class="p-5 rounded-2xl border border-sky-200 border-t-4 border-t-sky-500 bg-gradient-to-br from-sky-50 to-white shadow-sm hover:shadow-md hover:-translate-y-1 transition">
+          <div class="w-10 h-10 rounded-xl bg-sky-100 text-sky-700 flex items-center justify-center text-lg mb-3"><i class="fa-solid fa-baby"></i></div>
           <h3 class="font-bold text-slate-900 text-sm mb-1">New & Minor Passports</h3>
           <p class="text-xs text-slate-600 leading-relaxed">Documentation guidance for newborn baby passports and minor re-issues.</p>
         </div>
-        <div class="p-5 rounded-xl border border-slate-200 bg-brand-bgMuted">
-          <div class="text-emerald-700 text-lg mb-2"><i class="fa-solid fa-list-check"></i></div>
+        <div class="p-5 rounded-2xl border border-violet-200 border-t-4 border-t-violet-500 bg-gradient-to-br from-violet-50 to-white shadow-sm hover:shadow-md hover:-translate-y-1 transition">
+          <div class="w-10 h-10 rounded-xl bg-violet-100 text-violet-700 flex items-center justify-center text-lg mb-3"><i class="fa-solid fa-list-check"></i></div>
           <h3 class="font-bold text-slate-900 text-sm mb-1">Document Checking</h3>
           <p class="text-xs text-slate-600 leading-relaxed">Pre-submission review of mandatory attachments, photos, and Iqama validity to avoid center rejection.</p>
         </div>
-        <div class="p-5 rounded-xl border border-slate-200 bg-brand-bgMuted">
-          <div class="text-emerald-700 text-lg mb-2"><i class="fa-solid fa-laptop"></i></div>
+        <div class="p-5 rounded-2xl border border-amber-200 border-t-4 border-t-amber-500 bg-gradient-to-br from-amber-50 to-white shadow-sm hover:shadow-md hover:-translate-y-1 transition">
+          <div class="w-10 h-10 rounded-xl bg-amber-100 text-amber-700 flex items-center justify-center text-lg mb-3"><i class="fa-solid fa-laptop"></i></div>
           <h3 class="font-bold text-slate-900 text-sm mb-1">Online Application Support</h3>
           <p class="text-xs text-slate-600 leading-relaxed">Accurate data entry into official online consular and government portals.</p>
         </div>
-        <div class="p-5 rounded-xl border border-slate-200 bg-brand-bgMuted">
-          <div class="text-emerald-700 text-lg mb-2"><i class="fa-solid fa-stamp"></i></div>
+        <div class="p-5 rounded-2xl border border-rose-200 border-t-4 border-t-rose-500 bg-gradient-to-br from-rose-50 to-white shadow-sm hover:shadow-md hover:-translate-y-1 transition">
+          <div class="w-10 h-10 rounded-xl bg-rose-100 text-rose-700 flex items-center justify-center text-lg mb-3"><i class="fa-solid fa-stamp"></i></div>
           <h3 class="font-bold text-slate-900 text-sm mb-1">Saudi Work Visa & Medical</h3>
           <p class="text-xs text-slate-600 leading-relaxed">Guidance on Gamca/Wafid medical appointments, document attestation, and embassy stamping rules.</p>
         </div>
-        <div class="p-5 rounded-xl border border-slate-200 bg-brand-bgMuted">
-          <div class="text-emerald-700 text-lg mb-2"><i class="fa-solid fa-folder-open"></i></div>
+        <div class="p-5 rounded-2xl border border-cyan-200 border-t-4 border-t-cyan-500 bg-gradient-to-br from-cyan-50 to-white shadow-sm hover:shadow-md hover:-translate-y-1 transition">
+          <div class="w-10 h-10 rounded-xl bg-cyan-100 text-cyan-700 flex items-center justify-center text-lg mb-3"><i class="fa-solid fa-folder-open"></i></div>
           <h3 class="font-bold text-slate-900 text-sm mb-1">File Preparation</h3>
           <p class="text-xs text-slate-600 leading-relaxed">Organizing your complete application bundle in the required physical sequence.</p>
         </div>
@@ -1518,7 +1554,7 @@
 
               <div id="modalUmrahIndividualFields" class="space-y-3 hidden">
                 <div class="grid grid-cols-2 gap-2">
-                  <div><label for="modalUmrahIndividualFrom" class="block text-[11px] font-bold text-slate-700 uppercase mb-1">Departure City</label><input type="text" id="modalUmrahIndividualFrom" placeholder="e.g. Mumbai, Delhi" class="w-full px-3 py-2 rounded-lg border border-slate-300 text-xs focus:ring-2 focus:ring-brand-blue focus:outline-none bg-white"></div>
+                  <div><label for="modalUmrahIndividualArrival" class="block text-[11px] font-bold text-slate-700 uppercase mb-1">Arrival City</label><input type="text" id="modalUmrahIndividualArrival" placeholder="e.g. Jeddah, Madinah, Riyadh, Dammam" class="w-full px-3 py-2 rounded-lg border border-slate-300 text-xs focus:ring-2 focus:ring-brand-blue focus:outline-none bg-white"></div>
                   <div><label for="modalUmrahIndividualDate" class="block text-[11px] font-bold text-slate-700 uppercase mb-1">Preferred Travel Date</label><input type="date" id="modalUmrahIndividualDate" class="w-full px-2 py-2 rounded-lg border border-slate-300 text-xs focus:ring-2 focus:ring-brand-blue focus:outline-none bg-white"></div>
                 </div>
                 <div><label for="modalUmrahIndividualApplicants" class="block text-[11px] font-bold text-slate-700 uppercase mb-1">Pilgrims / Applicants</label><select id="modalUmrahIndividualApplicants" class="w-full px-3 py-2 rounded-lg border border-slate-300 text-xs focus:ring-2 focus:ring-brand-blue focus:outline-none bg-white"><option>1 Pilgrim</option><option>2 Pilgrims</option><option>3-4 Pilgrims</option><option>5+ Pilgrims</option></select></div>
@@ -1776,7 +1812,7 @@
       } else if (service === 'Saudi Work Visa Medical & Visa Stamping') {
         text += `*Service Required:* ${val(prefix+'WorkVisaService')}\n*City:* ${val(prefix+'WorkVisaCity')}\n*Applicants:* ${val(prefix+'WorkVisaApplicants')}\n*Preferred Date:* ${val(prefix+'WorkVisaDate','Flexible')}\n`;
       } else if (service === 'Umrah Individual Visa') {
-        text += `*Departure City:* ${val(prefix+'UmrahIndividualFrom')}\n*Preferred Travel Date:* ${val(prefix+'UmrahIndividualDate','Flexible')}\n*Pilgrims:* ${val(prefix+'UmrahIndividualApplicants')}\n`;
+        text += `*Arrival City:* ${val(prefix+'UmrahIndividualArrival')}\n*Preferred Travel Date:* ${val(prefix+'UmrahIndividualDate','Flexible')}\n*Pilgrims:* ${val(prefix+'UmrahIndividualApplicants')}\n`;
       } else if (service === 'Umrah Package') {
         text += `*Departure City:* ${val(prefix+'UmrahPackageFrom')}\n*Preferred Travel Date:* ${val(prefix+'UmrahPackageDate','Flexible')}\n*Package Duration:* ${val(prefix+'UmrahPackageDuration')}\n*Pilgrims:* ${val(prefix+'UmrahPackagePassengers')}\n`;
       }
