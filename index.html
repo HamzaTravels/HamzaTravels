@@ -300,6 +300,7 @@
           <a href="#home" class="hover:text-brand-blue transition">Home</a>
           <a href="#services" class="hover:text-brand-blue transition">Services</a>
           <a href="#flights" class="hover:text-brand-blue transition">Flight Booking</a>
+          <a href="#umrah" class="hover:text-brand-blue transition">Umrah</a>
           <a href="#passport" class="hover:text-brand-blue transition">Passport & Visa</a>
           <a href="#why-us" class="hover:text-brand-blue transition">Why Us</a>
           <a href="#about" class="hover:text-brand-blue transition">About</a>
@@ -402,7 +403,8 @@
                   <option value="VFS Appointment Assistance">3. VFS Appointment Assistance</option>
                   <option value="Flight Reservations for Visa Documentation">4. Flight Reservations for Visa Documentation</option>
                   <option value="Saudi Work Visa Medical & Visa Stamping">5. Saudi Work Visa Medical & Visa Stamping</option>
-                  <option value="Umrah Package Inquiry">Umrah Package Inquiry</option>
+                  <option value="Umrah Individual Visa">6. Umrah Individual Visa</option>
+                  <option value="Umrah Package">7. Umrah Package</option>
                 </select>
               </div>
 
@@ -510,12 +512,23 @@
                 </div>
               </div>
 
-              <div id="heroUmrahFields" class="space-y-3 hidden">
+              <div id="heroUmrahIndividualFields" class="space-y-3 hidden">
                 <div class="grid grid-cols-2 gap-2">
-                  <div><label for="heroUmrahFrom" class="block text-[11px] font-bold text-slate-700 uppercase mb-1">Departure City</label><input type="text" id="heroUmrahFrom" placeholder="e.g. Mumbai, Delhi" class="w-full px-3 py-1.5 rounded-lg border border-slate-300 text-xs focus:ring-2 focus:ring-brand-blue focus:outline-none bg-white"></div>
-                  <div><label for="heroUmrahDate" class="block text-[11px] font-bold text-slate-700 uppercase mb-1">Preferred Travel Date / Month</label><input type="date" id="heroUmrahDate" class="w-full px-2 py-1.5 rounded-lg border border-slate-300 text-xs focus:ring-2 focus:ring-brand-blue focus:outline-none bg-white"></div>
+                  <div><label for="heroUmrahIndividualFrom" class="block text-[11px] font-bold text-slate-700 uppercase mb-1">Departure City</label><input type="text" id="heroUmrahIndividualFrom" placeholder="e.g. Mumbai, Delhi" class="w-full px-3 py-1.5 rounded-lg border border-slate-300 text-xs focus:ring-2 focus:ring-brand-blue focus:outline-none bg-white"></div>
+                  <div><label for="heroUmrahIndividualDate" class="block text-[11px] font-bold text-slate-700 uppercase mb-1">Preferred Travel Date</label><input type="date" id="heroUmrahIndividualDate" class="w-full px-2 py-1.5 rounded-lg border border-slate-300 text-xs focus:ring-2 focus:ring-brand-blue focus:outline-none bg-white"></div>
                 </div>
-                <div><label for="heroUmrahPassengers" class="block text-[11px] font-bold text-slate-700 uppercase mb-1">Passengers</label><select id="heroUmrahPassengers" class="w-full px-3 py-1.5 rounded-lg border border-slate-300 text-xs focus:ring-2 focus:ring-brand-blue focus:outline-none bg-white"><option>1 Passenger</option><option>2 Passengers</option><option>3-4 Passengers</option><option>5+ Passengers</option></select></div>
+                <div><label for="heroUmrahIndividualApplicants" class="block text-[11px] font-bold text-slate-700 uppercase mb-1">Pilgrims / Applicants</label><select id="heroUmrahIndividualApplicants" class="w-full px-3 py-1.5 rounded-lg border border-slate-300 text-xs focus:ring-2 focus:ring-brand-blue focus:outline-none bg-white"><option>1 Pilgrim</option><option>2 Pilgrims</option><option>3-4 Pilgrims</option><option>5+ Pilgrims</option></select></div>
+              </div>
+
+              <div id="heroUmrahPackageFields" class="space-y-3 hidden">
+                <div class="grid grid-cols-2 gap-2">
+                  <div><label for="heroUmrahPackageFrom" class="block text-[11px] font-bold text-slate-700 uppercase mb-1">Departure City</label><input type="text" id="heroUmrahPackageFrom" placeholder="e.g. Mumbai, Delhi" class="w-full px-3 py-1.5 rounded-lg border border-slate-300 text-xs focus:ring-2 focus:ring-brand-blue focus:outline-none bg-white"></div>
+                  <div><label for="heroUmrahPackageDate" class="block text-[11px] font-bold text-slate-700 uppercase mb-1">Preferred Travel Date</label><input type="date" id="heroUmrahPackageDate" class="w-full px-2 py-1.5 rounded-lg border border-slate-300 text-xs focus:ring-2 focus:ring-brand-blue focus:outline-none bg-white"></div>
+                </div>
+                <div class="grid grid-cols-2 gap-2">
+                  <div><label for="heroUmrahPackageDuration" class="block text-[11px] font-bold text-slate-700 uppercase mb-1">Package Duration</label><select id="heroUmrahPackageDuration" class="w-full px-3 py-1.5 rounded-lg border border-slate-300 text-xs focus:ring-2 focus:ring-brand-blue focus:outline-none bg-white"><option>10-14 Days</option><option>15-21 Days</option><option>22-30 Days</option><option>Flexible</option></select></div>
+                  <div><label for="heroUmrahPackagePassengers" class="block text-[11px] font-bold text-slate-700 uppercase mb-1">Pilgrims</label><select id="heroUmrahPackagePassengers" class="w-full px-3 py-1.5 rounded-lg border border-slate-300 text-xs focus:ring-2 focus:ring-brand-blue focus:outline-none bg-white"><option>1 Pilgrim</option><option>2 Pilgrims</option><option>3-4 Pilgrims</option><option>5+ Pilgrims</option></select></div>
+                </div>
               </div>
 
               <div>
@@ -782,7 +795,48 @@
     </div>
   </section>
 
-  <!-- 7. INDIAN PASSPORT & CONSULAR DOCUMENTATION SECTION -->
+  <!-- 7. UMRAH SERVICES -->
+  <section id="umrah" class="py-16 bg-slate-50 border-b border-slate-200">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="text-center max-w-3xl mx-auto mb-10">
+        <span class="text-xs font-bold text-emerald-700 uppercase tracking-widest bg-emerald-50 px-3.5 py-1 rounded-full border border-emerald-100">Umrah Services</span>
+        <h2 class="text-2xl sm:text-3xl font-extrabold text-slate-900 mt-2">Umrah Visa & Package Assistance</h2>
+        <p class="text-slate-600 text-sm mt-2">Choose individual Umrah visa assistance or ask about a complete Umrah package according to your travel requirements.</p>
+      </div>
+
+      <div class="grid md:grid-cols-2 gap-6 max-w-5xl mx-auto">
+        <article class="bg-white rounded-2xl overflow-hidden border border-slate-200 shadow-sm hover:shadow-lg transition group">
+          <div class="h-44 sm:h-52 overflow-hidden bg-slate-100">
+            <img src="makkah.jpg" alt="Makkah for Umrah travel" class="w-full h-full object-cover group-hover:scale-105 transition duration-500">
+          </div>
+          <div class="p-6">
+            <div class="text-[11px] font-extrabold tracking-wider uppercase text-emerald-700 mb-1">Individual Umrah Visa</div>
+            <h3 class="text-xl font-extrabold text-slate-900 mb-2">Umrah Individual Visa</h3>
+            <p class="text-sm text-slate-600 leading-relaxed mb-5">Assistance for individual pilgrims who need Umrah visa processing guidance and travel planning support.</p>
+            <button type="button" onclick="openInquiryModal('Umrah Individual Visa')" class="w-full py-3 rounded-xl font-bold text-emerald-700 bg-emerald-50 hover:bg-emerald-600 hover:text-white border border-emerald-200 transition">
+              <i class="fa-solid fa-kaaba mr-2"></i> Inquire for Individual Visa
+            </button>
+          </div>
+        </article>
+
+        <article class="bg-white rounded-2xl overflow-hidden border border-slate-200 shadow-sm hover:shadow-lg transition group">
+          <div class="h-44 sm:h-52 overflow-hidden bg-slate-100">
+            <img src="masjidnabawi.jpg" alt="Madinah for Umrah package" class="w-full h-full object-cover group-hover:scale-105 transition duration-500">
+          </div>
+          <div class="p-6">
+            <div class="text-[11px] font-extrabold tracking-wider uppercase text-amber-700 mb-1">Complete Travel Package</div>
+            <h3 class="text-xl font-extrabold text-slate-900 mb-2">Umrah Package</h3>
+            <p class="text-sm text-slate-600 leading-relaxed mb-5">Ask about available Umrah package options, preferred dates, duration, and pilgrim requirements.</p>
+            <button type="button" onclick="openInquiryModal('Umrah Package')" class="w-full py-3 rounded-xl font-bold text-amber-700 bg-amber-50 hover:bg-amber-600 hover:text-white border border-amber-200 transition">
+              <i class="fa-solid fa-mosque mr-2"></i> Inquire for Umrah Package
+            </button>
+          </div>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <!-- 8. INDIAN PASSPORT & CONSULAR DOCUMENTATION SECTION -->
   <section id="passport" class="py-16 bg-white border-b border-slate-200">
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
       <div class="max-w-3xl mx-auto text-center mb-12">
@@ -1294,6 +1348,24 @@
           </div>
           <i class="fa-solid fa-chevron-right text-xs text-slate-400 transition group-hover:translate-x-1"></i>
         </button>
+
+        <!-- 6. Umrah Individual Visa -->
+        <button type="button" onclick="selectWelcomeService('Umrah Individual Visa')" class="ht-choice-btn group">
+          <div class="flex items-center gap-3">
+            <div class="w-9 h-9 rounded-lg bg-emerald-100 text-emerald-700 flex items-center justify-center text-sm group-hover:scale-110 transition"><i class="fa-solid fa-kaaba"></i></div>
+            <div><div class="text-xs font-bold text-slate-900">Umrah Individual Visa</div><div class="text-[10px] text-slate-500">Individual Umrah visa inquiry and travel assistance</div></div>
+          </div>
+          <i class="fa-solid fa-chevron-right text-xs text-slate-400 transition group-hover:translate-x-1"></i>
+        </button>
+
+        <!-- 7. Umrah Package -->
+        <button type="button" onclick="selectWelcomeService('Umrah Package')" class="ht-choice-btn group">
+          <div class="flex items-center gap-3">
+            <div class="w-9 h-9 rounded-lg bg-amber-100 text-amber-800 flex items-center justify-center text-sm group-hover:scale-110 transition"><i class="fa-solid fa-mosque"></i></div>
+            <div><div class="text-xs font-bold text-slate-900">Umrah Package</div><div class="text-[10px] text-slate-500">Package inquiry for Umrah travel arrangements</div></div>
+          </div>
+          <i class="fa-solid fa-chevron-right text-xs text-slate-400 transition group-hover:translate-x-1"></i>
+        </button>
       </div>
 
       <!-- Card Footer -->
@@ -1335,7 +1407,8 @@
             <option value="VFS Appointment Assistance">3. VFS Appointment Assistance</option>
             <option value="Flight Reservations for Visa Documentation">4. Flight Reservations for Visa Documentation</option>
             <option value="Saudi Work Visa Medical & Visa Stamping">5. Saudi Work Visa Medical & Visa Stamping</option>
-            <option value="Umrah Package Inquiry">Umrah Package Inquiry</option>
+            <option value="Umrah Individual Visa">6. Umrah Individual Visa</option>
+            <option value="Umrah Package">7. Umrah Package</option>
           </select>
         </div>
 
@@ -1443,12 +1516,23 @@
                 </div>
               </div>
 
-              <div id="modalUmrahFields" class="space-y-3 hidden">
+              <div id="modalUmrahIndividualFields" class="space-y-3 hidden">
                 <div class="grid grid-cols-2 gap-2">
-                  <div><label for="modalUmrahFrom" class="block text-[11px] font-bold text-slate-700 uppercase mb-1">Departure City</label><input type="text" id="modalUmrahFrom" placeholder="e.g. Mumbai, Delhi" class="w-full px-3 py-2 rounded-lg border border-slate-300 text-xs focus:ring-2 focus:ring-brand-blue focus:outline-none bg-white"></div>
-                  <div><label for="modalUmrahDate" class="block text-[11px] font-bold text-slate-700 uppercase mb-1">Preferred Travel Date / Month</label><input type="date" id="modalUmrahDate" class="w-full px-2 py-2 rounded-lg border border-slate-300 text-xs focus:ring-2 focus:ring-brand-blue focus:outline-none bg-white"></div>
+                  <div><label for="modalUmrahIndividualFrom" class="block text-[11px] font-bold text-slate-700 uppercase mb-1">Departure City</label><input type="text" id="modalUmrahIndividualFrom" placeholder="e.g. Mumbai, Delhi" class="w-full px-3 py-2 rounded-lg border border-slate-300 text-xs focus:ring-2 focus:ring-brand-blue focus:outline-none bg-white"></div>
+                  <div><label for="modalUmrahIndividualDate" class="block text-[11px] font-bold text-slate-700 uppercase mb-1">Preferred Travel Date</label><input type="date" id="modalUmrahIndividualDate" class="w-full px-2 py-2 rounded-lg border border-slate-300 text-xs focus:ring-2 focus:ring-brand-blue focus:outline-none bg-white"></div>
                 </div>
-                <div><label for="modalUmrahPassengers" class="block text-[11px] font-bold text-slate-700 uppercase mb-1">Passengers</label><select id="modalUmrahPassengers" class="w-full px-3 py-2 rounded-lg border border-slate-300 text-xs focus:ring-2 focus:ring-brand-blue focus:outline-none bg-white"><option>1 Passenger</option><option>2 Passengers</option><option>3-4 Passengers</option><option>5+ Passengers</option></select></div>
+                <div><label for="modalUmrahIndividualApplicants" class="block text-[11px] font-bold text-slate-700 uppercase mb-1">Pilgrims / Applicants</label><select id="modalUmrahIndividualApplicants" class="w-full px-3 py-2 rounded-lg border border-slate-300 text-xs focus:ring-2 focus:ring-brand-blue focus:outline-none bg-white"><option>1 Pilgrim</option><option>2 Pilgrims</option><option>3-4 Pilgrims</option><option>5+ Pilgrims</option></select></div>
+              </div>
+
+              <div id="modalUmrahPackageFields" class="space-y-3 hidden">
+                <div class="grid grid-cols-2 gap-2">
+                  <div><label for="modalUmrahPackageFrom" class="block text-[11px] font-bold text-slate-700 uppercase mb-1">Departure City</label><input type="text" id="modalUmrahPackageFrom" placeholder="e.g. Mumbai, Delhi" class="w-full px-3 py-2 rounded-lg border border-slate-300 text-xs focus:ring-2 focus:ring-brand-blue focus:outline-none bg-white"></div>
+                  <div><label for="modalUmrahPackageDate" class="block text-[11px] font-bold text-slate-700 uppercase mb-1">Preferred Travel Date</label><input type="date" id="modalUmrahPackageDate" class="w-full px-2 py-2 rounded-lg border border-slate-300 text-xs focus:ring-2 focus:ring-brand-blue focus:outline-none bg-white"></div>
+                </div>
+                <div class="grid grid-cols-2 gap-2">
+                  <div><label for="modalUmrahPackageDuration" class="block text-[11px] font-bold text-slate-700 uppercase mb-1">Package Duration</label><select id="modalUmrahPackageDuration" class="w-full px-3 py-2 rounded-lg border border-slate-300 text-xs focus:ring-2 focus:ring-brand-blue focus:outline-none bg-white"><option>10-14 Days</option><option>15-21 Days</option><option>22-30 Days</option><option>Flexible</option></select></div>
+                  <div><label for="modalUmrahPackagePassengers" class="block text-[11px] font-bold text-slate-700 uppercase mb-1">Pilgrims</label><select id="modalUmrahPackagePassengers" class="w-full px-3 py-2 rounded-lg border border-slate-300 text-xs focus:ring-2 focus:ring-brand-blue focus:outline-none bg-white"><option>1 Pilgrim</option><option>2 Pilgrims</option><option>3-4 Pilgrims</option><option>5+ Pilgrims</option></select></div>
+                </div>
               </div>
 
         <div>
@@ -1540,7 +1624,7 @@
 
     // 3. Truly service-specific dynamic fields for Hero Form & Inquiry Modal
     function setDynamicFields(prefix, service) {
-      const groups = ['FlightFields','PassportFields','VfsFields','ReservationFields','WorkVisaFields','UmrahFields'];
+      const groups = ['FlightFields','PassportFields','VfsFields','ReservationFields','WorkVisaFields','UmrahIndividualFields','UmrahPackageFields'];
       groups.forEach(g => {
         const el = document.getElementById(prefix + g);
         if (el) el.classList.add('hidden');
@@ -1551,7 +1635,8 @@
         'VFS Appointment Assistance': prefix + 'VfsFields',
         'Flight Reservations for Visa Documentation': prefix + 'ReservationFields',
         'Saudi Work Visa Medical & Visa Stamping': prefix + 'WorkVisaFields',
-        'Umrah Package Inquiry': prefix + 'UmrahFields'
+        'Umrah Individual Visa': prefix + 'UmrahIndividualFields',
+        'Umrah Package': prefix + 'UmrahPackageFields'
       };
       const active = document.getElementById(map[service]);
       if (active) active.classList.remove('hidden');
@@ -1690,8 +1775,10 @@
         text += `*From:* ${val(prefix+'ResFrom')}\n*To:* ${val(prefix+'ResTo')}\n*Travel Date:* ${val(prefix+'ResDate','Flexible')}\n*Passengers:* ${val(prefix+'ResPassengers')}\n`;
       } else if (service === 'Saudi Work Visa Medical & Visa Stamping') {
         text += `*Service Required:* ${val(prefix+'WorkVisaService')}\n*City:* ${val(prefix+'WorkVisaCity')}\n*Applicants:* ${val(prefix+'WorkVisaApplicants')}\n*Preferred Date:* ${val(prefix+'WorkVisaDate','Flexible')}\n`;
-      } else if (service === 'Umrah Package Inquiry') {
-        text += `*Departure City:* ${val(prefix+'UmrahFrom')}\n*Preferred Travel Date / Month:* ${val(prefix+'UmrahDate','Flexible')}\n*Passengers:* ${val(prefix+'UmrahPassengers')}\n`;
+      } else if (service === 'Umrah Individual Visa') {
+        text += `*Departure City:* ${val(prefix+'UmrahIndividualFrom')}\n*Preferred Travel Date:* ${val(prefix+'UmrahIndividualDate','Flexible')}\n*Pilgrims:* ${val(prefix+'UmrahIndividualApplicants')}\n`;
+      } else if (service === 'Umrah Package') {
+        text += `*Departure City:* ${val(prefix+'UmrahPackageFrom')}\n*Preferred Travel Date:* ${val(prefix+'UmrahPackageDate','Flexible')}\n*Package Duration:* ${val(prefix+'UmrahPackageDuration')}\n*Pilgrims:* ${val(prefix+'UmrahPackagePassengers')}\n`;
       }
       if (msg) text += `*Message / Notes:* ${msg}\n`;
       return text;
