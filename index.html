@@ -1843,7 +1843,7 @@
   <!-- 7. Firebase Customer Reviews: robust loading from existing Firestore + Realtime Database -->
   <script type="module">
     import { initializeApp, getApps, getApp } from "https://www.gstatic.com/firebasejs/12.18.0/firebase-app.js";
-    import { getAuth, onAuthStateChanged, GoogleAuthProvider, signInWithPopup, signOut } from "https://www.gstatic.com/firebasejs/12.18.0/firebase-auth.js";
+    import { getAuth, onAuthStateChanged, signInWithEmailAndPassword, signOut } from "https://www.gstatic.com/firebasejs/12.18.0/firebase-auth.js";
     import { getFirestore, collection, addDoc, getDocs, query, orderBy, serverTimestamp } from "https://www.gstatic.com/firebasejs/12.18.0/firebase-firestore.js";
     import { getDatabase, ref, get } from "https://www.gstatic.com/firebasejs/12.18.0/firebase-database.js";
 
@@ -1964,12 +1964,18 @@
         console.warn('Firestore reviews unavailable:', err);
       }
 
+      // Render Firestore reviews immediately; Realtime Database is optional for legacy reviews.
+      if (sourceWorked) {
+        window.__hamzaReviews = all;
+        renderReviews(all);
+      }
+
       // Also read the existing Realtime Database reviews so older reviews are preserved.
       try {
         const rtdbRead = get(ref(rtdb, 'reviews'));
         const snap = await Promise.race([
           rtdbRead,
-          new Promise((_, reject) => setTimeout(() => reject(new Error('Realtime Database read timeout')), 7000))
+          new Promise((_, reject) => setTimeout(() => reject(new Error('Realtime Database read timeout')), 1800))
         ]);
         const data = snap.val();
         if (data) Object.keys(data).forEach(id => all.push(normalizeReview(data[id], 'rtdb', id)));
@@ -2085,15 +2091,19 @@
     });
 
     adminLoginBtn.addEventListener('click', async () => {
+      const email = window.prompt('Admin email address:', ADMIN_EMAIL);
+      if (!email) return;
+      const password = window.prompt('Enter your admin password:');
+      if (!password) return;
       try {
-        const result = await signInWithPopup(auth, new GoogleAuthProvider());
+        const result = await signInWithEmailAndPassword(auth, email.trim(), password);
         if ((result.user.email || '').toLowerCase() !== ADMIN_EMAIL.toLowerCase()) {
           await signOut(auth);
-          alert('This Google account is not authorized for HAMZA TRAVELS admin replies.');
+          alert('This account is not authorized for HAMZA TRAVELS admin replies.');
         }
       } catch (err) {
         console.error('Admin login error:', err);
-        alert('Admin login was cancelled or failed. Please try again.');
+        alert('Login failed. Please check the admin email and password.');
       }
     });
 
