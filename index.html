@@ -178,6 +178,19 @@
     .ht-review-avatar { width: 40px; height: 40px; flex: 0 0 40px; display: grid; place-items: center; border-radius: 50%; background: linear-gradient(135deg,#dbeafe,#fef3c7); color: #0f2444; font-weight: 900; font-size: 14px; }
     .ht-review-stars { color: #f59e0b; letter-spacing: .08em; white-space: nowrap; font-size: 13px; }
 
+    /* Form Validation Styles */
+    .input-error { border-color: #ef4444 !important; box-shadow: 0 0 0 1px #ef4444 !important; }
+    
+    /* Skeleton Loader */
+    .skeleton {
+      background: #e2e8f0;
+      background-image: linear-gradient(90deg, #e2e8f0 0px, #f1f5f9 40px, #e2e8f0 80px);
+      background-size: 200% 100%;
+      animation: shimmer 1.5s infinite linear;
+      border-radius: 4px;
+    }
+    @keyframes shimmer { 0% { background-position: -200% 0; } 100% { background-position: 200% 0; } }
+
     body.ht-modal-open { overflow: hidden; }
 
     @media (max-width: 767px) {
@@ -342,22 +355,28 @@
     </div>
   </header>
 
-  <!-- 3. HERO SECTION -->
-  <section id="home" class="relative hero-pattern text-white py-12 sm:py-16 lg:py-20 overflow-hidden">
+  <!-- 3. HERO SECTION (Restored back to Local image for 100% Quality Control) -->
+  <section id="home" class="relative text-white py-12 sm:py-16 lg:py-20 overflow-hidden bg-brand-navy">
+    <!-- Professional Background Image with Dark Overlay -->
+    <div class="absolute inset-0 z-0">
+      <img src="hero.jpg" alt="Flights and Travel Background" class="w-full h-full object-cover opacity-30" loading="lazy">
+      <div class="absolute inset-0 bg-gradient-to-r from-brand-navy via-brand-navy/90 to-brand-navy/50"></div>
+    </div>
+
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
       <div class="grid lg:grid-cols-12 gap-10 items-center">
         <!-- Hero Left Column -->
         <div class="lg:col-span-7 text-center lg:text-left space-y-5">
-          <div class="inline-flex items-center px-3.5 py-1.5 rounded-full bg-slate-800/80 border border-slate-700 text-amber-400 text-xs font-semibold tracking-wide uppercase">
+          <div class="inline-flex items-center px-3.5 py-1.5 rounded-full bg-slate-800/80 border border-slate-700 text-amber-400 text-xs font-semibold tracking-wide uppercase shadow-lg backdrop-blur-sm">
             <i class="fa-solid fa-plane-departure mr-2"></i> Professional Travel, Passport & Visa Services
           </div>
 
-          <h1 class="text-3xl sm:text-5xl font-extrabold tracking-tight leading-tight text-white">
+          <h1 class="text-3xl sm:text-5xl font-extrabold tracking-tight leading-tight text-white drop-shadow-md">
             Your Trusted Travel Partner<br class="hidden sm:inline">
             <span class="text-amber-400">Across Saudi Arabia & India</span>
           </h1>
 
-          <p class="text-base sm:text-lg text-slate-300 max-w-2xl mx-auto lg:mx-0 font-normal leading-relaxed">
+          <p class="text-base sm:text-lg text-slate-200 max-w-2xl mx-auto lg:mx-0 font-normal leading-relaxed drop-shadow">
             Professional assistance for flight bookings, Indian passport renewal in Saudi Arabia, VFS appointment assistance, flight reservations for visa documentation, and Saudi work visa stamping — helping expatriates and families travel with complete confidence.
           </p>
 
@@ -365,18 +384,9 @@
             <a href="#services" class="w-full sm:w-auto inline-flex items-center justify-center px-7 py-3 rounded-lg font-bold text-brand-navy bg-amber-400 hover:bg-amber-300 shadow-md transition transform hover:-translate-y-0.5">
               Explore Core Services
             </a>
-            <a href="https://wa.me/918931048027?text=Hello%20Hamza%20Travels,%20I%20am%20interested%20in%20your%20services" target="_blank" rel="noopener" class="w-full sm:w-auto inline-flex items-center justify-center px-7 py-3 rounded-lg font-bold text-white bg-slate-800 hover:bg-slate-700 border border-slate-700 transition">
+            <a href="https://wa.me/918931048027?text=Hello%20Hamza%20Travels,%20I%20am%20interested%20in%20your%20services" target="_blank" rel="noopener" class="w-full sm:w-auto inline-flex items-center justify-center px-7 py-3 rounded-lg font-bold text-white bg-slate-800/80 hover:bg-slate-700 border border-slate-600 backdrop-blur-sm transition">
               <i class="fa-brands fa-whatsapp text-lg mr-2 text-green-400"></i> WhatsApp Us
             </a>
-          </div>
-
-          <div class="pt-4 max-w-xl mx-auto lg:mx-0">
-            <div class="rounded-xl overflow-hidden border border-slate-700 shadow-lg relative h-40 sm:h-44">
-              <img src="hero.jpg" alt="Hamza Travels Flight & Travel Visual" class="w-full h-full object-cover">
-              <div class="absolute inset-0 bg-gradient-to-r from-brand-navy/80 via-brand-navy/40 to-transparent flex items-end p-3.5">
-                <span class="text-xs text-slate-200 font-medium"><i class="fa-solid fa-shield-halved text-amber-400 mr-1.5"></i> Connecting Destinations Across India & Saudi Arabia</span>
-              </div>
-            </div>
           </div>
         </div>
 
@@ -392,7 +402,7 @@
             <form id="heroInquiryForm" class="space-y-3" onsubmit="handleHeroInquiry(event)">
               <div>
                 <label for="heroCustName" class="block text-xs font-bold text-slate-700 uppercase mb-1">Full Name *</label>
-                <input type="text" id="heroCustName" required placeholder="Your Full Name" class="w-full px-3.5 py-2 rounded-lg border border-slate-300 text-sm focus:ring-2 focus:ring-brand-blue focus:outline-none bg-white">
+                <input type="text" id="heroCustName" required placeholder="Your Full Name" class="w-full px-3.5 py-2 rounded-lg border border-slate-300 text-sm focus:ring-2 focus:ring-brand-blue focus:outline-none bg-white transition-colors" oninput="this.classList.remove('input-error')">
               </div>
 
               <div>
@@ -412,11 +422,11 @@
                 <div class="grid grid-cols-2 gap-2">
                   <div>
                     <label for="heroFlightFrom" class="block text-[11px] font-bold text-slate-700 uppercase mb-1">Departure (From) *</label>
-                    <input type="text" id="heroFlightFrom" placeholder="e.g. Riyadh, Dammam, Jeddah" class="w-full px-3 py-1.5 rounded-lg border border-slate-300 text-xs focus:ring-2 focus:ring-brand-blue focus:outline-none bg-white">
+                    <input type="text" id="heroFlightFrom" placeholder="e.g. Riyadh, Dammam, Jeddah" class="w-full px-3 py-1.5 rounded-lg border border-slate-300 text-xs focus:ring-2 focus:ring-brand-blue focus:outline-none bg-white transition-colors" oninput="this.classList.remove('input-error')">
                   </div>
                   <div>
                     <label for="heroFlightTo" class="block text-[11px] font-bold text-slate-700 uppercase mb-1">Destination (To) *</label>
-                    <input type="text" id="heroFlightTo" placeholder="e.g. Delhi, Lucknow, Mumbai" class="w-full px-3 py-1.5 rounded-lg border border-slate-300 text-xs focus:ring-2 focus:ring-brand-blue focus:outline-none bg-white">
+                    <input type="text" id="heroFlightTo" placeholder="e.g. Delhi, Lucknow, Mumbai" class="w-full px-3 py-1.5 rounded-lg border border-slate-300 text-xs focus:ring-2 focus:ring-brand-blue focus:outline-none bg-white transition-colors" oninput="this.classList.remove('input-error')">
                   </div>
                 </div>
 
@@ -441,7 +451,7 @@
                       <option value="5+ Passengers">5+ Pax</option>
                     </select>
                   </div>
-                  </div>
+                </div>
               </div>
 
               <!-- Service-specific dynamic fields -->
@@ -513,8 +523,8 @@
 
               <div id="heroUmrahIndividualFields" class="space-y-3 hidden">
                 <div class="grid grid-cols-2 gap-2">
-                  <div><label for="heroUmrahIndividualArrival" class="block text-[11px] font-bold text-slate-700 uppercase mb-1">Arrival City</label><input type="text" id="heroUmrahIndividualArrival" placeholder="e.g. Jeddah, Madinah, Riyadh, Dammam" class="w-full px-3 py-1.5 rounded-lg border border-slate-300 text-xs focus:ring-2 focus:ring-brand-blue focus:outline-none bg-white"></div>
-                  <div><label for="heroUmrahIndividualDate" class="block text-[11px] font-bold text-slate-700 uppercase mb-1">Preferred Travel Date</label><input type="date" id="heroUmrahIndividualDate" class="w-full px-2 py-1.5 rounded-lg border border-slate-300 text-xs focus:ring-2 focus:ring-brand-blue focus:outline-none bg-white"></div>
+                  <div><label for="heroUmrahIndividualArrival" class="block text-[11px] font-bold text-slate-700 uppercase mb-1">Arrival City</label><input type="text" id="heroUmrahIndividualArrival" placeholder="e.g. Jeddah, Madinah" class="w-full px-3 py-1.5 rounded-lg border border-slate-300 text-xs focus:ring-2 focus:ring-brand-blue focus:outline-none bg-white"></div>
+                  <div><label for="heroUmrahIndividualDate" class="block text-[11px] font-bold text-slate-700 uppercase mb-1">Travel Date</label><input type="date" id="heroUmrahIndividualDate" class="w-full px-2 py-1.5 rounded-lg border border-slate-300 text-xs focus:ring-2 focus:ring-brand-blue focus:outline-none bg-white"></div>
                 </div>
                 <div><label for="heroUmrahIndividualApplicants" class="block text-[11px] font-bold text-slate-700 uppercase mb-1">Pilgrims / Applicants</label><select id="heroUmrahIndividualApplicants" class="w-full px-3 py-1.5 rounded-lg border border-slate-300 text-xs focus:ring-2 focus:ring-brand-blue focus:outline-none bg-white"><option>1 Pilgrim</option><option>2 Pilgrims</option><option>3-4 Pilgrims</option><option>5+ Pilgrims</option></select></div>
               </div>
@@ -782,7 +792,7 @@
     </div>
   </section>
 
-  <!-- 7. SACRED JOURNEYS PHOTO GALLERY -->
+  <!-- 7. SACRED JOURNEYS PHOTO GALLERY (RESTORED TO LOCAL HIGH QUALITY IMAGES) -->
   <section class="py-12 bg-white border-b border-slate-200" aria-label="Sacred Journeys & Travel Assistance">
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
       <div class="text-center mb-7">
@@ -791,26 +801,26 @@
       </div>
       <div class="grid grid-cols-2 md:grid-cols-4 gap-4">
         <div class="relative rounded-xl overflow-hidden shadow-sm h-56 group">
-          <img src="Kaaba.jpg" alt="Holy Kaaba Makkah" class="w-full h-full object-cover group-hover:scale-105 transition duration-300">
-          <div class="absolute inset-0 bg-gradient-to-t from-black/70 via-transparent to-transparent flex items-end p-3.5">
+          <img src="Kaaba.jpg" alt="Holy Kaaba Makkah" class="w-full h-full object-cover group-hover:scale-105 transition duration-300" loading="lazy">
+          <div class="absolute inset-0 bg-gradient-to-t from-black/80 via-transparent to-transparent flex items-end p-3.5">
             <span class="text-white text-xs font-semibold">Umrah Journeys</span>
           </div>
         </div>
         <div class="relative rounded-xl overflow-hidden shadow-sm h-56 group">
-          <img src="makkah.jpg" alt="Makkah City" class="w-full h-full object-cover group-hover:scale-105 transition duration-300">
-          <div class="absolute inset-0 bg-gradient-to-t from-black/70 via-transparent to-transparent flex items-end p-3.5">
+          <img src="makkah.jpg" alt="Makkah City" class="w-full h-full object-cover group-hover:scale-105 transition duration-300" loading="lazy">
+          <div class="absolute inset-0 bg-gradient-to-t from-black/80 via-transparent to-transparent flex items-end p-3.5">
             <span class="text-white text-xs font-semibold">Makkah</span>
           </div>
         </div>
         <div class="relative rounded-xl overflow-hidden shadow-sm h-56 group">
-          <img src="masjidnabawi.jpg" alt="Masjid An Nabawi Madinah" class="w-full h-full object-cover group-hover:scale-105 transition duration-300">
-          <div class="absolute inset-0 bg-gradient-to-t from-black/70 via-transparent to-transparent flex items-end p-3.5">
+          <img src="masjidnabawi.jpg" alt="Masjid An Nabawi Madinah" class="w-full h-full object-cover group-hover:scale-105 transition duration-300" loading="lazy">
+          <div class="absolute inset-0 bg-gradient-to-t from-black/80 via-transparent to-transparent flex items-end p-3.5">
             <span class="text-white text-xs font-semibold">Madinah</span>
           </div>
         </div>
         <div class="relative rounded-xl overflow-hidden shadow-sm h-56 group">
-          <img src="umrah.jpg" alt="Umrah Pilgrims" class="w-full h-full object-cover group-hover:scale-105 transition duration-300">
-          <div class="absolute inset-0 bg-gradient-to-t from-black/70 via-transparent to-transparent flex items-end p-3.5">
+          <img src="umrah.jpg" alt="Travel Assistance" class="w-full h-full object-cover group-hover:scale-105 transition duration-300" loading="lazy">
+          <div class="absolute inset-0 bg-gradient-to-t from-black/80 via-transparent to-transparent flex items-end p-3.5">
             <span class="text-white text-xs font-semibold">Travel Assistance</span>
           </div>
         </div>
@@ -830,7 +840,7 @@
       <div class="max-w-md mx-auto">
         <article class="bg-white rounded-2xl overflow-hidden border border-slate-200 shadow-sm hover:shadow-lg transition group">
           <div class="h-44 sm:h-52 overflow-hidden bg-slate-100">
-            <img src="Kaaba.jpg" alt="Holy Kaaba Makkah" class="w-full h-full object-cover group-hover:scale-105 transition duration-500">
+            <img src="Kaaba.jpg" alt="Holy Kaaba Makkah" class="w-full h-full object-cover group-hover:scale-105 transition duration-500" loading="lazy">
           </div>
           <div class="p-6">
             <div class="text-[11px] font-extrabold tracking-wider uppercase text-emerald-700 mb-1">Individual Umrah Visa</div>
@@ -926,7 +936,7 @@
     </div>
   </section>
 
-  <!-- 11. CUSTOMER REVIEW SYSTEM -->
+  <!-- 11. CUSTOMER REVIEW SYSTEM (Google Reviews Redirect + Hybrid View) -->
   <section id="reviews" class="py-16 bg-white border-b border-slate-200">
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
       <div class="text-center max-w-3xl mx-auto mb-12">
@@ -936,44 +946,20 @@
       </div>
 
       <div class="grid lg:grid-cols-12 gap-10 items-start">
-        <!-- Review Submission Form -->
-        <div class="lg:col-span-5 bg-brand-bgMuted p-6 sm:p-7 rounded-2xl border border-slate-200 shadow-sm">
-          <h3 class="text-lg font-bold text-slate-900 mb-1">Share Your Experience</h3>
-          <p class="text-xs text-slate-500 mb-4">We value honest feedback on our flight booking, passport assistance, and visa services.</p>
-
-          <form id="reviewForm" class="space-y-3.5" onsubmit="handleReviewSubmit(event)">
-            <div>
-              <label for="revName" class="block text-xs font-bold text-slate-700 uppercase mb-1">Your Name *</label>
-              <input type="text" id="revName" required placeholder="Full Name" class="w-full px-3.5 py-2 rounded-lg border border-slate-300 text-sm focus:ring-2 focus:ring-amber-500 focus:outline-none bg-white">
-            </div>
-
-            <div>
-              <label for="revEmail" class="block text-xs font-bold text-slate-700 uppercase mb-1">Email Address <span class="text-slate-400 normal-case font-medium">(optional)</span></label>
-              <input type="email" id="revEmail" placeholder="yourname@example.com" autocomplete="email" class="w-full px-3.5 py-2 rounded-lg border border-slate-300 text-sm focus:ring-2 focus:ring-amber-500 focus:outline-none bg-white">
-              <p class="text-[11px] text-slate-500 mt-1">Email is optional. No login or verification required. Your email is never displayed publicly.</p>
-            </div>
-
-            <div>
-              <label for="revStars" class="block text-xs font-bold text-slate-700 uppercase mb-1">Star Rating *</label>
-              <select id="revStars" class="w-full px-3.5 py-2 rounded-lg border border-slate-300 text-sm focus:ring-2 focus:ring-amber-500 focus:outline-none bg-white font-medium">
-                <option value="5">★★★★★ (5 Stars - Excellent)</option>
-                <option value="4">★★★★☆ (4 Stars - Good)</option>
-                <option value="3">★★★☆☆ (3 Stars - Average)</option>
-                <option value="2">★★☆☆☆ (2 Stars - Below Average)</option>
-                <option value="1">★☆☆☆☆ (1 Star - Poor)</option>
-              </select>
-            </div>
-
-            <div>
-              <label for="revComment" class="block text-xs font-bold text-slate-700 uppercase mb-1">Your Review *</label>
-              <textarea id="revComment" rows="3" required placeholder="Write your experience..." class="w-full px-3.5 py-2 rounded-lg border border-slate-300 text-sm focus:ring-2 focus:ring-amber-500 focus:outline-none bg-white"></textarea>
-            </div>
-
-            <button type="submit" id="revSubmitBtn" class="w-full py-2.5 rounded-lg font-bold text-white bg-amber-600 hover:bg-amber-700 transition flex items-center justify-center space-x-2 text-sm shadow-sm">
-              <span>Submit Review</span>
-            </button>
-            <p id="revStatusMsg" class="text-xs text-center font-medium mt-2 hidden"></p>
-          </form>
+        <!-- Action Card: Redirect to Google Maps -->
+        <div class="lg:col-span-5 bg-gradient-to-br from-brand-navy to-brand-slate p-6 sm:p-8 rounded-2xl border border-blue-900 shadow-lg text-white text-center flex flex-col justify-center items-center">
+          <div class="w-16 h-16 bg-white rounded-full flex items-center justify-center mb-4 shadow-md">
+            <i class="fa-brands fa-google text-2xl text-blue-600"></i>
+          </div>
+          <h3 class="text-xl font-bold mb-2">Rate Us on Google</h3>
+          <p class="text-sm text-slate-300 mb-6 leading-relaxed">Your feedback helps us improve and helps others make confident travel decisions. Please leave a review on our Google Profile.</p>
+          
+          <!-- OFFICIAL GOOGLE MAPS LINK ADDED HERE -->
+          <a href="https://g.page/r/CWouyQq1hTflEBI/review" target="_blank" rel="noopener" class="w-full sm:w-auto px-8 py-3 rounded-xl font-bold text-brand-navy bg-amber-400 hover:bg-amber-300 shadow transition transform hover:-translate-y-0.5 inline-flex items-center justify-center">
+            <i class="fa-solid fa-star mr-2"></i> Write a Google Review
+          </a>
+          
+          <p class="text-[10px] text-slate-400 mt-4">Opens Google Maps in a new tab.</p>
         </div>
 
         <!-- Dynamic Reviews Display List -->
@@ -984,7 +970,9 @@
           </div>
 
           <div id="reviewsList" class="space-y-4 pr-1">
-            <div class="text-center py-8 text-xs text-slate-400">Loading reviews from database...</div>
+            <!-- Skeleton Loader -->
+            <div class="ht-review-card skeleton" style="height: 120px;"></div>
+            <div class="ht-review-card skeleton" style="height: 120px;"></div>
           </div>
         </div>
       </div>
@@ -1582,10 +1570,29 @@
       } catch (_) {}
     });
 
-    // 6. WhatsApp Submission Handlers — service-specific messages
+    // 6. WhatsApp Submission Handlers & Validation
     function val(id, fallback='Not specified') {
       const el = document.getElementById(id);
       return el && el.value ? el.value.trim() : fallback;
+    }
+
+    // Validate essential fields before sending
+    function validateForm(prefix) {
+      let isValid = true;
+      const nameEl = document.getElementById(prefix + 'CustName');
+      if (!nameEl.value.trim()) {
+        nameEl.classList.add('input-error');
+        isValid = false;
+      }
+      
+      const service = document.getElementById(prefix + 'Service').value;
+      if (service === 'Flight Ticket Booking') {
+        const fromEl = document.getElementById(prefix + 'FlightFrom');
+        const toEl = document.getElementById(prefix + 'FlightTo');
+        if (!fromEl.value.trim()) { fromEl.classList.add('input-error'); isValid = false; }
+        if (!toEl.value.trim()) { toEl.classList.add('input-error'); isValid = false; }
+      }
+      return isValid;
     }
 
     function buildServiceWhatsAppText(prefix, name, service, msg) {
@@ -1609,6 +1616,7 @@
 
     function handleHeroInquiry(e) {
       e.preventDefault();
+      if (!validateForm('hero')) return;
       const name = val('heroCustName','Customer');
       const service = val('heroService','Flight Ticket Booking');
       const msg = val('heroMsg','');
@@ -1618,6 +1626,7 @@
 
     function handleModalInquiry(e) {
       e.preventDefault();
+      if (!validateForm('modal')) return;
       const name = val('modalCustName','Customer');
       const service = val('modalService','Flight Ticket Booking');
       const msg = val('modalMsg','');
