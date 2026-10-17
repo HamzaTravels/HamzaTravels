@@ -58,6 +58,14 @@
       background-position: 0 0, 15px 15px;
     }
 
+    /* News Ticker Animation */
+    @keyframes marquee {
+      0% { transform: translateX(100%); }
+      100% { transform: translateX(-100%); }
+    }
+    .animate-marquee { display: inline-block; white-space: nowrap; animation: marquee 25s linear infinite; }
+    .animate-marquee:hover { animation-play-state: paused; }
+
     /* Pulse dot */
     .ht-live-dot {
       width: 7px; height: 7px; border-radius: 50%; background: #22c55e;
@@ -99,6 +107,12 @@
       transform: translateY(18px) scale(.97); transition: transform .32s cubic-bezier(.2,.8,.2,1);
     }
     .ht-modal-overlay.open .ht-modal-card { transform: translateY(0) scale(1); }
+
+    /* Promo Modal specific */
+    #promoModalCard { width: min(480px, 100%); background: transparent; box-shadow: none; border: none; overflow: visible; }
+    .promo-image-container { position: relative; border-radius: 16px; overflow: hidden; box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.5); }
+    .promo-close { position: absolute; top: -15px; right: -15px; background: #ef4444; border: 2px solid #fff; box-shadow: 0 4px 6px rgba(0,0,0,0.1); width: 36px; height: 36px; border-radius: 50%; color: white; font-size: 18px; display: grid; place-items: center; cursor: pointer; z-index: 50; transition: transform 0.2s;}
+    .promo-close:hover { transform: scale(1.1); background: #dc2626;}
 
     /* Close Button */
     .ht-close-btn {
@@ -172,15 +186,9 @@
     .ht-help-fab:hover { transform: translateY(-2px); background: #0f2444; box-shadow: 0 16px 36px rgba(2,8,23,.38); }
     .ht-help-fab i { color: #22c55e; font-size: 18px; }
 
-    /* Premium customer review cards */
-    .ht-review-card { background: linear-gradient(145deg,#ffffff,#f8fafc); border: 1px solid #e2e8f0; border-radius: 20px; padding: 18px; box-shadow: 0 10px 30px rgba(15,23,42,.06); transition: transform .25s ease, box-shadow .25s ease, border-color .25s ease; }
-    .ht-review-card:hover { transform: translateY(-3px); box-shadow: 0 16px 36px rgba(15,23,42,.10); border-color: #fbbf24; }
-    .ht-review-avatar { width: 40px; height: 40px; flex: 0 0 40px; display: grid; place-items: center; border-radius: 50%; background: linear-gradient(135deg,#dbeafe,#fef3c7); color: #0f2444; font-weight: 900; font-size: 14px; }
-    .ht-review-stars { color: #f59e0b; letter-spacing: .08em; white-space: nowrap; font-size: 13px; }
-
     /* Form Validation Styles */
     .input-error { border-color: #ef4444 !important; box-shadow: 0 0 0 1px #ef4444 !important; }
-    
+
     /* Skeleton Loader */
     .skeleton {
       background: #e2e8f0;
@@ -190,6 +198,12 @@
       border-radius: 4px;
     }
     @keyframes shimmer { 0% { background-position: -200% 0; } 100% { background-position: 200% 0; } }
+
+    /* Premium customer review cards */
+    .ht-review-card { background: linear-gradient(145deg,#ffffff,#f8fafc); border: 1px solid #e2e8f0; border-radius: 20px; padding: 18px; box-shadow: 0 10px 30px rgba(15,23,42,.06); transition: transform .25s ease, box-shadow .25s ease, border-color .25s ease; }
+    .ht-review-card:hover { transform: translateY(-3px); box-shadow: 0 16px 36px rgba(15,23,42,.10); border-color: #fbbf24; }
+    .ht-review-avatar { width: 40px; height: 40px; flex: 0 0 40px; display: grid; place-items: center; border-radius: 50%; background: linear-gradient(135deg,#dbeafe,#fef3c7); color: #0f2444; font-weight: 900; font-size: 14px; }
+    .ht-review-stars { color: #f59e0b; letter-spacing: .08em; white-space: nowrap; font-size: 13px; }
 
     body.ht-modal-open { overflow: hidden; }
 
@@ -204,63 +218,70 @@
     }
   </style>
 
-  <!-- Structured Data -->
-  <script type="application/ld+json">
-  {
-    "@context": "https://schema.org",
-    "@type": "TravelAgency",
-    "name": "Hamza Travels",
-    "alternateName": "HAMZA TRAVELS",
-    "url": "https://hamzatravelsonline.com",
-    "logo": "https://hamzatravelsonline.com/logo.jpg",
-    "image": "https://hamzatravelsonline.com/logo.jpg",
-    "description": "Hamza Travels provides flight bookings across domestic and international routes, Indian passport renewal guidance, VFS appointment assistance, flight reservations for visa documentation, and Saudi work visa medical & stamping support across Saudi Arabia and India.",
-    "taxID": "09BFLPN1044Q1ZV",
-    "founder": {
-      "@type": "Person",
-      "name": "Mohammad Mahatab Alam",
-      "jobTitle": "Owner / Proprietor"
-    },
-    "telephone": "+966594388004",
-    "email": "info.hamzatravels@gmail.com",
-    "priceRange": "$$",
-    "address": {
-      "@type": "PostalAddress",
-      "streetAddress": "Partawal Road, Near Gupta Market, Pakdi Bishunpur",
-      "addressLocality": "Maharajganj",
-      "addressRegion": "Uttar Pradesh",
-      "postalCode": "273151",
-      "addressCountry": "IN"
-    },
-    "areaServed": [
-      {
-        "@type": "Country",
-        "name": "Saudi Arabia"
-      },
-      {
-        "@type": "Country",
-        "name": "India"
-      }
-    ],
-    "openingHoursSpecification": {
-      "@type": "OpeningHoursSpecification",
-      "dayOfWeek": ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday", "Sunday"],
-      "opens": "09:00",
-      "closes": "23:00"
-    }
-  }
-  </script>
 </head>
 <body class="bg-white text-slate-800 antialiased selection:bg-amber-500 selection:text-white flex flex-col min-h-screen">
 
-  <!-- 1. TOP INFORMATION BAR -->
+  <!-- DYNAMIC NEWS TICKER (Announcements) -->
+  <div id="newsTickerBar" class="hidden bg-rose-600 text-white text-[11px] font-bold py-1.5 px-4 overflow-hidden relative z-50 shadow-inner border-b border-rose-800">
+    <div class="animate-marquee flex items-center gap-10" id="tickerContent">
+      <!-- Announcements load here -->
+    </div>
+  </div>
+
+  <!-- HIDDEN ADMIN DASHBOARD -->
+  <div id="adminPanel" class="hidden bg-slate-100 border-b border-slate-300 py-8 px-4 shadow-inner relative z-40">
+    <div class="max-w-4xl mx-auto">
+      <div class="flex justify-between items-center mb-6 border-b border-slate-300 pb-3">
+        <h2 class="text-xl font-extrabold text-brand-navy"><i class="fa-solid fa-shield-halved text-amber-500 mr-2"></i> Hamza Travels Admin Dashboard</h2>
+        <button id="adminLogoutBtn" class="text-xs bg-rose-100 text-rose-700 px-3 py-1.5 rounded-lg font-bold border border-rose-200 hover:bg-rose-200">Logout</button>
+      </div>
+      
+      <div class="grid md:grid-cols-2 gap-6">
+        <!-- Add Promo Poster -->
+        <div class="bg-white p-5 rounded-2xl border border-slate-200 shadow-sm">
+          <h3 class="text-sm font-bold text-slate-800 border-b border-slate-100 pb-2 mb-3"><i class="fa-solid fa-image text-brand-blue mr-1.5"></i> Add Promo Poster</h3>
+          <form id="promoForm" class="space-y-3">
+            <div>
+              <label class="block text-[10px] font-bold text-slate-500 uppercase mb-1">Select Poster Image</label>
+              <input type="file" id="promoFile" accept="image/*" class="w-full text-xs file:mr-4 file:py-1.5 file:px-3 file:rounded-lg file:border-0 file:text-xs file:font-semibold file:bg-blue-50 file:text-blue-700 hover:file:bg-blue-100 border border-slate-200 rounded-lg" required>
+            </div>
+            <div>
+              <label class="block text-[10px] font-bold text-slate-500 uppercase mb-1">Expiry Date & Time</label>
+              <input type="datetime-local" id="promoExpiry" class="w-full px-3 py-1.5 border border-slate-200 rounded-lg text-xs" required>
+            </div>
+            <button type="submit" id="promoSubmitBtn" class="w-full bg-brand-blue text-white font-bold text-xs py-2 rounded-lg hover:bg-blue-700 transition">Upload & Make Live</button>
+            <p id="promoStatus" class="text-[10px] text-center mt-1 hidden"></p>
+          </form>
+          <div class="mt-4 border-t border-slate-100 pt-3">
+            <h4 class="text-[10px] font-bold text-slate-500 uppercase mb-2">Active Promo</h4>
+            <div id="activePromoAdmin" class="text-xs text-slate-400">Loading...</div>
+          </div>
+        </div>
+
+        <!-- Add News/Advisory -->
+        <div class="bg-white p-5 rounded-2xl border border-slate-200 shadow-sm">
+          <h3 class="text-sm font-bold text-slate-800 border-b border-slate-100 pb-2 mb-3"><i class="fa-solid fa-bullhorn text-rose-500 mr-1.5"></i> Add Travel Advisory</h3>
+          <form id="newsForm" class="space-y-3">
+            <div>
+              <label class="block text-[10px] font-bold text-slate-500 uppercase mb-1">News Text</label>
+              <textarea id="newsText" rows="2" class="w-full px-3 py-2 border border-slate-200 rounded-lg text-xs" placeholder="e.g. Mandatory biometric required for Umrah..." required></textarea>
+            </div>
+            <button type="submit" id="newsSubmitBtn" class="w-full bg-rose-600 text-white font-bold text-xs py-2 rounded-lg hover:bg-rose-700 transition">Add to Ticker</button>
+            <p id="newsStatus" class="text-[10px] text-center mt-1 hidden"></p>
+          </form>
+          <div class="mt-4 border-t border-slate-100 pt-3 max-h-32 overflow-y-auto">
+            <h4 class="text-[10px] font-bold text-slate-500 uppercase mb-2">Active Announcements</h4>
+            <div id="activeNewsAdmin" class="space-y-2 text-xs text-slate-600">Loading...</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- 1. TOP INFORMATION BAR (CLEANED: GSTIN moved to Footer) -->
   <div class="bg-brand-navy text-slate-300 text-xs py-2.5 px-4 border-b border-slate-800">
     <div class="max-w-7xl mx-auto flex flex-wrap justify-between items-center gap-3">
       <div class="flex items-center flex-wrap gap-x-4 gap-y-1">
-        <span class="inline-flex items-center text-amber-400 font-semibold">
-          <i class="fa-solid fa-shield-halved mr-1.5"></i> GSTIN: <span class="font-mono text-white ml-1">09BFLPN1044Q1ZV</span>
-        </span>
-        <span class="hidden sm:inline text-slate-600">|</span>
         <span class="inline-flex items-center text-slate-300">
           <i class="fa-regular fa-clock mr-1.5 text-amber-400"></i> Hours: 9:00 AM – 11:00 PM Daily
         </span>
@@ -355,28 +376,22 @@
     </div>
   </header>
 
-  <!-- 3. HERO SECTION (Restored back to Local image for 100% Quality Control) -->
-  <section id="home" class="relative text-white py-12 sm:py-16 lg:py-20 overflow-hidden bg-brand-navy">
-    <!-- Professional Background Image with Dark Overlay -->
-    <div class="absolute inset-0 z-0">
-      <img src="hero.jpg" alt="Flights and Travel Background" class="w-full h-full object-cover opacity-30" loading="lazy">
-      <div class="absolute inset-0 bg-gradient-to-r from-brand-navy via-brand-navy/90 to-brand-navy/50"></div>
-    </div>
-
+  <!-- 3. HERO SECTION -->
+  <section id="home" class="relative hero-pattern text-white py-12 sm:py-16 lg:py-20 overflow-hidden">
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
       <div class="grid lg:grid-cols-12 gap-10 items-center">
         <!-- Hero Left Column -->
         <div class="lg:col-span-7 text-center lg:text-left space-y-5">
-          <div class="inline-flex items-center px-3.5 py-1.5 rounded-full bg-slate-800/80 border border-slate-700 text-amber-400 text-xs font-semibold tracking-wide uppercase shadow-lg backdrop-blur-sm">
+          <div class="inline-flex items-center px-3.5 py-1.5 rounded-full bg-slate-800/80 border border-slate-700 text-amber-400 text-xs font-semibold tracking-wide uppercase">
             <i class="fa-solid fa-plane-departure mr-2"></i> Professional Travel, Passport & Visa Services
           </div>
 
-          <h1 class="text-3xl sm:text-5xl font-extrabold tracking-tight leading-tight text-white drop-shadow-md">
+          <h1 class="text-3xl sm:text-5xl font-extrabold tracking-tight leading-tight text-white">
             Your Trusted Travel Partner<br class="hidden sm:inline">
             <span class="text-amber-400">Across Saudi Arabia & India</span>
           </h1>
 
-          <p class="text-base sm:text-lg text-slate-200 max-w-2xl mx-auto lg:mx-0 font-normal leading-relaxed drop-shadow">
+          <p class="text-base sm:text-lg text-slate-300 max-w-2xl mx-auto lg:mx-0 font-normal leading-relaxed">
             Professional assistance for flight bookings, Indian passport renewal in Saudi Arabia, VFS appointment assistance, flight reservations for visa documentation, and Saudi work visa stamping — helping expatriates and families travel with complete confidence.
           </p>
 
@@ -384,9 +399,18 @@
             <a href="#services" class="w-full sm:w-auto inline-flex items-center justify-center px-7 py-3 rounded-lg font-bold text-brand-navy bg-amber-400 hover:bg-amber-300 shadow-md transition transform hover:-translate-y-0.5">
               Explore Core Services
             </a>
-            <a href="https://wa.me/918931048027?text=Hello%20Hamza%20Travels,%20I%20am%20interested%20in%20your%20services" target="_blank" rel="noopener" class="w-full sm:w-auto inline-flex items-center justify-center px-7 py-3 rounded-lg font-bold text-white bg-slate-800/80 hover:bg-slate-700 border border-slate-600 backdrop-blur-sm transition">
+            <a href="https://wa.me/918931048027?text=Hello%20Hamza%20Travels,%20I%20am%20interested%20in%20your%20services" target="_blank" rel="noopener" class="w-full sm:w-auto inline-flex items-center justify-center px-7 py-3 rounded-lg font-bold text-white bg-slate-800 hover:bg-slate-700 border border-slate-700 transition">
               <i class="fa-brands fa-whatsapp text-lg mr-2 text-green-400"></i> WhatsApp Us
             </a>
+          </div>
+
+          <div class="pt-4 max-w-xl mx-auto lg:mx-0">
+            <div class="rounded-xl overflow-hidden border border-slate-700 shadow-lg relative h-40 sm:h-44">
+              <img src="hero.jpg" alt="Hamza Travels Flight & Travel Visual" class="w-full h-full object-cover">
+              <div class="absolute inset-0 bg-gradient-to-r from-brand-navy/80 via-brand-navy/40 to-transparent flex items-end p-3.5">
+                <span class="text-xs text-slate-200 font-medium"><i class="fa-solid fa-shield-halved text-amber-400 mr-1.5"></i> Connecting Destinations Across India & Saudi Arabia</span>
+              </div>
+            </div>
           </div>
         </div>
 
@@ -402,7 +426,7 @@
             <form id="heroInquiryForm" class="space-y-3" onsubmit="handleHeroInquiry(event)">
               <div>
                 <label for="heroCustName" class="block text-xs font-bold text-slate-700 uppercase mb-1">Full Name *</label>
-                <input type="text" id="heroCustName" required placeholder="Your Full Name" class="w-full px-3.5 py-2 rounded-lg border border-slate-300 text-sm focus:ring-2 focus:ring-brand-blue focus:outline-none bg-white transition-colors" oninput="this.classList.remove('input-error')">
+                <input type="text" id="heroCustName" required placeholder="Your Full Name" class="w-full px-3.5 py-2 rounded-lg border border-slate-300 text-sm focus:ring-2 focus:ring-brand-blue focus:outline-none transition-colors bg-white" oninput="this.classList.remove('input-error')">
               </div>
 
               <div>
@@ -422,11 +446,11 @@
                 <div class="grid grid-cols-2 gap-2">
                   <div>
                     <label for="heroFlightFrom" class="block text-[11px] font-bold text-slate-700 uppercase mb-1">Departure (From) *</label>
-                    <input type="text" id="heroFlightFrom" placeholder="e.g. Riyadh, Dammam, Jeddah" class="w-full px-3 py-1.5 rounded-lg border border-slate-300 text-xs focus:ring-2 focus:ring-brand-blue focus:outline-none bg-white transition-colors" oninput="this.classList.remove('input-error')">
+                    <input type="text" id="heroFlightFrom" placeholder="e.g. Riyadh, Dammam, Jeddah" class="w-full px-3 py-1.5 rounded-lg border border-slate-300 text-xs focus:ring-2 focus:ring-brand-blue focus:outline-none transition-colors bg-white" oninput="this.classList.remove('input-error')">
                   </div>
                   <div>
                     <label for="heroFlightTo" class="block text-[11px] font-bold text-slate-700 uppercase mb-1">Destination (To) *</label>
-                    <input type="text" id="heroFlightTo" placeholder="e.g. Delhi, Lucknow, Mumbai" class="w-full px-3 py-1.5 rounded-lg border border-slate-300 text-xs focus:ring-2 focus:ring-brand-blue focus:outline-none bg-white transition-colors" oninput="this.classList.remove('input-error')">
+                    <input type="text" id="heroFlightTo" placeholder="e.g. Delhi, Lucknow, Mumbai" class="w-full px-3 py-1.5 rounded-lg border border-slate-300 text-xs focus:ring-2 focus:ring-brand-blue focus:outline-none transition-colors bg-white" oninput="this.classList.remove('input-error')">
                   </div>
                 </div>
 
@@ -493,7 +517,7 @@
                     <select id="heroVfsApplicants" class="w-full px-3 py-1.5 rounded-lg border border-slate-300 text-xs focus:ring-2 focus:ring-brand-blue focus:outline-none bg-white"><option>1 Applicant</option><option>2 Applicants</option><option>3-4 Applicants</option><option>5+ Applicants</option></select>
                   </div>
                   <div>
-                    <label for="heroVfsDate" class="block text-[11px] font-bold text-slate-700 uppercase mb-1">Preferred Appointment Date</label>
+                    <label for="heroVfsDate" class="block text-[11px] font-bold text-slate-700 uppercase mb-1">Preferred Date</label>
                     <input type="date" id="heroVfsDate" class="w-full px-2 py-1.5 rounded-lg border border-slate-300 text-xs focus:ring-2 focus:ring-brand-blue focus:outline-none bg-white">
                   </div>
                 </div>
@@ -523,8 +547,8 @@
 
               <div id="heroUmrahIndividualFields" class="space-y-3 hidden">
                 <div class="grid grid-cols-2 gap-2">
-                  <div><label for="heroUmrahIndividualArrival" class="block text-[11px] font-bold text-slate-700 uppercase mb-1">Arrival City</label><input type="text" id="heroUmrahIndividualArrival" placeholder="e.g. Jeddah, Madinah" class="w-full px-3 py-1.5 rounded-lg border border-slate-300 text-xs focus:ring-2 focus:ring-brand-blue focus:outline-none bg-white"></div>
-                  <div><label for="heroUmrahIndividualDate" class="block text-[11px] font-bold text-slate-700 uppercase mb-1">Travel Date</label><input type="date" id="heroUmrahIndividualDate" class="w-full px-2 py-1.5 rounded-lg border border-slate-300 text-xs focus:ring-2 focus:ring-brand-blue focus:outline-none bg-white"></div>
+                  <div><label for="heroUmrahIndividualArrival" class="block text-[11px] font-bold text-slate-700 uppercase mb-1">Arrival City</label><input type="text" id="heroUmrahIndividualArrival" placeholder="e.g. Jeddah, Madinah, Riyadh, Dammam" class="w-full px-3 py-1.5 rounded-lg border border-slate-300 text-xs focus:ring-2 focus:ring-brand-blue focus:outline-none bg-white"></div>
+                  <div><label for="heroUmrahIndividualDate" class="block text-[11px] font-bold text-slate-700 uppercase mb-1">Preferred Travel Date</label><input type="date" id="heroUmrahIndividualDate" class="w-full px-2 py-1.5 rounded-lg border border-slate-300 text-xs focus:ring-2 focus:ring-brand-blue focus:outline-none bg-white"></div>
                 </div>
                 <div><label for="heroUmrahIndividualApplicants" class="block text-[11px] font-bold text-slate-700 uppercase mb-1">Pilgrims / Applicants</label><select id="heroUmrahIndividualApplicants" class="w-full px-3 py-1.5 rounded-lg border border-slate-300 text-xs focus:ring-2 focus:ring-brand-blue focus:outline-none bg-white"><option>1 Pilgrim</option><option>2 Pilgrims</option><option>3-4 Pilgrims</option><option>5+ Pilgrims</option></select></div>
               </div>
@@ -545,6 +569,21 @@
     </div>
   </section>
 
+  <!-- PROMO POPUP MODAL (Auto-Expiring from Firebase) -->
+  <div id="promoModal" class="ht-modal-overlay">
+    <div id="promoModalCard" class="relative">
+      <button type="button" class="promo-close" onclick="document.getElementById('promoModal').classList.remove('open')"><i class="fa-solid fa-xmark"></i></button>
+      <div class="promo-image-container">
+        <img id="promoImage" src="" alt="Special Flight Offer" class="w-full h-auto block">
+        <div class="bg-white p-4 text-center border-t border-slate-200">
+          <a href="https://wa.me/918931048027" target="_blank" class="w-full block py-3 rounded-xl font-bold text-white bg-green-600 hover:bg-green-700 shadow-md transition text-sm">
+            <i class="fa-brands fa-whatsapp text-lg mr-1.5"></i> Book This Offer on WhatsApp
+          </a>
+        </div>
+      </div>
+    </div>
+  </div>
+
   <!-- 4. TRUST & SERVICE HIGHLIGHTS -->
   <section id="why-us" class="py-6 bg-brand-bgMuted border-b border-slate-200">
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -556,7 +595,6 @@
             <p class="text-xs text-slate-600 mt-0.5">Reliable coordination across Saudi Arabia and all states in India.</p>
           </div>
         </div>
-
         <div class="flex items-start space-x-3">
           <div class="text-brand-blue text-xl mt-0.5"><i class="fa-solid fa-user-check"></i></div>
           <div>
@@ -564,7 +602,6 @@
             <p class="text-xs text-slate-600 mt-0.5">Dedicated guidance for expatriates, families, and solo travelers.</p>
           </div>
         </div>
-
         <div class="flex items-start space-x-3">
           <div class="text-brand-blue text-xl mt-0.5"><i class="fa-solid fa-clipboard-check"></i></div>
           <div>
@@ -572,7 +609,6 @@
             <p class="text-xs text-slate-600 mt-0.5">Clear advice on fares, documentation, and procedures without hidden terms.</p>
           </div>
         </div>
-
         <div class="flex items-start space-x-3">
           <div class="text-brand-blue text-xl mt-0.5"><i class="fa-solid fa-comments"></i></div>
           <div>
@@ -585,7 +621,7 @@
   </section>
 
   <!-- 5. CORE SERVICES -->
-  <section id="services" class="py-16 bg-white">
+  <section id="services" class="py-16 bg-white border-b border-slate-200">
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
       <div class="text-center max-w-3xl mx-auto mb-12">
         <span class="text-xs font-bold text-brand-blue uppercase tracking-widest bg-blue-50 px-3.5 py-1 rounded-full border border-blue-100">Our Services</span>
@@ -633,7 +669,6 @@
 
         <!-- BALANCED 4-CARD GRID -->
         <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
-
           <!-- Card 2: Indian Passport Services -->
           <div class="bg-white rounded-2xl p-6 border-t-4 border-t-emerald-600 border border-slate-200 hover:border-emerald-500 shadow-sm hover:shadow-md transition flex flex-col justify-between group">
             <div>
@@ -642,9 +677,7 @@
               </div>
               <div class="text-[11px] font-extrabold tracking-wider uppercase text-emerald-700 mb-1">Consular Support</div>
               <h3 class="text-base font-bold text-slate-900 mb-2">2. Indian Passport Services</h3>
-              <p class="text-slate-600 text-xs leading-relaxed mb-4">
-                Professional guidance for Indian passport renewal inside Saudi Arabia, new/minor passports, documentation checking, and online portal filing.
-              </p>
+              <p class="text-slate-600 text-xs leading-relaxed mb-4">Professional guidance for Indian passport renewal inside Saudi Arabia, new/minor passports, documentation checking, and online portal filing.</p>
               <ul class="text-[11px] text-slate-500 space-y-1.5 mb-5">
                 <li class="flex items-center"><i class="fa-solid fa-check text-emerald-600 mr-1.5"></i> Renewal & Re-issue Support</li>
                 <li class="flex items-center"><i class="fa-solid fa-check text-emerald-600 mr-1.5"></i> Newborn & Minor Passports</li>
@@ -665,9 +698,7 @@
               </div>
               <div class="text-[11px] font-extrabold tracking-wider uppercase text-rose-700 mb-1">Appointment Support</div>
               <h3 class="text-base font-bold text-slate-900 mb-2">3. VFS Appointment Assistance</h3>
-              <p class="text-slate-600 text-xs leading-relaxed mb-4">
-                Assistance with monitoring appointment slot availability across authorized centers, requirement checks, and checklist verification.
-              </p>
+              <p class="text-slate-600 text-xs leading-relaxed mb-4">Assistance with monitoring appointment slot availability across authorized centers, requirement checks, and checklist verification.</p>
               <ul class="text-[11px] text-slate-500 space-y-1.5 mb-5">
                 <li class="flex items-center"><i class="fa-solid fa-check text-rose-600 mr-1.5"></i> Center Availability Monitoring</li>
                 <li class="flex items-center"><i class="fa-solid fa-check text-rose-600 mr-1.5"></i> Mandatory Document Audit</li>
@@ -688,9 +719,7 @@
               </div>
               <div class="text-[11px] font-extrabold tracking-wider uppercase text-purple-700 mb-1">Visa Documentation</div>
               <h3 class="text-base font-bold text-slate-900 mb-2">4. Flight Reservations for Visa</h3>
-              <p class="text-slate-600 text-xs leading-relaxed mb-4">
-                Genuine flight reservation options and verifiable travel itineraries tailored for embassy visa applications and documentation proof.
-              </p>
+              <p class="text-slate-600 text-xs leading-relaxed mb-4">Genuine flight reservation options and verifiable travel itineraries tailored for embassy visa applications and documentation proof.</p>
               <ul class="text-[11px] text-slate-500 space-y-1.5 mb-5">
                 <li class="flex items-center"><i class="fa-solid fa-check text-purple-600 mr-1.5"></i> Embassy Visa Documentation</li>
                 <li class="flex items-center"><i class="fa-solid fa-check text-purple-600 mr-1.5"></i> Verifiable Airline Itineraries</li>
@@ -711,9 +740,7 @@
               </div>
               <div class="text-[11px] font-extrabold tracking-wider uppercase text-amber-700 mb-1">Saudi Visa Facilitation</div>
               <h3 class="text-base font-bold text-slate-900 mb-2">5. Saudi Work Visa & Medical</h3>
-              <p class="text-slate-600 text-xs leading-relaxed mb-4">
-                Comprehensive assistance with Gamca/Wafid medical appointment generation, document readiness, and Saudi work visa stamping procedures.
-              </p>
+              <p class="text-slate-600 text-xs leading-relaxed mb-4">Comprehensive assistance with Gamca/Wafid medical appointment generation, document readiness, and Saudi work visa stamping procedures.</p>
               <ul class="text-[11px] text-slate-500 space-y-1.5 mb-5">
                 <li class="flex items-center"><i class="fa-solid fa-check text-amber-600 mr-1.5"></i> Gamca / Wafid Medical Slips</li>
                 <li class="flex items-center"><i class="fa-solid fa-check text-amber-600 mr-1.5"></i> Visa Stamping Guidance</li>
@@ -725,14 +752,13 @@
               <i class="fa-solid fa-arrow-right text-[10px]"></i>
             </button>
           </div>
-
         </div>
       </div>
     </div>
   </section>
 
   <!-- 6. FLIGHT BOOKING DESK -->
-  <section id="flights" class="py-16 bg-brand-bgMuted border-y border-slate-200">
+  <section id="flights" class="py-16 bg-brand-bgMuted border-b border-slate-200">
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
       <div class="text-center max-w-3xl mx-auto mb-12">
         <span class="text-xs font-bold text-brand-blue uppercase tracking-widest bg-blue-50 px-3.5 py-1 rounded-full border border-blue-100">Ticketing Services</span>
@@ -744,41 +770,27 @@
 
       <div class="grid sm:grid-cols-2 lg:grid-cols-5 gap-4">
         <div class="bg-white p-5 rounded-xl border border-slate-200 hover:shadow-sm transition">
-          <div class="w-10 h-10 rounded-lg bg-blue-50 text-brand-blue flex items-center justify-center text-base mb-3">
-            <i class="fa-solid fa-plane"></i>
-          </div>
+          <div class="w-10 h-10 rounded-lg bg-blue-50 text-brand-blue flex items-center justify-center text-base mb-3"><i class="fa-solid fa-plane"></i></div>
           <h3 class="font-bold text-slate-900 text-sm mb-1">Domestic & International</h3>
           <p class="text-xs text-slate-600 leading-relaxed">Bookings across major carriers connecting Saudi Arabia, India, and global routes.</p>
         </div>
-
         <div class="bg-white p-5 rounded-xl border border-slate-200 hover:shadow-sm transition">
-          <div class="w-10 h-10 rounded-lg bg-amber-50 text-amber-600 flex items-center justify-center text-base mb-3">
-            <i class="fa-solid fa-people-roof"></i>
-          </div>
+          <div class="w-10 h-10 rounded-lg bg-amber-50 text-amber-600 flex items-center justify-center text-base mb-3"><i class="fa-solid fa-people-roof"></i></div>
           <h3 class="font-bold text-slate-900 text-sm mb-1">Family & Group Bookings</h3>
           <p class="text-xs text-slate-600 leading-relaxed">Coordinated itineraries and shared schedules for families and expatriates traveling together.</p>
         </div>
-
         <div class="bg-white p-5 rounded-xl border border-slate-200 hover:shadow-sm transition">
-          <div class="w-10 h-10 rounded-lg bg-emerald-50 text-emerald-700 flex items-center justify-center text-base mb-3">
-            <i class="fa-solid fa-arrows-rotate"></i>
-          </div>
+          <div class="w-10 h-10 rounded-lg bg-emerald-50 text-emerald-700 flex items-center justify-center text-base mb-3"><i class="fa-solid fa-arrows-rotate"></i></div>
           <h3 class="font-bold text-slate-900 text-sm mb-1">Date Changes & Reissues</h3>
           <p class="text-xs text-slate-600 leading-relaxed">Direct support for schedule adjustments and ticket reissuing according to airline conditions.</p>
         </div>
-
         <div class="bg-white p-5 rounded-xl border border-slate-200 hover:shadow-sm transition">
-          <div class="w-10 h-10 rounded-lg bg-rose-50 text-rose-700 flex items-center justify-center text-base mb-3">
-            <i class="fa-solid fa-ban"></i>
-          </div>
+          <div class="w-10 h-10 rounded-lg bg-rose-50 text-rose-700 flex items-center justify-center text-base mb-3"><i class="fa-solid fa-ban"></i></div>
           <h3 class="font-bold text-slate-900 text-sm mb-1">Cancellation Assistance</h3>
           <p class="text-xs text-slate-600 leading-relaxed">Guidance through airline refund processes and cancellation policies.</p>
         </div>
-
         <div class="bg-white p-5 rounded-xl border border-slate-200 hover:shadow-sm transition sm:col-span-2 lg:col-span-1">
-          <div class="w-10 h-10 rounded-lg bg-purple-50 text-purple-700 flex items-center justify-center text-base mb-3">
-            <i class="fa-solid fa-suitcase-rolling"></i>
-          </div>
+          <div class="w-10 h-10 rounded-lg bg-purple-50 text-purple-700 flex items-center justify-center text-base mb-3"><i class="fa-solid fa-suitcase-rolling"></i></div>
           <h3 class="font-bold text-slate-900 text-sm mb-1">Baggage Guidance</h3>
           <p class="text-xs text-slate-600 leading-relaxed">Clear details on weight limits, extra baggage allowance, and transit regulations.</p>
         </div>
@@ -792,7 +804,7 @@
     </div>
   </section>
 
-  <!-- 7. SACRED JOURNEYS PHOTO GALLERY (RESTORED TO LOCAL HIGH QUALITY IMAGES) -->
+  <!-- 7. SACRED JOURNEYS PHOTO GALLERY -->
   <section class="py-12 bg-white border-b border-slate-200" aria-label="Sacred Journeys & Travel Assistance">
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
       <div class="text-center mb-7">
@@ -801,28 +813,20 @@
       </div>
       <div class="grid grid-cols-2 md:grid-cols-4 gap-4">
         <div class="relative rounded-xl overflow-hidden shadow-sm h-56 group">
-          <img src="Kaaba.jpg" alt="Holy Kaaba Makkah" class="w-full h-full object-cover group-hover:scale-105 transition duration-300" loading="lazy">
-          <div class="absolute inset-0 bg-gradient-to-t from-black/80 via-transparent to-transparent flex items-end p-3.5">
-            <span class="text-white text-xs font-semibold">Umrah Journeys</span>
-          </div>
+          <img src="Kaaba.jpg" alt="Holy Kaaba Makkah" class="w-full h-full object-cover group-hover:scale-105 transition duration-300">
+          <div class="absolute inset-0 bg-gradient-to-t from-black/70 via-transparent to-transparent flex items-end p-3.5"><span class="text-white text-xs font-semibold">Umrah Journeys</span></div>
         </div>
         <div class="relative rounded-xl overflow-hidden shadow-sm h-56 group">
-          <img src="makkah.jpg" alt="Makkah City" class="w-full h-full object-cover group-hover:scale-105 transition duration-300" loading="lazy">
-          <div class="absolute inset-0 bg-gradient-to-t from-black/80 via-transparent to-transparent flex items-end p-3.5">
-            <span class="text-white text-xs font-semibold">Makkah</span>
-          </div>
+          <img src="makkah.jpg" alt="Makkah City" class="w-full h-full object-cover group-hover:scale-105 transition duration-300">
+          <div class="absolute inset-0 bg-gradient-to-t from-black/70 via-transparent to-transparent flex items-end p-3.5"><span class="text-white text-xs font-semibold">Makkah</span></div>
         </div>
         <div class="relative rounded-xl overflow-hidden shadow-sm h-56 group">
-          <img src="masjidnabawi.jpg" alt="Masjid An Nabawi Madinah" class="w-full h-full object-cover group-hover:scale-105 transition duration-300" loading="lazy">
-          <div class="absolute inset-0 bg-gradient-to-t from-black/80 via-transparent to-transparent flex items-end p-3.5">
-            <span class="text-white text-xs font-semibold">Madinah</span>
-          </div>
+          <img src="masjidnabawi.jpg" alt="Masjid An Nabawi Madinah" class="w-full h-full object-cover group-hover:scale-105 transition duration-300">
+          <div class="absolute inset-0 bg-gradient-to-t from-black/70 via-transparent to-transparent flex items-end p-3.5"><span class="text-white text-xs font-semibold">Madinah</span></div>
         </div>
         <div class="relative rounded-xl overflow-hidden shadow-sm h-56 group">
-          <img src="umrah.jpg" alt="Travel Assistance" class="w-full h-full object-cover group-hover:scale-105 transition duration-300" loading="lazy">
-          <div class="absolute inset-0 bg-gradient-to-t from-black/80 via-transparent to-transparent flex items-end p-3.5">
-            <span class="text-white text-xs font-semibold">Travel Assistance</span>
-          </div>
+          <img src="umrah.jpg" alt="Travel Assistance" class="w-full h-full object-cover group-hover:scale-105 transition duration-300">
+          <div class="absolute inset-0 bg-gradient-to-t from-black/70 via-transparent to-transparent flex items-end p-3.5"><span class="text-white text-xs font-semibold">Travel Assistance</span></div>
         </div>
       </div>
     </div>
@@ -840,7 +844,7 @@
       <div class="max-w-md mx-auto">
         <article class="bg-white rounded-2xl overflow-hidden border border-slate-200 shadow-sm hover:shadow-lg transition group">
           <div class="h-44 sm:h-52 overflow-hidden bg-slate-100">
-            <img src="Kaaba.jpg" alt="Holy Kaaba Makkah" class="w-full h-full object-cover group-hover:scale-105 transition duration-500" loading="lazy">
+            <img src="Kaaba.jpg" alt="Holy Kaaba Makkah" class="w-full h-full object-cover group-hover:scale-105 transition duration-500">
           </div>
           <div class="p-6">
             <div class="text-[11px] font-extrabold tracking-wider uppercase text-emerald-700 mb-1">Individual Umrah Visa</div>
@@ -931,46 +935,42 @@
         <strong>Hamza Travels is a professional travel consultancy managed by Mohammad Mahatab Alam, providing nationwide air ticketing across India, Indian passport documentation in Saudi Arabia, and visa facilitation support.</strong>
       </p>
       <p class="text-slate-600 text-xs sm:text-sm leading-relaxed max-w-2xl mx-auto">
-        Operating with an active service base in Layla, Al Aflaj (Riyadh Province, Saudi Arabia) and registered headquarters in Maharajganj, Uttar Pradesh, India (GSTIN: 09BFLPN1044Q1ZV), we serve customers across India and the expatriate community throughout the Kingdom of Saudi Arabia.
+        Operating with an active service base in Layla, Al Aflaj (Riyadh Province, Saudi Arabia) and registered headquarters in Maharajganj, Uttar Pradesh, India, we serve customers across India and the expatriate community throughout the Kingdom of Saudi Arabia.
       </p>
     </div>
   </section>
 
-  <!-- 11. CUSTOMER REVIEW SYSTEM (Google Reviews Redirect + Hybrid View) -->
+  <!-- 11. GOOGLE REVIEWS SYSTEM (Live Links + Hybrid Firebase) -->
   <section id="reviews" class="py-16 bg-white border-b border-slate-200">
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-      <div class="text-center max-w-3xl mx-auto mb-12">
+      <div class="text-center max-w-3xl mx-auto mb-10">
         <span class="text-xs font-bold text-amber-600 uppercase tracking-widest bg-amber-50 px-3.5 py-1 rounded-full border border-amber-200">Customer Feedback</span>
         <h2 class="text-2xl sm:text-3xl font-extrabold text-slate-900 mt-2">Customer Reviews</h2>
-        <p class="text-slate-600 text-sm mt-1">Real experiences from customers across Saudi Arabia and India.</p>
       </div>
 
       <div class="grid lg:grid-cols-12 gap-10 items-start">
         <!-- Action Card: Redirect to Google Maps -->
         <div class="lg:col-span-5 bg-gradient-to-br from-brand-navy to-brand-slate p-6 sm:p-8 rounded-2xl border border-blue-900 shadow-lg text-white text-center flex flex-col justify-center items-center">
-          <div class="w-16 h-16 bg-white rounded-full flex items-center justify-center mb-4 shadow-md">
-            <i class="fa-brands fa-google text-2xl text-blue-600"></i>
-          </div>
+          <div class="w-16 h-16 bg-white rounded-full flex items-center justify-center mb-4 shadow-md"><i class="fa-brands fa-google text-2xl text-blue-600"></i></div>
           <h3 class="text-xl font-bold mb-2">Rate Us on Google</h3>
-          <p class="text-sm text-slate-300 mb-6 leading-relaxed">Your feedback helps us improve and helps others make confident travel decisions. Please leave a review on our Google Profile.</p>
-          
-          <!-- OFFICIAL GOOGLE MAPS LINK ADDED HERE -->
-          <a href="https://g.page/r/CWouyQq1hTflEBI/review" target="_blank" rel="noopener" class="w-full sm:w-auto px-8 py-3 rounded-xl font-bold text-brand-navy bg-amber-400 hover:bg-amber-300 shadow transition transform hover:-translate-y-0.5 inline-flex items-center justify-center">
+          <p class="text-sm text-slate-300 mb-6 leading-relaxed">Your feedback helps us improve and helps others make confident travel decisions.</p>
+          <a href="https://g.page/r/CWouyQq1hTflEBI/review" target="_blank" rel="noopener" class="w-full sm:w-auto px-8 py-3 rounded-xl font-bold text-brand-navy bg-amber-400 hover:bg-amber-300 shadow transition inline-flex items-center justify-center">
             <i class="fa-solid fa-star mr-2"></i> Write a Google Review
           </a>
-          
           <p class="text-[10px] text-slate-400 mt-4">Opens Google Maps in a new tab.</p>
         </div>
 
         <!-- Dynamic Reviews Display List -->
         <div class="lg:col-span-7">
           <div class="flex items-center justify-between border-b border-slate-200 pb-3 mb-4">
-            <h3 class="text-base font-bold text-slate-900">Recent Customer Reviews</h3>
-            <div class="flex items-center gap-2"><span id="reviewCountBadge" class="text-xs font-semibold px-2.5 py-1 rounded-full bg-slate-100 text-slate-600 border border-slate-200">Loading reviews...</span><button id="adminLoginBtn" type="button" class="text-[11px] font-bold rounded-full border border-slate-200 px-3 py-1.5 text-slate-600 hover:bg-blue-50">Admin Login</button><button id="adminLogoutBtn" type="button" class="hidden text-[11px] font-bold rounded-full border border-slate-200 px-3 py-1.5 text-slate-600 hover:bg-rose-50">Logout</button></div>
+            <h3 class="text-base font-bold text-slate-900">Recent Reviews</h3>
+            <div class="flex items-center gap-2">
+              <span id="reviewCountBadge" class="text-xs font-semibold px-2.5 py-1 rounded-full bg-slate-200 text-slate-700">Loading...</span>
+              <button id="adminLoginBtn" type="button" class="text-[10px] font-bold rounded-full border border-slate-300 px-3 py-1.5 text-slate-600 hover:bg-slate-200">Admin Login</button>
+            </div>
           </div>
-
           <div id="reviewsList" class="space-y-4 pr-1">
-            <!-- Skeleton Loader -->
+            <!-- SKELETON LOADERS -->
             <div class="ht-review-card skeleton" style="height: 120px;"></div>
             <div class="ht-review-card skeleton" style="height: 120px;"></div>
           </div>
@@ -979,80 +979,7 @@
     </div>
   </section>
 
-  <!-- 12. CONTACT & INQUIRY SECTION -->
-  <section id="contact" class="py-16 bg-white border-b border-slate-200">
-    <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
-      <div class="text-center mb-10">
-        <span class="text-xs font-bold text-brand-blue uppercase tracking-widest bg-blue-50 px-3.5 py-1 rounded-full border border-blue-100">Contact Details</span>
-        <h2 class="text-2xl sm:text-3xl font-extrabold text-slate-900 mt-2">Get in Touch with Hamza Travels</h2>
-        <p class="text-slate-600 text-sm mt-1">Dedicated customer support across Saudi Arabia and India.</p>
-      </div>
-
-      <div class="grid md:grid-cols-2 xl:grid-cols-3 gap-6">
-
-        <!-- Saudi Arabia Service Base -->
-        <div class="ht-contact-card ht-contact-ksa">
-          <div class="ht-contact-card-head">
-            <div class="ht-contact-icon"><i class="fa-solid fa-location-dot"></i></div>
-            <div>
-              <h3 class="font-bold text-slate-900 text-base">Saudi Arabia Service Base</h3>
-              <span class="text-slate-500 text-xs">Customer Support · Saudi Arabia</span>
-            </div>
-          </div>
-          <div class="ht-contact-details">
-            <div class="ht-contact-row"><i class="fa-solid fa-location-dot"></i><div><strong>Location</strong><span>Layla, Al Aflaj, Riyadh Province, Kingdom of Saudi Arabia</span></div></div>
-            <div class="ht-contact-row"><i class="fa-solid fa-phone"></i><div><strong>Phone Contact</strong><a href="tel:+966594388004">+966 594388004</a></div></div>
-            <div class="ht-contact-row"><i class="fa-brands fa-whatsapp"></i><div><strong>WhatsApp Support</strong><a href="https://wa.me/918931048027" target="_blank" rel="noopener">+91 8931048027</a></div></div>
-            <div class="ht-contact-row"><i class="fa-solid fa-envelope"></i><div><strong>Email</strong><a href="mailto:info.hamzatravels@gmail.com">info.hamzatravels@gmail.com</a></div></div>
-            <div class="ht-contact-row"><i class="fa-regular fa-clock"></i><div><strong>Operating Hours</strong><span>9:00 AM – 11:00 PM Daily</span></div></div>
-          </div>
-        </div>
-
-        <!-- India Registered Business -->
-        <div class="ht-contact-card ht-contact-india">
-          <div class="ht-contact-card-head">
-            <div class="ht-contact-icon"><i class="fa-solid fa-building"></i></div>
-            <div>
-              <h3 class="font-bold text-slate-900 text-base">India Registered Office</h3>
-              <span class="text-slate-500 text-xs">Headquarters · India</span>
-            </div>
-          </div>
-          <div class="ht-contact-details">
-            <div class="ht-contact-row"><i class="fa-solid fa-location-dot"></i><div><strong>Address</strong><span>Partawal Road, Near Gupta Market, Pakdi Bishunpur, Maharajganj, Uttar Pradesh, India – PIN 273151</span></div></div>
-            <div class="ht-contact-row"><i class="fa-solid fa-phone"></i><div><strong>Phone & WhatsApp</strong><a href="tel:+918931048027">+91 8931048027</a></div></div>
-            <div class="ht-contact-row"><i class="fa-solid fa-file-invoice"></i><div><strong>GSTIN</strong><span class="font-mono text-slate-900 font-bold">09BFLPN1044Q1ZV</span></div></div>
-            <div class="ht-contact-row"><i class="fa-solid fa-user"></i><div><strong>Proprietor</strong><span>Mohammad Mahatab Alam</span></div></div>
-            <div class="ht-contact-row"><i class="fa-regular fa-clock"></i><div><strong>Operating Hours</strong><span>9:00 AM – 11:00 PM Daily</span></div></div>
-          </div>
-        </div>
-
-        <!-- Official Bank Account -->
-        <div class="ht-contact-card ht-contact-bank md:col-span-2 xl:col-span-1">
-          <div class="ht-contact-card-head">
-            <div class="ht-contact-icon"><i class="fa-solid fa-building-columns"></i></div>
-            <div>
-              <h3 class="font-bold text-slate-900 text-base">Official Bank Account</h3>
-              <span class="text-slate-500 text-xs">Verified Business Account · HDFC Bank</span>
-            </div>
-          </div>
-          <div class="ht-bank-highlight">
-            <span>Account Holder</span>
-            <strong>HAMZA TRAVELS</strong>
-          </div>
-          <div class="ht-bank-list">
-            <div><span>Bank</span><strong>HDFC BANK LTD.</strong></div>
-            <div><span>Account Number</span><strong class="ht-account-number">50200120314170</strong></div>
-            <div><span>Account Type</span><strong>Current Account</strong></div>
-            <div><span>Branch</span><strong>MAHARAJGANJ</strong></div>
-            <div><span>IFSC Code</span><strong class="font-mono text-slate-900 font-bold">HDFC0001909</strong></div>
-          </div>
-          <div class="ht-bank-note"><i class="fa-solid fa-shield-halved"></i><span>Please verify account details with Hamza Travels via WhatsApp (+91 8931048027) before making any payment.</span></div>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- 13. FAQS SECTION -->
+  <!-- 12. FAQS SECTION -->
   <section id="faq" class="py-16 bg-brand-bgMuted border-b border-slate-200">
     <div class="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8">
       <div class="text-center mb-10">
@@ -1100,112 +1027,66 @@
     </div>
   </section>
 
-  <!-- 14. FINAL CALL TO ACTION -->
-  <section class="py-14 bg-brand-navy text-white text-center">
-    <div class="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8 space-y-4">
-      <h2 class="text-2xl sm:text-3xl font-extrabold tracking-tight">Planning Your Next Travel or Documentation?</h2>
-      <p class="text-slate-300 text-sm max-w-lg mx-auto">
-        Speak directly with Hamza Travels for professional air ticketing, passport renewal support, and visa documentation.
-      </p>
-
-      <div class="pt-3 flex flex-wrap justify-center items-center gap-3">
-        <a href="https://wa.me/918931048027?text=Hello%20Hamza%20Travels,%20I%20am%20planning%20a%20journey" target="_blank" rel="noopener" class="inline-flex items-center px-6 py-2.5 rounded-lg font-bold text-white bg-green-600 hover:bg-green-700 shadow transition text-sm">
-          <i class="fa-brands fa-whatsapp text-base mr-2"></i> WhatsApp Us
-        </a>
-        <a href="tel:+966594388004" class="inline-flex items-center px-5 py-2.5 rounded-lg font-bold text-white bg-slate-800 hover:bg-slate-700 border border-slate-700 transition text-sm">
-          <i class="fa-solid fa-phone mr-2 text-amber-400"></i> Call Saudi Contact
-        </a>
-        <a href="tel:+918931048027" class="inline-flex items-center px-5 py-2.5 rounded-lg font-bold text-white bg-slate-800 hover:bg-slate-700 border border-slate-700 transition text-sm">
-          <i class="fa-solid fa-phone mr-2 text-amber-400"></i> Call India Contact
-        </a>
+  <!-- 13. CONTACT SECTION -->
+  <section id="contact" class="py-16 bg-white border-b border-slate-200">
+    <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="text-center mb-10">
+        <h2 class="text-2xl sm:text-3xl font-extrabold text-slate-900">Contact Hamza Travels</h2>
+      </div>
+      <div class="grid md:grid-cols-2 xl:grid-cols-3 gap-6">
+        <!-- KSA -->
+        <div class="ht-contact-card ht-contact-ksa">
+          <div class="ht-contact-card-head"><div class="ht-contact-icon"><i class="fa-solid fa-location-dot"></i></div><div><h3 class="font-bold text-slate-900 text-base">Saudi Arabia</h3><span class="text-slate-500 text-xs">Layla, Al Aflaj</span></div></div>
+          <div class="ht-contact-details">
+            <div class="ht-contact-row"><i class="fa-solid fa-phone"></i><div><strong>Phone</strong><a href="tel:+966594388004">+966 594388004</a></div></div>
+            <div class="ht-contact-row"><i class="fa-brands fa-whatsapp"></i><div><strong>WhatsApp</strong><a href="https://wa.me/918931048027" target="_blank">+91 8931048027</a></div></div>
+            <div class="ht-contact-row"><i class="fa-solid fa-envelope"></i><div><strong>Email</strong><a href="mailto:info.hamzatravels@gmail.com">info.hamzatravels@gmail.com</a></div></div>
+          </div>
+        </div>
+        <!-- India -->
+        <div class="ht-contact-card ht-contact-india">
+          <div class="ht-contact-card-head"><div class="ht-contact-icon"><i class="fa-solid fa-building"></i></div><div><h3 class="font-bold text-slate-900 text-base">India Office</h3><span class="text-slate-500 text-xs">Maharajganj, UP</span></div></div>
+          <div class="ht-contact-details">
+            <div class="ht-contact-row"><i class="fa-solid fa-location-dot"></i><div><strong>Address</strong><span>Partawal Road, Pakdi Bishunpur, Maharajganj, UP - 273151</span></div></div>
+            <div class="ht-contact-row"><i class="fa-solid fa-phone"></i><div><strong>Phone & WA</strong><a href="tel:+918931048027">+91 8931048027</a></div></div>
+            <div class="ht-contact-row"><i class="fa-solid fa-user"></i><div><strong>Proprietor</strong><span>Mohammad Mahatab Alam</span></div></div>
+          </div>
+        </div>
+        <!-- Bank -->
+        <div class="ht-contact-card ht-contact-bank md:col-span-2 xl:col-span-1">
+          <div class="ht-contact-card-head"><div class="ht-contact-icon"><i class="fa-solid fa-building-columns"></i></div><div><h3 class="font-bold text-slate-900 text-base">Bank Details</h3><span class="text-slate-500 text-xs">Verified Account</span></div></div>
+          <div class="ht-bank-highlight"><span>Account Holder</span><strong>HAMZA TRAVELS</strong></div>
+          <div class="ht-bank-list">
+            <div><span>Bank</span><strong>HDFC BANK LTD.</strong></div>
+            <div><span>A/C Number</span><strong class="ht-account-number">50200120314170</strong></div>
+            <div><span>IFSC Code</span><strong class="font-mono text-slate-900 font-bold">HDFC0001909</strong></div>
+          </div>
+        </div>
       </div>
     </div>
   </section>
 
-  <!-- 15. FOOTER -->
-  <footer class="bg-slate-950 text-slate-400 pt-14 pb-10 border-t border-slate-800 text-xs">
+  <!-- 14. FINAL CALL TO ACTION -->
+  <section class="py-14 bg-brand-navy text-white text-center">
+    <div class="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8 space-y-4">
+      <h2 class="text-2xl sm:text-3xl font-extrabold tracking-tight">Planning Your Next Travel or Documentation?</h2>
+      <p class="text-slate-300 text-sm max-w-lg mx-auto">Speak directly with Hamza Travels for professional air ticketing, passport renewal support, and visa documentation.</p>
+      <div class="pt-3 flex flex-wrap justify-center items-center gap-3">
+        <a href="https://wa.me/918931048027" target="_blank" class="inline-flex items-center px-6 py-2.5 rounded-lg font-bold text-white bg-green-600 hover:bg-green-700 shadow transition text-sm"><i class="fa-brands fa-whatsapp text-base mr-2"></i> WhatsApp Us</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- 15. FOOTER (GSTIN ADDED HERE PROMINENTLY) -->
+  <footer class="bg-slate-950 text-slate-400 pt-10 pb-8 border-t border-slate-800 text-xs">
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 mb-10">
-        <!-- Col 1: Brand & Logo -->
-        <div class="space-y-3">
-          <img src="logo.jpg" alt="Hamza Travels Logo" class="h-12 sm:h-14 w-auto max-w-[190px] object-contain rounded block">
-          <span class="text-base font-extrabold text-white tracking-wider block">HAMZA TRAVELS</span>
-          <p class="text-amber-400 font-semibold text-[11px]">Flight Booking, Passport & Visa Documentation Support</p>
-          <p class="text-slate-400 leading-relaxed text-xs">
-            Managed by <strong>Mohammad Mahatab Alam</strong>. Serving travelers and expatriates across India and Saudi Arabia.
-          </p>
-          <div class="pt-1">
-            <span class="inline-block bg-slate-900 border border-slate-800 text-amber-400 px-2 py-0.5 rounded text-[11px] font-mono">
-              GSTIN: 09BFLPN1044Q1ZV
-            </span>
-          </div>
-        </div>
-
-        <!-- Col 2: Navigation Links -->
-        <div>
-          <h4 class="text-xs font-bold uppercase text-white tracking-wider mb-3 border-b border-slate-800 pb-1">Navigation</h4>
-          <ul class="space-y-1.5">
-            <li><a href="#home" class="hover:text-amber-400 transition">Home</a></li>
-            <li><a href="#services" class="hover:text-amber-400 transition">Core Services</a></li>
-            <li><a href="#flights" class="hover:text-amber-400 transition">Flight Booking</a></li>
-            <li><a href="#passport" class="hover:text-amber-400 transition">Passport & Visa</a></li>
-            <li><a href="#why-us" class="hover:text-amber-400 transition">Why Us</a></li>
-            <li><a href="#about" class="hover:text-amber-400 transition">About</a></li>
-            <li><a href="#reviews" class="hover:text-amber-400 transition">Reviews</a></li>
-            <li><a href="#faq" class="hover:text-amber-400 transition">FAQs</a></li>
-            <li><a href="#contact" class="hover:text-amber-400 transition">Contact</a></li>
-          </ul>
-        </div>
-
-        <!-- Col 3: Saudi Arabia Service Base -->
-        <div>
-          <h4 class="text-xs font-bold uppercase text-white tracking-wider mb-3 border-b border-slate-800 pb-1">
-            🇸🇦 Saudi Arabia Service Base
-          </h4>
-          <ul class="space-y-2">
-            <li class="flex items-start">
-              <i class="fa-solid fa-location-dot mt-0.5 mr-2 text-amber-400"></i>
-              <span>Layla, Al Aflaj, Riyadh Province, Kingdom of Saudi Arabia</span>
-            </li>
-            <li class="flex items-center">
-              <i class="fa-solid fa-phone mr-2 text-amber-400"></i>
-              <a href="tel:+966594388004" class="hover:text-white transition">+966 594388004</a>
-            </li>
-            <li class="flex items-center">
-              <i class="fa-solid fa-envelope mr-2 text-amber-400"></i>
-              <a href="mailto:info.hamzatravels@gmail.com" class="hover:text-white transition">info.hamzatravels@gmail.com</a>
-            </li>
-            <li class="flex items-center">
-              <i class="fa-regular fa-clock mr-2 text-amber-400"></i>
-              <span>9:00 AM – 11:00 PM Daily</span>
-            </li>
-          </ul>
-        </div>
-
-        <!-- Col 4: India Registered Business -->
-        <div>
-          <h4 class="text-xs font-bold uppercase text-white tracking-wider mb-3 border-b border-slate-800 pb-1">
-            🇮🇳 India Registered Office
-          </h4>
-          <ul class="space-y-2">
-            <li class="flex items-start">
-              <i class="fa-solid fa-building mt-0.5 mr-2 text-amber-400"></i>
-              <span class="leading-relaxed">Partawal Road, Near Gupta Market, Pakdi Bishunpur, Maharajganj, Uttar Pradesh, India – PIN 273151</span>
-            </li>
-            <li class="flex items-center">
-              <i class="fa-solid fa-phone mr-2 text-amber-400"></i>
-              <a href="tel:+918931048027" class="hover:text-white transition">+91 8931048027</a>
-            </li>
-            <li class="flex items-center">
-              <i class="fa-solid fa-user mr-2 text-amber-400"></i>
-              <span>Owner: Mohammad Mahatab Alam</span>
-            </li>
-            <li class="flex items-center">
-              <i class="fa-solid fa-file-invoice mr-2 text-amber-400"></i>
-              <span class="font-mono">GSTIN: 09BFLPN1044Q1ZV</span>
-            </li>
-          </ul>
-        </div>
+      
+      <!-- GSTIN / REGISTRATION BANNER IN FOOTER -->
+      <div class="bg-slate-900 border border-slate-800 rounded-xl p-4 text-center mb-8 shadow-inner">
+        <span class="text-amber-400 text-sm md:text-base font-bold tracking-wide flex items-center justify-center flex-wrap">
+          <i class="fa-solid fa-shield-halved mr-2 text-green-500"></i> GOVERNMENT REGISTERED & VERIFIED — GSTIN: <span class="font-mono text-white ml-2">09BFLPN1044Q1ZV</span>
+        </span>
+        <p class="text-slate-500 mt-2 text-[11px]">Authorized Travel & Ticketing Agency managed by Mohammad Mahatab Alam.</p>
       </div>
 
       <div class="border-t border-slate-800/80 pt-6 flex flex-col sm:flex-row justify-between items-center text-slate-500 gap-3">
@@ -1219,700 +1100,302 @@
     </div>
   </footer>
 
-  <!-- FLOATING WHATSAPP BUTTON (Mobile & Desktop Accessible) -->
-  <button type="button" id="helpFab" class="ht-help-fab" aria-label="Open service request">
-    <i class="fa-brands fa-whatsapp"></i>
-    <span>Request Assistance</span>
-  </button>
-
-  <!-- LIVE WORLD CLOCK MODAL -->
-  <div id="clockModal" class="ht-modal-overlay" role="dialog" aria-modal="true" aria-labelledby="clockModalTitle" aria-hidden="true">
-    <div class="ht-modal-card" style="width: min(640px, 100%);">
-      <div class="p-5 sm:p-6 bg-gradient-to-r from-brand-navy to-brand-slate text-white relative overflow-hidden">
-        <button type="button" class="ht-close-btn" data-close-clock aria-label="Close live clocks"><i class="fa-solid fa-xmark"></i></button>
-        <div class="text-[10px] font-extrabold uppercase tracking-[.14em] text-amber-300">Live World Clocks</div>
-        <h3 id="clockModalTitle" class="text-xl font-extrabold mt-1">Saudi Arabia & India</h3>
-        <p class="text-[11px] text-slate-300 mt-1">Official time zones updating automatically every second.</p>
+  <!-- DYNAMIC INQUIRY MODAL & FAB -->
+  <div id="inquiryModal" class="ht-modal-overlay">
+    <div class="ht-modal-card">
+      <div class="p-5 bg-gradient-to-br from-brand-navy to-brand-slate text-white relative border-b border-blue-900/40">
+        <button type="button" class="ht-close-btn" id="inquiryModalCloseBtn"><i class="fa-solid fa-xmark"></i></button>
+        <h3 class="text-xl font-extrabold text-white">Request Assistance</h3>
       </div>
-      <div class="grid sm:grid-cols-2 gap-4 p-5 sm:p-6 bg-slate-50">
-        <div class="bg-white p-5 rounded-2xl border border-slate-200 shadow-sm relative overflow-hidden">
-          <div class="text-[10px] font-extrabold uppercase tracking-wider text-slate-500">🇸🇦 Saudi Arabia · Riyadh</div>
-          <div id="ksaClockLarge" class="text-3xl sm:text-4xl font-extrabold text-brand-navy font-mono my-2">--:--:--</div>
-          <div id="ksaDate" class="text-xs text-slate-500 font-medium">Loading date...</div>
-        </div>
-        <div class="bg-white p-5 rounded-2xl border border-slate-200 shadow-sm relative overflow-hidden">
-          <div class="text-[10px] font-extrabold uppercase tracking-wider text-slate-500">🇮🇳 India · New Delhi</div>
-          <div id="indiaClockLarge" class="text-3xl sm:text-4xl font-extrabold text-brand-navy font-mono my-2">--:--:--</div>
-          <div id="indiaDate" class="text-xs text-slate-500 font-medium">Loading date...</div>
-        </div>
-      </div>
-      <div class="px-5 py-3.5 bg-slate-100 border-t border-slate-200 text-slate-600 text-xs flex items-center">
-        <i class="fa-solid fa-circle-check text-green-600 mr-2"></i> Real-time synchronization active (Asia/Riyadh & Asia/Kolkata).
-      </div>
+      <form id="modalInquiryForm" class="p-6 space-y-3.5 bg-white" onsubmit="handleModalInquiry(event)">
+        <div><label class="block text-xs font-bold text-slate-700 mb-1">Name *</label><input type="text" id="modalCustName" required class="w-full px-3.5 py-2 rounded-xl border border-slate-300 text-sm focus:ring-2 focus:ring-brand-blue outline-none transition-colors" oninput="this.classList.remove('input-error')"></div>
+        <div><label class="block text-xs font-bold text-slate-700 mb-1">Service *</label><select id="modalService" class="w-full px-3.5 py-2 rounded-xl border border-slate-300 text-sm outline-none font-medium text-slate-800"><option>Flight Ticket Booking</option><option>Indian Passport Services</option><option>VFS Appointment Assistance</option><option>Flight Reservations for Visa</option><option>Saudi Work Visa Medical & Stamping</option><option>Umrah Individual Visa</option></select></div>
+        <div><label class="block text-xs font-bold text-slate-700 mb-1">Message</label><textarea id="modalMsg" rows="2" class="w-full px-3.5 py-2 rounded-xl border border-slate-300 text-xs outline-none focus:ring-2 focus:ring-brand-blue"></textarea></div>
+        <button type="submit" class="w-full py-3 rounded-xl font-bold text-white bg-green-600 hover:bg-green-700 shadow-md transition flex items-center justify-center text-sm"><i class="fa-brands fa-whatsapp text-lg mr-2"></i>Send on WhatsApp</button>
+      </form>
     </div>
   </div>
+
+  <button type="button" id="helpFab" class="ht-help-fab"><i class="fa-brands fa-whatsapp"></i><span>Assistance</span></button>
 
   <!-- BEAUTIFUL FIRST-VISIT WELCOME POPUP CARD (HTML/CSS Modal) -->
-  <div id="welcomePopupModal" class="ht-modal-overlay" role="dialog" aria-modal="true" aria-labelledby="welcomePopupTitle" aria-hidden="true">
+  <div id="welcomePopupModal" class="ht-modal-overlay" role="dialog" aria-modal="true" aria-hidden="true">
     <div class="ht-modal-card" style="width: min(500px, 94vw);">
-      <!-- Card Top Header with Brand Gradient -->
       <div class="p-5 sm:p-6 bg-gradient-to-br from-brand-navy via-brand-slate to-blue-950 text-white relative overflow-hidden border-b border-blue-900/40">
-        <button type="button" class="ht-close-btn" id="welcomePopupCloseBtn" aria-label="Close Welcome Card">
-          <i class="fa-solid fa-xmark"></i>
-        </button>
-        <div class="inline-flex items-center gap-1.5 text-[10px] font-extrabold tracking-widest uppercase text-amber-400 mb-1">
-          <i class="fa-solid fa-star text-[9px]"></i> Hamza Travels
-        </div>
-        <h3 id="welcomePopupTitle" class="text-xl sm:text-2xl font-extrabold tracking-tight text-white">
-          Welcome to HAMZA TRAVELS
-        </h3>
-        <p class="text-xs sm:text-sm text-slate-200 mt-1 leading-relaxed">
-          How can we help you today? Select a service below to get started:
-        </p>
+        <button type="button" class="ht-close-btn" id="welcomePopupCloseBtn" aria-label="Close Welcome Card"><i class="fa-solid fa-xmark"></i></button>
+        <div class="inline-flex items-center gap-1.5 text-[10px] font-extrabold tracking-widest uppercase text-amber-400 mb-1"><i class="fa-solid fa-star text-[9px]"></i> Hamza Travels</div>
+        <h3 class="text-xl sm:text-2xl font-extrabold tracking-tight text-white">Welcome to HAMZA TRAVELS</h3>
       </div>
-
-      <!-- Service Selection Options -->
       <div class="p-4 sm:p-6 bg-slate-50 space-y-2.5">
-        <!-- 1. Flight Ticket Booking (Featured) -->
         <button type="button" onclick="selectWelcomeService('Flight Ticket Booking')" class="ht-choice-btn featured group">
-          <div class="flex items-center gap-3">
-            <div class="w-9 h-9 rounded-lg bg-blue-600 text-white flex items-center justify-center text-sm shadow-sm group-hover:scale-110 transition">
-              <i class="fa-solid fa-plane"></i>
-            </div>
-            <div>
-              <div class="text-xs font-bold text-slate-900 flex items-center gap-1.5">
-                <span>Flight Ticket Booking</span>
-                <span class="text-[9px] bg-amber-400 text-brand-navy font-extrabold px-1.5 py-0.2 rounded uppercase">Featured</span>
-              </div>
-              <div class="text-[10px] text-slate-500">Domestic & International airfares across all major carriers</div>
-            </div>
-          </div>
-          <i class="fa-solid fa-chevron-right text-xs text-blue-600 transition group-hover:translate-x-1"></i>
+          <div class="flex items-center gap-3"><div class="w-9 h-9 rounded-lg bg-blue-600 text-white flex items-center justify-center text-sm shadow-sm group-hover:scale-110 transition"><i class="fa-solid fa-plane"></i></div><div><div class="text-xs font-bold text-slate-900">Flight Ticket Booking</div></div></div><i class="fa-solid fa-chevron-right text-xs text-blue-600"></i>
         </button>
-
-        <!-- 2. Indian Passport Services -->
         <button type="button" onclick="selectWelcomeService('Indian Passport Services')" class="ht-choice-btn group">
-          <div class="flex items-center gap-3">
-            <div class="w-9 h-9 rounded-lg bg-emerald-100 text-emerald-700 flex items-center justify-center text-sm group-hover:scale-110 transition">
-              <i class="fa-solid fa-passport"></i>
-            </div>
-            <div>
-              <div class="text-xs font-bold text-slate-900">Indian Passport Services</div>
-              <div class="text-[10px] text-slate-500">Renewal, minor passports, and documentation in Saudi Arabia</div>
-            </div>
-          </div>
-          <i class="fa-solid fa-chevron-right text-xs text-slate-400 transition group-hover:translate-x-1"></i>
+          <div class="flex items-center gap-3"><div class="w-9 h-9 rounded-lg bg-emerald-100 text-emerald-700 flex items-center justify-center text-sm group-hover:scale-110 transition"><i class="fa-solid fa-passport"></i></div><div><div class="text-xs font-bold text-slate-900">Indian Passport Services</div></div></div><i class="fa-solid fa-chevron-right text-xs text-slate-400"></i>
         </button>
-
-        <!-- 3. VFS Appointment Assistance -->
         <button type="button" onclick="selectWelcomeService('VFS Appointment Assistance')" class="ht-choice-btn group">
-          <div class="flex items-center gap-3">
-            <div class="w-9 h-9 rounded-lg bg-rose-100 text-rose-700 flex items-center justify-center text-sm group-hover:scale-110 transition">
-              <i class="fa-solid fa-calendar-check"></i>
-            </div>
-            <div>
-              <div class="text-xs font-bold text-slate-900">VFS Appointment Assistance</div>
-              <div class="text-[10px] text-slate-500">Center availability monitoring & document checklist checking</div>
-            </div>
-          </div>
-          <i class="fa-solid fa-chevron-right text-xs text-slate-400 transition group-hover:translate-x-1"></i>
+          <div class="flex items-center gap-3"><div class="w-9 h-9 rounded-lg bg-rose-100 text-rose-700 flex items-center justify-center text-sm group-hover:scale-110 transition"><i class="fa-solid fa-calendar-check"></i></div><div><div class="text-xs font-bold text-slate-900">VFS Appointment Assistance</div></div></div><i class="fa-solid fa-chevron-right text-xs text-slate-400"></i>
         </button>
-
-        <!-- 4. Flight Reservations for Visa Documentation -->
         <button type="button" onclick="selectWelcomeService('Flight Reservations for Visa Documentation')" class="ht-choice-btn group">
-          <div class="flex items-center gap-3">
-            <div class="w-9 h-9 rounded-lg bg-purple-100 text-purple-700 flex items-center justify-center text-sm group-hover:scale-110 transition">
-              <i class="fa-solid fa-file-lines"></i>
-            </div>
-            <div>
-              <div class="text-xs font-bold text-slate-900">Flight Reservations for Visa Documentation</div>
-              <div class="text-[10px] text-slate-500">Verifiable itineraries for visa applications & embassy files</div>
-            </div>
-          </div>
-          <i class="fa-solid fa-chevron-right text-xs text-slate-400 transition group-hover:translate-x-1"></i>
+          <div class="flex items-center gap-3"><div class="w-9 h-9 rounded-lg bg-purple-100 text-purple-700 flex items-center justify-center text-sm group-hover:scale-110 transition"><i class="fa-solid fa-file-lines"></i></div><div><div class="text-xs font-bold text-slate-900">Flight Reservations for Visa</div></div></div><i class="fa-solid fa-chevron-right text-xs text-slate-400"></i>
         </button>
-
-        <!-- 5. Saudi Work Visa Medical & Visa Stamping -->
         <button type="button" onclick="selectWelcomeService('Saudi Work Visa Medical & Visa Stamping')" class="ht-choice-btn group">
-          <div class="flex items-center gap-3">
-            <div class="w-9 h-9 rounded-lg bg-amber-100 text-amber-800 flex items-center justify-center text-sm group-hover:scale-110 transition">
-              <i class="fa-solid fa-stamp"></i>
-            </div>
-            <div>
-              <div class="text-xs font-bold text-slate-900">Saudi Work Visa Medical & Visa Stamping</div>
-              <div class="text-[10px] text-slate-500">Gamca/Wafid medical slips, document readiness, stamping guidance</div>
-            </div>
-          </div>
-          <i class="fa-solid fa-chevron-right text-xs text-slate-400 transition group-hover:translate-x-1"></i>
+          <div class="flex items-center gap-3"><div class="w-9 h-9 rounded-lg bg-amber-100 text-amber-800 flex items-center justify-center text-sm group-hover:scale-110 transition"><i class="fa-solid fa-stamp"></i></div><div><div class="text-xs font-bold text-slate-900">Saudi Visa & Medical</div></div></div><i class="fa-solid fa-chevron-right text-xs text-slate-400"></i>
         </button>
-
-        <!-- 6. Umrah Individual Visa -->
-        <button type="button" onclick="selectWelcomeService('Umrah Individual Visa')" class="ht-choice-btn group">
-          <div class="flex items-center gap-3">
-            <div class="w-9 h-9 rounded-lg bg-emerald-100 text-emerald-700 flex items-center justify-center text-sm group-hover:scale-110 transition"><i class="fa-solid fa-kaaba"></i></div>
-            <div><div class="text-xs font-bold text-slate-900">Umrah Individual Visa</div><div class="text-[10px] text-slate-500">Individual Umrah visa inquiry and travel assistance</div></div>
-          </div>
-          <i class="fa-solid fa-chevron-right text-xs text-slate-400 transition group-hover:translate-x-1"></i>
-        </button>
-      </div>
-
-      <!-- Card Footer -->
-      <div class="p-3.5 bg-white border-t border-slate-200 text-center text-[11px] text-slate-500">
-        Direct WhatsApp inquiry with <strong class="text-slate-700">+91 8931048027</strong> · Prompt response
       </div>
     </div>
   </div>
 
-  <!-- ALL SCRIPTS PLACED CLEANLY INSIDE SCRIPT TAGS -->
-  <script>
-    // 1. Live Saudi Arabia + India World Clocks
-    (() => {
-      const zones = {
-        ksa: { timeZone: 'Asia/Riyadh', locale: 'en-SA' },
-        india: { timeZone: 'Asia/Kolkata', locale: 'en-IN' }
-      };
-      const els = {
-        ksa: document.getElementById('ksaClock'),
-        india: document.getElementById('indiaClock'),
-        ksaLarge: document.getElementById('ksaClockLarge'),
-        indiaLarge: document.getElementById('indiaClockLarge'),
-        ksaDate: document.getElementById('ksaDate'),
-        indiaDate: document.getElementById('indiaDate')
-      };
-      const formatTime = (date, zone) => new Intl.DateTimeFormat(zone.locale, {
-        timeZone: zone.timeZone, hour: '2-digit', minute: '2-digit', second: '2-digit', hour12: true
-      }).format(date);
-      const formatDate = (date, zone) => new Intl.DateTimeFormat(zone.locale, {
-        timeZone: zone.timeZone, weekday: 'long', day: 'numeric', month: 'long', year: 'numeric'
-      }).format(date);
-
-      function updateWorldClocks() {
-        const now = new Date();
-        const ksa = formatTime(now, zones.ksa), india = formatTime(now, zones.india);
-        if (els.ksa) els.ksa.textContent = ksa;
-        if (els.india) els.india.textContent = india;
-        if (els.ksaLarge) els.ksaLarge.textContent = ksa;
-        if (els.indiaLarge) els.indiaLarge.textContent = india;
-        if (els.ksaDate) els.ksaDate.textContent = formatDate(now, zones.ksa);
-        if (els.indiaDate) els.indiaDate.textContent = formatDate(now, zones.india);
-      }
-      updateWorldClocks();
-      setInterval(updateWorldClocks, 1000);
-
-      const modal = document.getElementById('clockModal');
-      const trigger = document.getElementById('clockTrigger');
-      const close = () => {
-        if (modal) {
-          modal.classList.remove('open');
-          modal.setAttribute('aria-hidden', 'true');
-          document.body.classList.remove('ht-modal-open');
-        }
-      };
-      const open = () => {
-        if (modal) {
-          updateWorldClocks();
-          modal.classList.add('open');
-          modal.setAttribute('aria-hidden', 'false');
-          document.body.classList.add('ht-modal-open');
-        }
-      };
-      if (trigger) trigger.addEventListener('click', open);
-      document.querySelectorAll('[data-close-clock]').forEach(btn => btn.addEventListener('click', close));
-      if (modal) modal.addEventListener('click', e => { if (e.target === modal) close(); });
-      document.addEventListener('keydown', e => { if (e.key === 'Escape') close(); });
-    })();
-
-    // 2. Mobile Drawer Navigation Toggle
-    const navBtn = document.getElementById('mobileNavToggle');
-    const navMenu = document.getElementById('mobileNavMenu');
-    if (navBtn && navMenu) {
-      navBtn.addEventListener('click', () => {
-        navMenu.classList.toggle('hidden');
-      });
-      navMenu.querySelectorAll('a').forEach(link => {
-        link.addEventListener('click', () => {
-          navMenu.classList.add('hidden');
-        });
-      });
-    }
-
-    // 3. Truly service-specific dynamic fields for Hero Form & Inquiry Modal
-    function setDynamicFields(prefix, service) {
-      const groups = ['FlightFields','PassportFields','VfsFields','ReservationFields','WorkVisaFields','UmrahIndividualFields'];
-      groups.forEach(g => {
-        const el = document.getElementById(prefix + g);
-        if (el) el.classList.add('hidden');
-      });
-      const map = {
-        'Flight Ticket Booking': prefix + 'FlightFields',
-        'Indian Passport Services': prefix + 'PassportFields',
-        'VFS Appointment Assistance': prefix + 'VfsFields',
-        'Flight Reservations for Visa Documentation': prefix + 'ReservationFields',
-        'Saudi Work Visa Medical & Visa Stamping': prefix + 'WorkVisaFields',
-        'Umrah Individual Visa': prefix + 'UmrahIndividualFields'
-      };
-      const active = document.getElementById(map[service]);
-      if (active) active.classList.remove('hidden');
-    }
-
-    function toggleHeroDynamicFields() {
-      const service = document.getElementById('heroService')?.value || 'Flight Ticket Booking';
-      setDynamicFields('hero', service);
-    }
-
-    function toggleModalDynamicFields() {
-      const service = document.getElementById('modalService')?.value || 'Flight Ticket Booking';
-      setDynamicFields('modal', service);
-    }
-
-    // 4. Quick Inquiry Modal Open / Close Logic
-    const inquiryModal = document.getElementById('inquiryModal');
-    const inquiryModalClose = document.getElementById('inquiryModalCloseBtn');
-    const helpFab = document.getElementById('helpFab');
-
-    function openInquiryModal(serviceToSelect) {
-      if (!inquiryModal) return;
-      if (serviceToSelect) {
-        const sel = document.getElementById('modalService');
-        if (sel) {
-          sel.value = serviceToSelect;
-          toggleModalDynamicFields();
-        }
-      }
-      inquiryModal.classList.add('open');
-      inquiryModal.setAttribute('aria-hidden', 'false');
-      document.body.classList.add('ht-modal-open');
-      const nameInput = document.getElementById('modalCustName');
-      if (nameInput) setTimeout(() => nameInput.focus(), 250);
-    }
-
-    function closeInquiryModal() {
-      if (!inquiryModal) return;
-      inquiryModal.classList.remove('open');
-      inquiryModal.setAttribute('aria-hidden', 'true');
-      document.body.classList.remove('ht-modal-open');
-    }
-
-    if (inquiryModalClose) inquiryModalClose.addEventListener('click', closeInquiryModal);
-    if (helpFab) helpFab.addEventListener('click', () => openInquiryModal());
-    if (inquiryModal) inquiryModal.addEventListener('click', e => {
-      if (e.target === inquiryModal) closeInquiryModal();
-    });
-
-    // 5. Beautiful First-Visit Welcome Popup Modal
-    const welcomeModal = document.getElementById('welcomePopupModal');
-    const welcomeCloseBtn = document.getElementById('welcomePopupCloseBtn');
-
-    function closeWelcomePopup() {
-      if (!welcomeModal) return;
-      welcomeModal.classList.remove('open');
-      welcomeModal.setAttribute('aria-hidden', 'true');
-      document.body.classList.remove('ht-modal-open');
-      try {
-        sessionStorage.setItem('ht_welcome_seen', '1');
-      } catch (_) {}
-    }
-
-    function openWelcomePopup() {
-      if (!welcomeModal) return;
-      welcomeModal.classList.add('open');
-      welcomeModal.setAttribute('aria-hidden', 'false');
-      document.body.classList.add('ht-modal-open');
-    }
-
-    function selectWelcomeService(serviceName) {
-      closeWelcomePopup();
-      setTimeout(() => {
-        openInquiryModal(serviceName);
-      }, 180);
-    }
-
-    if (welcomeCloseBtn) welcomeCloseBtn.addEventListener('click', closeWelcomePopup);
-    if (welcomeModal) welcomeModal.addEventListener('click', e => {
-      if (e.target === welcomeModal) closeWelcomePopup();
-    });
-
-    document.addEventListener('keydown', e => {
-      if (e.key === 'Escape') {
-        if (welcomeModal && welcomeModal.classList.contains('open')) closeWelcomePopup();
-        if (inquiryModal && inquiryModal.classList.contains('open')) closeInquiryModal();
-      }
-    });
-
-    // Automatically trigger Welcome Popup once per browser session after short delay (1.8s)
-    window.addEventListener('DOMContentLoaded', () => {
-      try {
-        const seen = sessionStorage.getItem('ht_welcome_seen');
-        if (!seen) {
-          setTimeout(openWelcomePopup, 1800);
-        }
-      } catch (_) {
-        setTimeout(openWelcomePopup, 1800);
-      }
-
-      // Initialize dynamic inquiry fields to the selected service.
-      toggleHeroDynamicFields();
-      toggleModalDynamicFields();
-
-      // Review URL auto-scroll (?review=1)
-      try {
-        const urlParams = new URLSearchParams(window.location.search);
-        if (urlParams.get('review') === '1' || window.location.hash === '#reviews') {
-          setTimeout(() => {
-            const el = document.getElementById('reviews');
-            if (el) {
-              el.scrollIntoView({ behavior: 'smooth' });
-              const nameInput = document.getElementById('revName');
-              if (nameInput) nameInput.focus();
-            }
-          }, 350);
-        }
-      } catch (_) {}
-    });
-
-    // 6. WhatsApp Submission Handlers & Validation
-    function val(id, fallback='Not specified') {
-      const el = document.getElementById(id);
-      return el && el.value ? el.value.trim() : fallback;
-    }
-
-    // Validate essential fields before sending
-    function validateForm(prefix) {
-      let isValid = true;
-      const nameEl = document.getElementById(prefix + 'CustName');
-      if (!nameEl.value.trim()) {
-        nameEl.classList.add('input-error');
-        isValid = false;
-      }
-      
-      const service = document.getElementById(prefix + 'Service').value;
-      if (service === 'Flight Ticket Booking') {
-        const fromEl = document.getElementById(prefix + 'FlightFrom');
-        const toEl = document.getElementById(prefix + 'FlightTo');
-        if (!fromEl.value.trim()) { fromEl.classList.add('input-error'); isValid = false; }
-        if (!toEl.value.trim()) { toEl.classList.add('input-error'); isValid = false; }
-      }
-      return isValid;
-    }
-
-    function buildServiceWhatsAppText(prefix, name, service, msg) {
-      let text = `*HAMZA TRAVELS — Website Inquiry*\n*Name:* ${name}\n*Service:* ${service}\n`;
-      if (service === 'Flight Ticket Booking') {
-        text += `*From:* ${val(prefix+'FlightFrom','Flexible')}\n*To:* ${val(prefix+'FlightTo','Flexible')}\n*Travel Date:* ${val(prefix+'FlightDate','Flexible')}\n*Trip Type:* ${val(prefix+'TripType','One Way')}\n*Passengers:* ${val(prefix+'Passengers','1 Passenger')}\n`;
-      } else if (service === 'Indian Passport Services') {
-        text += `*Passport Service:* ${val(prefix+'PassportType')}\n*City / Location:* ${val(prefix+'PassportCity')}\n*Applicants:* ${val(prefix+'PassportApplicants')}\n`;
-      } else if (service === 'VFS Appointment Assistance') {
-        text += `*Appointment Type:* ${val(prefix+'VfsType')}\n*VFS City / Center:* ${val(prefix+'VfsCity')}\n*Applicants:* ${val(prefix+'VfsApplicants')}\n*Preferred Appointment Date:* ${val(prefix+'VfsDate','Flexible')}\n`;
-      } else if (service === 'Flight Reservations for Visa Documentation') {
-        text += `*From:* ${val(prefix+'ResFrom')}\n*To:* ${val(prefix+'ResTo')}\n*Travel Date:* ${val(prefix+'ResDate','Flexible')}\n*Passengers:* ${val(prefix+'ResPassengers')}\n`;
-      } else if (service === 'Saudi Work Visa Medical & Visa Stamping') {
-        text += `*Service Required:* ${val(prefix+'WorkVisaService')}\n*City:* ${val(prefix+'WorkVisaCity')}\n*Applicants:* ${val(prefix+'WorkVisaApplicants')}\n*Preferred Date:* ${val(prefix+'WorkVisaDate','Flexible')}\n`;
-      } else if (service === 'Umrah Individual Visa') {
-        text += `*Arrival City:* ${val(prefix+'UmrahIndividualArrival')}\n*Preferred Travel Date:* ${val(prefix+'UmrahIndividualDate','Flexible')}\n*Pilgrims:* ${val(prefix+'UmrahIndividualApplicants')}\n`;
-      }
-      if (msg) text += `*Message / Notes:* ${msg}\n`;
-      return text;
-    }
-
-    function handleHeroInquiry(e) {
-      e.preventDefault();
-      if (!validateForm('hero')) return;
-      const name = val('heroCustName','Customer');
-      const service = val('heroService','Flight Ticket Booking');
-      const msg = val('heroMsg','');
-      const text = buildServiceWhatsAppText('hero', name, service, msg);
-      window.open('https://wa.me/918931048027?text=' + encodeURIComponent(text), '_blank', 'noopener');
-    }
-
-    function handleModalInquiry(e) {
-      e.preventDefault();
-      if (!validateForm('modal')) return;
-      const name = val('modalCustName','Customer');
-      const service = val('modalService','Flight Ticket Booking');
-      const msg = val('modalMsg','');
-      const text = buildServiceWhatsAppText('modal', name, service, msg);
-      closeInquiryModal();
-      window.open('https://wa.me/918931048027?text=' + encodeURIComponent(text), '_blank', 'noopener');
-    }
-  </script>
-
-  <!-- 7. Firebase Customer Reviews: robust loading from existing Firestore + Realtime Database -->
+  <!-- FIREBASE & CORE JAVASCRIPT -->
   <script type="module">
-    import { initializeApp, getApps, getApp } from "https://www.gstatic.com/firebasejs/12.18.0/firebase-app.js";
-    import { getAuth, onAuthStateChanged, signInWithEmailAndPassword, signOut } from "https://www.gstatic.com/firebasejs/12.18.0/firebase-auth.js";
-    import { getFirestore, collection, addDoc, getDocs, query, orderBy, serverTimestamp } from "https://www.gstatic.com/firebasejs/12.18.0/firebase-firestore.js";
-    import { getDatabase, ref, get } from "https://www.gstatic.com/firebasejs/12.18.0/firebase-database.js";
+    import { initializeApp } from "https://www.gstatic.com/firebasejs/12.18.0/firebase-app.js";
+    import { getAuth, signInWithEmailAndPassword, signOut, onAuthStateChanged } from "https://www.gstatic.com/firebasejs/12.18.0/firebase-auth.js";
+    import { getFirestore, collection, addDoc, getDocs, doc, updateDoc, serverTimestamp } from "https://www.gstatic.com/firebasejs/12.18.0/firebase-firestore.js";
+    import { getStorage, ref as sRef, uploadBytes, getDownloadURL } from "https://www.gstatic.com/firebasejs/12.18.0/firebase-storage.js";
 
     const firebaseConfig = {
       apiKey: "AIzaSyCQ1Ti_F4FeJvf42n4QbgCTxZP_KbyMPcs",
       authDomain: "hamza-travels-da47f.firebaseapp.com",
-      databaseURL: "https://hamza-travels-da47f-default-rtdb.firebaseio.com",
       projectId: "hamza-travels-da47f",
       storageBucket: "hamza-travels-da47f.firebasestorage.app",
       messagingSenderId: "158965213718",
-      appId: "1:158965213718:web:0e565cadf394895741a337",
-      measurementId: "G-227BD2NRF6"
+      appId: "1:158965213718:web:0e565cadf394895741a337"
     };
 
-    const app = getApps().length ? getApp() : initializeApp(firebaseConfig);
+    const app = initializeApp(firebaseConfig);
     const db = getFirestore(app);
     const auth = getAuth(app);
-    const rtdb = getDatabase(app);
+    const storage = getStorage(app);
     const ADMIN_EMAIL = "info.hamzatravels@gmail.com";
-    let isAdmin = false;
-    const reviewsListElem = document.getElementById('reviewsList');
-    const reviewCountBadge = document.getElementById('reviewCountBadge');
-    const statusMsg = document.getElementById('revStatusMsg');
-    const submitBtn = document.getElementById('revSubmitBtn');
-    const adminLoginBtn = document.getElementById('adminLoginBtn');
-    const adminLogoutBtn = document.getElementById('adminLogoutBtn');
-    const reactionCache = new Map();
-    const replyCache = new Map();
 
-    function escapeHTML(str) {
-      const p = document.createElement('p');
-      p.appendChild(document.createTextNode(String(str ?? '')));
-      return p.innerHTML;
-    }
-
-    function normalizeReview(item, source, id) {
-      let time = 0;
-      const rawDate = item?.createdAt ?? item?.date ?? item?.reviewDate ?? item?.submittedAt;
-      if (rawDate?.toMillis) time = rawDate.toMillis();
-      else if (rawDate?._seconds) time = rawDate._seconds * 1000 + Math.floor((rawDate._nanoseconds || 0) / 1000000);
-      else if (typeof rawDate === 'number') time = rawDate < 100000000000 ? rawDate * 1000 : rawDate;
-      else if (typeof rawDate === 'string' && rawDate.trim()) {
-        const parsed = Date.parse(rawDate.trim());
-        if (!Number.isNaN(parsed)) time = parsed;
-      }
-      return { id: source + ':' + id, sourceId: id, name: item?.name || 'Anonymous', stars: item?.stars || 5, comment: item?.comment || '', time, source, likes: Number(item?.likes || 0), dislikes: Number(item?.dislikes || 0), replies: Array.isArray(item?.replies) ? item.replies : [] };
-    }
-
-    function renderReviews(items) {
-      const seen = new Set();
-      const cleaned = items
-        .filter(x => x.comment || x.name)
-        .filter(x => {
-          const key = `${String(x.name).trim().toLowerCase()}|${String(x.comment).trim().toLowerCase()}|${x.stars}`;
-          if (seen.has(key)) return false;
-          seen.add(key); return true;
-        })
-        .sort((a,b) => (b.time || 0) - (a.time || 0));
-
-      if (!cleaned.length) {
-        reviewsListElem.innerHTML = `<div class="text-center py-10 text-sm text-slate-400 bg-slate-50 rounded-2xl border border-dashed border-slate-200">No reviews published yet. Be the first to share your experience!</div>`;
-        reviewCountBadge.innerText = '0 Reviews';
-        return;
-      }
-
-      reviewCountBadge.innerText = `${cleaned.length} Review${cleaned.length === 1 ? '' : 's'}`;
-      reviewsListElem.innerHTML = cleaned.map(item => {
-        const safeName = escapeHTML(item.name);
-        const safeComment = escapeHTML(item.comment);
-        const starCount = Math.max(1, Math.min(5, parseInt(item.stars,10) || 5));
-        const initials = escapeHTML((String(item.name || 'A').trim().charAt(0) || 'A').toUpperCase());
-        const starsText = '★'.repeat(starCount) + '☆'.repeat(5-starCount);
-        const reviewDate = item.time ? new Date(item.time).toLocaleDateString('en-GB', { day: '2-digit', month: 'long', year: 'numeric' }) : 'Date not available';
-        const reviewKey = escapeHTML(item.id);
-        const reaction = reactionCache.get(item.id) || { like: 0, dislike: 0 };
-        const replies = replyCache.get(item.id) || item.replies || [];
-        const repliesHTML = replies.map(reply => `<div class="mt-3 rounded-xl bg-slate-50 border border-slate-200 p-3"><div class="text-[10px] font-extrabold text-brand-blue">HAMZA TRAVELS · Reply</div><div class="text-xs text-slate-600 mt-1 leading-6">${escapeHTML(reply.text || '')}</div></div>`).join('');
-        return `<article class="ht-review-card" data-review-id="${reviewKey}">
-          <div class="flex items-start justify-between gap-3">
-            <div class="flex items-center gap-3 min-w-0">
-              <div class="ht-review-avatar">${initials}</div>
-              <div class="min-w-0"><div class="font-extrabold text-slate-900 text-sm truncate">${safeName}</div><div class="text-[10px] text-slate-400 mt-0.5">Customer feedback</div><div class="text-[10px] text-slate-400 mt-0.5">Submitted on: ${reviewDate}</div></div>
-            </div>
-            <div class="ht-review-stars" aria-label="${starCount} out of 5 stars">${starsText}</div>
-          </div>
-          <p class="mt-4 text-sm text-slate-600 leading-7">${safeComment}</p>
-          <div class="mt-4 flex flex-wrap items-center gap-2 border-t border-slate-100 pt-3">
-            <button type="button" class="review-reaction-btn rounded-full border border-slate-200 px-3 py-1.5 text-xs font-semibold text-slate-600 hover:bg-emerald-50" data-reaction="like" data-review="${reviewKey}">👍 Like <span data-count="like">${item.likes + reaction.like}</span></button>
-            <button type="button" class="review-reaction-btn rounded-full border border-slate-200 px-3 py-1.5 text-xs font-semibold text-slate-600 hover:bg-rose-50" data-reaction="dislike" data-review="${reviewKey}">👎 Dislike <span data-count="dislike">${item.dislikes + reaction.dislike}</span></button>
-            ${isAdmin ? `<button type="button" class="review-reply-btn rounded-full border border-slate-200 px-3 py-1.5 text-xs font-semibold text-slate-600 hover:bg-blue-50" data-review="${reviewKey}">Reply</button>` : ``}
-          </div>
-          ${isAdmin ? `<form class="review-reply-form hidden mt-3" data-review="${reviewKey}">
-            <textarea required maxlength="500" rows="2" class="w-full rounded-xl border border-slate-200 p-3 text-xs outline-none focus:border-blue-400" placeholder="Write an official reply..."></textarea>
-            <button type="submit" class="mt-2 rounded-full bg-slate-900 px-4 py-2 text-xs font-bold text-white">Post Reply</button>
-            <div class="reply-status text-[11px] mt-2"></div>
-          </form>` : ``}
-          <div class="review-replies">${repliesHTML}</div>
-        </article>`;
-      }).join('');
-    }
-
+    // 1. REVIEWS SYSTEM
     async function loadReviews() {
-      reactionCache.clear();
-      replyCache.clear();
-      const all = [];
-      let sourceWorked = false;
-
-      // Read Firestore without waiting forever. This is the primary source for the current review system.
+      const reviewsList = document.getElementById('reviewsList');
       try {
-        const firestoreRead = getDocs(collection(db, 'reviews'));
-        const snap = await Promise.race([
-          firestoreRead,
-          new Promise((_, reject) => setTimeout(() => reject(new Error('Firestore read timeout')), 7000))
-        ]);
-        snap.forEach(doc => all.push(normalizeReview(doc.data(), 'firestore', doc.id)));
-        sourceWorked = true;
-      } catch (err) {
-        console.warn('Firestore reviews unavailable:', err);
-      }
+        const snap = await getDocs(collection(db, 'reviews'));
+        let items = [];
+        snap.forEach(d => items.push({ id: d.id, ...d.data() }));
+        items = items.sort((a,b) => (b.createdAt?.toMillis ? b.createdAt.toMillis() : 0) - (a.createdAt?.toMillis ? a.createdAt.toMillis() : 0)).slice(0, 10);
+        
+        document.getElementById('reviewCountBadge').innerText = `${items.length} Reviews`;
+        if(!items.length) {
+            reviewsList.innerHTML = `<div class="text-center py-6 text-sm text-slate-500 bg-slate-50 rounded-xl">No legacy reviews. Please visit our Google profile!</div>`;
+            return;
+        }
 
-      // Render Firestore reviews immediately; Realtime Database is optional for legacy reviews.
-      if (sourceWorked) {
-        window.__hamzaReviews = all;
-        renderReviews(all);
+        reviewsList.innerHTML = items.map(item => {
+          const stars = '★'.repeat(item.stars || 5) + '☆'.repeat(5-(item.stars || 5));
+          const date = item.createdAt?.toMillis ? new Date(item.createdAt.toMillis()).toLocaleDateString() : 'Recent';
+          return `<article class="ht-review-card mb-3 p-4">
+            <div class="flex justify-between items-start"><div class="font-bold text-slate-900 text-sm">${item.name || 'Customer'} <span class="block text-[10px] text-slate-400 font-normal">${date}</span></div><div class="text-amber-500 text-xs">${stars}</div></div>
+            <p class="mt-2 text-xs text-slate-600 leading-relaxed">${item.comment || ''}</p>
+          </article>`;
+        }).join('');
+      } catch(e) {
+        document.getElementById('reviewCountBadge').innerText = "Loaded";
+        reviewsList.innerHTML = `<div class="text-center py-6 text-sm text-slate-500 bg-slate-50 rounded-xl">Please check our live Google Maps page for all reviews.</div>`;
       }
-
-      // Also read the existing Realtime Database reviews so older reviews are preserved.
-      try {
-        const rtdbRead = get(ref(rtdb, 'reviews'));
-        const snap = await Promise.race([
-          rtdbRead,
-          new Promise((_, reject) => setTimeout(() => reject(new Error('Realtime Database read timeout')), 1800))
-        ]);
-        const data = snap.val();
-        if (data) Object.keys(data).forEach(id => all.push(normalizeReview(data[id], 'rtdb', id)));
-        sourceWorked = true;
-      } catch (err) {
-        console.warn('Realtime Database reviews unavailable:', err);
-      }
-
-      // Never leave the customer staring at an endless loading state.
-      if (!sourceWorked) {
-        reviewsListElem.innerHTML = `<div class="text-center py-10 text-sm text-slate-500 bg-amber-50 rounded-2xl border border-amber-200">Reviews could not be loaded right now. Please refresh the page and try again.</div>`;
-        reviewCountBadge.innerText = 'Unable to load';
-        return;
-      }
-
-      // Load public reactions and replies without changing the existing review records.
-      try {
-        const reactionSnap = await getDocs(collection(db, 'reviewReactions'));
-        reactionSnap.forEach(doc => {
-          const data = doc.data();
-          const key = data.reviewId;
-          if (!key) return;
-          const current = reactionCache.get(key) || { like: 0, dislike: 0 };
-          if (data.type === 'like') current.like += 1;
-          if (data.type === 'dislike') current.dislike += 1;
-          reactionCache.set(key, current);
-        });
-      } catch (err) { console.warn('Reactions unavailable:', err); }
-      try {
-        const replySnap = await getDocs(collection(db, 'reviewReplies'));
-        replySnap.forEach(doc => {
-          const data = doc.data();
-          if (!data.reviewId || !data.text) return;
-          const list = replyCache.get(data.reviewId) || [];
-          list.push({ text: data.text, time: data.createdAt?.toMillis ? data.createdAt.toMillis() : 0 });
-          replyCache.set(data.reviewId, list);
-        });
-      } catch (err) { console.warn('Replies unavailable:', err); }
-      window.__hamzaReviews = all;
-      renderReviews(all);
     }
+    loadReviews();
 
-    window.handleReviewSubmit = async function(e) {
-      e.preventDefault();
-      const name = document.getElementById('revName').value.trim();
-      const email = document.getElementById('revEmail').value.trim();
-      const stars = parseInt(document.getElementById('revStars').value,10) || 5;
-      const comment = document.getElementById('revComment').value.trim();
-      if (!name || !comment) return;
-      if (email && !/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email)) {
-        statusMsg.innerText = 'Please enter a valid email address, or leave it blank.';
-        statusMsg.className = 'text-xs text-center font-medium mt-2 text-rose-600 block';
-        return;
-      }
-      submitBtn.disabled = true; submitBtn.innerText = 'Submitting...';
+    // 2. ADMIN DASHBOARD & AUTHENTICATION
+    document.getElementById('adminLoginBtn').addEventListener('click', async () => {
+      const email = prompt('Admin Email:', ADMIN_EMAIL);
+      if(!email) return;
+      const pass = prompt('Admin Password:');
+      if(!pass) return;
       try {
-        await addDoc(collection(db, 'reviews'), { name, stars, comment, createdAt: serverTimestamp() });
-        statusMsg.innerText = 'Thank you! Your review has been submitted.';
-        statusMsg.className = 'text-xs text-center font-medium mt-2 text-green-600 block';
-        document.getElementById('reviewForm').reset();
-        await loadReviews();
-      } catch (err) {
-        console.error('Review submit error:', err);
-        statusMsg.innerText = 'Error submitting review. Please try again.';
-        statusMsg.className = 'text-xs text-center font-medium mt-2 text-rose-600 block';
+        await signInWithEmailAndPassword(auth, email, pass);
+      } catch(e) { alert("Login failed. Wrong credentials."); }
+    });
+
+    document.getElementById('adminLogoutBtn').addEventListener('click', () => signOut(auth));
+
+    onAuthStateChanged(auth, user => {
+      const isAdmin = user && user.email.toLowerCase() === ADMIN_EMAIL.toLowerCase();
+      document.getElementById('adminPanel').classList.toggle('hidden', !isAdmin);
+      document.getElementById('adminLoginBtn').classList.toggle('hidden', isAdmin);
+    });
+
+    // 3. PROMO SYSTEM (UPLOAD & DISPLAY)
+    document.getElementById('promoForm').addEventListener('submit', async (e) => {
+      e.preventDefault();
+      const file = document.getElementById('promoFile').files[0];
+      const expiry = new Date(document.getElementById('promoExpiry').value).getTime();
+      const btn = document.getElementById('promoSubmitBtn');
+      const status = document.getElementById('promoStatus');
+      
+      if(!file || !expiry) return alert("Please provide file and expiry time.");
+      btn.disabled = true; btn.innerText = "Uploading...";
+      status.classList.remove('hidden'); status.innerText = "Uploading image to Firebase...";
+
+      try {
+        const fileRef = sRef(storage, 'promos/' + Date.now() + '_' + file.name);
+        await uploadBytes(fileRef, file);
+        const url = await getDownloadURL(fileRef);
+        
+        status.innerText = "Saving to database...";
+        await addDoc(collection(db, 'promotions'), { url, expiryDate: expiry, createdAt: serverTimestamp() });
+        status.className = "text-[10px] text-center mt-1 text-green-600";
+        status.innerText = "Promo Live Successfully!";
+        document.getElementById('promoForm').reset();
+        loadActivePromo();
+      } catch(err) {
+        status.className = "text-[10px] text-center mt-1 text-rose-600";
+        status.innerText = "Error: " + err.message;
       } finally {
-        submitBtn.disabled = false; submitBtn.innerText = 'Submit Review';
-        setTimeout(() => statusMsg.classList.add('hidden'), 5000);
+        btn.disabled = false; btn.innerText = "Upload & Make Live";
       }
+    });
+
+    async function loadActivePromo() {
+      try {
+        const snap = await getDocs(collection(db, 'promotions'));
+        let active = null; const now = Date.now();
+        snap.forEach(doc => {
+          const d = doc.data();
+          if(d.expiryDate > now) {
+            if(!active || d.expiryDate > active.expiryDate) active = d; 
+          }
+        });
+
+        const adminView = document.getElementById('activePromoAdmin');
+        if(active) {
+            adminView.innerHTML = `<a href="${active.url}" target="_blank" class="text-blue-600 underline">View Live Promo</a> (Expires: ${new Date(active.expiryDate).toLocaleString()})`;
+            document.getElementById('promoImage').src = active.url;
+            setTimeout(() => { document.getElementById('promoModal').classList.add('open'); }, 1500);
+        } else {
+            adminView.innerHTML = "No active promotion.";
+        }
+      } catch(e) { console.error("Promo load err:", e); }
+    }
+    loadActivePromo();
+
+    // 4. NEWS TICKER (ANNOUNCEMENTS)
+    document.getElementById('newsForm').addEventListener('submit', async (e) => {
+      e.preventDefault();
+      const text = document.getElementById('newsText').value;
+      const btn = document.getElementById('newsSubmitBtn');
+      btn.disabled = true; btn.innerText = "Saving...";
+      try {
+        await addDoc(collection(db, 'announcements'), { text, active: true, createdAt: serverTimestamp() });
+        document.getElementById('newsForm').reset();
+        loadAnnouncements();
+      } catch(err) { alert("Error adding news."); }
+      finally { btn.disabled = false; btn.innerText = "Add to Ticker"; }
+    });
+
+    window.deleteNews = async function(id) {
+       if(!confirm("Remove this announcement?")) return;
+       try { await updateDoc(doc(db, 'announcements', id), { active: false }); loadAnnouncements(); } 
+       catch(e) { alert("Error removing."); }
     };
 
-    reviewsListElem.addEventListener('click', async (event) => {
-      const reactionBtn = event.target.closest('.review-reaction-btn');
-      if (reactionBtn) {
-        const reviewId = reactionBtn.dataset.review;
-        const type = reactionBtn.dataset.reaction;
-        const voteKey = `ht-review-voted:${reviewId}`;
-        if (localStorage.getItem(voteKey)) return;
-        reactionBtn.disabled = true;
-        try {
-          await addDoc(collection(db, 'reviewReactions'), { reviewId, type, createdAt: serverTimestamp() });
-          localStorage.setItem(voteKey, type);
-          const count = reactionBtn.querySelector('[data-count]');
-          if (count) count.textContent = String(Number(count.textContent || 0) + 1);
-        } catch (err) { console.error('Reaction error:', err); reactionBtn.disabled = false; }
-        return;
-      }
-      const replyBtn = event.target.closest('.review-reply-btn');
-      if (replyBtn) {
-        const form = reviewsListElem.querySelector(`.review-reply-form[data-review="${CSS.escape(replyBtn.dataset.review)}"]`);
-        if (form) form.classList.toggle('hidden');
-      }
-    });
-
-    reviewsListElem.addEventListener('submit', async (event) => {
-      const form = event.target.closest('.review-reply-form');
-      if (!form) return;
-      event.preventDefault();
-      const textArea = form.querySelector('textarea');
-      const status = form.querySelector('.reply-status');
-      const text = textArea.value.trim();
-      if (!text) return;
-      const button = form.querySelector('button[type="submit"]');
-      button.disabled = true; button.textContent = 'Posting...';
+    async function loadAnnouncements() {
       try {
-        await addDoc(collection(db, 'reviewReplies'), { reviewId: form.dataset.review, text, createdAt: serverTimestamp() });
-        const list = replyCache.get(form.dataset.review) || [];
-        list.push({ text }); replyCache.set(form.dataset.review, list);
-        form.closest('article').querySelector('.review-replies').insertAdjacentHTML('beforeend', `<div class="mt-3 rounded-xl bg-slate-50 border border-slate-200 p-3"><div class="text-[10px] font-extrabold text-brand-blue">HAMZA TRAVELS · Reply</div><div class="text-xs text-slate-600 mt-1 leading-6">${escapeHTML(text)}</div></div>`);
-        textArea.value = ''; form.classList.add('hidden');
-      } catch (err) { status.textContent = 'Could not post reply. Please try again.'; status.className = 'reply-status text-[11px] mt-2 text-rose-600'; }
-      finally { button.disabled = false; button.textContent = 'Post Reply'; }
-    });
+        const snap = await getDocs(collection(db, 'announcements'));
+        let publicHtml = ''; let adminHtml = '';
+        snap.forEach(doc => {
+          const d = doc.data();
+          if(d.active) {
+            publicHtml += `<span><i class="fa-solid fa-bolt text-amber-300 mr-1.5"></i> ${d.text}</span> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; `;
+            adminHtml += `<div class="flex justify-between items-center bg-slate-50 p-2 rounded border border-slate-200 mb-2"><span>${d.text}</span><button type="button" onclick="deleteNews('${doc.id}')" class="text-rose-600"><i class="fa-solid fa-trash"></i></button></div>`;
+          }
+        });
 
-    adminLoginBtn.addEventListener('click', async () => {
-      const email = window.prompt('Admin email address:', ADMIN_EMAIL);
-      if (!email) return;
-      const password = window.prompt('Enter your admin password:');
-      if (!password) return;
-      try {
-        const result = await signInWithEmailAndPassword(auth, email.trim(), password);
-        if ((result.user.email || '').toLowerCase() !== ADMIN_EMAIL.toLowerCase()) {
-          await signOut(auth);
-          alert('This account is not authorized for HAMZA TRAVELS admin replies.');
+        document.getElementById('activeNewsAdmin').innerHTML = adminHtml || "No active news.";
+        const ticker = document.getElementById('newsTickerBar');
+        const content = document.getElementById('tickerContent');
+        if(publicHtml) {
+            content.innerHTML = publicHtml + publicHtml; 
+            ticker.classList.remove('hidden');
+        } else {
+            ticker.classList.add('hidden');
         }
-      } catch (err) {
-        console.error('Admin login error:', err);
-        alert('Login failed. Please check the admin email and password.');
+      } catch(e) { console.error("News err:", e); }
+    }
+    loadAnnouncements();
+  </script>
+
+  <!-- BASIC UI SCRIPTS -->
+  <script>
+    function validateForm(prefix) {
+      let isValid = true;
+      const nameEl = document.getElementById(prefix + 'CustName');
+      if (nameEl && !nameEl.value.trim()) { nameEl.classList.add('input-error'); isValid = false; }
+      const serviceEl = document.getElementById(prefix + 'Service');
+      if (serviceEl && serviceEl.value === 'Flight Ticket Booking') {
+        const fromEl = document.getElementById(prefix + 'FlightFrom');
+        const toEl = document.getElementById(prefix + 'FlightTo');
+        if (fromEl && !fromEl.value.trim()) { fromEl.classList.add('input-error'); isValid = false; }
+        if (toEl && !toEl.value.trim()) { toEl.classList.add('input-error'); isValid = false; }
       }
+      return isValid;
+    }
+
+    function val(id, fallback='Not specified') {
+      const el = document.getElementById(id); return el && el.value ? el.value.trim() : fallback;
+    }
+
+    function buildWA(prefix) {
+      const name = val(prefix+'CustName'); const service = val(prefix+'Service');
+      let t = `*HAMZA TRAVELS — Website Inquiry*\n*Name:* ${name}\n*Service:* ${service}\n`;
+      if(service.includes('Flight')) {
+        t += `*From:* ${val(prefix+'FlightFrom')}\n*To:* ${val(prefix+'FlightTo')}\n*Date:* ${val(prefix+'FlightDate','Flexible')}\n`;
+      }
+      return t + `*Notes:* ${val(prefix+'Msg','')}`;
+    }
+
+    window.handleHeroInquiry = function(e) {
+      e.preventDefault(); if(!validateForm('hero')) return;
+      window.open('https://wa.me/918931048027?text=' + encodeURIComponent(buildWA('hero')), '_blank');
+    };
+    window.handleModalInquiry = function(e) {
+      e.preventDefault(); if(!validateForm('modal')) return;
+      document.getElementById('inquiryModal').classList.remove('open');
+      window.open('https://wa.me/918931048027?text=' + encodeURIComponent(buildWA('modal')), '_blank');
+    };
+
+    window.openInquiryModal = function(service) {
+      const m = document.getElementById('inquiryModal');
+      if(service) {
+         const sel = document.getElementById('modalService');
+         if(sel) sel.value = service;
+      }
+      m.classList.add('open');
+    };
+
+    window.selectWelcomeService = function(service) {
+      document.getElementById('welcomePopupModal').classList.remove('open');
+      setTimeout(() => openInquiryModal(service), 200);
+    };
+
+    document.getElementById('inquiryModalCloseBtn').addEventListener('click', () => document.getElementById('inquiryModal').classList.remove('open'));
+    document.getElementById('helpFab').addEventListener('click', () => openInquiryModal());
+    document.getElementById('mobileNavToggle').addEventListener('click', () => document.getElementById('mobileNavMenu').classList.toggle('hidden'));
+    document.getElementById('welcomePopupCloseBtn').addEventListener('click', () => document.getElementById('welcomePopupModal').classList.remove('open'));
+    
+    window.toggleHeroDynamicFields = function() {
+        ['FlightFields','PassportFields','VfsFields','ReservationFields','WorkVisaFields','UmrahIndividualFields'].forEach(id => {
+            const el = document.getElementById('hero' + id); if(el) el.classList.add('hidden');
+        });
+        const val = document.getElementById('heroService').value;
+        if(val.includes('Flight Ticket')) document.getElementById('heroFlightFields').classList.remove('hidden');
+        else if(val.includes('Passport')) document.getElementById('heroPassportFields').classList.remove('hidden');
+        else if(val.includes('VFS')) document.getElementById('heroVfsFields').classList.remove('hidden');
+        else if(val.includes('Reservations')) document.getElementById('heroReservationFields').classList.remove('hidden');
+        else if(val.includes('Work Visa')) document.getElementById('heroWorkVisaFields').classList.remove('hidden');
+        else if(val.includes('Umrah')) document.getElementById('heroUmrahIndividualFields').classList.remove('hidden');
+    }
+
+    window.addEventListener('DOMContentLoaded', () => {
+      try {
+        if (!sessionStorage.getItem('ht_welcome_seen')) {
+          setTimeout(() => document.getElementById('welcomePopupModal').classList.add('open'), 1800);
+          sessionStorage.setItem('ht_welcome_seen', '1');
+        }
+      } catch (e) {}
     });
-
-    adminLogoutBtn.addEventListener('click', () => signOut(auth));
-
-    onAuthStateChanged(auth, (user) => {
-      isAdmin = !!user && (user.email || '').toLowerCase() === ADMIN_EMAIL.toLowerCase();
-      adminLoginBtn.classList.toggle('hidden', isAdmin);
-      adminLogoutBtn.classList.toggle('hidden', !isAdmin);
-      renderReviews(window.__hamzaReviews || []);
-    });
-
-    loadReviews();
   </script>
 </body>
 </html>
